@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= BASE ================= */
+
+.tk-footer {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  padding-top: 200px; /* SPACE FOR SUBSCRIBE CARD */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #cbd5e1;
+  overflow-x: hidden;
+}
+
+/* ================= SUBSCRIBE ================= */
+
+.tk-subscribe {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 64px 80px;
+  background: linear-gradient(135deg, #d9f99d, #eaffb8);
+  color: #000;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 40px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45);
+}
+
+.tk-subscribe h2 {
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 700;
+  max-width: 520px; /* safer text width */
+}
+
+/* Input */
+
+.tk-input-box {
+  display: flex;
+  background: #000;
+  border-radius: 999px;
+  padding: 6px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.tk-input-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 14px 18px;
+  outline: none;
+  min-width: 0;
+}
+
+.tk-input-box button {
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Social */
+
+.tk-social {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================= MAIN FOOTER ================= */
+
+.tk-footer-main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 80px 70px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+
+.tk-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #d9f99d;
+}
+
+.tk-logo-icon {
+  background: #d9f99d;
+  color: #000;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.tk-col h4 {
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.tk-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tk-col li {
+  margin-bottom: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Badge */
+
+.new {
+  background: #d9f99d;
+  color: #000;
+  padding: 2px 8px;
+  font-size: 10px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+/* ================= BOTTOM ================= */
+
+.tk-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 22px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ================= SCROLL ================= */
+
+.scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: #d9f99d;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+  .tk-footer-main,
+  .tk-subscribe {
+    max-width: 1600px;
+  }
+}
+
+/* Laptop / tablet landscape */
+@media (max-width: 1200px) {
+  .tk-footer-main {
+    gap: 48px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .tk-subscribe {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 56px 48px;
+  }
+
+  .tk-subscribe h2 {
+    margin: 0 auto;
+  }
+
+  .tk-footer-main {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 40px 60px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 820px) {
+  .tk-footer-main {
+    gap: 32px;
+  }
+
+  .tk-subscribe h2 {
+    font-size: 40px;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 600px) {
+  .tk-footer {
+    padding-top: 140px;
+  }
+
+  .tk-subscribe {
+    padding: 40px 24px;
+  }
+
+  .tk-subscribe h2 {
+    font-size: 34px;
+  }
+
+  .tk-input-box {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .tk-input-box input {
+    background: #000;
+    border-radius: 999px;
+  }
+
+  .tk-input-box button {
+    width: 100%;
+  }
+
+  .tk-footer-main {
+    grid-template-columns: 1fr;
+    padding: 0 24px 50px;
+  }
+
+  .tk-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 420px) {
+  .tk-subscribe h2 {
+    font-size: 28px;
+  }
+
+  .tk-logo {
+    font-size: 20px;
+  }
+
+  .tk-footer-bottom {
+    font-size: 13px;
+    padding: 18px 20px;
+  }
+
+  .tk-col li {
+    white-space: normal; /* prevents overflow on tiny screens */
+  }
+
+  .scroll-top {
+    width: 42px;
+    height: 42px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .tk-subscribe {
+    padding: 32px 18px;
+  }
+
+  .tk-subscribe h2 {
+    font-size: 24px;
+  }
+}
