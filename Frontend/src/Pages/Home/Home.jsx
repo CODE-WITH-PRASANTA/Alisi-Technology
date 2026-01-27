@@ -8,6 +8,7 @@ import HomeAbout from '../../Components/HomeAbout/HomeAbout'
 import HomeInsights from '../../Components/HomeInsights/HomeInsights'
 import HomeWorkingProcess from '../../Components/HomeWorkingProcess/HomeWorkingProcess'
 import HomeContactSection from '../../Components/HomeContactSection/HomeContactSection'
+import HomeRecentProjects from '../../Components/HomeRecentProjects/HomeRecentProjects'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <HomeAbout/>
       <HomeTestimonial/>
       <HomeWorkingProcess/>
+      <HomeRecentProjects/>
       <HomeContactSection/>  
       <HomeInsights/>
     </div>

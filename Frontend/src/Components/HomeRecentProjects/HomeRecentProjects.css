@@ -1,0 +1,163 @@
+.projects {
+  background: #0a0a0a;
+  padding: 110px 6%;
+  color: #fff;
+}
+
+/* HEADER */
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.projects-header span {
+  color: #c9ff1a;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.projects-header h2 {
+  margin-top: 15px;
+  font-size: clamp(28px, 4vw, 46px);
+}
+
+.nav-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btns button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+/* SLIDER */
+
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+}
+
+/* EACH PAGE */
+
+.slide-group {
+  min-width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+/* CARD */
+
+.project-slide {
+  flex: 1;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.overlay span {
+  background: #111;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #c9ff1a;
+}
+
+.overlay h3 {
+  flex: 1;
+  margin: 0 12px;
+}
+
+.arrow {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 5px;
+  
+}
+
+.project-card:hover .arrow {
+  background: #c9ff1a;
+  color: #000;
+}
+
+/* DOTS */
+
+.dots {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #444;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #c9ff1a;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .projects {
+    padding: 80px 4%;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .slide-group {
+    gap: 0;
+  }
+
+  .project-card img {
+    height: 300px;
+  }
+}
