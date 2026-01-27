@@ -1,0 +1,67 @@
+import React from "react";
+import "./ContactInfo.css";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaComments,
+} from "react-icons/fa";
+
+const ContactInfo = () => {
+  return (
+    <section className="contact-info-section">
+      {/* Header */}
+      <div className="contact-info-header">
+        <span className="contact-tag">[ CONTACT INFO ]</span>
+        <h2>Reach Out Us Now!</h2>
+      </div>
+
+      {/* Cards */}
+      <div className="contact-info-grid">
+        {/* Location */}
+        <div className="contact-card">
+          <div className="contact-icon">
+            <FaMapMarkerAlt />
+          </div>
+          <h3>Our Location</h3>
+          <p>
+            993 Renner Burg, West Rond, <br />
+            MT 94251-030
+          </p>
+        </div>
+
+        {/* Email */}
+        <div className="contact-card">
+          <div className="contact-icon">
+            <FaEnvelope />
+          </div>
+          <h3>Email us</h3>
+          <p>support@tekmino.com</p>
+          <p>info@tekmino.com</p>
+        </div>
+
+        {/* Phone */}
+        <div className="contact-card">
+          <div className="contact-icon">
+            <FaPhoneAlt />
+          </div>
+          <h3>Call us</h3>
+          <p>+1 (009) 544-7818</p>
+          <p>+1 (009) 880-1810</p>
+        </div>
+
+        {/* Live Chat */}
+        <div className="contact-card">
+          <div className="contact-icon">
+            <FaComments />
+          </div>
+          <h3>Live chat</h3>
+          <p>livechat@tekmino.com</p>
+          <p className="highlight">Need help?</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactInfo;
