@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./HomeWhyChoose.css";
 import {
   FaThumbsUp,
@@ -8,17 +8,32 @@ import {
 } from "react-icons/fa";
 
 export default function WhyChoose() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sectionRef.current.classList.add("show");
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+  }, []);
+
   return (
-    <section className="why-wrapper">
+    <section className="why-wrapper reveal" ref={sectionRef}>
       <div className="why-top">
-        <div>
+        <div className="fade-up">
           <span className="why-tag">[ WHY CHOOSE US ]</span>
           <h2>
             Reliable IT Solution, for <br /> Best Results.
           </h2>
         </div>
 
-        <div className="why-right">
+        <div className="why-right fade-up delay-1">
           <p>Our services are customized to meet your unique.</p>
           <button className="learn-btn">
             Learn More <span>↗</span>
@@ -27,7 +42,7 @@ export default function WhyChoose() {
       </div>
 
       <div className="why-cards">
-        <div className="why-card">
+        <div className="why-card fade-up delay-1">
           <div className="icon">
             <FaThumbsUp />
           </div>
@@ -38,7 +53,7 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        <div className="why-card active">
+        <div className="why-card active fade-up delay-2">
           <div className="icon">
             <FaLightbulb />
           </div>
@@ -49,7 +64,7 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        <div className="why-card">
+        <div className="why-card fade-up delay-3">
           <div className="icon">
             <FaRocket />
           </div>
@@ -60,7 +75,7 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        <div className="why-card">
+        <div className="why-card fade-up delay-4">
           <div className="icon">
             <FaHandshake />
           </div>
