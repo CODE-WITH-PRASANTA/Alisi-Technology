@@ -24,7 +24,7 @@
 /* LEFT */
 
 .tag {
-  color: #c9ff1a;
+  color: #e5ff9f;
   letter-spacing: 3px;
   font-size: 13px;
 }
@@ -38,7 +38,7 @@
 /* BUTTON */
 
 .primary-btn {
-  background: #c9ff1a;
+  background: #e5ff9f;
   border: 2px solid transparent;
   padding: 14px 26px;
   border-radius: 40px;
@@ -52,7 +52,7 @@
 
 .primary-btn span {
   background: #000;
-  color: #fff;
+  color: #c1bdbd;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -65,8 +65,8 @@
 
 .primary-btn:hover {
   background: #000;
-  color: #c9ff1a;
-  border: 2px solid #c9ff1a;
+  color: #e5ff9f;
+  border: 2px solid #e5ff9f;
 }
 
 /* INFO */
@@ -88,7 +88,7 @@
 }
 
 .contact-info span {
-  color: #c9ff1a;
+  color: #e5ff9f;
 }
 
 /* FORM */
@@ -105,7 +105,7 @@
 }
 
 .contact-form h3 span {
-  color: #c9ff1a;
+  color: #e5ff9f;
 }
 
 .form-grid {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeContactSection.css";
-import bg from "../../assets/common-bg-2.webp";
+import bg from "../../Assets/common-bg-2.webp";
 
 export default function ContactSection() {
   return (

@@ -10,7 +10,7 @@
 }
 
 .process-header span {
-  color: #c9ff1a;
+  color: #e5ff9f;
   letter-spacing: 3px;
   font-size: 13px;
 }
@@ -55,7 +55,7 @@
   transform: translateX(-50%);
   width: 70px;
   height: 70px;
-  background: #c9ff1a;
+  background: #e5ff9f;
   color: #000;
   border-radius: 50%;
   display: flex;
@@ -86,7 +86,7 @@
   right: -35px;
   top: 50%;
   width: 70px;
-  border-bottom: 2px dashed #c9ff1a;
+  border-bottom: 2px dashed #e5ff9f;
 }
 
 /* ================= RESPONSIVE ================= */

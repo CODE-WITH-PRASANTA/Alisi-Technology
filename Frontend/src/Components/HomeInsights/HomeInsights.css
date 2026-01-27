@@ -10,7 +10,7 @@
 }
 
 .insights-header span {
-  color: #c9ff1a;
+  color: #e5ff9f;
   letter-spacing: 3px;
   font-size: 13px;
 }
@@ -99,7 +99,7 @@
   border: 1px solid #222;
   padding: 4px 12px;
   border-radius: 20px;
-  color: #c9ff1a;
+  color: #e5ff9f;
   font-size: 13px;
 }
 
@@ -133,7 +133,7 @@
 }
 
 .insight-card:hover .read-more {
-  color: #c9ff1a;
+  color: #e5ff9f;
 }
 
 /* ================= RESPONSIVE ================= */

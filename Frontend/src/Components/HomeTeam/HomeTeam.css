@@ -27,7 +27,7 @@
 }
 
 .home-team-tag{
-  color:#d6ff2b;
+  color:#e5ff9f;
   font-weight:600;
   letter-spacing:2px;
 }
@@ -47,8 +47,8 @@
 /* BUTTON */
 
 .home-team-more-btn{
-  background:#d6ff2b;
-  border:5px solid #d6ff2b;   /* thick yellow border */
+  background:#e5ff9f;
+  border:5px solid #e5ff9f;   /* thick yellow border */
   padding:14px 32px 14px 36px;
   border-radius:70px;
   font-weight:600;
@@ -86,7 +86,7 @@
 .home-team-more-btn:hover{
   background:#000;
   color:#fff;
-  border-color:#d6ff2b;
+  border-color:#e5ff9f;
 }
 
 /* =============================
@@ -129,7 +129,7 @@
 }
 
 .home-team-share-btn{
-  background:#d6ff2b;
+  background:#e5ff9f;
   width:46px;
   height:46px;
   border-radius:50%;
@@ -138,6 +138,7 @@
   justify-content:center;
   cursor:pointer;
   transition:.4s;
+  color: #000;
 }
 
 .home-team-social-icons{
@@ -163,7 +164,7 @@
 }
 
 .home-team-social-icons svg:hover{
-  background:#d6ff2b;
+  background:#e5ff9f;
 }
 
 /* Hover Effects */

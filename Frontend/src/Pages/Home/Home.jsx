@@ -13,6 +13,7 @@ import HomeTechnologies from '../../Components/HomeTechnologies/HomeTechnologies
 import HomeTeam from '../../Components/HomeTeam/HomeTeam'
 import HomeVideo from '../../Components/HomeVideo/HomeVideo'
 import HomeServices from '../../Components/HomeServices/HomeServices'
+import HomeFeedback from '../../Components/HomeFeedback/HomeFeedback'
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <HomeAbout/>
       <HomeServices/>
       <HomeVideo/>
+      <HomeFeedback/>
       <HomeTestimonial/>
       <HomeWorkingProcess/>
       <HomeTeam/>

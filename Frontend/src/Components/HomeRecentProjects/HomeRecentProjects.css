@@ -14,7 +14,7 @@
 }
 
 .projects-header span {
-  color: #c9ff1a;
+  color: #e5ff9f;
   letter-spacing: 3px;
   font-size: 13px;
 }
@@ -93,7 +93,7 @@
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 13px;
-  color: #c9ff1a;
+  color: #e5ff9f;
 }
 
 .overlay h3 {
@@ -115,7 +115,7 @@
 }
 
 .project-card:hover .arrow {
-  background: #c9ff1a;
+  background: #e5ff9f;
   color: #000;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .dot.active {
-  background: #c9ff1a;
+  background: #e5ff9f;
 }
 
 /* MOBILE */
