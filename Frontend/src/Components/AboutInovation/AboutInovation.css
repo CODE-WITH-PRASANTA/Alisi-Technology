@@ -1,0 +1,216 @@
+/* SECTION */
+.tek-about-section {
+  padding: 80px 20px;
+  background: #000;
+}
+
+/* CONTAINER */
+.tek-about-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 70px;
+
+  /* Stretch so image matches content height */
+  align-items: stretch;
+}
+
+/* IMAGE */
+.tek-about-image-box {
+  flex: 1.2;
+  border-radius: 22px;
+  overflow: hidden;
+
+  min-height: 100%;
+  height: calc(100% + 80px); /* extra height */
+}
+
+.tek-about-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.tek-about-content-box {
+  flex: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TAG */
+.tek-about-tag {
+  color: #e5ff9f;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+/* TITLE */
+.tek-about-title {
+  font-size: 42px;
+  line-height: 1.25;
+  margin-bottom: 40px;
+}
+
+/* INFO */
+.tek-about-info-wrapper {
+  display: flex;
+  gap: 28px;
+}
+
+/* LOGO BOX */
+.tek-about-logo-card {
+  background: #e5ff9f;
+  padding: 22px;
+  border-radius: 18px;
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tek-about-logo-card img {
+  width: 55px;
+  margin-bottom: 8px;
+}
+
+.tek-about-logo-card h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* TEXT AREA */
+.tek-about-text-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* CARD */
+.tek-about-card {
+  background: #111;
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tek-about-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tek-about-card p {
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* BUTTON */
+.tek-about-btn {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: transparent;
+  border: 2px solid #e5ff9f;
+  padding: 12px 18px 12px 32px;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  width: fit-content;
+}
+
+.tek-about-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* SWEEP */
+.tek-about-btn::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: #e5ff9f;
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+.tek-about-btn:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+.tek-about-btn:hover {
+  color: #000;
+}
+
+/* ICON */
+.tek-about-btn-icon {
+  position: relative;
+  z-index: 2;
+  background: #e5ff9f;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.tek-about-btn:hover .tek-about-btn-icon {
+  transform: rotate(45deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .tek-about-container {
+    flex-direction: column;
+  }
+
+  .tek-about-image-box {
+    height: 420px;
+  }
+
+  .tek-about-title {
+    font-size: 36px;
+  }
+
+  .tek-about-info-wrapper {
+    flex-direction: column;
+  }
+
+  .tek-about-logo-card {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tek-about-image-box {
+    height: 320px;
+  }
+
+  .tek-about-title {
+    font-size: 30px;
+  }
+}

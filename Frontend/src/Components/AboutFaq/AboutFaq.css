@@ -1,0 +1,299 @@
+/* ================================
+   FAQ SECTION
+================================ */
+
+.tek-faq-section {
+  background: #000;
+  padding: 90px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CONTAINER */
+
+.tek-faq-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 80px;
+}
+
+/* ================= LEFT ================= */
+
+.tek-faq-left {
+  flex: 1;
+  color: #fff;
+}
+
+.tek-faq-tag {
+  color: #e5ff9f;
+  letter-spacing: 2px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.tek-faq-title {
+  font-size: 48px;
+  margin: 20px 0 40px;
+  line-height: 1.2;
+}
+
+/* ================= CONTACT BUTTON ================= */
+
+.tek-faq-contact-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 34px;
+  border-radius: 60px;
+  background: #e5ff9f;
+  border: 3px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.tek-faq-contact-btn span {
+  z-index: 2;
+  font-weight: 600;
+  color: #000;
+}
+
+.tek-faq-contact-btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #000;
+  left: 0;
+  top: 0;
+  transition: 0.5s ease;
+}
+
+.tek-faq-contact-btn:hover::before {
+  width: 100%;
+}
+
+.tek-faq-contact-btn:hover {
+  border: 3px solid #e5ff9f;
+}
+
+.tek-faq-contact-btn:hover span {
+  color: #e5ff9f;
+}
+
+/* Arrow Circle */
+
+.tek-faq-arrow-circle {
+  background: #000;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transform: rotate(-45deg);
+  transition: 0.4s ease;
+}
+
+/* ================= CALL CARD ================= */
+
+.tek-faq-call-card {
+  background: #171a17;
+  padding: 34px;
+  border-radius: 20px;
+  margin-top: 60px;
+  max-width: 420px;
+}
+
+.tek-faq-call-card p {
+  color: #ccc;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+/* INNER BLACK CARD */
+
+.tek-faq-call-box {
+  background: #000;
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+/* PERSON IMAGE */
+
+.tek-faq-person-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+
+.tek-faq-call-box div {
+  display: flex;
+  flex-direction: column;
+}
+
+.tek-faq-call-box span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.tek-faq-call-box h4 {
+  color: #fff;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* PHONE ICON */
+
+.tek-faq-phone-icon {
+  margin-left: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e5ff9f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 20px;
+  transition: transform 0.7s ease;
+}
+
+/* ROTATE ON HOVER */
+
+.tek-faq-call-box:hover .tek-faq-phone-icon {
+  transform: rotate(360deg);
+}
+
+/* ================= RIGHT FAQ ================= */
+
+.tek-faq-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tek-faq-item {
+  background: #171a17;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.tek-faq-question {
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tek-faq-question h4 {
+  color: #fff;
+  font-size: 18px;
+}
+
+.tek-faq-icon {
+  width: 38px;
+  height: 38px;
+  background: #e5ff9f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.tek-faq-item.active h4 {
+  color: #e5ff9f;
+}
+
+.tek-faq-answer {
+  padding: 0 24px 22px;
+}
+
+.tek-faq-answer p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* ================= SCROLL TOP ================= */
+
+.tek-faq-scroll-top {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e5ff9f;
+  font-size: 14px;
+}
+
+.tek-faq-scroll-top svg {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+/* PERFECT REFERENCE ARROW */
+
+.tek-faq-arrow-circle {
+  background: #000;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.tek-faq-arrow-icon {
+  color: #fff;
+  font-size: 18px;
+  stroke-width: 2px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .tek-faq-container {
+    flex-direction: column;
+  }
+
+  .tek-faq-title {
+    font-size: 38px;
+  }
+
+  .tek-faq-call-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .tek-faq-title {
+    font-size: 30px;
+  }
+
+  .tek-faq-question h4 {
+    font-size: 16px;
+  }
+
+  .tek-faq-call-box {
+    flex-direction: row;
+  }
+}

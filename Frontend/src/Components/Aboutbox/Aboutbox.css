@@ -1,0 +1,116 @@
+.techstats-wrapper {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.techstats-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #000;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+.techstats-box {
+  position: relative;
+  padding: 50px 25px;
+  text-align: center;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ICON */
+
+.techstats-icon {
+  font-size: 36px;
+  color: #e5ff9f;
+  margin-bottom: 18px;
+}
+
+/* NUMBER */
+
+.techstats-number {
+  font-size: 52px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* LABEL */
+
+.techstats-label {
+  font-size: 16px;
+  color: #bfbfbf;
+}
+
+/* DIVIDER LINE */
+
+.techstats-divider {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 1px;
+  height: 80%;
+  background: rgba(255,255,255,0.15);
+}
+
+/* MOVING DOT */
+
+.techstats-moving-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  background: #e5ff9f;
+  border-radius: 50%;
+  animation: techstatsDotMove 2.5s infinite ease-in-out;
+}
+
+@keyframes techstatsDotMove {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .techstats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .techstats-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .techstats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .techstats-box {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .techstats-box:last-child {
+    border-bottom: none;
+  }
+
+  .techstats-number {
+    font-size: 44px;
+  }
+}
