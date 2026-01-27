@@ -274,3 +274,14 @@
     margin-top: 15px;
   }
 }
+
+/* Hide award section on mobile */
+
+@media (max-width: 600px) {
+  .award,
+  .award-bg,
+  .award-text,
+  .award-icon {
+    display: none !important;
+  }
+}

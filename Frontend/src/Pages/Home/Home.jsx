@@ -9,6 +9,10 @@ import HomeInsights from '../../Components/HomeInsights/HomeInsights'
 import HomeWorkingProcess from '../../Components/HomeWorkingProcess/HomeWorkingProcess'
 import HomeContactSection from '../../Components/HomeContactSection/HomeContactSection'
 import HomeRecentProjects from '../../Components/HomeRecentProjects/HomeRecentProjects'
+import HomeTechnologies from '../../Components/HomeTechnologies/HomeTechnologies'
+import HomeTeam from '../../Components/HomeTeam/HomeTeam'
+import HomeVideo from '../../Components/HomeVideo/HomeVideo'
+import HomeServices from '../../Components/HomeServices/HomeServices'
 
 const Home = () => {
   return (
@@ -17,8 +21,12 @@ const Home = () => {
       <HomeSliderBrand/>
       <HomeWhyChoose/>
       <HomeAbout/>
+      <HomeServices/>
+      <HomeVideo/>
       <HomeTestimonial/>
       <HomeWorkingProcess/>
+      <HomeTeam/>
+      <HomeTechnologies/>
       <HomeRecentProjects/>
       <HomeContactSection/>  
       <HomeInsights/>

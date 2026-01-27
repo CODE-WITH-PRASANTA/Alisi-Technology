@@ -1,0 +1,132 @@
+.tech-section {
+  background: #000;
+  padding: 100px 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tech-tag {
+  color: #c9f000;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.tech-section h2 {
+  color: #fff;
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+/* marquee wrappers */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* directions */
+
+.left .track {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.right .track {
+  animation: scrollRight 40s linear infinite;
+}
+
+/* cards */
+
+.tech-card {
+  max-width: 320px;
+  width: 100%;
+  background: #141414;
+  border-radius: 16px;
+  padding: 30px 30px 25px 30px;
+  text-align: left;
+  transition: 0.3s ease;
+  gap: 15px;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+}
+
+.tech-card img {
+  width: 42px;
+  margin-bottom: 16px;
+}
+
+.tech-card h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* animations */
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* responsive */
+
+@media (max-width: 1024px) {
+  .tech-section h2 {
+    font-size: 36px;
+  }
+
+  .tech-card {
+    min-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-section {
+    padding: 70px 15px;
+  }
+
+  .tech-section h2 {
+    font-size: 30px;
+  }
+
+  .tech-card {
+    min-width: 220px;
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-section h2 {
+    font-size: 24px;
+  }
+
+  .tech-card {
+    min-width: 200px;
+  }
+}
