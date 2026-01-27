@@ -12,12 +12,12 @@ const brands = [b1, b2, b3, b4, b5, b6];
 
 export default function BrandSlider() {
   return (
-    <section className="brand-wrapper">
-      <div className="brand-title">
+    <section className="abrand-wrapper">
+      <div className="abrand-title">
         Join Over <span>1000+</span> Companies with Tekmino Here
       </div>
 
-      <div className="brand-slider">
+      <div className="abrand-slider">
         <div className="track">
           {[...brands, ...brands].map((logo, i) => (
             <div className="brand-card" key={i}>
