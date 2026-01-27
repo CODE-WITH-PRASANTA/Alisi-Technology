@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.contact-info-section {
+  font-family: "Poppins", sans-serif;
+  padding: 100px 20px;
+  background: #050605;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+
+.contact-info-header {
+  margin-bottom: 60px;
+}
+
+.contact-tag {
+  display: inline-block;
+  color: #d9f99d;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.contact-info-header h2 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+/* ================= GRID ================= */
+
+.contact-info-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* ================= CARD ================= */
+
+.contact-card {
+  background: linear-gradient(180deg, #151815, #0c0f0c);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8);
+}
+
+/* ================= ICON ================= */
+
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.contact-icon svg {
+  font-size: 26px;
+  color: #d9f99d;
+}
+
+/* ================= TEXT ================= */
+
+.contact-card h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.contact-card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-card .highlight {
+  color: #d9f99d;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-header h2 {
+    font-size: 34px;
+  }
+
+  .contact-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-header h2 {
+    font-size: 28px;
+  }
+}
