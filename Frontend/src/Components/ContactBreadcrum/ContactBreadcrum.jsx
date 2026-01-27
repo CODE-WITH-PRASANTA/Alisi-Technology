@@ -1,19 +1,19 @@
 import React from "react";
-import "./AboutBreadcrum.css";
+import "./ContactBreadcrum.css";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ContactBreadcrum = () => {
   return (
-    <section className="about-hero">
-      <div className="about-hero-overlay">
-        <h1>About</h1>
+    <section className="contact-hero">
+      <div className="contact-hero-overlay">
+        <h1>Contact Us</h1>
 
-        <div className="about-breadcrumb">
+        <div className="contact-breadcrumb">
           <FaHome />
           <Link to="/">Home</Link>
           <span>›</span>
-          <span className="active">About</span>
+          <span className="active">Contact Us</span>
         </div>
       </div>
     </section>

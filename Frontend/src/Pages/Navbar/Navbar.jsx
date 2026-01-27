@@ -3,24 +3,17 @@ import "./Navbar.css";
 import {
   FaBolt,
   FaClock,
-  FaCog,
   FaBars,
   FaTimes,
   FaArrowRight,
+  FaChevronDown,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import logo from "../../Assets/logo.png" // ✅ ADD THIS
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
-  const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Projects", path: "/projects" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
-  ];
+  const [serviceOpen, setServiceOpen] = useState(false);
 
   return (
     <>
@@ -38,32 +31,45 @@ const Navbar = () => {
           <span>
             <FaClock /> 9 am to 6 pm [mon-sat]
           </span>
-          <span>
-            <FaCog /> Support
-          </span>
         </div>
       </div>
 
       {/* ================= NAVBAR ================= */}
       <header className="tm-navbar">
         <div className="tm-navbar-container">
-          {/* Logo */}
-          <div className="tm-logo">
-            <div className="tm-logo-icon">T</div>
-            <span>Tekmino</span>
-          </div>
+          {/* LOGO (IMAGE) */}
+          <NavLink to="/" className="tm-logo">
+            <img src={logo} alt="Alisi Technology Logo" />
+          </NavLink>
 
           {/* Desktop Menu */}
           <nav className="tm-menu">
-            {links.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                end
-              >
-                {link.name}
-              </NavLink>
-            ))}
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+
+            <div
+              className="tm-dropdown"
+              onMouseEnter={() => setServiceOpen(true)}
+              onMouseLeave={() => setServiceOpen(false)}
+            >
+              <button className="tm-dropdown-btn">
+                Services <FaChevronDown />
+              </button>
+
+              <div className={`tm-dropdown-menu ${serviceOpen ? "show" : ""}`}>
+                <NavLink to="/services">AI & Data Analytics</NavLink>
+                <NavLink to="/services">Cloud</NavLink>
+                <NavLink to="/services">Consulting</NavLink>
+                <NavLink to="/services">Cybersecurity</NavLink>
+                <NavLink to="/services">Enterprise Solutions</NavLink>
+                <NavLink to="/services">IoT & Digital Eng.</NavLink>
+                <NavLink to="/services">Sustainability</NavLink>
+              </div>
+            </div>
+
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </nav>
 
           {/* Actions */}
@@ -72,7 +78,6 @@ const Navbar = () => {
               Get Started <FaArrowRight />
             </button>
 
-            {/* Mobile Toggle */}
             <button
               className="menu-toggle"
               onClick={() => setOpen(!open)}
@@ -82,17 +87,29 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ================= MOBILE MENU ================= */}
         <div className={`tm-mobile-menu ${open ? "show" : ""}`}>
-          {links.map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              onClick={() => setOpen(false)}
-            >
-              {link.name}
-            </NavLink>
-          ))}
+          <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+          <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+
+          <button
+            className="tm-mobile-dropdown-btn"
+            onClick={() => setServiceOpen(!serviceOpen)}
+          >
+            Services <FaChevronDown />
+          </button>
+
+          {serviceOpen && (
+            <div className="tm-mobile-submenu">
+              <NavLink to="/services" onClick={() => setOpen(false)}>AI & Data</NavLink>
+              <NavLink to="/services" onClick={() => setOpen(false)}>Cloud</NavLink>
+              <NavLink to="/services" onClick={() => setOpen(false)}>Cybersecurity</NavLink>
+            </div>
+          )}
+
+          <NavLink to="/projects" onClick={() => setOpen(false)}>Projects</NavLink>
+          <NavLink to="/blog" onClick={() => setOpen(false)}>Blog</NavLink>
+          <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
         </div>
       </header>
     </>
