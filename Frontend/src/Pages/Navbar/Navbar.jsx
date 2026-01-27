@@ -57,6 +57,7 @@ const Navbar = () => {
               </button>
 
               <div className={`tm-dropdown-menu ${serviceOpen ? "show" : ""}`}>
+                <NavLink to="/services/all-services">All Services</NavLink>
                 <NavLink to="/services">AI & Data Analytics</NavLink>
                 <NavLink to="/services">Cloud</NavLink>
                 <NavLink to="/services">Consulting</NavLink>
