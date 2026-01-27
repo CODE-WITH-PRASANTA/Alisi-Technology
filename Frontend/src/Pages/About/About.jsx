@@ -7,6 +7,7 @@ import AboutTeam from '../../Components/AboutTeam/AboutTeam'
 import AboutTestimonial from '../../Components/AboutTestimonial/AboutTestimonial'
 import AboutFaq from '../../Components/AboutFaq/AboutFaq'
 import AboutSlider from '../../Components/AboutSlider/AboutSlider'
+import AboutFeedback from '../../Components/AboutFeedback/AboutFeedback'
 
 const About = () => {
   return (
@@ -16,9 +17,11 @@ const About = () => {
      <AboutInovation />
      <Aboutbox />
      <AboutTeam />
+      <AboutFeedback />
      <AboutTestimonial />
      <AboutFaq />
      <AboutSlider />
+    
     
     </div>
   )

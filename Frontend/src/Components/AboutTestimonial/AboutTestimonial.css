@@ -37,7 +37,7 @@
 
 .avatar.active {
   opacity: 1;
-  border: 3px solid #d7ff00;
+  border: 3px solid #e5ff9f;
 }
 
 .avatar.active img {
@@ -78,7 +78,7 @@
 }
 
 .stars {
-  color: #d7ff00;
+  color: #e5ff9f;
   margin-bottom: 20px;
   font-size: 18px;
 }
@@ -136,7 +136,7 @@
 }
 
 .arrow:hover {
-  background: #d7ff00;
+  background: #e5ff9f;
   color: #000;
 }
 
@@ -167,7 +167,7 @@
 
 .dot:hover,
 .dot.active {
-  background: #d7ff00;
+  background: #e5ff9f;
 }
 
 /* Responsive */

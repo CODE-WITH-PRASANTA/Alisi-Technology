@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= SECTION ================= */
+
+.all-services-section {
+  font-family: "Poppins", sans-serif;
+  padding: 120px 20px;
+  background: #050605;
+  overflow: hidden;
+}
+
+/* ================= GRID ================= */
+
+.all-services-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+/* ================= CARD ================= */
+
+.all-service-card {
+  position: relative;
+  background: linear-gradient(180deg, #151815, #0c0f0c);
+  border-radius: 22px;
+  padding: 44px 36px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.all-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 140px rgba(0, 0, 0, 0.85);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SERIAL NUMBER ================= */
+
+.all-service-number {
+  position: absolute;
+  top: -18px;
+  right: 18px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0b0b0b;
+  background: linear-gradient(135deg, #d9f99d, #b6f34c);
+  box-shadow:
+    0 8px 24px rgba(217, 249, 157, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.all-service-card:hover .all-service-number {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 14px 40px rgba(217, 249, 157, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* ================= ICON ================= */
+
+.all-service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.all-service-icon svg {
+  font-size: 26px;
+  color: #d9f99d;
+}
+
+.all-service-card:hover .all-service-icon {
+  transform: scale(1.15) rotate(6deg);
+  box-shadow: 0 0 26px rgba(217, 249, 157, 0.6);
+}
+
+/* ================= TEXT ================= */
+
+.all-service-card h3 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.all-service-card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ================= LINK ================= */
+
+.all-learn-more {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.all-learn-more span {
+  font-size: 18px;
+}
+
+.all-learn-more:hover {
+  color: #d9f99d;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .all-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .all-services-section {
+    padding: 90px 16px;
+  }
+
+  .all-service-card {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all-service-number {
+    top: -14px;
+    right: 14px;
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+
+  .all-service-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .all-service-card {
+    padding: 30px 22px;
+  }
+}

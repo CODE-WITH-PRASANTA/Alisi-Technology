@@ -29,7 +29,7 @@
 
 .techstats-icon {
   font-size: 36px;
-  color: #d6ff3f;
+  color: #e5ff9f;
   margin-bottom: 18px;
 }
 
@@ -68,7 +68,7 @@
   transform: translateX(-50%);
   width: 7px;
   height: 7px;
-  background: #d6ff3f;
+  background: #e5ff9f;
   border-radius: 50%;
   animation: techstatsDotMove 2.5s infinite ease-in-out;
 }
