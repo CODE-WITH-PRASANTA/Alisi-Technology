@@ -1,0 +1,157 @@
+/* ================= WRAPPER ================= */
+
+.consultinng-wrapper {
+  background: #000;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* ================= TITLE ================= */
+
+.consultinng-title {
+  margin: 0 auto 40px;
+  padding: 10px 26px;
+  width: fit-content;
+  border: 1px solid #333;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+.consultinng-title span {
+  background: #e5ff9f;
+  color: #000;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin: 0 4px;
+  font-weight: 600;
+}
+
+/* ================= SLIDER ================= */
+
+.consultinng-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade edges */
+
+.consultinng-slider::before,
+.consultinng-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.consultinng-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+.consultinng-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}
+
+/* ================= TRACK ================= */
+
+.consultinng-track {
+  display: flex;
+  width: max-content;
+  animation: consultinng-scroll 22s linear infinite;
+}
+
+/* ================= CARD ================= */
+
+.consultinng-card {
+  min-width: 240px;
+  height: 120px;
+  margin: 0 15px;
+  background: #0f0f0f;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultinng-card img {
+  max-width: 70%;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.consultinng-card:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes consultinng-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .consultinng-card {
+    min-width: 220px;
+    height: 110px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .consultinng-card {
+    min-width: 200px;
+    height: 100px;
+  }
+
+  .consultinng-title {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .consultinng-wrapper {
+    padding: 60px 0;
+  }
+
+  .consultinng-card {
+    min-width: 160px;
+    height: 90px;
+    margin: 0 10px;
+  }
+
+  .consultinng-title {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .consultinng-card {
+    min-width: 140px;
+    height: 80px;
+  }
+
+  .consultinng-slider::before,
+  .consultinng-slider::after {
+    width: 70px;
+  }
+}

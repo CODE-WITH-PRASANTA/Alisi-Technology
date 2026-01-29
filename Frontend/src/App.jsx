@@ -7,6 +7,9 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AllServices from "./Pages/AllServices/AllServices";
+import AiDataAnalytics from "./Pages/AiDataAnalytics/AiDataAnalytics"
+import Cloud from "./Pages/Cloud/Cloud";
+import Consulting from "./Pages/Consulting/Consulting";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/all-services" element={<AllServices />} />
+        <Route path="/services/Data-Analytics"element={<AiDataAnalytics />} />
+       <Route path="/services/Cloud" element={<Cloud />} />
+       <Route path="/services/Consulting" element={<Consulting />} />
       </Routes>
 
       <Footer />
