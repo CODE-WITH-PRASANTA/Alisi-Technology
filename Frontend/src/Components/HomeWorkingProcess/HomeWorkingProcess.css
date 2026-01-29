@@ -1,0 +1,117 @@
+.process {
+  background: #050505;
+  padding: 120px 6%;
+  color: #fff;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.process-header span {
+  color: #e5ff9f;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.process-header h2 {
+  margin-top: 15px;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.2;
+}
+
+/* GRID */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+/* CARD */
+
+.process-card {
+  background: linear-gradient(180deg, #121412, #0a0a0a);
+  padding: 60px 35px 40px;
+  position: relative;
+  border-radius: 30px 30px 30px 0;
+  transition: 0.4s ease;
+}
+
+/* HOVER → STRAIGHT CARD */
+
+.process-card:hover {
+  border-radius: 0;
+}
+
+/* STEP CIRCLE */
+
+.step-circle {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background: #e5ff9f;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* TEXT */
+
+.process-card h3 {
+  margin-top: 20px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.process-card p {
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* DOT CONNECTOR */
+
+.dot-connector {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  width: 70px;
+  border-bottom: 2px dashed #e5ff9f;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dot-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .process {
+    padding: 80px 4%;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .process-card {
+    padding: 55px 25px 35px;
+  }
+}

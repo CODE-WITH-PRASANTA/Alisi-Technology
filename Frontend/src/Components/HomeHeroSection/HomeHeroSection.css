@@ -17,7 +17,7 @@
 /* LEFT */
 
 .hero-left .tag {
-  color: #d7ff00;
+  color: #d9f99d;
   letter-spacing: 2px;
   font-size: 13px;
 }
@@ -36,7 +36,7 @@
 }
 
 .explore-btn {
-  background: #d7ff00;
+  background: #d9f99d;
   border: none;
   padding: 14px 28px;
   border-radius: 30px;
@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #d7ff00;
+  color: #d9f99d;
 }
 
 .hero-points {
@@ -118,7 +118,7 @@
 }
 
 .review-card span {
-  color: #d7ff00;
+  color: #d9f99d;
   font-size: 16px;
 }
 
