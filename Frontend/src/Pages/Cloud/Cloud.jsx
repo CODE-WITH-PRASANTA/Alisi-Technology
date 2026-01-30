@@ -1,20 +1,32 @@
-import React from 'react'
-import CloudBreadcrum from '../../Components/CloudBreadcrum/CloudBreadcrum'
-import CloudFeatures from '../../Components/CloudFeatures/CloudFeatures'
-import CloudCTA from '../../Components/CloudCTA/CloudCTA'
-import CloudPlanPricing from '../../Components/CloudPlanPricing/CloudPlanPricing'
-import CloudBrand from '../../Components/CloudBrand/CloudBrand'
+import React from "react";
+import "./Cloud.css";
+
+
+
+import CloudBreadcrum from "../../Components/CloudBreadcrum/CloudBreadcrum"
+import CloudLeftComponent from "../../Components/CloudLeftComponent/CloudLeftComponent";
+import CloudSidebar from "../../Components/CloudSidebar/CloudSidebar";
 
 const Cloud = () => {
   return (
-    <div>
-      <CloudBreadcrum />
-      <CloudFeatures />
-      <CloudCTA />
-      <CloudPlanPricing />
-      <CloudBrand />
-    </div>
-  )
-}
+    <section className="cloud-page-wrapper">
+     <CloudBreadcrum />
+      <div className="cloud-page-container">
+      
 
-export default Cloud
+        {/* LEFT CONTENT */}
+        <div className="cloud-left-section">
+          <CloudLeftComponent />
+        </div>
+
+        {/* RIGHT SIDEBAR */}
+        <div className="cloud-right-section">
+          <CloudSidebar />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Cloud;
