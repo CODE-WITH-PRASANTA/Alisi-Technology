@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-.aiservices-hero {
+.aai-servicehero {
   font-family: "Poppins", sans-serif;
   min-height: 360px;
   display: flex;
@@ -30,13 +30,13 @@
   background-repeat: no-repeat;
 }
 
-.aiservices-hero-overlay {
+.aai-servicehero-overlay {
   padding: 40px 20px;
 }
 
 /* ================= TITLE ================= */
 
-.aiservices-hero h1 {
+.aai-servicehero h1 {
   font-size: 56px;
   font-weight: 700;
   color: #ffffff;
@@ -45,7 +45,7 @@
 
 /* ================= BREADCRUMB ================= */
 
-.aiservices-breadcrumb {
+.aai-servicebreadcrumb {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -57,26 +57,26 @@
   backdrop-filter: blur(6px);
 }
 
-.aiservices-breadcrumb svg {
+.aai-servicebreadcrumb svg {
   color: #d9f99d;
   font-size: 14px;
 }
 
-.aiservices-breadcrumb a {
+.aai-servicebreadcrumb a {
   color: #cbd5e1;
   text-decoration: none;
   font-weight: 500;
 }
 
-.aiservices-breadcrumb a:hover {
+.aai-servicebreadcrumb a:hover {
   color: #d9f99d;
 }
 
-.aiservices-breadcrumb span {
+.aai-servicebreadcrumb span {
   opacity: 0.6;
 }
 
-.aiservices-breadcrumb .active {
+.aai-servicebreadcrumb .active {
   color: #d9f99d;
   font-weight: 600;
 }
@@ -84,32 +84,32 @@
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
-  .aiservices-hero {
+  .aai-servicehero {
     min-height: 300px;
   }
 
-  .aiservices-hero h1 {
+  .aai-servicehero h1 {
     font-size: 44px;
   }
 }
 
 @media (max-width: 600px) {
-  .aiservices-hero {
+  .aai-servicehero {
     min-height: 260px;
   }
 
-  .aiservices-hero h1 {
+  .aai-servicehero h1 {
     font-size: 34px;
   }
 
-  .aiservices-breadcrumb {
+  .aai-servicebreadcrumb {
     font-size: 13px;
     padding: 8px 14px;
   }
 }
 
 @media (max-width: 420px) {
-  .aiservices-hero h1 {
+  .aai-servicehero h1 {
     font-size: 28px;
   }
 }

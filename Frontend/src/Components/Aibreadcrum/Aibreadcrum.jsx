@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const AllServicesBreadcrum = () => {
   return (
-    <section className="aiservices-hero">
-      <div className="aiservices-hero-overlay">
+    <section className="aai-servicehero">
+      <div className="aai-servicehero-overlay">
         <h1>AI & Data Analytics</h1>
 
-        <div className="aiservices-breadcrumb">
+        <div className="aai-servicebreadcrumb">
           <FaHome />
           <Link to="/">Home</Link>
           <span>›</span>
