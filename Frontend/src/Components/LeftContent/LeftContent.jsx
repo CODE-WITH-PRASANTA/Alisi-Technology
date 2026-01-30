@@ -9,37 +9,27 @@ const faqData = [
   {
     question: "What are the main types of cloud computing?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions.",
   },
   {
     question: "How secure is cloud computing?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data.",
   },
   {
     question: "Can I move my existing applications to the cloud?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes, most applications can be migrated using proven cloud migration strategies.",
   },
   {
     question: "How does cloud computing reduce costs?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "It eliminates large hardware investments and offers flexible, pay-as-you-go pricing models.",
   },
-  {
-    question: "How do you collect customer feedback?",
-    answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
-  },
-  {
-    question: "How Do i Choose the Right Cloud Service Provider?",
-    answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
-  }
 ];
 
 const LeftContent = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -47,29 +37,32 @@ const LeftContent = () => {
 
   return (
     <div className="ai-analytics-left-wrapper">
-
-      {/* BANNER IMAGE */}
+      {/* ================= BANNER ================= */}
       <div className="ai-analytics-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src={bannerImg} alt="Cloud Services Banner" />
       </div>
 
-      {/* TITLE */}
+      {/* ================= MAIN HEADING ================= */}
       <h1 className="ai-analytics-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+        Cloud Computing: Transforming the Future of IT Solutions
       </h1>
 
-      {/* DESCRIPTION */}
+      {/* ================= DESCRIPTION ================= */}
       <p className="ai-analytics-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        Cloud computing is transforming how organizations store, manage, and
+        access data. By delivering computing services over the internet,
+        businesses can scale faster, improve collaboration, and reduce
+        operational costs while maintaining security and performance.
       </p>
 
       <p className="ai-analytics-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+        Our cloud solutions span Infrastructure as a Service (IaaS), Platform as
+        a Service (PaaS), and Software as a Service (SaaS), enabling businesses
+        to modernize IT systems and adapt to evolving digital demands.
       </p>
 
-      {/* FEATURE LIST */}
+      {/* ================= FEATURES ================= */}
       <div className="ai-analytics-feature-container">
-
         <ul className="ai-analytics-feature-list">
           <li>Scalable IT Infrastructure</li>
           <li>High Data Security</li>
@@ -78,62 +71,103 @@ const LeftContent = () => {
         </ul>
 
         <ul className="ai-analytics-feature-list">
-          <li>Compliance & Support</li>
+          <li>Compliance & Regulatory Support</li>
           <li>Reduced Hardware Costs</li>
           <li>24/7 Cloud Monitoring</li>
         </ul>
-
       </div>
 
-      {/* IMAGE GRID */}
+      {/* ================= IMAGE GRID ================= */}
       <div className="ai-analytics-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src={imgOne} alt="Cloud Engineering Team" />
+        <img src={imgTwo} alt="Cloud Strategy Discussion" />
       </div>
 
-      {/* CUSTOMER SERVICES */}
-      <div className="ai-analytics-services-section">
+      {/* ================= OUR VALUES & APPROACH ================= */}
+      <div className="ai-analytics-values-section">
+        <h2 className="ai-analytics-section-title">
+          Our Values & Approach
+        </h2>
 
+        <div className="ai-analytics-values-grid">
+          <div className="ai-analytics-value-card">
+            <span>01</span>
+            <h4>Client-Focused Thinking</h4>
+            <p>
+              We align technology with real business goals to deliver measurable
+              value and long-term impact.
+            </p>
+          </div>
+
+          <div className="ai-analytics-value-card">
+            <span>02</span>
+            <h4>Continuous Learning & Innovation</h4>
+            <p>
+              Our teams continuously strengthen their expertise through hands-on
+              experience and emerging technologies.
+            </p>
+          </div>
+
+          <div className="ai-analytics-value-card">
+            <span>03</span>
+            <h4>Security, Quality & Reliability</h4>
+            <p>
+              We follow industry best practices to deliver secure, compliant,
+              and highly reliable cloud and IT services.
+            </p>
+          </div>
+
+          <div className="ai-analytics-value-card">
+            <span>04</span>
+            <h4>Long-Term Partnership</h4>
+            <p>
+              Beyond delivery, we provide continuous support and strategic
+              guidance to help businesses scale with confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= CUSTOMER SERVICES ================= */}
+      <div className="ai-analytics-services-section">
         <h2 className="ai-analytics-section-title">
           Our Range of Customer Services
         </h2>
 
         <p className="ai-analytics-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          We deliver reliable cloud and IT services that improve operational
+          efficiency, enhance security, and support sustainable business growth.
         </p>
 
         <div className="ai-analytics-card-grid">
-
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">01</span>
             <h4>Increased Customer Satisfaction</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              Tailored cloud solutions improve performance and user experience.
             </p>
           </div>
 
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Operational Efficiency</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              Automation and optimization reduce manual effort and downtime.
             </p>
           </div>
 
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Actionable Insights</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+              Data-driven strategies enable smarter decision-making.
             </p>
           </div>
-
         </div>
       </div>
 
-      {/* FAQ */}
+      {/* ================= FAQ ================= */}
       <div className="ai-analytics-faq-area">
-
         <h2 className="ai-analytics-section-title">
           Frequently Asked Questions
         </h2>
@@ -146,7 +180,6 @@ const LeftContent = () => {
             }`}
             onClick={() => toggleFAQ(index)}
           >
-
             <div className="ai-analytics-faq-header">
               <h4>{item.question}</h4>
               <span className="ai-analytics-faq-icon">
@@ -159,12 +192,9 @@ const LeftContent = () => {
                 {item.answer}
               </p>
             )}
-
           </div>
         ))}
-
       </div>
-
     </div>
   );
 };
