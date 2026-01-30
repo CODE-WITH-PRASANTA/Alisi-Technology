@@ -1,20 +1,30 @@
-import React from 'react'
-import Aibreadcrum from '../../Components/Aibreadcrum/Aibreadcrum'
-import Aifeatures from '../../Components/Aifeatures/Aifeatures'
-import AiCTA from '../../Components/AiCTA/AiCTA'
-import AiPlanPricing from '../../Components/AiPlanPricing/AiPlanPricing'
-import AiServiceBrand from '../../Components/AiServiceBrand/AiServiceBrand'
+import React from "react";
+import "./AiDataAnalytics.css";
+
+import LeftContent from "../../Components/LeftContent/LeftContent";
+import AiDataAnalyticsSidebar from "../../Components/AiDataAnalyticsSidebar/AiDataAnalyticsSidebar";
+import Aibreadcrum from "../../Components/Aibreadcrum/Aibreadcrum"
 
 const AiDataAnalytics = () => {
   return (
-    <div>
-      <Aibreadcrum />
-      <Aifeatures />
-      <AiCTA />
-      <AiPlanPricing />
-      <AiServiceBrand />
-    </div>
-  )
-}
+    <section className="ai-page-wrapper">
+     <Aibreadcrum />
+      <div className="ai-page-container">
+      
 
-export default AiDataAnalytics
+        {/* LEFT CONTENT */}
+        <div className="ai-left-section">
+          <LeftContent />
+        </div>
+
+        {/* RIGHT SIDEBAR */}
+        <div className="ai-right-section">
+          <AiDataAnalyticsSidebar />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default AiDataAnalytics;
