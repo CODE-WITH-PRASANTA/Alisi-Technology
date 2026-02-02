@@ -4,7 +4,7 @@
 
 .all-services-section {
   font-family: "Poppins", sans-serif;
-  padding: 120px 20px;
+  padding: 4px 20px 20px;
   background: #050605;
   overflow: hidden;
 }
@@ -37,6 +37,20 @@
   box-shadow: 0 40px 140px rgba(0, 0, 0, 0.85);
 }
 
+/* Optional readability overlay */
+.all-service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
+}
+
 /* ================= ANIMATION ================= */
 
 @keyframes fadeUp {
@@ -67,7 +81,7 @@
     0 8px 24px rgba(217, 249, 157, 0.35),
     inset 0 1px 2px rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(6px);
-  z-index: 2;
+  z-index: 3;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -90,6 +104,8 @@
   justify-content: center;
   margin-bottom: 26px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 3;
 }
 
 .all-service-icon svg {
@@ -104,10 +120,13 @@
 
 /* ================= TEXT ================= */
 
-.all-service-card h3 {
+.all-service-card h2 {
   color: #ffffff;
   font-size: 22px;
+  font-weight: 600;
   margin-bottom: 14px;
+  position: relative;
+  z-index: 3;
 }
 
 .all-service-card p {
@@ -115,6 +134,8 @@
   font-size: 14px;
   line-height: 1.7;
   margin-bottom: 28px;
+  position: relative;
+  z-index: 3;
 }
 
 /* ================= LINK ================= */
@@ -128,6 +149,8 @@
   align-items: center;
   gap: 6px;
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 3;
 }
 
 .all-learn-more span {
@@ -148,7 +171,9 @@
 
 @media (max-width: 768px) {
   .all-services-section {
-    padding: 90px 16px;
+    padding-top: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .all-service-card {
@@ -168,7 +193,7 @@
     padding: 5px 14px;
   }
 
-  .all-service-card h3 {
+  .all-service-card h2 {
     font-size: 20px;
   }
 }
