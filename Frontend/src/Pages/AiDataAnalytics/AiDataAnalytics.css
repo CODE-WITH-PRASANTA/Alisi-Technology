@@ -1,0 +1,141 @@
+.ai-page-wrapper {
+  background: #000;
+}
+
+.ai-page-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.ai-left-section {
+  flex: 3;
+}
+
+/* RIGHT SIDE */
+.ai-right-section {
+  flex: 1.2;
+  position: sticky;
+  top: 30px;
+}
+
+.ai-right-section {
+  position: sticky;
+  top: 40px;          /* space from top */
+  height: fit-content;
+  align-self: flex-start;
+
+  /* Smooth feeling */
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVE */
+.ai-page-wrapper {
+  background: #000;
+ 
+}
+
+/* =====================
+   MAIN CONTAINER
+===================== */
+
+.ai-page-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* =====================
+   LEFT SIDE
+===================== */
+
+.ai-left-section {
+  flex: 3;
+  min-width: 0; /* prevents overflow on small screens */
+}
+
+/* =====================
+   RIGHT SIDE (STICKY)
+===================== */
+
+.ai-right-section {
+  flex: 1.2;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .ai-page-container {
+    gap: 40px;
+  }
+
+  .ai-left-section {
+    flex: 2.6;
+  }
+
+  .ai-right-section {
+    flex: 1.1;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .ai-page-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .ai-right-section {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .ai-page-wrapper {
+    padding: 60px 16px;
+  }
+
+  .ai-page-container {
+    gap: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .ai-page-wrapper {
+    padding: 50px 14px;
+  }
+
+  .ai-page-container {
+    gap: 40px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .ai-page-wrapper {
+    padding: 40px 12px;
+  }
+}
+
