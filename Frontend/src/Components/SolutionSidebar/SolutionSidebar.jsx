@@ -1,0 +1,59 @@
+import React from "react";
+import "./SolutionSidebar.css";
+
+import sidebarPersonImg from "../../assets/service-details-1.webp";
+
+const services = [
+  "Network Infrastructure",
+  "Software Development",
+  "IT Consulting & Strategy",
+  "Cybersecurity Solutions",
+  "Cloud Computing",
+  "Managed IT Services",
+];
+
+const SolutionSidebar = () => {
+  return (
+    <div className="solution-sidebar-wrapper">
+
+      {/* SERVICES LIST FIRST */}
+      <div className="solution-sidebar-services-box">
+
+        <h3 className="solution-sidebar-title">
+          More Services
+        </h3>
+
+        <ul className="solution-sidebar-list">
+          {services.map((item, index) => (
+            <li key={index} className="solution-sidebar-item">
+              {item}
+              <span className="solution-sidebar-arrow">›</span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+      {/* INNOVATIVE CARD SECOND */}
+      <div className="solution-sidebar-card">
+
+        <div className="solution-sidebar-card-content">
+          <h2>Innovative</h2>
+          <p>IT Solutions.</p>
+
+          <div className="solution-sidebar-phone">
+            📞 +8 (321) 890-640
+          </div>
+        </div>
+
+        <div className="solution-sidebar-image-holder">
+          <img src={sidebarPersonImg} alt="Professional" />
+        </div>
+
+      </div>
+
+    </div>
+  );
+};
+
+export default SolutionSidebar;

@@ -1,0 +1,141 @@
+.sus-page-wrapper {
+  background: #000;
+}
+
+.sus-page-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.sus-left-section {
+  flex: 3;
+}
+
+/* RIGHT SIDE */
+.sus-right-section {
+  flex: 1.2;
+  position: sticky;
+  top: 30px;
+}
+
+.sus-right-section {
+  position: sticky;
+  top: 40px;          /* space from top */
+  height: fit-content;
+  align-self: flex-start;
+
+  /* Smooth feeling */
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVE */
+.sus-page-wrapper {
+  background: #000;
+ 
+}
+
+/* =====================
+   MAIN CONTAINER
+===================== */
+
+.sus-page-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* =====================
+   LEFT SIDE
+===================== */
+
+.sus-left-section {
+  flex: 3;
+  min-width: 0; /* prevents overflow on small screens */
+}
+
+/* =====================
+   RIGHT SIDE (STICKY)
+===================== */
+
+.sus-right-section {
+  flex: 1.2;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .sus-page-container {
+    gap: 40px;
+  }
+
+  .sus-left-section {
+    flex: 2.6;
+  }
+
+  .sus-right-section {
+    flex: 1.1;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .sus-page-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .sus-right-section {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .sus-page-wrapper {
+    padding: 60px 16px;
+  }
+
+  .sus-page-container {
+    gap: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .sus-page-wrapper {
+    padding: 50px 14px;
+  }
+
+  .sus-page-container {
+    gap: 40px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .sus-page-wrapper {
+    padding: 40px 12px;
+  }
+}
+

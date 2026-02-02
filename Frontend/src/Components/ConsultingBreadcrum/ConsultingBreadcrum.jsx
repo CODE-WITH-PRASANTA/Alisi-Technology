@@ -3,7 +3,7 @@ import "./ConsultingBreadcrum.css";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const AllServicesBreadcrum = () => {
+const ConsultingBreadcrum = () => {
   return (
     <section className="consultinghero">
       <div className="consultinghero-overlay">
@@ -20,4 +20,4 @@ const AllServicesBreadcrum = () => {
   );
 };
 
-export default AllServicesBreadcrum;
+export default ConsultingBreadcrum;

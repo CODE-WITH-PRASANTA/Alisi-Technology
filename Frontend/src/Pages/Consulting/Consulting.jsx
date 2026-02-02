@@ -1,20 +1,35 @@
-import React from 'react'
-import ConsultingBreadcrum from '../../Components/ConsultingBreadcrum/ConsultingBreadcrum'
-import ConsultingFeatures from '../../Components/ConsultingFeatures/ConsultingFeatures'
-import ConsultingCTA from '../../Components/ConsultingCTA/ConsultingCTA'
-import ConsultingPlanPricing from '../../Components/ConsultingPlanPricing/ConsultingPlanPricing'
-import ConsultingBrand from '../../Components/ConsultingBrand/ConsultingBrand'
+import React from "react";
+import "./Consulting.css";
+
+
+
+
+
+
+import ConsultingBreadcrum from "../../Components/ConsultingBreadcrum/ConsultingBreadcrum";
+import ConsultingLeftComponent from "../../Components/ConsultingLeftComponent/ConsultingLeftComponent";
+import ConsultingSidebar from "../../Components/ConsultingSidebar/ConsultingSidebar";
 
 const Consulting = () => {
   return (
-    <div>
+    <section className="consulting-page-wrapper">
      <ConsultingBreadcrum />
-     <ConsultingFeatures />
-     <ConsultingCTA />
-     <ConsultingPlanPricing />
-     <ConsultingBrand />
-    </div>
-  )
-}
+      <div className="consulting-page-container">
+      
 
-export default Consulting
+        {/* LEFT CONTENT */}
+        <div className="consulting-left-section">
+          <ConsultingLeftComponent />
+        </div>
+
+        {/* RIGHT SIDEBAR */}
+        <div className="consulting-right-section">
+          <ConsultingSidebar />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Consulting;

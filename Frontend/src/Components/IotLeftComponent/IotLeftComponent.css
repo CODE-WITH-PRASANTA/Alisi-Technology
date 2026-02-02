@@ -1,0 +1,283 @@
+.iot-left-wrapper {
+  color: #fff;
+}
+
+/* BANNER */
+
+.iot-banner-box {
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.iot-banner-box img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* TEXT */
+
+.iot-main-heading {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.iot-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+/* FEATURES */
+
+.iot-feature-container {
+  display: flex;
+  gap: 80px;
+  margin: 40px 0;
+}
+
+.iot-feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.iot-feature-list li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+  color: #ddd;
+}
+
+.iot-feature-list li::before {
+  content: "✔";
+  color: #e5ff9f;
+  position: absolute;
+  left: 0;
+}
+
+/* IMAGE GRID */
+
+.iot-image-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.iot-image-layout img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* SERVICES */
+
+.iot-services-section {
+  margin: 80px 0;
+}
+
+.iot-section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.iot-section-desc {
+  color: #cfcfcf;
+  max-width: 750px;
+  margin-bottom: 40px;
+}
+
+.iot-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.iot-service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.iot-service-card:hover {
+  transform: translateY(-8px);
+}
+
+.iot-card-number {
+  background: #e5ff9f;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.iot-service-card h4 {
+  margin: 20px 0 10px;
+}
+
+.iot-service-card p {
+  color: #ccc;
+}
+
+/* FAQ */
+
+.iot-faq-area {
+  margin: 80px 0;
+}
+
+.iot-faq-box {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.iot-faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iot-faq-icon {
+  background: #e5ff9f;
+  color: #000;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iot-faq-content {
+  margin-top: 14px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .iot-main-heading {
+    font-size: 36px;
+  }
+
+  .iot-feature-container {
+    gap: 50px;
+  }
+
+  .iot-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .iot-feature-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .iot-image-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .iot-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .iot-banner-box img {
+    height: 320px;
+  }
+
+  .iot-main-heading {
+    font-size: 32px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .iot-main-heading {
+    font-size: 28px;
+  }
+
+  .iot-text {
+    font-size: 15px;
+  }
+
+  .iot-section-title {
+    font-size: 30px;
+  }
+
+  .iot-banner-box img {
+    height: 260px;
+  }
+
+  .iot-services-section,
+  .iot-faq-area {
+    margin: 60px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .iot-banner-box img {
+    height: 220px;
+  }
+
+  .iot-main-heading {
+    font-size: 24px;
+  }
+
+  .iot-feature-list li {
+    font-size: 14px;
+  }
+
+  .iot-service-card {
+    padding: 22px;
+  }
+
+  .iot-card-number {
+    padding: 5px 10px;
+  }
+
+  .iot-faq-box {
+    padding: 18px;
+  }
+
+  .iot-faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .iot-main-heading {
+    font-size: 22px;
+  }
+
+  .iot-banner-box img {
+    height: 190px;
+  }
+
+  .iot-text {
+    font-size: 14px;
+  }
+}

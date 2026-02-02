@@ -1,0 +1,134 @@
+.tmProjects-wrapper {
+  padding: 80px 6%;
+  background: #000;
+}
+
+.tmProjects-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 1s ease;
+}
+
+.tmProjects-row-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card */
+
+.tmProjects-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+}
+
+.tmProjects-imgWrap img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: 0.6s ease;
+  animation: tmZoomIdle 6s infinite alternate;
+}
+
+/* Hover zoom */
+
+.tmProjects-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+
+.tmProjects-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+}
+
+.tmProjects-tag {
+  background: #1a1a1a;
+  color: #e5ff9f;
+  display: inline-block;
+  width: fit-content;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  transition: 0.4s;
+}
+
+.tmProjects-overlay h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+/* Arrow */
+
+.tmProjects-arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  transition: 0.4s;
+}
+
+/* Hover Yellow */
+
+.tmProjects-card:hover .tmProjects-arrow,
+.tmProjects-card:hover .tmProjects-tag {
+  background: #e5ff9f;
+  color: #000;
+}
+
+/* Keyframe zoom idle */
+
+@keyframes tmZoomIdle {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1024px) {
+  .tmProjects-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tmProjects-imgWrap img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tmProjects-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tmProjects-imgWrap img {
+    height: 300px;
+  }
+
+  .tmProjects-overlay h3 {
+    font-size: 18px;
+  }
+}
