@@ -1,0 +1,136 @@
+.projectSidebar {
+  position: static;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+/* Info Card */
+
+.projectSidebar__card {
+  background: #0d0f0f;
+  padding: 35px 30px;
+  border-radius: 20px;
+}
+
+.projectSidebar__title {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.projectSidebar__list li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.projectSidebar__list span {
+  min-width: 42px;
+  height: 42px;
+  background: #e5ff9f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.projectSidebar__list h5 {
+  color: #888;
+  font-size: 14px;
+}
+
+.projectSidebar__list p {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Share */
+
+.projectSidebar__share {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 900;
+}
+
+.projectSidebar__share span {
+  color: #aaa;
+}
+
+.projectSidebar__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.projectSidebar__socials svg {
+  width: 36px;
+  height: 36px;
+  background: #1a1a1a;
+  padding: 9px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.projectSidebar__socials svg:hover {
+  background: #e5ff9f;
+  color: #000;
+}
+
+/* Ad Card */
+
+.projectSidebar__ad {
+  background: radial-gradient(circle at top, #1c1f05, #050505);
+  border-radius: 22px;
+  padding: 35px 30px 0;
+  overflow: hidden;
+}
+
+.projectSidebar__adContent h2 {
+  font-size: 42px;
+  color: #fff;
+}
+
+.projectSidebar__adContent p {
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.projectSidebar__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #e5ff9f;
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.projectSidebar__adImg img {
+  width: 100%;
+  border-radius: 0 0 22px 22px;
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+  .projectSidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectSidebar__adContent h2 {
+    font-size: 32px;
+  }
+}
