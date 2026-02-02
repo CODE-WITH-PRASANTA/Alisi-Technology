@@ -1,0 +1,174 @@
+.blogContent {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  
+}
+
+/* CARD */
+
+.blogItem {
+  transition: 0.4s ease;
+}
+
+/* IMAGE */
+
+.blogImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.blogImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* IMAGE HOVER */
+
+.blogItem:hover img {
+  transform: scale(1.08);
+}
+
+/* DATE BADGE */
+
+.dateBadge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: black;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.dateBadge strong {
+  font-size: 20px;
+  display: block;
+}
+
+.dateBadge span {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* META */
+
+.blogMeta {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.category {
+  border: 1px solid #333;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+.author {
+  color: #999;
+  font-size: 14px;
+}
+
+/* TITLE */
+
+.blogItem h2 {
+  margin: 16px 0;
+  color: white;
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+/* DESC */
+
+.blogItem p {
+  color: #aaa;
+  line-height: 1.7;
+  max-width: 95%;
+}
+
+/* BUTTON */
+
+.readBtn {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #121212;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.readBtn span {
+  background: #e5ff9f;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* BUTTON HOVER */
+
+.blogItem:hover .readBtn span {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .blogItem h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogItem h2 {
+    font-size: 24px;
+  }
+
+  .blogItem p {
+    max-width: 100%;
+  }
+
+  .dateBadge {
+    top: 12px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogItem h2 {
+    font-size: 21px;
+  }
+
+  .dateBadge strong {
+    font-size: 16px;
+  }
+
+  .readBtn {
+    padding: 6px 16px;
+  }
+}
+
+/* LARGE DESKTOP */
+
+@media (min-width: 1600px) {
+  .blogItem h2 {
+    font-size: 36px;
+  }
+}
