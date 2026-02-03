@@ -9,16 +9,27 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+/* ✅ CORS – SINGLE, CORRECT CONFIG */
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      // "http://localhost:5174",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
-// serve uploaded images
+/* serve uploaded images */
 app.use("/uploads", express.static("uploads"));
 
-// routes
+/* routes */
 app.use("/api/projects", projectRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
-  console.log(`Server running on port ${PORT}`)
+  console.log(`✅ Server running on port ${PORT}`)
 );
