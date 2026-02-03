@@ -5,6 +5,8 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
 
   const [photo, setPhoto] = useState(null);
   const [preview, setPreview] = useState("");
+  const [name, setName] = useState("");
+  const [position, setPosition] = useState("");
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState(0);
 
@@ -12,6 +14,8 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
     if (editItem) {
       setPhoto(editItem.photo);
       setPreview(editItem.photo);
+      setName(editItem.name || "");
+      setPosition(editItem.position || "");
       setFeedback(editItem.feedback);
       setRating(editItem.rating);
     }
@@ -31,6 +35,8 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
 
     const data = {
       photo,
+      name,
+      position,
       feedback,
       rating,
       id: editItem?.id
@@ -42,8 +48,11 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
       addTestimonial(data);
     }
 
+    // Reset form
     setPhoto(null);
     setPreview("");
+    setName("");
+    setPosition("");
     setFeedback("");
     setRating(0);
   };
@@ -55,6 +64,7 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
         {editItem ? "Edit Testimonial" : "Add Testimonial"}
       </h2>
 
+      {/* PHOTO */}
       <div className="adm-form-group">
         <label>Upload Photo</label>
         <input type="file" onChange={handleImage} />
@@ -63,6 +73,31 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
         )}
       </div>
 
+      {/* NAME */}
+      <div className="adm-form-group">
+        <label>Client Name</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter client name"
+          required
+        />
+      </div>
+
+      {/* POSITION */}
+      <div className="adm-form-group">
+        <label>Client Position</label>
+        <input
+          type="text"
+          value={position}
+          onChange={(e) => setPosition(e.target.value)}
+          placeholder="e.g. CEO, Manager, Founder"
+          required
+        />
+      </div>
+
+      {/* FEEDBACK */}
       <div className="adm-form-group">
         <label>Feedback</label>
         <textarea
@@ -73,6 +108,7 @@ const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
         />
       </div>
 
+      {/* RATING */}
       <div className="adm-form-group">
         <label>Rating</label>
         <StarRating rating={rating} setRating={setRating} />

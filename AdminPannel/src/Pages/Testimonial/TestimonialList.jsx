@@ -22,15 +22,29 @@ const TestimonialList = ({ testimonials, onEdit, onDelete }) => {
 
           <div className="adm-card-content">
 
+            {/* NAME */}
+            <h4 className="adm-client-name">
+              {item.name}
+            </h4>
+
+            {/* POSITION */}
+            <p className="adm-client-position">
+              {item.position}
+            </p>
+
+            {/* FEEDBACK */}
             <p className="adm-feedback-text">
               {item.feedback}
             </p>
 
+            {/* RATING */}
             <div className="adm-rating-view">
               {"★".repeat(item.rating)}
             </div>
 
+            {/* ACTIONS */}
             <div className="adm-card-actions">
+
               <button
                 className="adm-edit-btn"
                 onClick={() => onEdit(item)}
@@ -44,6 +58,7 @@ const TestimonialList = ({ testimonials, onEdit, onDelete }) => {
               >
                 Delete
               </button>
+
             </div>
 
           </div>

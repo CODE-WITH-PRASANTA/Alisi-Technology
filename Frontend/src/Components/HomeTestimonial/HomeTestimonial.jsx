@@ -8,38 +8,38 @@ import img3 from "../../Assets/testimonial-client-3.webp";
 const data = [
   {
     name: "Ralph Edwards",
-    role: "Co. Founder",
+    role: "Operations Manager",
     img: img2,
     text:
-      "Working with Tkmino has been a game-changer for our business. Their team's professionalism, attention to detail, and innovative solutions have helped us streamline operations and achieve our goals faster than we imagined. We truly feel like a valued partner. The results we've seen after to be our company partnering."
+      "Alisil Technology provided outstanding IT and digital engineering solutions that helped streamline our operations. Their expertise in cloud systems and automation made a real difference in improving efficiency and reliability across our business."
   },
   {
     name: "Guy Hawkins",
-    role: "Co. Founder",
+    role: "Business Director",
     img: img1,
     text:
-      "Working with Tkmino has been a game-changer for our business. Their team's professionalism, attention to detail, and innovative solutions have helped us streamline operations and achieve our goals faster than we imagined. We truly feel like a valued partner. The results we've seen after to be our company partnering."
+      "Working with Alisil Technology was a smooth and professional experience. Their team delivered secure cloud solutions and custom software that supported our digital transformation goals. We highly value their commitment and technical knowledge."
   },
   {
     name: "Mevon Lane",
-    role: "Co. Founder",
+    role: "Chief Technology Officer",
     img: img3,
     text:
-      "Working with Tkmino has been a game-changer for our business. Their team's professionalism, attention to detail, and innovative solutions have helped us streamline operations and achieve our goals faster than we imagined. We truly feel like a valued partner. The results we've seen after to be our company partnering."
+      "The IoT and cybersecurity solutions from Alisil Technology significantly improved our system performance and data security. Their innovative approach and continuous support have made them a trusted technology partner."
   }
 ];
 
 export default function Testimonial() {
   const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState("right"); // ✅ added
+  const [direction, setDirection] = useState("right");
 
   const prev = () => {
-    setDirection("left"); // ✅ added
+    setDirection("left");
     setActive(active === 0 ? data.length - 1 : active - 1);
   };
 
   const next = () => {
-    setDirection("right"); // ✅ added
+    setDirection("right");
     setActive(active === data.length - 1 ? 0 : active + 1);
   };
 
@@ -51,11 +51,11 @@ export default function Testimonial() {
             key={i}
             className={`avatar ${active === i ? "active" : ""}`}
             onClick={() => {
-              setDirection(i > active ? "right" : "left"); // ✅ added
+              setDirection(i > active ? "right" : "left");
               setActive(i);
             }}
           >
-            <img src={item.img} alt="" />
+            <img src={item.img} alt={item.name} />
           </div>
         ))}
       </div>
@@ -68,7 +68,6 @@ export default function Testimonial() {
           ‹
         </button>
 
-        {/* ✅ added direction class */}
         <div key={active} className={`card slide-${direction}`}>
           <div className="stars">★★★★★</div>
           <p>{data[active].text}</p>
@@ -85,7 +84,7 @@ export default function Testimonial() {
             key={i}
             className={`dot ${active === i ? "active" : ""}`}
             onClick={() => {
-              setDirection(i > active ? "right" : "left"); // ✅ added
+              setDirection(i > active ? "right" : "left");
               setActive(i);
             }}
           />

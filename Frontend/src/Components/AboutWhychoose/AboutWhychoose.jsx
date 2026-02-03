@@ -12,14 +12,18 @@ export default function WhyChoose() {
     <section className="abbout-wrapper">
       <div className="abbout-top">
         <div>
-          <span className="abbout-tag">[ WHY CHOOSE US ]</span>
+          <span className="abbout-tag">[ WHY CHOOSE ALISIL TECHNOLOGY ]</span>
           <h2>
-            Reliable IT Solution, for <br /> Best Results.
+            Trusted Digital Solutions <br /> That Drive Real Results
           </h2>
         </div>
 
         <div className="abbout-right">
-          <p>Our services are customized to meet your unique.</p>
+          <p>
+            At Alisil Technology Pvt Ltd, we deliver innovative IT, IoT, and
+            digital engineering solutions designed to help businesses grow,
+            operate efficiently, and stay competitive in a digital-first world.
+          </p>
           <button className="learn-btn">
             Learn More <span>↗</span>
           </button>
@@ -27,14 +31,16 @@ export default function WhyChoose() {
       </div>
 
       <div className="abbout-cards">
+
         <div className="abbout-card">
           <div className="icon">
             <FaThumbsUp />
           </div>
-          <h3>Proven Track Record</h3>
+          <h3>Proven Industry Experience</h3>
           <p>
-            With a portfolio of successful projects and satisfied clients, we
-            have a reputation.
+            We have successfully delivered reliable technology solutions across
+            multiple industries, helping clients achieve measurable business
+            growth and operational efficiency.
           </p>
         </div>
 
@@ -42,10 +48,11 @@ export default function WhyChoose() {
           <div className="icon">
             <FaLightbulb />
           </div>
-          <h3>Tailored Solutions</h3>
+          <h3>Customized Business Solutions</h3>
           <p>
-            Our services are customized to meet your unique business needs,
-            ensuring solution.
+            Every business is unique. Our team designs tailored digital,
+            software, and IoT solutions aligned with your specific goals and
+            technical requirements.
           </p>
         </div>
 
@@ -53,10 +60,11 @@ export default function WhyChoose() {
           <div className="icon">
             <FaRocket />
           </div>
-          <h3>Future Technologies</h3>
+          <h3>Advanced & Future-Ready Technologies</h3>
           <p>
-            Stay ahead of the competition with AI, cloud computing, and
-            automation solutions.
+            We leverage modern technologies such as cloud computing, automation,
+            IoT systems, and digital engineering to build scalable, future-proof
+            platforms.
           </p>
         </div>
 
@@ -64,12 +72,14 @@ export default function WhyChoose() {
           <div className="icon">
             <FaHandshake />
           </div>
-          <h3>24/7 Support</h3>
+          <h3>Dedicated Client Support</h3>
           <p>
-            With a portfolio of successful projects and satisfied clients, we
-            have a reputation.
+            Our experts provide continuous technical support, system monitoring,
+            and performance optimization to ensure long-term success for your
+            business.
           </p>
         </div>
+
       </div>
     </section>
   );

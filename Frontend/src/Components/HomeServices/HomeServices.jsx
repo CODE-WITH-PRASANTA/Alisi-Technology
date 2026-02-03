@@ -14,55 +14,55 @@ const services = [
     id: "01",
     icon: <FiMonitor />,
     title: "Managed IT Services",
-    desc: "Comprehensive IT management, including monitoring, maintenance.",
+    desc: "End-to-end IT management to keep your systems running smoothly and securely.",
     points: [
-      "24/7 system monitoring",
-      "IT support & troubleshooting",
+      "24/7 monitoring & maintenance",
+      "Technical support services",
       "Remote IT assistance",
     ],
   },
   {
     id: "02",
     icon: <FiCloud />,
-    title: "Cloud Computing",
-    desc: "Scalable cloud-based services, including migration, storage, and security.",
+    title: "Cloud Computing Solutions",
+    desc: "Flexible cloud platforms that support business growth and digital transformation.",
     points: [
-      "Scalable cloud storage",
-      "SaaS, PaaS, IaaS",
-      "Hybrid & multi-cloud",
+      "Cloud migration services",
+      "Secure cloud infrastructure",
+      "Hybrid cloud solutions",
     ],
   },
   {
     id: "03",
     icon: <FiShield />,
-    title: "Cybersecurity Solutions",
-    desc: "Advanced security measures including firewall protection.",
+    title: "Cybersecurity Services",
+    desc: "Advanced security solutions to protect your digital assets and data.",
     points: [
-      "Firewall security",
-      "Threat prevention",
-      "Endpoint protection",
+      "Threat prevention systems",
+      "Network security protection",
+      "Data safety solutions",
     ],
   },
   {
     id: "04",
     icon: <FiSettings />,
     title: "IT Consulting & Strategy",
-    desc: "Expert guidance to optimize IT infrastructure.",
+    desc: "Expert guidance to optimize technology and improve business performance.",
     points: [
-      "Transformation planning",
-      "Infrastructure optimization",
-      "Risk assessment",
+      "Digital transformation planning",
+      "System optimization",
+      "Technology consulting",
     ],
   },
   {
     id: "05",
     icon: <FiShare2 />,
-    title: "Network Infrastructure",
-    desc: "Designing and maintaining secure high-performance networks.",
+    title: "Network & IoT Infrastructure",
+    desc: "Reliable connectivity solutions for modern digital operations.",
     points: [
-      "Network planning",
-      "Optimization",
-      "Risk assessment",
+      "Network design & setup",
+      "IoT system integration",
+      "Secure connectivity",
     ],
   },
 ];
@@ -89,10 +89,10 @@ export default function HomeServices() {
 
         {/* LEFT CONTENT */}
         <div className="home-services-left">
-          <span className="badge">[ EXPLORE SERVICES ]</span>
+          <span className="badge">[ OUR SERVICES ]</span>
 
           <h2>
-            Reliable IT Solution <br /> for a Smarter.
+            Smart IT & Digital Solutions <br /> Built for Business Growth
           </h2>
 
           <button className="main-btn">
