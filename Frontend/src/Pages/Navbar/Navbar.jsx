@@ -9,7 +9,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logo from "../../Assets/logo.png" // ✅ ADD THIS
+import logo from "../../Assets/Logo 003.png" // ✅ ADD THIS
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
