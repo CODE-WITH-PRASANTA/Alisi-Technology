@@ -9,6 +9,7 @@ import "./Consulting.css";
 import ConsultingBreadcrum from "../../Components/ConsultingBreadcrum/ConsultingBreadcrum";
 import ConsultingLeftComponent from "../../Components/ConsultingLeftComponent/ConsultingLeftComponent";
 import ConsultingSidebar from "../../Components/ConsultingSidebar/ConsultingSidebar";
+import ConsultingPrice from "../../Components/ConsultingPrice/ConsultingPrice";
 
 const Consulting = () => {
   return (
@@ -28,6 +29,7 @@ const Consulting = () => {
         </div>
 
       </div>
+      <ConsultingPrice />
     </section>
   );
 };
