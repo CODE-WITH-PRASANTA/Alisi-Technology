@@ -25,7 +25,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
       {/* MOBILE OVERLAY */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/60 z-40 lg:hidden cursor-pointer"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -40,12 +40,12 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
         {/* LOGO */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800">
           {!collapsed && (
-            <span className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer">
               Admin Panel
             </span>
           )}
           <button
-            className="lg:hidden text-slate-400"
+            className="lg:hidden text-slate-400 cursor-pointer"
             onClick={() => setSidebarOpen(false)}
           >
             <FiX />
@@ -147,18 +147,18 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 
         {/* PROFILE */}
         <div className="border-t border-slate-800 p-3">
-          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition">
+          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition cursor-pointer">
             <img
               src="https://i.pravatar.cc/40"
-              className="w-9 h-9 rounded-full ring-2 ring-blue-500"
+              className="w-9 h-9 rounded-full ring-2 ring-blue-500 cursor-pointer"
             />
             {!collapsed && (
               <>
-                <div className="flex-1">
+                <div className="flex-1 cursor-pointer">
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
-                <FiLogOut className="text-slate-400 hover:text-red-400" />
+                <FiLogOut className="text-slate-400 hover:text-red-400 cursor-pointer" />
               </>
             )}
           </div>
@@ -173,10 +173,10 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 const SidebarItem = ({ icon, label, collapsed, color, onClick }) => (
   <button
     onClick={onClick}
-    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
+    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition cursor-pointer"
   >
-    <span className={`text-lg ${color}`}>{icon}</span>
-    {!collapsed && <span>{label}</span>}
+    <span className={`text-lg ${color} cursor-pointer`}>{icon}</span>
+    {!collapsed && <span className="cursor-pointer">{label}</span>}
   </button>
 );
 
@@ -184,15 +184,15 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
   <>
     <button
       onClick={() => setOpen(!open)}
-      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
+      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition cursor-pointer"
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 cursor-pointer">
         {icon}
-        {!collapsed && <span>{label}</span>}
+        {!collapsed && <span className="cursor-pointer">{label}</span>}
       </div>
       {!collapsed && (
         <FiChevronDown
-          className={`transition ${
+          className={`transition cursor-pointer ${
             open ? "rotate-180 text-blue-400" : "text-slate-400"
           }`}
         />
@@ -207,7 +207,7 @@ const SubItem = ({ label, onClick }) => (
   <button
     onClick={onClick}
     className="block w-full text-left px-3 py-2 rounded-lg
-    text-slate-400 hover:text-white hover:bg-[#1b2230] transition"
+    text-slate-400 hover:text-white hover:bg-[#1b2230] transition cursor-pointer"
   >
     {label}
   </button>
