@@ -6,8 +6,8 @@ const RightSidebar = ({ open, setOpen }) => {
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/60 z-40"
           onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/60 z-40 cursor-pointer"
         />
       )}
 
@@ -20,14 +20,16 @@ const RightSidebar = ({ open, setOpen }) => {
       >
         {/* HEADER */}
         <div className="h-16 px-5 flex items-center justify-between border-b border-slate-800">
-          <div className="flex items-center gap-2">
+          {/* TITLE AREA */}
+          <div className="flex items-center gap-2 cursor-pointer">
             <FiBell className="text-yellow-400" />
             <h3 className="font-semibold">Notifications</h3>
           </div>
 
+          {/* CLOSE BUTTON */}
           <button
             onClick={() => setOpen(false)}
-            className="text-slate-400 hover:text-white"
+            className="text-slate-400 hover:text-white cursor-pointer"
           >
             <FiX />
           </button>
@@ -57,10 +59,16 @@ const RightSidebar = ({ open, setOpen }) => {
 };
 
 const NotificationItem = ({ title, desc, time }) => (
-  <div className="bg-[#161c25] p-4 rounded-xl hover:bg-[#1b2230] transition">
-    <h4 className="text-sm font-semibold">{title}</h4>
-    <p className="text-xs text-slate-400 mt-1">{desc}</p>
-    <span className="text-[11px] text-slate-500 mt-2 block">{time}</span>
+  <div
+    className="bg-[#161c25] p-4 rounded-xl
+    hover:bg-[#1b2230] transition
+    cursor-pointer"
+  >
+    <h4 className="text-sm font-semibold cursor-pointer">{title}</h4>
+    <p className="text-xs text-slate-400 mt-1 cursor-pointer">{desc}</p>
+    <span className="text-[11px] text-slate-500 mt-2 block cursor-pointer">
+      {time}
+    </span>
   </div>
 );
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SusLeftComponent.css";
 
 import bannerImg from "../../assets/service-details-3.webp";
@@ -32,14 +32,45 @@ const faqData = [
       "Through surveys, analytics tools, and continuous monitoring systems."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
-    answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    question: "How Do I Choose the Right Cloud Service Provider?",
+    answer:
+      "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. Businesses must also follow best practices like strong password policies and regular security audits."
   }
 ];
 
 const SusLeftComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  /* ===============================
+     SEO (NO HELMET, NO UI CHANGE)
+     =============================== */
+  useEffect(() => {
+    // Page title
+    document.title =
+      "Cloud Computing Services | Secure & Scalable IT Solutions";
+
+    // Meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "Professional cloud computing services offering scalable infrastructure, enhanced security, disaster recovery, and cost-effective IT solutions for modern businesses."
+      );
+    }
+
+    // Meta keywords (optional)
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+
+    metaKeywords.setAttribute(
+      "content",
+      "cloud computing services, cloud infrastructure, AWS cloud solutions, Azure cloud services, secure cloud computing, scalable IT solutions, enterprise cloud"
+    );
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -50,7 +81,7 @@ const SusLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="sus-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src={bannerImg} alt="Cloud Computing Services Banner" />
       </div>
 
       {/* TITLE */}
@@ -60,16 +91,15 @@ const SusLeftComponent = () => {
 
       {/* DESCRIPTION */}
       <p className="sus-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices.
       </p>
 
       <p className="sus-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+        Cloud computing is categorized into Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), enabling businesses to scale efficiently while reducing costs and improving collaboration.
       </p>
 
       {/* FEATURE LIST */}
       <div className="sus-feature-container">
-
         <ul className="sus-feature-list">
           <li>Scalable IT Infrastructure</li>
           <li>High Data Security</li>
@@ -82,33 +112,30 @@ const SusLeftComponent = () => {
           <li>Reduced Hardware Costs</li>
           <li>24/7 Cloud Monitoring</li>
         </ul>
-
       </div>
 
       {/* IMAGE GRID */}
       <div className="sus-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src={imgOne} alt="Cloud team collaboration" />
+        <img src={imgTwo} alt="Cloud infrastructure discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
       <div className="sus-services-section">
-
         <h2 className="sus-section-title">
           Our Range of Customer Services
         </h2>
 
         <p className="sus-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          We deliver reliable cloud and IT services tailored to business needs. Our solutions ensure seamless operations, enhanced security, and optimized performance for organizations of all sizes.
         </p>
 
         <div className="sus-card-grid">
-
           <div className="sus-service-card">
             <span className="sus-card-number">01</span>
             <h4>Increased Customer Satisfaction</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              Personalized solutions help businesses deliver better customer experiences.
             </p>
           </div>
 
@@ -116,7 +143,7 @@ const SusLeftComponent = () => {
             <span className="sus-card-number">02</span>
             <h4>Improved Operational Efficiency</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              Automation and cloud tools streamline workflows and reduce manual effort.
             </p>
           </div>
 
@@ -124,16 +151,14 @@ const SusLeftComponent = () => {
             <span className="sus-card-number">03</span>
             <h4>Insights for Improvement</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+              Data-driven insights empower continuous business growth.
             </p>
           </div>
-
         </div>
       </div>
 
       {/* FAQ */}
       <div className="sus-faq-area">
-
         <h2 className="sus-section-title">
           Frequently Asked Questions
         </h2>
@@ -146,7 +171,6 @@ const SusLeftComponent = () => {
             }`}
             onClick={() => toggleFAQ(index)}
           >
-
             <div className="sus-faq-header">
               <h4>{item.question}</h4>
               <span className="sus-faq-icon">
@@ -159,10 +183,8 @@ const SusLeftComponent = () => {
                 {item.answer}
               </p>
             )}
-
           </div>
         ))}
-
       </div>
 
     </div>

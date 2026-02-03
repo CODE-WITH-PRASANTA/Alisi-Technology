@@ -8,6 +8,9 @@ import AddProject from "./Pages/AddProject";
 import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
 import ViewPrices from "./Pages/ViewPrices";
+import TestimonialPage from "./Pages/Testimonial/TestimonialPage";
+import BlogManagerPage from "./Pages/BlogManager/BlogManagerPage";
+import BlogView from "./Pages/BlogView/BlogView";
 
 function App() {
   return (
@@ -27,7 +30,10 @@ function App() {
             <Route path="/projects" element={<ViewProjects />} />
             <Route path="/price" element={<ViewPrices />} />
             <Route path="/price/add" element={<AddPrice />} />
-          </Route>
+            <Route path="/testimonial" element={<TestimonialPage />} />
+            <Route path="/blog" element={<BlogManagerPage />} />   
+            <Route path="/blog-view" element={<BlogView />} />
+           </Route>
 
           {/* FALLBACK */}
           <Route path="*" element={<Navigate to="/login" replace />} />

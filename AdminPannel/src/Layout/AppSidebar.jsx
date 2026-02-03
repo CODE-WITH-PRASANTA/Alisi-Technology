@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   FiHome,
   FiEdit,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/fi";
 
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
+
   const navigate = useNavigate();
 
   const [blogOpen, setBlogOpen] = useState(false);
@@ -37,32 +39,44 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
         ${collapsed ? "w-20" : "w-64"}
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
+
         {/* LOGO */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+
           {!collapsed && (
-            <span className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span
+              className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
+              onClick={() => navigate("/dashboard")}
+            >
               Admin Panel
             </span>
           )}
+
           <button
             className="lg:hidden text-slate-400"
             onClick={() => setSidebarOpen(false)}
           >
             <FiX />
           </button>
+
         </div>
 
         {/* MENU */}
         <nav className="flex-1 p-3 space-y-1 text-sm overflow-y-auto">
+
+          {/* DASHBOARD */}
           <SidebarItem
             icon={<FiHome />}
             label="Dashboard"
             collapsed={collapsed}
             color="text-blue-400"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => {
+              navigate("/dashboard");
+              setSidebarOpen(false);
+            }}
           />
 
-          {/* BLOG */}
+          {/* BLOG MANAGEMENT */}
           <Dropdown
             icon={<FiEdit className="text-purple-400" />}
             label="Blog Management"
@@ -70,8 +84,21 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             setOpen={setBlogOpen}
             collapsed={collapsed}
           >
-            <SubItem label="Add Blog" />
-            <SubItem label="View Blog" />
+            <SubItem
+              label="Add Blog"
+              onClick={() => {
+                navigate("/blog");
+                setSidebarOpen(false);
+              }}
+            />
+
+            <SubItem
+              label="View Blog"
+              onClick={() => {
+                navigate("/blog-view");
+                setSidebarOpen(false);
+              }}
+            />
           </Dropdown>
 
           {/* PRICE MANAGEMENT */}
@@ -89,6 +116,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
                 setSidebarOpen(false);
               }}
             />
+
             <SubItem
               label="View Prices"
               onClick={() => {
@@ -98,6 +126,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             />
           </Dropdown>
 
+          {/* LEAD */}
           <SidebarItem
             icon={<FiUsers />}
             label="Lead Management"
@@ -105,6 +134,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             color="text-cyan-400"
           />
 
+          {/* FINALIZE */}
           <SidebarItem
             icon={<FiCheckCircle />}
             label="Finalize Work"
@@ -112,14 +142,19 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             color="text-emerald-400"
           />
 
+          {/* TESTIMONIAL */}
           <SidebarItem
             icon={<FiStar />}
             label="Testimonial Management"
             collapsed={collapsed}
             color="text-yellow-400"
+            onClick={() => {
+              navigate("/testimonial");
+              setSidebarOpen(false);
+            }}
           />
 
-          {/* PROJECT & CLIENT */}
+          {/* PROJECTS */}
           <Dropdown
             icon={<FiBriefcase className="text-orange-400" />}
             label="Project & Client"
@@ -134,6 +169,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
                 setSidebarOpen(false);
               }}
             />
+
             <SubItem
               label="View Projects"
               onClick={() => {
@@ -141,34 +177,46 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
                 setSidebarOpen(false);
               }}
             />
+
             <SubItem label="Clients" />
           </Dropdown>
+
         </nav>
 
         {/* PROFILE */}
         <div className="border-t border-slate-800 p-3">
+
           <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition">
+
             <img
               src="https://i.pravatar.cc/40"
               className="w-9 h-9 rounded-full ring-2 ring-blue-500"
+              alt="profile"
             />
+
             {!collapsed && (
               <>
                 <div className="flex-1">
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
-                <FiLogOut className="text-slate-400 hover:text-red-400" />
+
+                <FiLogOut className="text-slate-400 hover:text-red-400 cursor-pointer" />
               </>
             )}
+
           </div>
+
         </div>
+
       </aside>
     </>
   );
 };
 
-/* ---------- COMPONENTS ---------- */
+export default AppSidebar;
+
+/* ---------------- COMPONENTS ---------------- */
 
 const SidebarItem = ({ icon, label, collapsed, color, onClick }) => (
   <button
@@ -190,6 +238,7 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
         {icon}
         {!collapsed && <span>{label}</span>}
       </div>
+
       {!collapsed && (
         <FiChevronDown
           className={`transition ${
@@ -199,7 +248,11 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
       )}
     </button>
 
-    {open && !collapsed && <div className="ml-8 space-y-1">{children}</div>}
+    {open && !collapsed && (
+      <div className="ml-8 space-y-1">
+        {children}
+      </div>
+    )}
   </>
 );
 
@@ -212,5 +265,3 @@ const SubItem = ({ label, onClick }) => (
     {label}
   </button>
 );
-
-export default AppSidebar;

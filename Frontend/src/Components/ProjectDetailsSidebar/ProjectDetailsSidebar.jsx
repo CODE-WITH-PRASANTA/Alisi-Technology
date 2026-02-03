@@ -1,6 +1,5 @@
 import React from "react";
 import "./ProjectDetailsSidebar.css";
-
 import {
   FaUser,
   FaDollarSign,
@@ -16,22 +15,22 @@ import {
 
 import adImg from "../../Assets/service-ad.webp";
 
-const ProjectDetailsSidebar = () => {
+const ProjectDetailsSidebar = ({ project }) => {
+  if (!project) return null;
+
   return (
     <aside className="projectSidebar">
 
       {/* Project Info Card */}
       <div className="projectSidebar__card">
-
         <h3 className="projectSidebar__title">Project Info</h3>
 
         <ul className="projectSidebar__list">
-
           <li>
             <span><FaUser /></span>
             <div>
-              <h5>Clients</h5>
-              <p>Innovate Interiors Group</p>
+              <h5>Client</h5>
+              <p>{project.clientName}</p>
             </div>
           </li>
 
@@ -39,7 +38,7 @@ const ProjectDetailsSidebar = () => {
             <span><FaDollarSign /></span>
             <div>
               <h5>Budget</h5>
-              <p>$8,000 USD</p>
+              <p>{project.budget}</p>
             </div>
           </li>
 
@@ -47,7 +46,7 @@ const ProjectDetailsSidebar = () => {
             <span><FaMapMarkerAlt /></span>
             <div>
               <h5>Location</h5>
-              <p>Maplewood Heights, CA</p>
+              <p>{project.location}</p>
             </div>
           </li>
 
@@ -55,24 +54,22 @@ const ProjectDetailsSidebar = () => {
             <span><FaLayerGroup /></span>
             <div>
               <h5>Sector</h5>
-              <p>IT Solutions</p>
+              <p>{project.sector}</p>
             </div>
           </li>
 
           <li>
             <span><FaCalendarAlt /></span>
             <div>
-              <h5>Complete date</h5>
-              <p>Oct 20, 2024</p>
+              <h5>Complete Date</h5>
+              <p>{project.completeDate}</p>
             </div>
           </li>
-
         </ul>
 
         {/* Share */}
         <div className="projectSidebar__share">
           <span>Share:</span>
-
           <div className="projectSidebar__socials">
             <FaFacebookF />
             <FaInstagram />
@@ -80,12 +77,10 @@ const ProjectDetailsSidebar = () => {
             <FaTwitter />
           </div>
         </div>
-
       </div>
 
-      {/* Advertisement Card */}
+      {/* Advertisement */}
       <div className="projectSidebar__ad">
-
         <div className="projectSidebar__adContent">
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
@@ -99,7 +94,6 @@ const ProjectDetailsSidebar = () => {
         <div className="projectSidebar__adImg">
           <img src={adImg} alt="service" />
         </div>
-
       </div>
 
     </aside>
