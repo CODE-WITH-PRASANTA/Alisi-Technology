@@ -1,0 +1,147 @@
+.conclusion-wrapper {
+  background: #070707;
+  padding: 80px 0;
+  color: #d4d4d4;
+}
+
+.conclusion-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Video */
+
+.video-box {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.video-box img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  background: #c7f000;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Text */
+
+.conclusion-container h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.conclusion-container p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* Tags + Share */
+
+.tags-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-top: 1px dashed #222;
+  border-bottom: 1px dashed #222;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tags span {
+  border: 1px solid #222;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.share img {
+  width: 18px;
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+/* Navigation */
+
+.post-nav {
+  margin-top: 40px;
+  background: #121212;
+  border-radius: 50px;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.grid-icon {
+  display: grid;
+  grid-template-columns: repeat(2, 10px);
+  gap: 6px;
+}
+
+.grid-icon span {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .video-box img {
+    height: 280px;
+  }
+
+  .post-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-box img {
+    height: 220px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

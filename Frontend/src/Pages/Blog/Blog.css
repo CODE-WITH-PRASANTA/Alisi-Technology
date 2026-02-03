@@ -1,0 +1,20 @@
+.blog {
+  background: #050505;
+  padding-bottom: 80px;
+}
+
+.blog__container {
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .blog__container {
+    grid-template-columns: 1fr;
+  }
+}

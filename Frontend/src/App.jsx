@@ -18,6 +18,7 @@ import Cybersecurity from "./Pages/Cybersecurity/Cybersecurity";
 import EnterpriceSolution from "./Pages/EnterpriceSolution/EnterpriceSolution";
 import IOTDigitalEng from "./Pages/IOTDigitalEng/IOTDigitalEng";
 import Sustainability from "./Pages/Sustainability/Sustainability";
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/services/Enterprise-Solutions" element={<EnterpriceSolution />} />
         <Route path="/services/IoT-Digital-Eng." element={<IOTDigitalEng />} />
         <Route path="/services/Sustainability" element={<Sustainability />} />
+        <Route path="/blog/details" element={<BlogDetails/>} />
       </Routes>
 
       <Footer />
