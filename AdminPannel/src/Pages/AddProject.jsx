@@ -13,31 +13,55 @@ const AddProject = () => {
     completeDate: "",
     category: "",
     projectImg: null,
-    galleryImg: null,
+    galleryImg: [], // ✅ ARRAY
   });
+
+  /* ---------- HANDLERS ---------- */
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleImage = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.files[0] });
+  const handleProjectImage = (e) => {
+    setForm({ ...form, projectImg: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleGalleryImages = (e) => {
+    setForm({ ...form, galleryImg: Array.from(e.target.files) });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Project Data:", form);
+
+    const formData = new FormData();
+
+    Object.keys(form).forEach((key) => {
+      if (key === "galleryImg") {
+        form.galleryImg.forEach((file) =>
+          formData.append("galleryImg", file)
+        );
+      } else {
+        formData.append(key, form[key]);
+      }
+    });
+
+    await fetch("http://localhost:5000/api/projects", {
+      method: "POST",
+      body: formData,
+    });
+
+    alert("Project added successfully");
   };
 
   return (
     <div className="h-[calc(100vh-4rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
       
-      {/* LEFT FORM (SCROLLABLE) */}
+      {/* LEFT FORM */}
       <form
         onSubmit={handleSubmit}
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
-        rounded-2xl p-6 space-y-5 overflow-y-auto scroll-smooth no-scrollbar"
+        rounded-2xl p-6 space-y-5 overflow-y-auto no-scrollbar"
       >
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Add New Project
@@ -48,8 +72,18 @@ const AddProject = () => {
         <Textarea label="Quotes" name="quotes" value={form.quotes} onChange={handleChange} />
 
         <div className="grid md:grid-cols-2 gap-4">
-          <FileInput label="Project Image" name="projectImg" onChange={handleImage} />
-          <FileInput label="Related Image" name="galleryImg" onChange={handleImage} />
+          <FileInput
+            label="Project Image"
+            name="projectImg"
+            onChange={handleProjectImage}
+          />
+
+          <FileInput
+            label="Gallery Images"
+            name="galleryImg"
+            multiple
+            onChange={handleGalleryImages}
+          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -70,18 +104,33 @@ const AddProject = () => {
         </button>
       </form>
 
-      {/* RIGHT PREVIEW (SCROLLABLE) */}
+      {/* RIGHT PREVIEW */}
       <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto no-scrollbar">
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
         </h3>
 
+        {/* Project Image Preview */}
         {form.projectImg && (
           <img
             src={URL.createObjectURL(form.projectImg)}
             className="rounded-xl w-full h-40 object-cover"
             alt="Project Preview"
           />
+        )}
+
+        {/* Gallery Preview */}
+        {form.galleryImg.length > 0 && (
+          <div className="grid grid-cols-3 gap-2">
+            {form.galleryImg.map((img, i) => (
+              <img
+                key={i}
+                src={URL.createObjectURL(img)}
+                className="rounded-lg h-20 object-cover"
+                alt="Gallery"
+              />
+            ))}
+          </div>
         )}
 
         <div>
@@ -139,6 +188,10 @@ const Textarea = ({ label, ...props }) => (
 const FileInput = ({ label, ...props }) => (
   <div>
     <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input type="file" {...props} className="w-full text-sm text-slate-400" />
+    <input
+      type="file"
+      {...props}
+      className="w-full text-sm text-slate-400"
+    />
   </div>
 );
