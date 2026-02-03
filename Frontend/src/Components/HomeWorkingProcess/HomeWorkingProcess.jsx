@@ -4,18 +4,18 @@ import "./HomeWorkingProcess.css";
 const steps = [
   {
     no: "01",
-    title: "Deep Discovery & Planning",
-    desc: "Every great solution starts understanding. We take the time to learn about your business, challenges, and goals.",
+    title: "Business Analysis & Strategy Planning",
+    desc: "We begin by understanding your business objectives, technical requirements, and challenges to create a clear digital strategy tailored to your goals.",
   },
   {
     no: "02",
-    title: "Development & Implement",
-    desc: "Every great solution starts understanding. We take the time to learn about your business, challenges, and goals.",
+    title: "Solution Development & Implementation",
+    desc: "Our experts design and develop custom IT, IoT, and digital engineering solutions, ensuring seamless integration with your existing systems.",
   },
   {
     no: "03",
-    title: "Optimization & Support",
-    desc: "Every great solution starts understanding. We take the time to learn about your business, challenges, and goals.",
+    title: "Performance Optimization & Ongoing Support",
+    desc: "After deployment, we continuously monitor performance, enhance system efficiency, and provide reliable technical support for long-term success.",
   },
 ];
 
@@ -25,7 +25,7 @@ export default function WorkingProcess() {
       <div className="process-header">
         <span>[ OUR WORKING PROCESS ]</span>
         <h2>
-          Transform Your Business <br /> in 3 Simple Steps.
+          Transform Your Business <br /> in 3 Simple Steps
         </h2>
       </div>
 

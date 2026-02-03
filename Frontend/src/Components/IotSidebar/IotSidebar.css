@@ -112,99 +112,38 @@
   height: 100%;
   object-fit: cover;
 }
-
-/* =====================
-   RESPONSIVE
-===================== */
-/* =====================
-   RESPONSIVE SYSTEM
-===================== */
-
-/* Large laptops */
-@media (max-width: 1200px) {
-
-  .iot-sidebar-card {
-    min-height: 520px;
-  }
-
-  .iot-sidebar-image-holder {
-    width: 88%;
-    height: 55%;
-  }
+.iot-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 80px;   /* NEW */
 }
+
+
+/* =====================
+   TOP PADDING RESPONSIVE
+===================== */
 
 /* Tablets */
 @media (max-width: 992px) {
-
+  .iot-left-wrapper,
   .iot-sidebar-wrapper {
-    gap: 24px;
-  }
-
-  .iot-sidebar-card {
-    min-height: 460px;
-    padding: 26px;
-  }
-
-  .iot-sidebar-image-holder {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    border-radius: 200px 200px 0 0;
-    margin-top: 24px;
-  }
-}
-
-/* Small tablets */
-@media (max-width: 768px) {
-
-  .iot-sidebar-card-content h2 {
-    font-size: 36px;
-  }
-
-  .iot-sidebar-card-content p {
-    font-size: 16px;
-  }
-
-  .iot-sidebar-card {
-    min-height: 420px;
+    padding-top: 60px;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-
-  .iot-sidebar-card {
-    min-height: auto;
-  }
-
-  .iot-sidebar-image-holder {
-    height: 240px;
-    border-radius: 160px 160px 0 0;
-  }
-
-  .iot-sidebar-phone {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-
-  .iot-sidebar-services-box {
-    padding: 20px;
-  }
-
-  .iot-sidebar-item {
-    font-size: 14px;
-    padding: 14px 16px;
+  .iot-left-wrapper,
+  .iot-sidebar-wrapper {
+    padding-top: 40px;
   }
 }
 
 /* Very small phones */
 @media (max-width: 400px) {
-
-  .iot-sidebar-card-content h2 {
-    font-size: 30px;
-  }
-
-  .iot-sidebar-image-holder {
-    height: 200px;
+  .iot-left-wrapper,
+  .iot-sidebar-wrapper {
+    padding-top: 30px;
   }
 }

@@ -16,6 +16,7 @@ const AiDataAnalytics = () => {
         {/* LEFT CONTENT */}
         <div className="ai-left-section">
           <LeftContent />
+          <PricingSection />
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -25,7 +26,6 @@ const AiDataAnalytics = () => {
         </div>
          
       </div>
-       <PricingSection />
     </section>
   );
 };

@@ -8,18 +8,21 @@ import blog3 from "../../Assets/blog-post-3.webp";
 const posts = [
   {
     img: blog1,
-    category: "Development",
-    title: "How to Successfully Migrate Your Business to the Cloud",
+    category: "Cloud Computing",
+    title: "A Practical Guide to Moving Your Business Infrastructure to the Cloud",
+    desc: `As businesses continue to embrace digital transformation, cloud computing has become a key driver of efficiency and growth. From improved scalability to reduced operational costs, migrating to the cloud allows organizations to modernize their IT infrastructure while ensuring security and performance.`
   },
   {
     img: blog2,
     category: "Cybersecurity",
-    title: "Building a Stronger Workforce with IT Training",
+    title: "Strengthening Business Security in a Digitally Connected World",
+    desc: `With the rise of connected systems and cloud platforms, cybersecurity has never been more critical. Businesses must adopt proactive security strategies to protect sensitive data, prevent cyber threats, and ensure compliance with industry standards in today’s digital environment.`
   },
   {
     img: blog3,
-    category: "Automation",
-    title: "Optimizing Your IT Budget: Tips and Strategies",
+    category: "Digital Engineering",
+    title: "Smart Technology Solutions to Improve Operational Efficiency",
+    desc: `Digital engineering and automation technologies are transforming the way businesses operate. By integrating smart systems and real-time data analytics, organizations can streamline workflows, enhance productivity, and make informed decisions that drive long-term success.`
   },
 ];
 
@@ -32,7 +35,7 @@ const BlogContent = () => {
 
           {/* IMAGE */}
           <div className="blogImage">
-            <img src={post.img} alt="" />
+            <img src={post.img} alt={post.title} />
 
             <div className="dateBadge">
               <strong>08</strong>
@@ -43,18 +46,14 @@ const BlogContent = () => {
           {/* META */}
           <div className="blogMeta">
             <span className="category">{post.category}</span>
-            <span className="author">By Eade Marren</span>
+            <span className="author">By Alisil Technology Team</span>
           </div>
 
           {/* CONTENT */}
           <h2>{post.title}</h2>
 
           <p>
-            In today's fast-paced business environment, migrating to the cloud
-            has become more of a necessity than a choice. The cloud offers
-            businesses unmatched flexibility, scalability, and cost efficiency.
-            However, making the shift to the cloud can be a complex process if
-            not approached strategically....
+            {post.desc}
           </p>
 
           <button className="readBtn">

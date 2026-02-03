@@ -1,5 +1,6 @@
 .solution-left-wrapper {
   color: #fff;
+  padding-top: 80px; 
 }
 
 /* BANNER */
@@ -279,5 +280,16 @@
 
   .solution-text {
     font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .solution-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-left-wrapper {
+    padding-top: 30px;
   }
 }

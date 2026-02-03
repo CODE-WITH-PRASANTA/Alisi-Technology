@@ -7,34 +7,34 @@ import imgTwo from "../../assets/service-details-1.webp";
 
 const faqData = [
   {
-    question: "What are the main types of cloud computing?",
+    question: "What IoT and Digital Engineering services does Alisil Technology offer?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "Alisil Technology Pvt Ltd provides end-to-end IoT and digital engineering solutions including smart device integration, cloud-connected platforms, embedded system development, real-time data analytics, automation solutions, and digital transformation services tailored to business needs.."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How secure are your IoT and digital platforms?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Security is a core focus of our solutions. We implement enterprise-grade security protocols, data encryption, secure cloud infrastructure, and continuous monitoring to protect devices, networks, and business data from cyber threats.."
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "Can existing systems be integrated with IoT solutions?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes. Our digital engineering experts specialize in seamless system integration. We connect legacy systems with modern IoT platforms to improve efficiency, enable real-time monitoring, and enhance overall business performance without disrupting operations."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "How can IoT solutions improve business efficiency?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "IoT technologies enable real-time tracking, automation, predictive maintenance, and data-driven decision-making. This helps reduce downtime, optimize resources, lower operational costs, and improve productivity across industries."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "Do you provide customized IoT and digital engineering solutions?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "Absolutely. Every business has unique requirements. We design and develop customized IoT ecosystems and digital platforms that align with your operational goals, industry standards, and scalability needs."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
+    question: "How do you support businesses after project deployment??",
     answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    "Alisil Technology offers continuous technical support, system monitoring, performance optimization, and regular updates to ensure your IoT and digital solutions operate smoothly and remain future-ready."
   }
 ];
 
@@ -55,32 +55,32 @@ const IotLeftComponent = () => {
 
       {/* TITLE */}
       <h1 className="iot-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+       IoT & Digital Engineering: Powering Smart, Connected Business Solutions
       </h1>
 
       {/* DESCRIPTION */}
       <p className="iot-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        At Alisil Technology Pvt Ltd, we deliver advanced IoT and Digital Engineering solutions that help businesses transform operations, improve efficiency, and unlock real-time insights. Our expertise spans smart device integration, cloud-connected platforms, embedded systems, and scalable digital infrastructures designed to support modern enterprises.
       </p>
 
       <p className="iot-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+      We specialize in building secure, high-performance IoT ecosystems that connect hardware, software, and data into a unified intelligent system. From industrial automation and smart monitoring to digital transformation strategies, our solutions are tailored to meet the evolving needs of businesses across industries.
       </p>
 
       {/* FEATURE LIST */}
       <div className="iot-feature-container">
 
         <ul className="iot-feature-list">
-          <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Smart IoT System Design & Development</li>
+          <li>Secure Cloud-Based IoT Platforms</li>
+          <li>Real-Time Data Analytics & Monitoring</li>
+          <li>Embedded Software Engineering</li>
         </ul>
 
         <ul className="iot-feature-list">
-          <li>Compliance & Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>High Performance & Reliability</li>
+          <li>Enterprise-Grade Security Standards</li>
+          <li>24/7 Technical Support & Monitoring</li>
         </ul>
 
       </div>
@@ -95,36 +95,36 @@ const IotLeftComponent = () => {
       <div className="iot-services-section">
 
         <h2 className="iot-section-title">
-          Our Range of Customer Services
+         Our Range of Digital Engineering & IoT Services
         </h2>
 
         <p className="iot-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+         At Alisil Technology Pvt Ltd, we offer a comprehensive range of IoT and digital engineering services designed to help businesses innovate, streamline operations, and stay ahead in the digital era. Our solutions combine smart technology, secure digital platforms, and intelligent automation to deliver measurable business impact.
         </p>
 
         <div className="iot-card-grid">
 
           <div className="iot-service-card">
             <span className="iot-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Increased Business Efficiency</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              Smart IoT automation and digital systems streamline workflows, reduce manual processes, and improve operational performance across your organization.
             </p>
           </div>
 
           <div className="iot-service-card">
             <span className="iot-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Scalable Digital Solutions</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              Our cloud-enabled platforms and engineering frameworks are built to grow with your business, ensuring flexibility and long-term sustainability.
             </p>
           </div>
 
           <div className="iot-service-card">
             <span className="iot-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Data-Driven Innovation</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+             Real-time monitoring, analytics, and intelligent insights empower businesses to make smarter decisions and continuously improve performance.
             </p>
           </div>
 
