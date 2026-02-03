@@ -6,6 +6,7 @@ import "./EnterpriceSolution.css";
 import SolutionBreadcrum from "../../Components/SolutionBreadcrum/SolutionBreadcrum";
 import SolutionLeftComponent from "../../Components/SolutionLeftComponent/SolutionLeftComponent";
 import SolutionSidebar from "../../Components/SolutionSidebar/SolutionSidebar";
+import EnterPricing from "../../Components/EnterPricing/EnterPricing";
 
 const  EnterpriceSolution = () => {
   return (
@@ -25,6 +26,7 @@ const  EnterpriceSolution = () => {
         </div>
 
       </div>
+      <EnterPricing />
     </section>
   );
 };
