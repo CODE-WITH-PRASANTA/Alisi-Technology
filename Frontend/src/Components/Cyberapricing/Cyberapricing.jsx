@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CyberaPricing.css";
+import "./Cyberapricing.css";
 import { FaCheck } from "react-icons/fa";
 
 const CyberPricing = () => {

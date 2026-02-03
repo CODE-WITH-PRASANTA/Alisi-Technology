@@ -1,7 +1,8 @@
 import React from "react";
 import "./AboutInovation.css";
+
 import aboutMainImg from "../../assets/main.webp";
-import tekminoLogo from "../../assets/tlogo.webp";
+import tekminoLogo from "../../assets/T-LOGO.webp";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const AboutTekmino = () => {

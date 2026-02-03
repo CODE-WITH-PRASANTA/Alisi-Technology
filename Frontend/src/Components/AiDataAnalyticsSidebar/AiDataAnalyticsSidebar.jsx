@@ -1,7 +1,7 @@
 import React from "react";
 import "./AiDataAnalyticsSidebar.css";
 
-import sidebarPersonImg from "../../assets/service-details-1.webp";
+import sidebarPersonImg from "../../assets/service-details-2.webp";
 
 const services = [
   "Network Infrastructure",

@@ -3,7 +3,7 @@ import "./AboutFaq.css";
 import { FaPlus, FaMinus, FaPhoneAlt,  } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import personImg from "../../assets/testimonial-client-1.webp"; // your image
+import personImg from "../../assets/testimonial-client-3.webp"; 
 
 const faqData = [
   "What services does your company offer?",
