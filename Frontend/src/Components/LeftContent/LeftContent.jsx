@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./LeftContent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../Assets/AI&Data-1.webp";
-import imgTwo from "../../Assets/AI&-Data-2.webp";
+import bannerImg from "../../Assets/AI&Data-1.webp";
+import imgOne from "../../Assets/AI-data-4.webp";
+import imgTwo from "../../Assets/AI&data-3.webp";
 
 const faqData = [
   {

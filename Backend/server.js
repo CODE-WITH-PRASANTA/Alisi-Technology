@@ -11,6 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/add",(req,res)=>{
+  res.send("My app")
+})
+
 // test route
 app.get("/", (req, res) => {
   res.send("API running successfully 🚀");

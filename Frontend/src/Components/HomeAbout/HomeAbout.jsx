@@ -50,16 +50,18 @@ export default function AboutTekmino() {
 
         {/* RIGHT */}
         <div className="about-right fade delay-2">
-          <span className="tag">[ ABOUT TEKMINO ]</span>
+          <span className="tag">[ABOUT ALISIL TECHNOLOGY ]</span>
 
           <h2>
-            Delivering Solution That Drive Our Innovation & Fast Success.
-          </h2>
+ Empowering Businesses Through Smart Digital & IT Solutions          </h2>
 
           <p>
-            We are a team of passionate tech experts delivering innovative IT
-            solutions tailored to help businesses grow, adapt, and thrive in a
-            digital. Stay ahead of the competition.
+           Alisil Technology is a trusted IT solutions company delivering reliable,
+            scalable, and result-driven digital services for startups, enterprises,
+            and growing businesses. We specialize in cloud computing, networking
+            solutions, cybersecurity, AI & data analytics, and IT consulting —
+            helping organizations modernize operations, improve efficiency, and
+            achieve long-term success.
           </p>
 
           <div className="stats">

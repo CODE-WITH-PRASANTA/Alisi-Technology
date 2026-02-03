@@ -4,12 +4,16 @@ import "./AiDataAnalyticsSidebar.css";
 import sidebarPersonImg from "../../assets/service-details-1.webp";
 
 const services = [
-  "Network Infrastructure",
-  "Software Development",
-  "IT Consulting & Strategy",
-  "Cybersecurity Solutions",
+  "BPO Services",
+  "KPO Services",
   "Cloud Computing",
-  "Managed IT Services",
+  "Cognitive Business Operations",
+  "Consulting",
+  "Cybersecurity",
+  "Enterprise Solutions",
+  "IoT & Digital Engineering",
+  "Network Solutions & Services",
+  "Sustainability Services",
 ];
 
 const AiDataAnalyticsSidebar = () => {

@@ -1,5 +1,6 @@
 .cyber-left-wrapper {
   color: #fff;
+   padding-top: 80px; 
 }
 
 /* BANNER */
@@ -279,5 +280,17 @@
 
   .cyber-text {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cyber-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyber-left-wrapper {
+    padding-top: 30px;
   }
 }

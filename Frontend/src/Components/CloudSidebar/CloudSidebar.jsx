@@ -4,12 +4,16 @@ import "./CloudSidebar.css";
 import sidebarPersonImg from "../../assets/service-details-1.webp";
 
 const services = [
-  "Network Infrastructure",
-  "Software Development",
-  "IT Consulting & Strategy",
-  "Cybersecurity Solutions",
-  "Cloud Computing",
-  "Managed IT Services",
+  "BPO Services",
+  "KPO Services",
+  "Artificial Intelligence & Data & Analytics",
+  "Cognitive Business Operations",
+  "Consulting",
+  "Cybersecurity",
+  "Enterprise Solutions",
+  "IoT & Digital Engineering",
+  "Network Solutions & Services",
+  "Sustainability Services",
 ];
 
 const CloudSidebar = () => {

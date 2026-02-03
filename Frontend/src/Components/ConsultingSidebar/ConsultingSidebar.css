@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-top: 80px;  
 }
 
 /* =====================
@@ -208,3 +209,16 @@
     height: 200px;
   }
 }
+
+@media (max-width: 768px) {
+  .consultingg-sidebar-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultingg-sidebar-wrapper {
+    padding-top: 30px;
+  }
+}
+
