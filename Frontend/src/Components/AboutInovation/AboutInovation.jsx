@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutInovation.css";
 
-import aboutMainImg from "../../assets/Main 001.webp";
+import aboutMainImg from "../../assets/Main-001.webp";
 import tekminoLogo from "../../assets/T-LOGO.webp";
 import { FiArrowUpRight } from "react-icons/fi";
 
