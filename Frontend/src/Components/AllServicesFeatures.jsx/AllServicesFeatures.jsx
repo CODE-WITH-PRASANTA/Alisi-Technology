@@ -23,7 +23,7 @@ const services = [
   {
     id: "02",
     icon: <FaCloud />,
-    title: "Cloud",
+    title: "BPO",
     desc: "End-to-end cloud solutions including migration, modernization, security, and cloud-native development.",
   },
   {

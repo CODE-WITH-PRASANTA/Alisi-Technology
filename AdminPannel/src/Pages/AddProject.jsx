@@ -37,7 +37,7 @@ const AddProject = () => {
       <form
         onSubmit={handleSubmit}
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
-        rounded-2xl p-6 space-y-5 overflow-y-auto"
+        rounded-2xl p-6 space-y-5 overflow-y-auto scroll-smooth no-scrollbar"
       >
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Add New Project
@@ -71,7 +71,7 @@ const AddProject = () => {
       </form>
 
       {/* RIGHT PREVIEW (SCROLLABLE) */}
-      <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto">
+      <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto no-scrollbar">
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
         </h3>
