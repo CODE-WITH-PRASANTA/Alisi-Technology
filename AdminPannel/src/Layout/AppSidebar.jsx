@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FiHome,
   FiEdit,
@@ -13,7 +14,11 @@ import {
 } from "react-icons/fi";
 
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
+  const navigate = useNavigate();
+
   const [blogOpen, setBlogOpen] = useState(false);
+  const [priceOpen, setPriceOpen] = useState(false);
+  const [projectOpen, setProjectOpen] = useState(false);
 
   return (
     <>
@@ -39,67 +44,122 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
               Admin Panel
             </span>
           )}
-          <button className="lg:hidden text-slate-400" onClick={() => setSidebarOpen(false)}>
+          <button
+            className="lg:hidden text-slate-400"
+            onClick={() => setSidebarOpen(false)}
+          >
             <FiX />
           </button>
         </div>
 
         {/* MENU */}
-        <nav className="flex-1 p-3 space-y-1 text-sm overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
-          <SidebarItem icon={<FiHome />} label="Dashboard" collapsed={collapsed} color="text-blue-400" />
+        <nav className="flex-1 p-3 space-y-1 text-sm overflow-y-auto">
+          <SidebarItem
+            icon={<FiHome />}
+            label="Dashboard"
+            collapsed={collapsed}
+            color="text-blue-400"
+            onClick={() => navigate("/dashboard")}
+          />
 
-          {/* BLOG MANAGEMENT */}
-          <button
-            onClick={() => setBlogOpen(!blogOpen)}
-            className="w-full flex items-center justify-between px-3 py-3 rounded-xl
-            hover:bg-[#161c25] hover:shadow-lg transition"
+          {/* BLOG */}
+          <Dropdown
+            icon={<FiEdit className="text-purple-400" />}
+            label="Blog Management"
+            open={blogOpen}
+            setOpen={setBlogOpen}
+            collapsed={collapsed}
           >
-            <div className="flex items-center gap-3">
-              <FiEdit className="text-purple-400 text-lg" />
-              {!collapsed && <span>Blog Management</span>}
-            </div>
-            {!collapsed && (
-              <FiChevronDown
-                className={`transition ${blogOpen ? "rotate-180 text-purple-400" : "text-slate-400"}`}
-              />
-            )}
-          </button>
+            <SubItem label="Add Blog" />
+            <SubItem label="View Blog" />
+          </Dropdown>
 
-          {blogOpen && !collapsed && (
-            <div className="ml-8 space-y-1">
-              <SubItem label="Add Blog" />
-              <SubItem label="View Blog" />
-            </div>
-          )}
+          {/* PRICE MANAGEMENT */}
+          <Dropdown
+            icon={<FiDollarSign className="text-green-400" />}
+            label="Price Management"
+            open={priceOpen}
+            setOpen={setPriceOpen}
+            collapsed={collapsed}
+          >
+            <SubItem
+              label="Add Price"
+              onClick={() => {
+                navigate("/price/add");
+                setSidebarOpen(false);
+              }}
+            />
+            <SubItem
+              label="View Prices"
+              onClick={() => {
+                navigate("/price");
+                setSidebarOpen(false);
+              }}
+            />
+          </Dropdown>
 
-          <SidebarItem icon={<FiDollarSign />} label="Price Management" collapsed={collapsed} color="text-green-400" />
-          <SidebarItem icon={<FiUsers />} label="Lead Management" collapsed={collapsed} color="text-cyan-400" />
-          <SidebarItem icon={<FiCheckCircle />} label="Finalize Work" collapsed={collapsed} color="text-emerald-400" />
-          <SidebarItem icon={<FiStar />} label="Testimonial Management" collapsed={collapsed} color="text-yellow-400" />
-          <SidebarItem icon={<FiBriefcase />} label="Project & Client" collapsed={collapsed} color="text-orange-400" />
+          <SidebarItem
+            icon={<FiUsers />}
+            label="Lead Management"
+            collapsed={collapsed}
+            color="text-cyan-400"
+          />
+
+          <SidebarItem
+            icon={<FiCheckCircle />}
+            label="Finalize Work"
+            collapsed={collapsed}
+            color="text-emerald-400"
+          />
+
+          <SidebarItem
+            icon={<FiStar />}
+            label="Testimonial Management"
+            collapsed={collapsed}
+            color="text-yellow-400"
+          />
+
+          {/* PROJECT & CLIENT */}
+          <Dropdown
+            icon={<FiBriefcase className="text-orange-400" />}
+            label="Project & Client"
+            open={projectOpen}
+            setOpen={setProjectOpen}
+            collapsed={collapsed}
+          >
+            <SubItem
+              label="Add Project"
+              onClick={() => {
+                navigate("/projects/add");
+                setSidebarOpen(false);
+              }}
+            />
+            <SubItem
+              label="View Projects"
+              onClick={() => {
+                navigate("/projects");
+                setSidebarOpen(false);
+              }}
+            />
+            <SubItem label="Clients" />
+          </Dropdown>
         </nav>
 
         {/* PROFILE */}
         <div className="border-t border-slate-800 p-3">
-          <div
-            className="flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer
-            bg-[#0f141b] hover:bg-[#161c25] hover:shadow-lg transition"
-          >
+          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition">
             <img
               src="https://i.pravatar.cc/40"
-              alt="Profile"
               className="w-9 h-9 rounded-full ring-2 ring-blue-500"
             />
-
             {!collapsed && (
-              <div className="flex-1">
-                <p className="text-sm font-semibold">Admin User</p>
-                <p className="text-xs text-slate-400">Administrator</p>
-              </div>
-            )}
-
-            {!collapsed && (
-              <FiLogOut className="text-slate-400 hover:text-red-400 transition" />
+              <>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold">Admin User</p>
+                  <p className="text-xs text-slate-400">Administrator</p>
+                </div>
+                <FiLogOut className="text-slate-400 hover:text-red-400" />
+              </>
             )}
           </div>
         </div>
@@ -108,22 +168,46 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
   );
 };
 
-const SidebarItem = ({ icon, label, collapsed, color }) => (
+/* ---------- COMPONENTS ---------- */
+
+const SidebarItem = ({ icon, label, collapsed, color, onClick }) => (
   <button
-    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl
-    hover:bg-[#161c25] hover:shadow-lg transition group"
+    onClick={onClick}
+    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
   >
-    <span className={`text-lg ${color} group-hover:scale-110 transition`}>
-      {icon}
-    </span>
-    {!collapsed && <span className="font-medium">{label}</span>}
+    <span className={`text-lg ${color}`}>{icon}</span>
+    {!collapsed && <span>{label}</span>}
   </button>
 );
 
-const SubItem = ({ label }) => (
+const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
+  <>
+    <button
+      onClick={() => setOpen(!open)}
+      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
+    >
+      <div className="flex items-center gap-3">
+        {icon}
+        {!collapsed && <span>{label}</span>}
+      </div>
+      {!collapsed && (
+        <FiChevronDown
+          className={`transition ${
+            open ? "rotate-180 text-blue-400" : "text-slate-400"
+          }`}
+        />
+      )}
+    </button>
+
+    {open && !collapsed && <div className="ml-8 space-y-1">{children}</div>}
+  </>
+);
+
+const SubItem = ({ label, onClick }) => (
   <button
-    className="block w-full text-left px-3 py-2 rounded-lg text-slate-400
-    hover:text-white hover:bg-[#1b2230] transition"
+    onClick={onClick}
+    className="block w-full text-left px-3 py-2 rounded-lg
+    text-slate-400 hover:text-white hover:bg-[#1b2230] transition"
   >
     {label}
   </button>
