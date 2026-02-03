@@ -25,7 +25,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
       {/* MOBILE OVERLAY */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden cursor-pointer"
+          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -40,12 +40,15 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
         {/* LOGO */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800">
           {!collapsed && (
-            <span className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer">
+            <span
+              className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
+              onClick={() => navigate("/dashboard")}
+            >
               Admin Panel
             </span>
           )}
           <button
-            className="lg:hidden text-slate-400 cursor-pointer"
+            className="lg:hidden text-slate-400"
             onClick={() => setSidebarOpen(false)}
           >
             <FiX />
@@ -59,7 +62,10 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             label="Dashboard"
             collapsed={collapsed}
             color="text-blue-400"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => {
+              navigate("/dashboard");
+              setSidebarOpen(false);
+            }}
           />
 
           {/* BLOG */}
@@ -74,7 +80,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             <SubItem label="View Blog" />
           </Dropdown>
 
-          {/* PRICE MANAGEMENT */}
+          {/* PRICE */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
             label="Price Management"
@@ -112,14 +118,19 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             color="text-emerald-400"
           />
 
+          {/* ✅ TESTIMONIAL ROUTE ADDED */}
           <SidebarItem
             icon={<FiStar />}
             label="Testimonial Management"
             collapsed={collapsed}
             color="text-yellow-400"
+            onClick={() => {
+              navigate("/testimonial");
+              setSidebarOpen(false);
+            }}
           />
 
-          {/* PROJECT & CLIENT */}
+          {/* PROJECTS */}
           <Dropdown
             icon={<FiBriefcase className="text-orange-400" />}
             label="Project & Client"
@@ -147,14 +158,15 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 
         {/* PROFILE */}
         <div className="border-t border-slate-800 p-3">
-          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition cursor-pointer">
+          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition">
             <img
               src="https://i.pravatar.cc/40"
-              className="w-9 h-9 rounded-full ring-2 ring-blue-500 cursor-pointer"
+              className="w-9 h-9 rounded-full ring-2 ring-blue-500"
+              alt="profile"
             />
             {!collapsed && (
               <>
-                <div className="flex-1 cursor-pointer">
+                <div className="flex-1">
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
@@ -173,10 +185,10 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 const SidebarItem = ({ icon, label, collapsed, color, onClick }) => (
   <button
     onClick={onClick}
-    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition cursor-pointer"
+    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
   >
-    <span className={`text-lg ${color} cursor-pointer`}>{icon}</span>
-    {!collapsed && <span className="cursor-pointer">{label}</span>}
+    <span className={`text-lg ${color}`}>{icon}</span>
+    {!collapsed && <span>{label}</span>}
   </button>
 );
 
@@ -184,17 +196,15 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
   <>
     <button
       onClick={() => setOpen(!open)}
-      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition cursor-pointer"
+      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
     >
-      <div className="flex items-center gap-3 cursor-pointer">
+      <div className="flex items-center gap-3">
         {icon}
-        {!collapsed && <span className="cursor-pointer">{label}</span>}
+        {!collapsed && <span>{label}</span>}
       </div>
       {!collapsed && (
         <FiChevronDown
-          className={`transition cursor-pointer ${
-            open ? "rotate-180 text-blue-400" : "text-slate-400"
-          }`}
+          className={`transition ${open ? "rotate-180 text-blue-400" : "text-slate-400"}`}
         />
       )}
     </button>
@@ -207,7 +217,7 @@ const SubItem = ({ label, onClick }) => (
   <button
     onClick={onClick}
     className="block w-full text-left px-3 py-2 rounded-lg
-    text-slate-400 hover:text-white hover:bg-[#1b2230] transition cursor-pointer"
+    text-slate-400 hover:text-white hover:bg-[#1b2230] transition"
   >
     {label}
   </button>

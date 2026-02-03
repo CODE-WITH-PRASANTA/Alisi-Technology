@@ -8,6 +8,7 @@ import AddProject from "./Pages/AddProject";
 import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
 import ViewPrices from "./Pages/ViewPrices";
+import TestimonialPage from "./Pages/Testimonial/TestimonialPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/projects" element={<ViewProjects />} />
             <Route path="/price" element={<ViewPrices />} />
             <Route path="/price/add" element={<AddPrice />} />
+            <Route path="/testimonial" element={<TestimonialPage />} />
           </Route>
 
           {/* FALLBACK */}
