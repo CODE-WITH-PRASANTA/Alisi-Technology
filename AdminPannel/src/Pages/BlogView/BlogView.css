@@ -1,10 +1,13 @@
 .bv-main-section{
-  background:#f6f7fb;
+  background:linear-gradient(180deg,#0f141b,#0b0f14);
+  
+  color:#fff;
 }
 
 .bv-main-heading{
   font-size:42px;
   font-weight:600;
+  margin-bottom:30px;
 }
 
 /* TOP LAYOUT */
@@ -21,8 +24,10 @@
 .bv-feature-card{
   flex:2;
   position:relative;
-  border-radius:18px;
+  border-radius:20px;
   overflow:hidden;
+  border:1px solid #1f2933;
+  box-shadow:0 12px 35px rgba(0,0,0,.6);
 }
 
 .bv-feature-card img{
@@ -36,9 +41,9 @@
   bottom:0;
   left:0;
   right:0;
-  padding:30px;
+  padding:32px;
   color:#fff;
-  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
 }
 
 .bv-feature-overlay h3{
@@ -50,6 +55,7 @@
   display:flex;
   gap:20px;
   font-size:14px;
+  color:#9ca3af;
 }
 
 /* SIDE BLOGS */
@@ -62,34 +68,42 @@
 }
 
 .bv-side-card{
-  background:#fff;
+  background:linear-gradient(180deg,#0f141b,#0b0f14);
   display:flex;
   gap:15px;
   padding:18px;
-  border-radius:16px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  border-radius:18px;
+  border:1px solid #1f2933;
+  box-shadow:0 10px 28px rgba(0,0,0,.6);
+  transition:.3s;
+}
+
+.bv-side-card:hover{
+  transform:translateY(-4px);
 }
 
 .bv-side-card img{
   width:120px;
   height:90px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:14px;
 }
 
 .bv-side-content h4{
   font-size:18px;
   margin:8px 0;
+  color:#fff;
 }
 
 .bv-side-content p{
   font-size:14px;
-  color:#666;
+  color:#9ca3af;
 }
 
 .bv-side-date{
   font-size:14px;
   font-weight:600;
+  color:#38bdf8;
 }
 
 /* GRID */
@@ -103,10 +117,16 @@
 }
 
 .bv-grid-card{
-  background:#fff;
-  border-radius:16px;
+  background:linear-gradient(180deg,#0f141b,#0b0f14);
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  border:1px solid #1f2933;
+  box-shadow:0 10px 28px rgba(0,0,0,.6);
+  transition:.3s;
+}
+
+.bv-grid-card:hover{
+  transform:translateY(-6px);
 }
 
 .bv-grid-card img{
@@ -120,6 +140,7 @@
   font-size:16px;
   text-align:center;
   line-height:1.5;
+  color:#e5e7eb;
 }
 
 /* RESPONSIVE */
