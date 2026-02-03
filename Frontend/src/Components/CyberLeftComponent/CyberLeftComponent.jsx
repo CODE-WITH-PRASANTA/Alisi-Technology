@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./CyberLeftComponent.css";
 
-import bannerImg from "../../assets/service-details-2.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
+import bannerImg from "../../assets/Service-details-001.webp";
+import imgOne from "../../assets/Service-details-002.webp";
+import imgTwo from "../../assets/Service-details-002.webp";
 
 const faqData = [
   {

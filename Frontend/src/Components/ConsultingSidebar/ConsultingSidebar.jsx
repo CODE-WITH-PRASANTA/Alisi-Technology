@@ -1,7 +1,7 @@
 import React from "react";
 import "./ConsultingSidebar.css";
 
-import sidebarPersonImg from "../../assets/service-details-2.webp";
+import sidebarPersonImg from "../../assets/Service-details-002.webp";
 
 const services = [
    "BPO Services",
