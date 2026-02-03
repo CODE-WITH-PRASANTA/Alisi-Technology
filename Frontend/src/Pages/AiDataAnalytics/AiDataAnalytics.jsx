@@ -4,6 +4,7 @@ import "./AiDataAnalytics.css";
 import LeftContent from "../../Components/LeftContent/LeftContent";
 import AiDataAnalyticsSidebar from "../../Components/AiDataAnalyticsSidebar/AiDataAnalyticsSidebar";
 import Aibreadcrum from "../../Components/Aibreadcrum/Aibreadcrum"
+import PricingSection from "../../Components/PricingSection/PricingSection";
 
 const AiDataAnalytics = () => {
   return (
@@ -20,9 +21,11 @@ const AiDataAnalytics = () => {
         {/* RIGHT SIDEBAR */}
         <div className="ai-right-section">
           <AiDataAnalyticsSidebar />
-        </div>
 
+        </div>
+         
       </div>
+       <PricingSection />
     </section>
   );
 };

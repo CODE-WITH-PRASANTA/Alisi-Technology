@@ -9,7 +9,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logo from "../../Assets/logo.png" // ✅ ADD THIS
+import logo from "../../Assets/Logo 003.png" // ✅ ADD THIS
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -58,13 +58,17 @@ const Navbar = () => {
 
               <div className={`tm-dropdown-menu ${serviceOpen ? "show" : ""}`}>
                 <NavLink to="/services/all-services">All Services</NavLink>
-                <NavLink to="/services/Data-Analytics">AI & Data Analytics</NavLink>
-                <NavLink to="/services/Cloud">Cloud</NavLink>
+                <NavLink to="/services/Data-Analytics">Artificial Intelligence and Data & Analytics. </NavLink>
+                <NavLink to="/services/bpo" >BPO Services</NavLink>
+                <NavLink to="/services/kpo" >KPO Services</NavLink>
+                <NavLink to="/services/Cloud">Cloud computing</NavLink>
+                <NavLink to="/services/Cognitive">Cognitive Business Operations</NavLink>
                 <NavLink to="/services/Consulting">Consulting</NavLink>
                 <NavLink to="/services/Cybersecurity">Cybersecurity</NavLink>
                 <NavLink to="/services/Enterprise-Solutions">Enterprise Solutions</NavLink>
-                <NavLink to="/services/IoT-Digital-Eng.">IoT & Digital Eng.</NavLink>
-                <NavLink to="/services/Sustainability">Sustainability</NavLink>
+                <NavLink to="/services/IoT-Digital-Eng.">IoT and Digital Engineering</NavLink>
+                <NavLink to="/services/Network">Network Solutions and Services</NavLink>
+                <NavLink to="/services/Sustainability">Sustainability Services</NavLink>
               </div>
             </div>
 
