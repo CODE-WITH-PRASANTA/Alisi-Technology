@@ -9,6 +9,8 @@ import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
 import ViewPrices from "./Pages/ViewPrices";
 import TestimonialPage from "./Pages/Testimonial/TestimonialPage";
+import BlogManagerPage from "./Pages/BlogManager/BlogManagerPage";
+import BlogView from "./Pages/BlogView/BlogView";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
             <Route path="/price" element={<ViewPrices />} />
             <Route path="/price/add" element={<AddPrice />} />
             <Route path="/testimonial" element={<TestimonialPage />} />
-          </Route>
+            <Route path="/blog" element={<BlogManagerPage />} />   
+            <Route path="/blog-view" element={<BlogView />} />
+           </Route>
 
           {/* FALLBACK */}
           <Route path="*" element={<Navigate to="/login" replace />} />
