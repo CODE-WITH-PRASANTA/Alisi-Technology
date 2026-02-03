@@ -13,8 +13,11 @@ const AddProject = () => {
     completeDate: "",
     category: "",
     projectImg: null,
-    galleryImg: [], // ✅ ARRAY
+    galleryImg: [],
   });
+
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   /* ---------- HANDLERS ---------- */
 
@@ -33,6 +36,7 @@ const AddProject = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = new FormData();
 
@@ -46,17 +50,40 @@ const AddProject = () => {
       }
     });
 
-    await fetch("http://localhost:5000/api/projects", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      await fetch("http://localhost:5000/api/projects", {
+        method: "POST",
+        body: formData,
+      });
 
-    alert("Project added successfully");
+      setSuccess(true);
+
+      setForm({
+        title: "",
+        content: "",
+        quotes: "",
+        clientName: "",
+        companyName: "",
+        budget: "",
+        location: "",
+        sector: "",
+        completeDate: "",
+        category: "",
+        projectImg: null,
+        galleryImg: [],
+      });
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="h-[calc(100vh-4rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
-      
+
       {/* LEFT FORM */}
       <form
         onSubmit={handleSubmit}
@@ -67,23 +94,19 @@ const AddProject = () => {
           Add New Project
         </h2>
 
+        {success && (
+          <div className="bg-green-500/10 border border-green-500 text-green-400 px-4 py-3 rounded-lg text-sm">
+            ✅ Project added successfully!
+          </div>
+        )}
+
         <Input label="Project Title" name="title" value={form.title} onChange={handleChange} />
         <Textarea label="Project Content" name="content" value={form.content} onChange={handleChange} />
         <Textarea label="Quotes" name="quotes" value={form.quotes} onChange={handleChange} />
 
         <div className="grid md:grid-cols-2 gap-4">
-          <FileInput
-            label="Project Image"
-            name="projectImg"
-            onChange={handleProjectImage}
-          />
-
-          <FileInput
-            label="Gallery Images"
-            name="galleryImg"
-            multiple
-            onChange={handleGalleryImages}
-          />
+          <FileInput label="Project Image" onChange={handleProjectImage} />
+          <FileInput label="Gallery Images" multiple onChange={handleGalleryImages} />
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -98,28 +121,44 @@ const AddProject = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium"
+          disabled={loading}
+          className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60
+          text-white px-6 py-2 rounded-lg font-medium"
         >
-          Submit Project
+          {loading ? "Submitting..." : "Submit Project"}
         </button>
       </form>
 
-      {/* RIGHT PREVIEW */}
+      {/* RIGHT LIVE PREVIEW */}
       <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto no-scrollbar">
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
         </h3>
 
-        {/* Project Image Preview */}
-        {form.projectImg && (
+        {form.projectImg ? (
           <img
             src={URL.createObjectURL(form.projectImg)}
             className="rounded-xl w-full h-40 object-cover"
-            alt="Project Preview"
+            alt="Preview"
           />
+        ) : (
+          <div className="h-40 flex items-center justify-center text-slate-500 border border-dashed border-slate-700 rounded-xl">
+            Project Image Preview
+          </div>
         )}
 
-        {/* Gallery Preview */}
+        <h2 className="text-xl font-bold text-white">
+          {form.title || "Project Title"}
+        </h2>
+
+        <p className="text-sm text-slate-400">
+          {form.content || "Project description will appear here..."}
+        </p>
+
+        <blockquote className="italic text-slate-300 border-l-4 border-blue-500 pl-4">
+          {form.quotes || "Project quote will appear here"}
+        </blockquote>
+
         {form.galleryImg.length > 0 && (
           <div className="grid grid-cols-3 gap-2">
             {form.galleryImg.map((img, i) => (
@@ -132,17 +171,6 @@ const AddProject = () => {
             ))}
           </div>
         )}
-
-        <div>
-          <p className="text-xl font-bold">{form.title || "Project Title"}</p>
-          <p className="text-sm text-slate-400 mt-2">
-            {form.content || "Project description will appear here"}
-          </p>
-        </div>
-
-        <blockquote className="italic text-slate-300 border-l-4 border-blue-500 pl-4">
-          {form.quotes || "Project quote"}
-        </blockquote>
 
         <ul className="text-sm text-slate-400 space-y-1">
           <li><b>Client:</b> {form.clientName || "-"}</li>
@@ -188,10 +216,6 @@ const Textarea = ({ label, ...props }) => (
 const FileInput = ({ label, ...props }) => (
   <div>
     <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input
-      type="file"
-      {...props}
-      className="w-full text-sm text-slate-400"
-    />
+    <input type="file" {...props} className="w-full text-sm text-slate-400" />
   </div>
 );
