@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import "./LeftContent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
+import bannerImg from "../../Assets/AI&Data-1.webp";
+import imgOne from "../../Assets/AI-data-4.webp";
+import imgTwo from "../../Assets/AI&data-3.webp";
 
 const faqData = [
   {
-    question: "What are the main types of cloud computing?",
+    question: "What AI services does Alisi Technology provide?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions.",
+      "Alisi Technology delivers end-to-end AI solutions including machine learning models, intelligent automation, predictive analytics, and custom AI applications—helping businesses turn data into measurable outcomes.",
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How does data analytics improve business performance?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data.",
+      "Our data analytics solutions transform raw data into actionable insights, enabling smarter decisions, improved efficiency, and faster growth through real-time dashboards, advanced analytics, and business intelligence.",
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "Can AI be integrated with existing systems?",
     answer:
-      "Yes, most applications can be migrated using proven cloud migration strategies.",
+      "Yes. We seamlessly integrate AI models and analytics platforms into your current applications and infrastructure—enhancing performance without disrupting operations.",
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "Is my data secure with AI and analytics platforms?",
     answer:
-      "It eliminates large hardware investments and offers flexible, pay-as-you-go pricing models.",
+      "Absolutely. Alisi Technology implements enterprise-grade security, encryption, access control, and continuous monitoring to ensure your data remains protected, compliant, and reliable.",
   },
 ];
 
@@ -44,36 +44,31 @@ const LeftContent = () => {
 
       {/* ================= MAIN HEADING ================= */}
       <h1 className="ai-analytics-main-heading">
-        Cloud Computing: Transforming the Future of IT Solutions
+        Bringing AI to Life with Data, Models & Intelligent Agents
       </h1>
 
       {/* ================= DESCRIPTION ================= */}
       <p className="ai-analytics-text">
-        Cloud computing is transforming how organizations store, manage, and
-        access data. By delivering computing services over the internet,
-        businesses can scale faster, improve collaboration, and reduce
-        operational costs while maintaining security and performance.
+       Our strategy moves beyond traditional enterprise software toward a modern paradigm powered by Data, AI Models, and Intelligent Agents—with humans always in the loop.
       </p>
 
       <p className="ai-analytics-text">
-        Our cloud solutions span Infrastructure as a Service (IaaS), Platform as
-        a Service (PaaS), and Software as a Service (SaaS), enabling businesses
-        to modernize IT systems and adapt to evolving digital demands.
+        We build intelligent systems that automate processes, enhance decision-making, and create reimagined value chains across industries. From predictive analytics to autonomous workflows, Alisi Technology helps you operationalize AI across your organization.
       </p>
 
       {/* ================= FEATURES ================= */}
       <div className="ai-analytics-feature-container">
         <ul className="ai-analytics-feature-list">
           <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Build custom AI models</li>
+          <li>Deploy intelligent automation</li>
+          <li>Flexible Storage Architecture</li>
         </ul>
 
         <ul className="ai-analytics-feature-list">
-          <li>Compliance & Regulatory Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>Create AI-powered applications</li>
+          <li>Business intelligence dashboards</li>
+          <li>Data engineering & architecture</li>
         </ul>
       </div>
 
@@ -92,28 +87,25 @@ const LeftContent = () => {
         <div className="ai-analytics-values-grid">
           <div className="ai-analytics-value-card">
             <span>01</span>
-            <h4>Client-Focused Thinking</h4>
+            <h4>Client-First Strategy</h4>
             <p>
-              We align technology with real business goals to deliver measurable
-              value and long-term impact.
+             We align technology with real business objectives—delivering measurable outcomes and sustainable value.
             </p>
           </div>
 
           <div className="ai-analytics-value-card">
             <span>02</span>
-            <h4>Continuous Learning & Innovation</h4>
+            <h4>Security, Quality & Reliability</h4>
             <p>
-              Our teams continuously strengthen their expertise through hands-on
-              experience and emerging technologies.
+              We follow global best practices to provide secure, compliant, and highly reliable IT and cloud services you can trust
             </p>
           </div>
 
           <div className="ai-analytics-value-card">
             <span>03</span>
-            <h4>Security, Quality & Reliability</h4>
+            <h4>Continuous Learning & Innovation</h4>
             <p>
-              We follow industry best practices to deliver secure, compliant,
-              and highly reliable cloud and IT services.
+              Our teams stay ahead of emerging technologies through hands-on experience, certifications, and continuous upskilling to bring you modern, future-proof solutions.
             </p>
           </div>
 
@@ -121,8 +113,7 @@ const LeftContent = () => {
             <span>04</span>
             <h4>Long-Term Partnership</h4>
             <p>
-              Beyond delivery, we provide continuous support and strategic
-              guidance to help businesses scale with confidence.
+             Beyond delivery, we offer continuous support and strategic guidance—helping your business grow with confidence.
             </p>
           </div>
         </div>
@@ -131,36 +122,35 @@ const LeftContent = () => {
       {/* ================= CUSTOMER SERVICES ================= */}
       <div className="ai-analytics-services-section">
         <h2 className="ai-analytics-section-title">
-          Our Range of Customer Services
+         Powering the Intelligent Enterprise of Tomorrow
         </h2>
 
         <p className="ai-analytics-section-desc">
-          We deliver reliable cloud and IT services that improve operational
-          efficiency, enhance security, and support sustainable business growth.
+         At Alisi Technology, we deliver intelligent cloud, AI, and IT solutions designed to accelerate growth, enhance security, and improve operational performance. Our customer-centric approach ensures every solution is tailored to your business goals—helping you scale faster in today’s digital economy.
         </p>
 
         <div className="ai-analytics-card-grid">
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Enhanced Customer Experience</h4>
             <p>
-              Tailored cloud solutions improve performance and user experience.
+              We design smart digital platforms and cloud environments that improve performance, availability, and user engagement—helping your business deliver seamless experiences across every touchpoint.
             </p>
           </div>
 
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">02</span>
-            <h4>Operational Efficiency</h4>
+            <h4>Operational Excellence</h4>
             <p>
-              Automation and optimization reduce manual effort and downtime.
+              Through automation, system optimization, and modern infrastructure, we reduce manual effort, minimize downtime, and streamline workflows to maximize productivity.
             </p>
           </div>
 
           <div className="ai-analytics-service-card">
             <span className="ai-analytics-card-number">03</span>
-            <h4>Actionable Insights</h4>
+            <h4>Data-Driven Intelligence</h4>
             <p>
-              Data-driven strategies enable smarter decision-making.
+              Our analytics and AI solutions transform raw data into actionable insights, empowering leadership teams to make confident, informed decisions.
             </p>
           </div>
         </div>

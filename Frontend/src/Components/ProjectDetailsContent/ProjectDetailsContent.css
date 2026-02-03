@@ -3,12 +3,14 @@
   margin-top: 100px;
 }
 
+/* HERO IMAGE */
 .projectContent__image img {
   width: 100%;
   border-radius: 18px;
   margin-bottom: 35px;
 }
 
+/* TITLE */
 .projectContent__title {
   font-size: 36px;
   font-weight: 700;
@@ -16,18 +18,29 @@
   margin-bottom: 20px;
 }
 
+/* SUBTITLE */
 .projectContent__subtitle {
   font-size: 26px;
   margin: 40px 0 15px;
 }
 
+/* DESCRIPTION */
 .projectContent__desc {
   color: #bdbdbd;
   line-height: 1.8;
   margin-bottom: 15px;
 }
 
-/* Features */
+/* QUOTE */
+.projectContent__quote {
+  font-style: italic;
+  color: #e0e0e0;
+  border-left: 4px solid #e5ff9f;
+  padding-left: 18px;
+  margin: 20px 0;
+}
+
+/* FEATURES */
 
 .projectContent__features {
   display: grid;
@@ -49,13 +62,26 @@
   color: #e5ff9f;
 }
 
-/* Gallery */
+/* GALLERY */
 
 .projectContent__gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin-top: 30px;
+
+  /* smooth transition */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.projectContent__gallery.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projectContent__gallery.hide {
+  opacity: 0;
+  transform: translateY(14px);
 }
 
 .projectContent__galleryItem {
@@ -68,7 +94,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .projectContent__galleryOverlay {
@@ -79,7 +105,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .projectContent__galleryOverlay svg {
@@ -94,7 +120,7 @@
   opacity: 1;
 }
 
-/* Pagination */
+/* PAGINATION */
 
 .projectContent__pagination {
   margin-top: 50px;
@@ -114,8 +140,25 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.projectContent__navBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.projectContent__navBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* PAGE INFO */
+.projectContent__pageInfo {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+/* GRID ICON (optional, untouched) */
 .projectContent__gridIcon {
   display: grid;
   grid-template-columns: repeat(2, 8px);
@@ -129,7 +172,7 @@
   border-radius: 2px;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 
 @media (max-width: 991px) {
   .projectContent__gallery {

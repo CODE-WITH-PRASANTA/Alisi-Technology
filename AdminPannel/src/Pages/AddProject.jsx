@@ -13,43 +13,100 @@ const AddProject = () => {
     completeDate: "",
     category: "",
     projectImg: null,
-    galleryImg: null,
+    galleryImg: [],
   });
+
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  /* ---------- HANDLERS ---------- */
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleImage = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.files[0] });
+  const handleProjectImage = (e) => {
+    setForm({ ...form, projectImg: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleGalleryImages = (e) => {
+    setForm({ ...form, galleryImg: Array.from(e.target.files) });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Project Data:", form);
+    setLoading(true);
+
+    const formData = new FormData();
+
+    Object.keys(form).forEach((key) => {
+      if (key === "galleryImg") {
+        form.galleryImg.forEach((file) =>
+          formData.append("galleryImg", file)
+        );
+      } else {
+        formData.append(key, form[key]);
+      }
+    });
+
+    try {
+      await fetch("http://localhost:5000/api/projects", {
+        method: "POST",
+        body: formData,
+      });
+
+      setSuccess(true);
+
+      setForm({
+        title: "",
+        content: "",
+        quotes: "",
+        clientName: "",
+        companyName: "",
+        budget: "",
+        location: "",
+        sector: "",
+        completeDate: "",
+        category: "",
+        projectImg: null,
+        galleryImg: [],
+      });
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="h-[calc(100vh-4rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
-      
-      {/* LEFT FORM (SCROLLABLE) */}
+
+      {/* LEFT FORM */}
       <form
         onSubmit={handleSubmit}
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
-        rounded-2xl p-6 space-y-5 overflow-y-auto scroll-smooth no-scrollbar"
+        rounded-2xl p-6 space-y-5 overflow-y-auto no-scrollbar"
       >
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Add New Project
         </h2>
+
+        {success && (
+          <div className="bg-green-500/10 border border-green-500 text-green-400 px-4 py-3 rounded-lg text-sm">
+            ✅ Project added successfully!
+          </div>
+        )}
 
         <Input label="Project Title" name="title" value={form.title} onChange={handleChange} />
         <Textarea label="Project Content" name="content" value={form.content} onChange={handleChange} />
         <Textarea label="Quotes" name="quotes" value={form.quotes} onChange={handleChange} />
 
         <div className="grid md:grid-cols-2 gap-4">
-          <FileInput label="Project Image" name="projectImg" onChange={handleImage} />
-          <FileInput label="Related Image" name="galleryImg" onChange={handleImage} />
+          <FileInput label="Project Image" onChange={handleProjectImage} />
+          <FileInput label="Gallery Images" multiple onChange={handleGalleryImages} />
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -64,36 +121,56 @@ const AddProject = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium"
+          disabled={loading}
+          className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60
+          text-white px-6 py-2 rounded-lg font-medium"
         >
-          Submit Project
+          {loading ? "Submitting..." : "Submit Project"}
         </button>
       </form>
 
-      {/* RIGHT PREVIEW (SCROLLABLE) */}
+      {/* RIGHT LIVE PREVIEW */}
       <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto no-scrollbar">
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
         </h3>
 
-        {form.projectImg && (
+        {form.projectImg ? (
           <img
             src={URL.createObjectURL(form.projectImg)}
             className="rounded-xl w-full h-40 object-cover"
-            alt="Project Preview"
+            alt="Preview"
           />
+        ) : (
+          <div className="h-40 flex items-center justify-center text-slate-500 border border-dashed border-slate-700 rounded-xl">
+            Project Image Preview
+          </div>
         )}
 
-        <div>
-          <p className="text-xl font-bold">{form.title || "Project Title"}</p>
-          <p className="text-sm text-slate-400 mt-2">
-            {form.content || "Project description will appear here"}
-          </p>
-        </div>
+        <h2 className="text-xl font-bold text-white">
+          {form.title || "Project Title"}
+        </h2>
+
+        <p className="text-sm text-slate-400">
+          {form.content || "Project description will appear here..."}
+        </p>
 
         <blockquote className="italic text-slate-300 border-l-4 border-blue-500 pl-4">
-          {form.quotes || "Project quote"}
+          {form.quotes || "Project quote will appear here"}
         </blockquote>
+
+        {form.galleryImg.length > 0 && (
+          <div className="grid grid-cols-3 gap-2">
+            {form.galleryImg.map((img, i) => (
+              <img
+                key={i}
+                src={URL.createObjectURL(img)}
+                className="rounded-lg h-20 object-cover"
+                alt="Gallery"
+              />
+            ))}
+          </div>
+        )}
 
         <ul className="text-sm text-slate-400 space-y-1">
           <li><b>Client:</b> {form.clientName || "-"}</li>

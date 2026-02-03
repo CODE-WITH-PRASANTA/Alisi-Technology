@@ -9,32 +9,32 @@ const faqData = [
   {
     question: "What are the main types of cloud computing?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "Cloud computing includes Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). At Alisil Technology, we help businesses choose and implement the right cloud model based on performance needs, scalability goals, and budget."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How secure is cloud computing with Alisil Technology?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Security is our top priority. Alisil Technology delivers enterprise-grade cloud security including data encryption, access control, firewall protection, compliance management, and continuous monitoring. Our solutions follow industry best practices to protect your applications, infrastructure, and sensitive business data."
   },
   {
     question: "Can I move my existing applications to the cloud?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes. We provide complete cloud migration services including assessment, planning, data transfer, application modernization, and post-migration optimization. Our experts ensure minimal downtime while securely moving your existing systems to the cloud."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "How does cloud computing reduce IT costs?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "Cloud computing eliminates expensive on-premise hardware and enables pay-as-you-go pricing. With Alisil Technology, businesses reduce infrastructure costs, lower maintenance expenses, and improve resource utilization while gaining scalable computing power."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "How does Alisil Technology collect customer feedback?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "We actively collect customer feedback through performance reviews, surveys, analytics, and ongoing support interactions. This helps us continuously improve our cloud services and deliver solutions aligned with client expectations."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
+    question: "What industries does Alisil Technology serve?",
     answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    "We support multiple industries including healthcare, finance, retail, manufacturing, logistics, and startups by delivering tailored cloud solutions that meet industry-specific compliance and performance requirements."
   }
 ];
 
@@ -55,16 +55,16 @@ const CloudLeftComponent = () => {
 
       {/* TITLE */}
       <h1 className="cloud-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+        Cloud Computing Services by Alisil Technology
       </h1>
 
       {/* DESCRIPTION */}
       <p className="cloud-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        At Alisil Technology, we deliver secure, scalable, and high-performance cloud computing solutions designed to help businesses modernize infrastructure, improve agility, and reduce operational costs. Our cloud services empower organizations to store, manage, and access data seamlessly while maintaining enterprise-grade security and reliability.
       </p>
 
       <p className="cloud-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+        From startups to large enterprises, we provide end-to-end cloud services including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Our expert engineers support cloud migration, system modernization, DevOps integration, and cloud-native development—helping your business adapt to evolving digital demands with confidence.
       </p>
 
       {/* FEATURE LIST */}
@@ -95,11 +95,11 @@ const CloudLeftComponent = () => {
       <div className="cloud-services-section">
 
         <h2 className="cloud-section-title">
-          Our Range of Customer Services
+        Our Range of Cloud Customer Services
         </h2>
 
         <p className="cloud-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          At Alisil Technology, we deliver reliable cloud and IT services that improve operational efficiency, enhance security, and support sustainable business growth.
         </p>
 
         <div className="cloud-card-grid">
@@ -108,23 +108,23 @@ const CloudLeftComponent = () => {
             <span className="cloud-card-number">01</span>
             <h4>Increased Customer Satisfaction</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              Tailored cloud solutions improve performance, availability, and user experience—helping businesses deliver better digital services to their customers.
             </p>
           </div>
 
           <div className="cloud-service-card">
             <span className="cloud-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Operational Efficiency</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              Automation, DevOps practices, and intelligent optimization reduce manual workloads, system downtime, and infrastructure costs.
             </p>
           </div>
 
           <div className="cloud-service-card">
             <span className="cloud-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Actionable Insights</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+              Advanced analytics and monitoring provide real-time visibility into performance, enabling smarter, data-driven business decisions.
             </p>
           </div>
 

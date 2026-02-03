@@ -18,6 +18,7 @@ const Cloud = () => {
         {/* LEFT CONTENT */}
         <div className="cloud-left-section">
           <CloudLeftComponent />
+           <CloudPricing />
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -26,7 +27,7 @@ const Cloud = () => {
         </div>
 
       </div>
-      <CloudPricing />
+     
     </section>
   );
 };

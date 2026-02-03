@@ -1,117 +1,112 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ProjectDetailsContent.css";
 import { FaSearch, FaCheck, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-import mainImg from "../../Assets/project-details.webp";
-import g1 from "../../Assets/project-gallery-1.webp";
-import g2 from "../../Assets/project-gallery-2.webp";
-import g3 from "../../Assets/project-gallery-3.webp";
+const BASE_URL = "http://localhost:5000";
+const IMAGES_PER_PAGE = 3;
 
-const ProjectDetailsContent = () => {
+const ProjectDetailsContent = ({ project }) => {
+  if (!project) return null;
+
+  const gallery = project.galleryImg || [];
+  const totalPages = Math.ceil(gallery.length / IMAGES_PER_PAGE);
+
+  const [page, setPage] = useState(1);
+  const [animate, setAnimate] = useState(true);
+
+  const startIndex = (page - 1) * IMAGES_PER_PAGE;
+  const currentImages = gallery.slice(
+    startIndex,
+    startIndex + IMAGES_PER_PAGE
+  );
+
+  const changePage = (newPage) => {
+    setAnimate(false);
+    setTimeout(() => {
+      setPage(newPage);
+      setAnimate(true);
+    }, 200);
+  };
+
   return (
     <div className="projectContent">
-      {/* Hero Image */}
+
+      {/* HERO IMAGE */}
       <div className="projectContent__image">
-        <img src={mainImg} alt="project" />
+        <img src={`${BASE_URL}/${project.projectImg}`} alt={project.title} />
       </div>
 
-      {/* Title */}
-      <h1 className="projectContent__title">
-        Cloud Migration System: Transforming IT Infrastructure for Scalability.
-      </h1>
+      {/* TITLE */}
+      <h1 className="projectContent__title">{project.title}</h1>
 
-      {/* Description */}
-      <p className="projectContent__desc">
-        Cloud migration has become a crucial strategy for businesses looking to
-        enhance scalability, reduce operational costs, and improve performance.
-        This case study explores how XYZ Retail successfully transitioned from
-        on-premise infrastructure to a cloud-based system.
-      </p>
+      {/* DESCRIPTION */}
+      <p className="projectContent__desc">{project.content}</p>
 
-      <p className="projectContent__desc">
-        Maintaining physical servers and IT personnel was becoming expensive.
-        Their infrastructure lacked the ability to scale quickly during seasonal
-        peaks, resulting in missed opportunities.
-      </p>
+      {/* QUOTES */}
+      {project.quotes && (
+        <blockquote className="projectContent__quote">
+          {project.quotes}
+        </blockquote>
+      )}
 
-      {/* Strategy */}
-      <h2 className="projectContent__subtitle">Cloud Migration Strategies</h2>
+      {/* HIGHLIGHTS */}
+      <h2 className="projectContent__subtitle">Project Highlights</h2>
 
-      <p className="projectContent__desc">
-        The migration started with a full assessment of data, applications, and
-        network dependencies to determine what could be migrated directly and
-        what required re-architecture.
-      </p>
-
-      {/* Features */}
       <div className="projectContent__features">
         <ul>
-          <li>
-            <FaCheck /> Scalable IT Infrastructure
-          </li>
-          <li>
-            <FaCheck /> High Data Security
-          </li>
-          <li>
-            <FaCheck /> Disaster Recovery Solutions
-          </li>
-          <li>
-            <FaCheck /> Flexible Storage Options
-          </li>
+          <li><FaCheck /> Scalable Architecture</li>
+          <li><FaCheck /> Secure Implementation</li>
+          <li><FaCheck /> Optimized Performance</li>
         </ul>
-
         <ul>
-          <li>
-            <FaCheck /> Compliance and Support
-          </li>
-          <li>
-            <FaCheck /> Reduced Hardware
-          </li>
-          <li>
-            <FaCheck /> 24/7 Cloud Monitoring
-          </li>
+          <li><FaCheck /> Industry Best Practices</li>
+          <li><FaCheck /> Client-Centric Approach</li>
+          <li><FaCheck /> On-Time Delivery</li>
         </ul>
       </div>
 
-      {/* Showcase */}
-      <h2 className="projectContent__subtitle">
-        Showcasing Excellence in IT Solutions
-      </h2>
+      {/* GALLERY */}
+      {gallery.length > 0 && (
+        <>
+          <h2 className="projectContent__subtitle">Project Gallery</h2>
 
-      <p className="projectContent__desc">
-        Explore our diverse range of successful IT projects demonstrating
-        innovation and top-notch results.
-      </p>
-
-      {/* Gallery */}
-      <div className="projectContent__gallery">
-        {[g1, g2, g3].map((img, i) => (
-          <div className="projectContent__galleryItem" key={i}>
-            <img src={img} alt="gallery" />
-            <div className="projectContent__galleryOverlay">
-              <FaSearch />
-            </div>
+          <div className={`projectContent__gallery ${animate ? "show" : "hide"}`}>
+            {currentImages.map((img, i) => (
+              <div className="projectContent__galleryItem" key={i}>
+                <img src={`${BASE_URL}/${img}`} alt="gallery" />
+                <div className="projectContent__galleryOverlay">
+                  <FaSearch />
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      {/* Pagination */}
-      <div className="projectContent__pagination">
-        <button className="projectContent__navBtn">
-          <FaArrowLeft /> Previous
-        </button>
+          {/* PAGINATION */}
+          {totalPages > 1 && (
+            <div className="projectContent__pagination">
+              <button
+                className="projectContent__navBtn"
+                disabled={page === 1}
+                onClick={() => changePage(page - 1)}
+              >
+                <FaArrowLeft /> Previous
+              </button>
 
-        <div className="projectContent__gridIcon">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+              <span className="projectContent__pageInfo">
+                Page {page} of {totalPages}
+              </span>
 
-        <button className="projectContent__navBtn">
-          Next <FaArrowRight />
-        </button>
-      </div>
+              <button
+                className="projectContent__navBtn"
+                disabled={page === totalPages}
+                onClick={() => changePage(page + 1)}
+              >
+                Next <FaArrowRight />
+              </button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

@@ -1,25 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./OurProjectDetails.css";
 
-import p1 from "../../Assets/project-1.webp";
-import p2 from "../../Assets/project-2.webp";
-import p3 from "../../Assets/project-3.webp";
-import p4 from "../../Assets/project-4.webp";
-import p5 from "../../Assets/project-5.webp";
-import p6 from "../../Assets/project-6-scaled.webp";
+const BASE_URL = "http://localhost:5000";
 
-const projects = [
-  { img: p1, title: "Cloud Migration System" },
-  { img: p2, title: "Digital Growth Strategy" },
-  { img: p3, title: "Mobile App Development" },
-  { img: p4, title: "Business Transformation" },
-  { img: p5, title: "Customer Experience" },
-  { img: p6, title: "Process Optimization" },
-];
-
-export default function Projects() {
+export default function OurProjectDetails() {
   const rowsRef = useRef([]);
+  const [projects, setProjects] = useState([]);
 
+  /* FETCH PROJECTS */
+  useEffect(() => {
+    fetch("http://localhost:5000/api/projects")
+      .then(res => res.json())
+      .then(data => setProjects(data.projects || []));
+  }, []);
+
+  /* ANIMATION */
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -33,45 +29,55 @@ export default function Projects() {
     );
 
     rowsRef.current.forEach(row => row && observer.observe(row));
-  }, []);
+  }, [projects]);
 
   return (
     <section className="tmProjects-wrapper">
+      {/* ROW 1 */}
       <div
         className="tmProjects-row"
         ref={el => (rowsRef.current[0] = el)}
       >
-        {projects.slice(0, 3).map((item, i) => (
-          <ProjectCard key={i} item={item} />
+        {projects.slice(0, 3).map(project => (
+          <ProjectCard key={project._id} project={project} />
         ))}
       </div>
 
+      {/* ROW 2 */}
       <div
         className="tmProjects-row"
         ref={el => (rowsRef.current[1] = el)}
       >
-        {projects.slice(3, 6).map((item, i) => (
-          <ProjectCard key={i} item={item} />
+        {projects.slice(3, 6).map(project => (
+          <ProjectCard key={project._id} project={project} />
         ))}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ item }) {
+/* PROJECT CARD */
+function ProjectCard({ project }) {
   return (
     <div className="tmProjects-card">
       <div className="tmProjects-imgWrap">
-        <img src={item.img} alt="" />
+        <img
+          src={`${BASE_URL}/${project.projectImg}`}
+          alt={project.title}
+        />
       </div>
 
       <div className="tmProjects-overlay">
         <span className="tmProjects-tag">Solution</span>
-        <h3>{item.title}</h3>
+        <h3>{project.title}</h3>
 
-        <a href="#" className="tmProjects-arrow">
+        {/* ✅ LINK TO DETAILS */}
+        <Link
+          to={`/projects/details/${project._id}`}
+          className="tmProjects-arrow"
+        >
           →
-        </a>
+        </Link>
       </div>
     </div>
   );
