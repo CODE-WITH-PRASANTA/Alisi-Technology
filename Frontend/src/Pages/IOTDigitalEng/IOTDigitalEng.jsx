@@ -5,6 +5,7 @@ import "./IOTDigitalEng.css";
 import IOTBreadcrum from "../../Components/IOTBreadcrum/IOTBreadcrum";
 import IotLeftComponent from "../../Components/IotLeftComponent/IotLeftComponent";
 import IotSidebar from "../../Components/IotSidebar/IotSidebar";
+import IOTPricing from "../../Components/IOTPricing/IOTPricing";
 
 const IOTDigitalEng = () => {
   return (
@@ -24,6 +25,7 @@ const IOTDigitalEng = () => {
         </div>
 
       </div>
+      <IOTPricing />
     </section>
   );
 };

@@ -6,6 +6,7 @@ import "./Cloud.css";
 import CloudBreadcrum from "../../Components/CloudBreadcrum/CloudBreadcrum"
 import CloudLeftComponent from "../../Components/CloudLeftComponent/CloudLeftComponent";
 import CloudSidebar from "../../Components/CloudSidebar/CloudSidebar";
+import CloudPricing from "../../Components/CloudPricing/CloudPricing";
 
 const Cloud = () => {
   return (
@@ -25,6 +26,7 @@ const Cloud = () => {
         </div>
 
       </div>
+      <CloudPricing />
     </section>
   );
 };
