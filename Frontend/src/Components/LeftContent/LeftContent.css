@@ -3,6 +3,7 @@
 .ai-analytics-left-wrapper {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
+   padding-top: 80px; 
 }
 
 /* ================= BANNER ================= */
@@ -289,5 +290,17 @@
   .ai-analytics-value-card,
   .ai-analytics-service-card {
     padding: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-analytics-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-analytics-left-wrapper {
+    padding-top: 30px;
   }
 }

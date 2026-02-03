@@ -70,13 +70,13 @@
 .save-info input {
   width: 18px;
   height: 18px;
-  accent-color: #c7f000;
+  accent-color: #e5ff9f;
 }
 
 /* Button */
 
 .post-btn {
-  background: #c7f000;
+  background: #e5ff9f;
   color: #000;
   border: none;
   padding: 14px 30px;
@@ -106,11 +106,11 @@
 .post-btn:hover {
   background: #000;
   color: #fff;
-  box-shadow: 0 0 0 4px #c7f000;
+  box-shadow: 0 0 0 4px #e5ff9f;
 }
 
 .post-btn:hover span {
-  background: #c7f000;
+  background: #e5ff9f;
   color: #000;
 }
 
