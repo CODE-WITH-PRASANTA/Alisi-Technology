@@ -1,6 +1,5 @@
 import "./MigrationSection.css";
-import imgLeft from "../../assets/blog-9.webp";
-import imgRight from "../../assets/blog-10.webp";
+
 
 export default function MigrationSection() {
   return (
@@ -20,8 +19,8 @@ export default function MigrationSection() {
 
         {/* Images */}
         <div className="migration-images">
-          <img src={imgLeft} alt="meeting" />
-          <img src={imgRight} alt="working woman" />
+          <img src="../../assets/blog-9.webp" alt="meeting" />
+          <img src="../../assets/blog-10.webp" alt="working woman" />
         </div>
 
         <p className="migration-desc">

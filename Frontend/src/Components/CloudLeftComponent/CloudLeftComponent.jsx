@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import "./CloudLeftComponent.css";
-
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
+import './CloudLeftComponent.css'
 
 const faqData = [
   {
@@ -50,7 +46,7 @@ const CloudLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="cloud-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
       </div>
 
       {/* TITLE */}
@@ -87,8 +83,8 @@ const CloudLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="cloud-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src="../../assets/Service-details-002.webp" alt="Team working" />
+        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutInovation.css";
-import aboutMainImg from "../../assets/main.webp";
-import tekminoLogo from "../../assets/tlogo.webp";
+
+
 import { FiArrowUpRight } from "react-icons/fi";
 
 const AboutTekmino = () => {
@@ -11,7 +11,7 @@ const AboutTekmino = () => {
 
         {/* LEFT IMAGE */}
         <div className="tek-about-image-box">
-          <img src={aboutMainImg} alt="About Alisil Technology" />
+          <img src="''../../assets/Main-001.webp" alt="About Alisil Technology" />
         </div>
 
         {/* RIGHT CONTENT */}
@@ -27,7 +27,7 @@ const AboutTekmino = () => {
 
             {/* LOGO BOX */}
             <div className="tek-about-logo-card">
-              <img src={tekminoLogo} alt="Alisil Technology Logo" />
+              <img src="../../assets/T-LOGO.webp" alt="Alisil Technology Logo" />
               <h4>Alisil Technology</h4>
             </div>
 

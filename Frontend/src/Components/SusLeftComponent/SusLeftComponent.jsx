@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./SusLeftComponent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
 
 const faqData = [
   {
@@ -81,7 +78,7 @@ const SusLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="sus-banner-box">
-        <img src={bannerImg} alt="Cloud Computing Services Banner" />
+        <img src="../../assets/Service-details-001.webp" alt="Cloud Computing Services Banner" />
       </div>
 
       {/* TITLE */}
@@ -116,8 +113,8 @@ const SusLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="sus-image-layout">
-        <img src={imgOne} alt="Cloud team collaboration" />
-        <img src={imgTwo} alt="Cloud infrastructure discussion" />
+        <img src="../../assets/Service-details-002.webp" alt="Cloud team collaboration" />
+        <img src="../../assets/Service-details-002.webp" alt="Cloud infrastructure discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}

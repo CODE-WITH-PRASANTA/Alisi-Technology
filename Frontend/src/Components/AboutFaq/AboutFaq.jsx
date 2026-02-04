@@ -3,7 +3,6 @@ import "./AboutFaq.css";
 import { FaPlus, FaMinus, FaPhoneAlt } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import personImg from "../../assets/testimonial-client-1.webp";
 
 const faqData = [
   {
@@ -70,7 +69,7 @@ const FaqSection = () => {
 
             <div className="tek-faq-call-box">
               <img
-                src={personImg}
+                src="../../assets/testimonial-client-1.webp"
                 alt="Alisil Technology consultant"
                 className="tek-faq-person-img"
               />

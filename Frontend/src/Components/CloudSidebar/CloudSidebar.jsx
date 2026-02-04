@@ -1,7 +1,6 @@
 import React from "react";
 import "./CloudSidebar.css";
 
-import sidebarPersonImg from "../../assets/service-details-1.webp";
 
 const services = [
   "BPO Services",
@@ -51,7 +50,7 @@ const CloudSidebar = () => {
         </div>
 
         <div className="cloudd-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Professional" />
+          <img src="../../assets/Service-details-001.webp" alt="Professional" />
         </div>
 
       </div>
