@@ -20,11 +20,11 @@ export default function HomeHero() {
           <span className="tag">[ TRANSFORMING IDEAS ]</span>
 
           <h1>
-            Innovative Tech
+            Empowering Businesses  
             <br />
-            Solutions for
+            Through Smart Digital
             <br />
-            Business.
+            & IT Solutions.
           </h1>
 
           <div className="hero-actions">
@@ -49,7 +49,7 @@ export default function HomeHero() {
 
           {/* Trusted badge */}
           <div className="trusted">
-            ✔ Trusted by 800+ <br /> Tech Giants.
+            ✔ Trusted  800+ <br /> Technology Partner
           </div>
 
           {/* Review card */}

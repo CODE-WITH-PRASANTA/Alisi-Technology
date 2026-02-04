@@ -1,14 +1,14 @@
 import React from "react";
 import "./BlogView.css";
 
-import blogMain from "../../Assets/a1.webp";
-import blogSide1 from "../../Assets/a2.webp";
-import blogSide2 from "../../Assets/a3.webp";
+import blogMain from "../../assets/a5.webp";
+import blogSide1 from "../../assets/a4.webp";
+import blogSide2 from "../../assets/a3.webp";
 
-import grid1 from "../../Assets/a4.webp";
-import grid2 from "../../Assets/a5.webp";
-import grid3 from "../../Assets/a6.webp";
-import grid4 from "../../Assets/a7.webp";
+import grid1 from "../../assets/a3.webp";
+import grid2 from "../../assets/a1.webp";
+import grid3 from "../../assets/a6.webp";
+import grid4 from "../../assets/a7.webp";
 
 const BlogView = () => {
   return (

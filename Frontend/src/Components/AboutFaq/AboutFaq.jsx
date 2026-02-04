@@ -1,20 +1,39 @@
 import React, { useState } from "react";
 import "./AboutFaq.css";
-import { FaPlus, FaMinus, FaPhoneAlt,  } from "react-icons/fa";
+import { FaPlus, FaMinus, FaPhoneAlt } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import personImg from "../../assets/testimonial-client-1.webp"; // your image
 
 const faqData = [
-  "What services does your company offer?",
-  "How can your IT solutions help my business?",
-  "Do you provide support after project completion?",
-  "How long does it take to implement an IT solution?",
-  "Is my data secure with your solutions?"
+  {
+    question: "Who is Alisil Technology and what does the company specialize in?",
+    answer:
+      "Alisil Technology Pvt Ltd is a digital engineering and IoT solutions company focused on delivering smart technology, custom software, cloud platforms, and automation systems that help businesses grow and modernize their operations."
+  },
+  {
+    question: "What makes Alisil Technology different from other IT companies?",
+    answer:
+      "We combine technical expertise with a business-focused approach. Our solutions are customized, scalable, and built with long-term performance in mind, ensuring real value rather than one-size-fits-all technology services."
+  },
+  {
+    question: "What industries does Alisil Technology work with?",
+    answer:
+      "We support clients across manufacturing, logistics, healthcare, education, retail, and technology sectors, delivering tailored digital engineering and IoT solutions based on specific industry needs."
+  },
+  {
+    question: "How experienced is your technical team?",
+    answer:
+      "Our team consists of skilled engineers, developers, and digital specialists with years of hands-on experience in IoT systems, cloud computing, automation, and modern software technologies."
+  },
+  {
+    question: "How does Alisil Technology ensure project quality and reliability?",
+    answer:
+      "We follow structured development processes, perform rigorous testing, maintain strong security standards, and provide continuous support to ensure every solution meets high-quality and performance expectations."
+  }
 ];
 
 const FaqSection = () => {
-  const [activeIndex, setActiveIndex] = useState(4);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -27,33 +46,31 @@ const FaqSection = () => {
         {/* LEFT CONTENT */}
         <div className="tek-faq-left">
 
-          <span className="tek-faq-tag">[ READ FAQS ]</span>
+          <span className="tek-faq-tag">[ ABOUT ALISIL TECHNOLOGY ]</span>
 
           <h2 className="tek-faq-title">
-            Quick Answers For Your <br />
-            Important Questions
+            Learn More About Our <br />
+            Company & Expertise
           </h2>
 
           <button className="tek-faq-contact-btn">
             <span>Contact Us</span>
             <div className="tek-faq-arrow-circle">
-  <FiArrowUpRight className="tek-faq-arrow-icon" />
-</div>
-
-           
+              <FiArrowUpRight className="tek-faq-arrow-icon" />
+            </div>
           </button>
 
           {/* CALL CARD */}
           <div className="tek-faq-call-card">
             <p>
-              Getting started is easy! Simply reach out us through our contact
-              form or give us a call & we’ll schedule.
+              Have questions about our company or services? Our team is always
+              ready to guide you and provide the information you need.
             </p>
 
             <div className="tek-faq-call-box">
               <img
-                src={personImg}
-                alt="person"
+                src="../../assets/testimonial-client-1.webp"
+                alt="Alisil Technology consultant"
                 className="tek-faq-person-img"
               />
 
@@ -72,7 +89,7 @@ const FaqSection = () => {
         {/* RIGHT FAQ */}
         <div className="tek-faq-right">
 
-          {faqData.map((question, index) => (
+          {faqData.map((item, index) => (
             <div
               key={index}
               className={`tek-faq-item ${
@@ -83,7 +100,7 @@ const FaqSection = () => {
                 className="tek-faq-question"
                 onClick={() => toggleFAQ(index)}
               >
-                <h4>{question}</h4>
+                <h4>{item.question}</h4>
 
                 <div className="tek-faq-icon">
                   {activeIndex === index ? <FaMinus /> : <FaPlus />}
@@ -92,12 +109,7 @@ const FaqSection = () => {
 
               {activeIndex === index && (
                 <div className="tek-faq-answer">
-                  <p>
-                    Our solutions are tailored to meet your unique business
-                    needs, improving efficiency, reducing costs, and enabling
-                    seamless digital transformation to boost growth and
-                    productivity with modern technologies.
-                  </p>
+                  <p>{item.answer}</p>
                 </div>
               )}
             </div>
@@ -105,9 +117,6 @@ const FaqSection = () => {
 
         </div>
       </div>
-
-      {/* SCROLL TOP */}
-      
     </section>
   );
 };

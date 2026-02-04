@@ -16,6 +16,11 @@
   object-fit: cover;
 }
 
+.iot-left-wrapper {
+  color: #fff;
+  padding-top: 80px;   /* NEW */
+}
+
 /* TEXT */
 
 .iot-main-heading {
@@ -164,120 +169,29 @@
 /* RESPONSIVE */
 
 /* =====================
-   RESPONSIVE SYSTEM
+   TOP PADDING RESPONSIVE
 ===================== */
-
-/* Large laptops */
-@media (max-width: 1200px) {
-
-  .iot-main-heading {
-    font-size: 36px;
-  }
-
-  .iot-feature-container {
-    gap: 50px;
-  }
-
-  .iot-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 /* Tablets */
 @media (max-width: 992px) {
-
-  .iot-feature-container {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .iot-image-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .iot-card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .iot-banner-box img {
-    height: 320px;
-  }
-
-  .iot-main-heading {
-    font-size: 32px;
-  }
-}
-
-/* Small tablets */
-@media (max-width: 768px) {
-
-  .iot-main-heading {
-    font-size: 28px;
-  }
-
-  .iot-text {
-    font-size: 15px;
-  }
-
-  .iot-section-title {
-    font-size: 30px;
-  }
-
-  .iot-banner-box img {
-    height: 260px;
-  }
-
-  .iot-services-section,
-  .iot-faq-area {
-    margin: 60px 0;
+  .iot-left-wrapper,
+  .iot-sidebar-wrapper {
+    padding-top: 60px;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-
-  .iot-banner-box img {
-    height: 220px;
-  }
-
-  .iot-main-heading {
-    font-size: 24px;
-  }
-
-  .iot-feature-list li {
-    font-size: 14px;
-  }
-
-  .iot-service-card {
-    padding: 22px;
-  }
-
-  .iot-card-number {
-    padding: 5px 10px;
-  }
-
-  .iot-faq-box {
-    padding: 18px;
-  }
-
-  .iot-faq-icon {
-    width: 28px;
-    height: 28px;
+  .iot-left-wrapper,
+  .iot-sidebar-wrapper {
+    padding-top: 40px;
   }
 }
 
 /* Very small phones */
 @media (max-width: 400px) {
-
-  .iot-main-heading {
-    font-size: 22px;
-  }
-
-  .iot-banner-box img {
-    height: 190px;
-  }
-
-  .iot-text {
-    font-size: 14px;
+  .iot-left-wrapper,
+  .iot-sidebar-wrapper {
+    padding-top: 30px;
   }
 }

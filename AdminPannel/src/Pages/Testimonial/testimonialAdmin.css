@@ -178,6 +178,25 @@
   color:#facc15;
   font-size:18px;
 }
+.adm-position{
+  font-size:13px;
+  color:#9ca3af;
+  margin-bottom:6px;
+}
+
+.adm-client-name{
+  font-size:16px;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:2px;
+}
+
+.adm-client-position{
+  font-size:13px;
+  color:#9ca3af;
+  margin-bottom:8px;
+}
+
 
 /* ACTIONS */
 

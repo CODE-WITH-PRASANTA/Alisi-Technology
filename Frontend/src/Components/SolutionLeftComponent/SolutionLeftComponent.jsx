@@ -1,42 +1,52 @@
 import React, { useState } from "react";
 import "./SolutionLeftComponent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
 
 const faqData = [
+  
   {
-    question: "What are the main types of cloud computing?",
+    question: "What are enterprise solutions?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "Enterprise solutions are comprehensive IT systems designed to support large-scale business operations. At Alisil Technology, our enterprise solutions include custom software development, system integration, business process automation, and secure infrastructure services that help organizations improve efficiency, scalability, and decision-making."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How secure are your enterprise and networking services?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Alisil Technology implements enterprise-grade security technologies including next-generation firewalls, encrypted VPNs, access controls, intrusion detection systems, and continuous monitoring. These measures protect your data and systems from cyber threats while ensuring compliance with industry standards."
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "What types of network services does Alisil Technology offer?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "We provide end-to-end network services such as network design and deployment, managed network services, wireless networking, firewall configuration, VPN setup, performance optimization, disaster recovery planning, and 24/7 monitoring—supporting reliable and scalable enterprise environments."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "Can you upgrade or modernize an existing network infrastructure?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "Yes. Our team specializes in network modernization and upgrades. We assess your current infrastructure and implement scalable, high-performance solutions that improve speed, reliability, and security—while minimizing downtime and business disruption."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "How do enterprise solutions help reduce business costs?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "Enterprise solutions reduce costs by automating workflows, optimizing IT resources, centralizing operations, and minimizing manual effort. Alisil Technology helps organizations achieve long-term savings through efficient infrastructure, smarter processes, and proactive system management."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
-    answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    question: "Do you provide custom enterprise software development?",
+    answer:
+      "Absolutely. Alisil Technology designs and develops custom enterprise applications tailored to your business needs, ensuring secure architecture, seamless integrations, and scalable performance to support future growth."
+  },
+  {
+    question: "How do I choose the right cloud or enterprise service provider?",
+    answer:
+      "Choosing the right provider involves evaluating security standards, scalability, industry experience, support capabilities, and customization options. Alisil Technology delivers secure, flexible enterprise and cloud solutions backed by expert guidance, ongoing support, and proven implementation strategies."
+  },
+  {
+    question: "Do you offer ongoing support and monitoring?",
+    answer:
+      "Yes. We provide continuous monitoring, maintenance, and technical support to ensure your enterprise systems remain secure, optimized, and up to date—helping your business operate smoothly 24/7."
   }
 ];
+
+
 
 const SolutionLeftComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -50,81 +60,80 @@ const SolutionLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="solution-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
       </div>
 
       {/* TITLE */}
       <h1 className="solution-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
-      </h1>
+      Enterprise Solutions: Driving Digital Transformation for Modern Businesses      </h1>
 
       {/* DESCRIPTION */}
       <p className="solution-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        At Alisil Technology, we deliver powerful Enterprise IT Solutions designed to streamline operations, enhance productivity, and accelerate business growth. Our enterprise services help organizations integrate advanced technologies, optimize workflows, and build scalable digital ecosystems that adapt to evolving market demands.
       </p>
 
       <p className="solution-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+       Our enterprise offerings include Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Business Process Automation, and Custom Software Development, enabling companies to modernize infrastructure while maintaining reliability and compliance.
       </p>
 
       {/* FEATURE LIST */}
       <div className="solution-feature-container">
 
         <ul className="solution-feature-list">
-          <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Scalable Enterprise Architecture</li>
+          <li>Secure Data Management & Compliance</li>
+          <li>Seamless System Integration</li>
+          <li>Process Automation & Optimization</li>
         </ul>
 
         <ul className="solution-feature-list">
-          <li>Compliance & Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>High Availability & Performance</li>
+          <li>Ongoing Support & Maintenance</li>
+          <li>24/7 Network Monitoring & Support</li>
         </ul>
 
       </div>
 
       {/* IMAGE GRID */}
       <div className="solution-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src="../../assets/Service-details-002.webp" alt="Team working" />
+        <img src="../../assets/Service-details-001.webp" alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
       <div className="solution-services-section">
 
         <h2 className="solution-section-title">
-          Our Range of Customer Services
+          Our Range of Enterprise Services
         </h2>
 
         <p className="solution-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          We provide comprehensive managed network services that enhance operational efficiency, strengthen security, and ensure uninterrupted connectivity.
         </p>
 
         <div className="solution-card-grid">
 
           <div className="solution-service-card">
             <span className="solution-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Business Process Automation</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              We streamline complex workflows through intelligent automation, reducing manual effort, minimizing errors, and improving operational efficiency across departments.
             </p>
           </div>
 
           <div className="solution-service-card">
             <span className="solution-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Custom Enterprise Applications</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              Our team builds secure, scalable enterprise applications tailored to your organization’s unique requirements, ensuring seamless performance and long-term flexibility.
             </p>
           </div>
 
           <div className="solution-service-card">
             <span className="solution-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>System Integration & Modernization</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+             We connect legacy systems with modern platforms to create unified digital environments, improving data visibility, collaboration, and business agility.
             </p>
           </div>
 

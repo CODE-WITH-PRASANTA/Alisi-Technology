@@ -21,6 +21,7 @@ const Consulting = () => {
         {/* LEFT CONTENT */}
         <div className="consulting-left-section">
           <ConsultingLeftComponent />
+          <ConsultingPrice />
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -29,7 +30,7 @@ const Consulting = () => {
         </div>
 
       </div>
-      <ConsultingPrice />
+      
     </section>
   );
 };

@@ -1,15 +1,18 @@
 import React from "react";
 import "./ConsultingSidebar.css";
 
-import sidebarPersonImg from "../../assets/service-details-1.webp";
 
 const services = [
-  "Network Infrastructure",
-  "Software Development",
-  "IT Consulting & Strategy",
-  "Cybersecurity Solutions",
+   "BPO Services",
+  "KPO Services",
   "Cloud Computing",
-  "Managed IT Services",
+  "Cognitive Business Operations",
+  "Artificial Intelligence & Data & Analytics",
+  "Cybersecurity",
+  "Enterprise Solutions",
+  "IoT & Digital Engineering",
+  "Network Solutions & Services",
+  "Sustainability Services",
 ];
 
 const ConsultingSidebar = () => {
@@ -47,7 +50,7 @@ const ConsultingSidebar = () => {
         </div>
 
         <div className="consultingg-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Professional" />
+          <img src="'../../assets/Service-details-001.webp" alt="Professional" />
         </div>
 
       </div>

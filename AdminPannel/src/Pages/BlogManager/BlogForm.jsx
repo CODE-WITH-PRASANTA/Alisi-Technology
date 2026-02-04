@@ -95,11 +95,11 @@ const BlogForm = ({ addBlog, editBlog, updateBlog }) => {
         <label>Category</label>
         <select value={category} onChange={e=>setCategory(e.target.value)}>
           <option value="">Select Category</option>
-          <option>Activities</option>
-          <option>Education</option>
-          <option>Events</option>
-          <option>Kids Care</option>
-          <option>School News</option>
+          <option>Technology</option>
+          <option>Cloud Services</option>
+          <option>Security</option>
+          <option>DevOps & Automation</option>
+          <option>Tech News</option>
         </select>
       </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutInovation.css";
-import aboutMainImg from "../../assets/main.webp";
-import tekminoLogo from "../../assets/tlogo.webp";
+
+
 import { FiArrowUpRight } from "react-icons/fi";
 
 const AboutTekmino = () => {
@@ -11,25 +11,24 @@ const AboutTekmino = () => {
 
         {/* LEFT IMAGE */}
         <div className="tek-about-image-box">
-          <img src={aboutMainImg} alt="About Tekmino" />
+          <img src="''../../assets/Main-001.webp" alt="About Alisil Technology" />
         </div>
 
         {/* RIGHT CONTENT */}
         <div className="tek-about-content-box">
 
-          <span className="tek-about-tag">[ ABOUT TEKMINO ]</span>
+          <span className="tek-about-tag">[ ABOUT ALISIL TECHNOLOGY ]</span>
 
           <h2 className="tek-about-title">
-            Driving Innovation Through AI and New Technology,
-            Delivering Tailored.
+            Driving Innovation Through Smart Technology and Digital Engineering
           </h2>
 
           <div className="tek-about-info-wrapper">
 
             {/* LOGO BOX */}
             <div className="tek-about-logo-card">
-              <img src={tekminoLogo} alt="Tekmino Logo" />
-              <h4>Tekmino</h4>
+              <img src="../../assets/T-LOGO.webp" alt="Alisil Technology Logo" />
+              <h4>Alisil Technology</h4>
             </div>
 
             {/* TEXT SECTION */}
@@ -38,16 +37,18 @@ const AboutTekmino = () => {
               <div className="tek-about-card">
                 <h4>Our Mission</h4>
                 <p>
-                  Revolutionize the way you work with our solutions designed
-                  to meet the challenges of today’s business landscape.
+                  To deliver innovative digital, IoT, and engineering solutions
+                  that help businesses improve performance, efficiency, and
+                  long-term growth.
                 </p>
               </div>
 
               <div className="tek-about-card tek-about-vision-card">
                 <h4>Our Vision</h4>
                 <p>
-                  Deliver innovative and intelligent technology solutions
-                  that empower businesses to grow and transform.
+                  To become a trusted technology partner driving digital
+                  transformation through smart systems, automation, and modern
+                  engineering solutions.
                 </p>
               </div>
 

@@ -1,40 +1,37 @@
 import React, { useState } from "react";
 import "./CyberLeftComponent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
 
 const faqData = [
   {
-    question: "What are the main types of cloud computing?",
+    question: "What cyber security services does Alisil Technology provide?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "We offer end-to-end cyber security services including network protection, cloud security, endpoint security, threat monitoring, vulnerability testing, and compliance support."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How secure are your cyber security solutions?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Our solutions use enterprise-grade encryption, advanced threat intelligence, and continuous monitoring to ensure maximum protection against evolving cyber threats."
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "Can you protect cloud and on-premise systems?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes. We secure both cloud-based and on-premise environments using hybrid security architectures and best practices."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "How does cyber security help reduce business risk?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "Cyber security prevents data breaches, minimizes downtime, protects customer information, and ensures regulatory compliance—saving costs associated with incidents and recovery."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "Do you provide ongoing monitoring and support?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "Absolutely. We offer 24/7 monitoring, incident response, and managed security services to keep your systems protected at all times."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
+    question: "How do I get started with Alisil Technology?",
     answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    "Simply contact our team for a security assessment. We’ll evaluate your current infrastructure and recommend a customized cyber security roadmap."
   }
 ];
 
@@ -50,81 +47,81 @@ const CyberLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="cyber-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
       </div>
 
       {/* TITLE */}
       <h1 className="cyber-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+        Cyber Security Solutions: Protecting Your Digital Assets with Alisil Technology
       </h1>
 
       {/* DESCRIPTION */}
       <p className="cyber-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+       In today’s rapidly evolving digital landscape, cyber threats are becoming more sophisticated and frequent. At Alisil Technology, we deliver comprehensive cyber security solutions designed to safeguard your business infrastructure, applications, and sensitive data from modern cyber risks.
       </p>
 
       <p className="cyber-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+       Our expert-driven security services help organizations prevent breaches, detect threats in real time, and respond quickly to incidents—ensuring business continuity, compliance, and peace of mind. From startups to enterprises, we provide scalable security strategies tailored to your operational needs.
       </p>
 
       {/* FEATURE LIST */}
       <div className="cyber-feature-container">
 
         <ul className="cyber-feature-list">
-          <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Advanced Threat Detection & Prevention</li>
+          <li>Enterprise-Grade Data Protection</li>
+          <li>Secure Network Infrastructure</li>
+          <li>Compliance & Regulatory Support</li>
         </ul>
 
         <ul className="cyber-feature-list">
-          <li>Compliance & Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>Disaster Recovery & Business Continuity Planning</li>
+          <li>Vulnerability Assessment & Penetration Testing</li>
+          <li>24/7 Security Monitoring & Incident Response</li>
         </ul>
 
       </div>
 
       {/* IMAGE GRID */}
       <div className="cyber-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src="../../assets/Service-details-002.webp" alt="Team working" />
+        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
       <div className="cyber-services-section">
 
         <h2 className="cyber-section-title">
-          Our Range of Customer Services
+         Our Range of Cyber Security Services
         </h2>
 
         <p className="cyber-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          We deliver reliable cyber security and IT protection services that enhance resilience, improve operational efficiency, and strengthen customer trust.
         </p>
 
         <div className="cyber-card-grid">
 
           <div className="cyber-service-card">
             <span className="cyber-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Comprehensive Security Protection</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              We implement multi-layered security frameworks to protect your systems, applications, and data from malware, ransomware, phishing, and unauthorized access.
             </p>
           </div>
 
           <div className="cyber-service-card">
             <span className="cyber-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Operational Risk Reduction</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+             Through automation, monitoring, and real-time alerts, we minimize downtime and mitigate cyber risks—keeping your business running smoothly.
             </p>
           </div>
 
           <div className="cyber-service-card">
             <span className="cyber-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Actionable Security Insights</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+             Our analytics-driven approach provides visibility into threats, enabling smarter decisions and continuous improvement of your security posture.
             </p>
           </div>
 

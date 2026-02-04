@@ -1,5 +1,6 @@
 .cloud-left-wrapper {
   color: #fff;
+  padding-top: 80px;
 }
 
 /* BANNER */
@@ -279,5 +280,17 @@
 
   .cloud-text {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cloud-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloud-left-wrapper {
+    padding-top: 30px;
   }
 }

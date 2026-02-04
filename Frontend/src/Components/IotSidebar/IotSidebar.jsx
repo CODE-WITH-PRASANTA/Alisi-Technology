@@ -1,15 +1,15 @@
 import React from "react";
 import "./IotSidebar.css";
 
-import sidebarPersonImg from "../../assets/service-details-1.webp";
 
+// SEO-friendly & professional service names
 const services = [
-  "Network Infrastructure",
-  "Software Development",
-  "IT Consulting & Strategy",
-  "Cybersecurity Solutions",
-  "Cloud Computing",
-  "Managed IT Services",
+  "IoT Network Infrastructure Solutions",
+  "Custom Software Development",
+  "Digital Engineering Consulting",
+  "Advanced Cybersecurity Services",
+  "Cloud & IoT Platform Solutions",
+  "Managed IT & System Support",
 ];
 
 const IotSidebar = () => {
@@ -20,7 +20,7 @@ const IotSidebar = () => {
       <div className="iot-sidebar-services-box">
 
         <h3 className="iot-sidebar-title">
-          More Services
+          Our Technology Services
         </h3>
 
         <ul className="iot-sidebar-list">
@@ -39,15 +39,16 @@ const IotSidebar = () => {
 
         <div className="iot-sidebar-card-content">
           <h2>Innovative</h2>
-          <p>IT Solutions.</p>
+          <p>IoT & Digital Engineering Solutions</p>
 
           <div className="iot-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞 Speak With Our Experts: +8 (321) 890-640
           </div>
+
         </div>
 
         <div className="iot-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Professional" />
+          <img src="../../assets/Service-details-001.webp" alt="Alisil Technology Digital Engineering Team" />
         </div>
 
       </div>

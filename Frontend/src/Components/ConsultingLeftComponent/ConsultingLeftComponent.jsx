@@ -1,40 +1,38 @@
 import React, { useState } from "react";
 import "./ConsultingLeftComponent.css";
 
-import bannerImg from "../../assets/service-details-3.webp";
-import imgOne from "../../assets/service-details-2.webp";
-import imgTwo from "../../assets/service-details-1.webp";
+import imgone from '../../assets/Service-details-001.webp'
 
 const faqData = [
   {
-    question: "What are the main types of cloud computing?",
+    question: "What consulting services does Alisil Technology offer?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "We provide IT consulting, digital transformation strategy, cloud advisory, cybersecurity consulting, enterprise architecture planning, and process optimization services tailored to your business needs."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How can consulting help my business grow?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Our consulting services help improve efficiency, reduce operational risks, optimize technology investments, and enable innovation—supporting sustainable business growth."
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "Do you offer customized consulting solutions?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes. Every organization is unique. We deliver personalized consulting strategies based on your industry, goals, and operational requirements."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "What industries do you support?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "We serve multiple industries including healthcare, finance, retail, manufacturing, logistics, and technology startups with tailored consulting solutions."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "Do you provide ongoing support after consulting engagements?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "Absolutely. Alisil Technology offers continuous advisory, performance monitoring, and optimization services to ensure long-term success."
   },
   {
-    question: "How Do i Choose the Right Cloud Service Provider?",
+    question: "How do I get started with Alisil Technology consulting services?",
     answer: 
-    "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. However, businesses must also follow best practices, such as strong password policies and regular security audits, to enhance protection. Our solutions optimize every touchpoint of the customer journey, ensuring seamless, personalized, and meaningful interactions."
+    "You can contact our consulting team to schedule a free consultation. We assess your business needs and propose a customized roadmap aligned with your goals."
   }
 ];
 
@@ -50,81 +48,81 @@ const ConsultingLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="consulting-banner-box">
-        <img src={bannerImg} alt="Service Banner" />
+        <img src="../../assets//Service-details-001.webp" alt="Service Banner" />
       </div>
 
       {/* TITLE */}
       <h1 className="consulting-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+        Smart Technology Consulting to Accelerate Your Business Growth
       </h1>
 
       {/* DESCRIPTION */}
       <p className="consulting-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices. This technology enables businesses to scale efficiently, reduce costs, and enhance collaboration by providing on-demand access to powerful computing resources.
+        At Alisil Technology, we deliver expert IT consulting services designed to help businesses leverage technology, improve operational efficiency, and achieve sustainable growth. Our consulting approach combines strategic planning, modern digital solutions, and industry best practices to transform your ideas into scalable, secure, and high-performing systems.
       </p>
 
       <p className="consulting-text">
-        Cloud computing is categorized into different models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each catering to different business needs. Popular cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+       Whether you’re a startup, SME, or enterprise, our professional consultants work closely with your team to understand your goals and provide customized technology strategies that drive real business results.
       </p>
 
       {/* FEATURE LIST */}
       <div className="consulting-feature-container">
 
         <ul className="consulting-feature-list">
-          <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Strategic IT Consulting</li>
+          <li>Digital Transformation Planning</li>
+          <li>Business Process Optimization</li>
+          <li>Cloud Migration Consulting</li>
         </ul>
 
         <ul className="consulting-feature-list">
-          <li>Compliance & Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>Data Analytics & Insights</li>
+          <li>Continuous Technical Advisory</li>
+          <li>Performance Optimization</li>
         </ul>
 
       </div>
 
       {/* IMAGE GRID */}
       <div className="consulting-image-layout">
-        <img src={imgOne} alt="Team working" />
-        <img src={imgTwo} alt="Discussion" />
+        <img src={imgone} alt="Team working" />
+        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
       <div className="consulting-services-section">
 
         <h2 className="consulting-section-title">
-          Our Range of Customer Services
+          Our IT Consulting Expertise
         </h2>
 
         <p className="consulting-section-desc">
-          We are committed to delivering top-notch customer services tailored meet your business needs. Our comprehensive range of IT solutions ensures seamless operations, enhanced security, and optimized performance for businesses of all sizes., leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers.
+          We offer end-to-end consulting solutions tailored to your organization’s unique requirements:
         </p>
 
         <div className="consulting-card-grid">
 
           <div className="consulting-service-card">
             <span className="consulting-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Digital Transformation Consulting</h4>
             <p>
-              Personalized experiences ensure customers feel valued and engaged.
+              Modernize your business with cloud adoption, automation, and data-driven processes. We help you transition from traditional systems to agile digital platforms that improve productivity and customer experience.
             </p>
           </div>
 
           <div className="consulting-service-card">
             <span className="consulting-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Cloud & Infrastructure Consulting</h4>
             <p>
-              Automation tools help teams handle tasks faster and smarter.
+              From architecture design to deployment, we guide you through secure and scalable cloud solutions. Our experts help optimize infrastructure, reduce operational costs, and ensure high availability across your systems.
             </p>
           </div>
 
           <div className="consulting-service-card">
             <span className="consulting-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Cybersecurity & Compliance Consulting</h4>
             <p>
-              Data-driven strategies help businesses grow continuously.
+              Protect your digital assets with enterprise-grade security strategies. We assess vulnerabilities, implement best practices, and help maintain compliance with industry standards.
             </p>
           </div>
 
