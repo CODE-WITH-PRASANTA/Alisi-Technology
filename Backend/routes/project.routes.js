@@ -1,5 +1,5 @@
 const express = require("express");
-const upload = require("../middlewares/upload.middleware");
+const { upload, convertToWebp } = require("../middlewares/upload.middleware");
 const { createProject } = require("../controllers/project.controller");
 const Project = require("../models/Project.model");
 
@@ -12,6 +12,7 @@ router.post(
     { name: "projectImg", maxCount: 1 },
     { name: "galleryImg", maxCount: 6 },
   ]),
+  convertToWebp, // 🔥 THIS IS REQUIRED
   createProject
 );
 
