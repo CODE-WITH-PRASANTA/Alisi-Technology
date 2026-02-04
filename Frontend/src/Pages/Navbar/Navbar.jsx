@@ -9,11 +9,16 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logo from "../../Assets/Logo 003.png" // ✅ ADD THIS
+import logo from "../../Assets/Logo 003.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
+
+  const closeAll = () => {
+    setOpen(false);
+    setServiceOpen(false);
+  };
 
   return (
     <>
@@ -37,47 +42,59 @@ const Navbar = () => {
       {/* ================= NAVBAR ================= */}
       <header className="tm-navbar">
         <div className="tm-navbar-container">
-          {/* LOGO (IMAGE) */}
-          <NavLink to="/" className="tm-logo">
+          {/* LOGO */}
+          <NavLink to="/" className="tm-logo" onClick={closeAll}>
             <img src={logo} alt="Alisi Technology Logo" />
           </NavLink>
 
-          {/* Desktop Menu */}
+          {/* DESKTOP MENU */}
           <nav className="tm-menu">
-            <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/" end onClick={closeAll}>Home</NavLink>
+            <NavLink to="/about" onClick={closeAll}>About</NavLink>
 
-            <div
-              className="tm-dropdown"
-              onMouseEnter={() => setServiceOpen(true)}
-              onMouseLeave={() => setServiceOpen(false)}
-            >
-              <button className="tm-dropdown-btn">
+            {/* 🔽 CLICKABLE SERVICES */}
+            <div className="tm-dropdown">
+              <button
+                className="tm-dropdown-btn"
+                onClick={() => setServiceOpen(!serviceOpen)}
+              >
                 Services <FaChevronDown />
               </button>
 
               <div className={`tm-dropdown-menu ${serviceOpen ? "show" : ""}`}>
-                <NavLink to="/services/all-services">All Services</NavLink>
-                <NavLink to="/services/Data-Analytics">Artificial Intelligence and Data & Analytics. </NavLink>
-                <NavLink to="/services/bpo" >BPO Services</NavLink>
-                <NavLink to="/services/kpo" >KPO Services</NavLink>
-                <NavLink to="/services/Cloud">Cloud computing</NavLink>
-                <NavLink to="/services/Cognitive">Cognitive Business Operations</NavLink>
-                <NavLink to="/services/Consulting">Consulting</NavLink>
-                <NavLink to="/services/Cybersecurity">Cybersecurity</NavLink>
-                <NavLink to="/services/Enterprise-Solutions">Enterprise Solutions</NavLink>
-                <NavLink to="/services/IoT-Digital-Eng.">IoT and Digital Engineering</NavLink>
-                <NavLink to="/services/Network">Network Solutions and Services</NavLink>
-                <NavLink to="/services/Sustainability">Sustainability Services</NavLink>
+                <NavLink to="/services/all-services" onClick={closeAll}>All Services</NavLink>
+                <NavLink to="/services/Data-Analytics" onClick={closeAll}>
+                  Artificial Intelligence & Data Analytics
+                </NavLink>
+                <NavLink to="/services/bpo" onClick={closeAll}>BPO Services</NavLink>
+                <NavLink to="/services/kpo" onClick={closeAll}>KPO Services</NavLink>
+                <NavLink to="/services/Cloud" onClick={closeAll}>Cloud Computing</NavLink>
+                <NavLink to="/services/Cognitive" onClick={closeAll}>
+                  Cognitive Business Operations
+                </NavLink>
+                <NavLink to="/services/Consulting" onClick={closeAll}>Consulting</NavLink>
+                <NavLink to="/services/Cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
+                <NavLink to="/services/Enterprise-Solutions" onClick={closeAll}>
+                  Enterprise Solutions
+                </NavLink>
+                <NavLink to="/services/IoT-Digital-Eng." onClick={closeAll}>
+                  IoT & Digital Engineering
+                </NavLink>
+                <NavLink to="/services/Network" onClick={closeAll}>
+                  Network Solutions & Services
+                </NavLink>
+                <NavLink to="/services/Sustainability" onClick={closeAll}>
+                  Sustainability Services
+                </NavLink>
               </div>
             </div>
 
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/projects" onClick={closeAll}>Projects</NavLink>
+            <NavLink to="/blog" onClick={closeAll}>Blog</NavLink>
+            <NavLink to="/contact" onClick={closeAll}>Contact</NavLink>
           </nav>
 
-          {/* Actions */}
+          {/* ACTIONS */}
           <div className="tm-actions">
             <button className="cta-btn">
               Get Started <FaArrowRight />
@@ -94,8 +111,8 @@ const Navbar = () => {
 
         {/* ================= MOBILE MENU ================= */}
         <div className={`tm-mobile-menu ${open ? "show" : ""}`}>
-          <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-          <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+          <NavLink to="/" onClick={closeAll}>Home</NavLink>
+          <NavLink to="/about" onClick={closeAll}>About</NavLink>
 
           <button
             className="tm-mobile-dropdown-btn"
@@ -106,15 +123,16 @@ const Navbar = () => {
 
           {serviceOpen && (
             <div className="tm-mobile-submenu">
-              <NavLink to="/services" onClick={() => setOpen(false)}>AI & Data</NavLink>
-              <NavLink to="/services" onClick={() => setOpen(false)}>Cloud</NavLink>
-              <NavLink to="/services" onClick={() => setOpen(false)}>Cybersecurity</NavLink>
+              <NavLink to="/services/all-services" onClick={closeAll}>All Services</NavLink>
+              <NavLink to="/services/Data-Analytics" onClick={closeAll}>AI & Data</NavLink>
+              <NavLink to="/services/Cloud" onClick={closeAll}>Cloud</NavLink>
+              <NavLink to="/services/Cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
             </div>
           )}
 
-          <NavLink to="/projects" onClick={() => setOpen(false)}>Projects</NavLink>
-          <NavLink to="/blog" onClick={() => setOpen(false)}>Blog</NavLink>
-          <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
+          <NavLink to="/projects" onClick={closeAll}>Projects</NavLink>
+          <NavLink to="/blog" onClick={closeAll}>Blog</NavLink>
+          <NavLink to="/contact" onClick={closeAll}>Contact</NavLink>
         </div>
       </header>
     </>

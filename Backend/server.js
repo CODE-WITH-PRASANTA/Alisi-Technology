@@ -9,7 +9,6 @@ connectDB();
 
 const app = express();
 
-/* ✅ CORS – SINGLE, CORRECT CONFIG */
 app.use(
   cors({
     origin: [
