@@ -1,7 +1,6 @@
 import React from "react";
 import "./AiDataAnalyticsSidebar.css";
 
-import sidebarPersonImg from "../../assets/Service-details-001.webp";
 
 const services = [
   "BPO Services",
@@ -51,7 +50,7 @@ const AiDataAnalyticsSidebar = () => {
         </div>
 
         <div className="ai-analytics-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Professional" />
+          <img src="../../assets/Service-details-001.webp" alt="Professional" />
         </div>
 
       </div>

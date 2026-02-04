@@ -1,7 +1,6 @@
 import React from "react";
 import "./IotSidebar.css";
 
-import sidebarPersonImg from "../../assets/Service-details-001.webp";
 
 // SEO-friendly & professional service names
 const services = [
@@ -49,7 +48,7 @@ const IotSidebar = () => {
         </div>
 
         <div className="iot-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Alisil Technology Digital Engineering Team" />
+          <img src="../../assets/Service-details-001.webp" alt="Alisil Technology Digital Engineering Team" />
         </div>
 
       </div>

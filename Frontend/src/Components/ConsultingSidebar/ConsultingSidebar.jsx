@@ -1,7 +1,6 @@
 import React from "react";
 import "./ConsultingSidebar.css";
 
-import sidebarPersonImg from "../../assets/Service-details-001.webp";
 
 const services = [
    "BPO Services",
@@ -51,7 +50,7 @@ const ConsultingSidebar = () => {
         </div>
 
         <div className="consultingg-sidebar-image-holder">
-          <img src={sidebarPersonImg} alt="Professional" />
+          <img src="'../../assets/Service-details-001.webp" alt="Professional" />
         </div>
 
       </div>
