@@ -9,7 +9,7 @@ import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
 import ViewPrices from "./Pages/ViewPrices";
 import TestimonialPage from "./Pages/Testimonial/TestimonialPage";
-import BlogManagerPage from "./Pages/BlogManager/BlogManagerPage";
+import BlogManagerPage from "./Pages/BlogManagerPage/BlogManagerPage";
 import BlogView from "./Pages/BlogView/BlogView";
 
 function App() {
