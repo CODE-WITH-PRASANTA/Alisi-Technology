@@ -8,9 +8,10 @@ import AddProject from "./Pages/AddProject";
 import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
 import ViewPrices from "./Pages/ViewPrices";
-import TestimonialPage from "./Pages/Testimonial/TestimonialPage";
-import BlogManagerPage from "./Pages/BlogManager/BlogManagerPage";
+import TestimonialPage from "./Pages/TestimonialPage/TestimonialPage";
+import BlogManagerPage from "./Pages/BlogManagerPage/BlogManagerPage";
 import BlogView from "./Pages/BlogView/BlogView";
+import TeamManagerPage from "./Pages/TeamMemberPosting/TeamMemberPosting";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/testimonial" element={<TestimonialPage />} />
             <Route path="/blog" element={<BlogManagerPage />} />   
             <Route path="/blog-view" element={<BlogView />} />
+            <Route path="/team" element={<TeamManagerPage />} />
            </Route>
 
           {/* FALLBACK */}

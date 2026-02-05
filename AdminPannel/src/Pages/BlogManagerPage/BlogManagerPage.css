@@ -1,0 +1,238 @@
+/* MAIN CONTAINER */
+
+.adm-blog-manager-container{
+  display:flex;
+  height:100vh;
+  padding:20px;
+  gap:22px;
+  overflow:hidden;
+}
+
+/* PANELS */
+
+.adm-blog-left-panel{
+  width:55%;
+  height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding-right:6px;
+}
+
+.adm-blog-right-panel{
+  width:45%;
+}
+
+/* FORM BOX */
+
+.adm-blog-form-box{
+  background:linear-gradient(180deg,#0f141b,#0b0f14);
+  padding:28px;
+  border-radius:18px;
+  border:1px solid #1f2933;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  max-height:88vh;
+  overflow-y:auto;
+}
+
+/* HEADING */
+
+.adm-blog-form-heading{
+  font-size:22px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+/* INPUT GROUP */
+
+.adm-input-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:14px;
+  color:#9ca3af;
+}
+
+.adm-input-group input,
+.adm-input-group textarea,
+.adm-input-group select{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #1f2933;
+  background:#0b0f14;
+  color:#fff;
+  outline:none;
+}
+
+.adm-input-group input:focus,
+.adm-input-group textarea:focus{
+  border-color:#38bdf8;
+}
+
+/* TEXTAREA */
+
+.adm-content-textarea{
+  height:160px;
+  resize:none;
+}
+
+/* IMAGE PREVIEW */
+
+.adm-image-preview{
+  width:90px;
+  height:90px;
+  border-radius:12px;
+  object-fit:cover;
+  margin-top:8px;
+  border:1px solid #1f2933;
+}
+
+/* SUBMIT BUTTON */
+
+.adm-submit-btn{
+  width:100%;
+  padding:14px;
+  background:linear-gradient(135deg,#38bdf8,#22d3ee);
+  border:none;
+  color:#000;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.adm-submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(56,189,248,.4);
+}
+
+/* TABLE BOX */
+
+.adm-blog-table-box{
+  background:linear-gradient(180deg,#0f141b,#0b0f14);
+  padding:18px;
+  border-radius:18px;
+  border:1px solid #1f2933;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+/* TABLE */
+
+.adm-table-heading{
+  font-size:20px;
+  color:#fff;
+}
+
+.adm-table-scroll-area{
+  margin-top:15px;
+  overflow-x:auto;
+}
+
+.adm-blog-table{
+  min-width:900px;
+  width:100%;
+  border-collapse:collapse;
+  background:#0b0f14;
+  color:#e5e7eb;
+}
+
+.adm-blog-table th{
+  background:#1f2933;
+  padding:12px;
+  text-align:left;
+}
+
+.adm-blog-table td{
+  padding:12px;
+  border-bottom:1px solid #1f2933;
+}
+
+/* IMAGE CELL */
+
+.adm-table-img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* DESCRIPTION */
+
+.adm-desc-cell{
+  max-width:220px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* BUTTONS */
+
+.adm-edit-btn{
+  background:#22c55e;
+  color:#000;
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  margin-right:6px;
+  cursor:pointer;
+}
+
+.adm-delete-btn{
+  background:#ef4444;
+  color:#000;
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* EMPTY */
+
+.adm-empty-row{
+  text-align:center;
+  padding:20px;
+  color:#9ca3af;
+}
+
+/* ===== HIDE SCROLLBARS BUT KEEP SCROLL ===== */
+
+/* Chrome, Edge, Safari */
+.adm-blog-left-panel::-webkit-scrollbar,
+.adm-blog-form-box::-webkit-scrollbar,
+.adm-blog-right-panel::-webkit-scrollbar,
+.adm-table-scroll-area::-webkit-scrollbar{
+  width:0px;
+  height:0px;
+}
+
+/* Firefox */
+.adm-blog-left-panel,
+.adm-blog-form-box,
+.adm-blog-right-panel,
+.adm-table-scroll-area{
+  scrollbar-width:none;
+}
+
+/* IE (old but safe) */
+.adm-blog-left-panel,
+.adm-blog-form-box,
+.adm-blog-right-panel,
+.adm-table-scroll-area{
+  -ms-overflow-style:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+  .adm-blog-manager-container{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .adm-blog-left-panel,
+  .adm-blog-right-panel{
+    width:100%;
+  }
+}

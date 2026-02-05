@@ -12,6 +12,7 @@ import {
   FiChevronDown,
   FiX,
   FiLogOut,
+  FiUserPlus
 } from "react-icons/fi";
 
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
@@ -153,6 +154,18 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
               setSidebarOpen(false);
             }}
           />
+            
+            {/* TEAM POSTING */}
+<SidebarItem
+  icon={<FiUserPlus />}
+  label="Team Posting"
+  collapsed={collapsed}
+  color="text-pink-400"
+  onClick={() => {
+    navigate("/team");
+    setSidebarOpen(false);
+  }}
+/>
 
           {/* PROJECTS */}
           <Dropdown
