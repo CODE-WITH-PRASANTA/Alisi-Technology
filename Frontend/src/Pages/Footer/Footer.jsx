@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import footerBg from "../../Assets/footer-bg.webp"; // ✅ IMPORTANT
+import logo from "../../Assets/Logo 003.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -52,9 +53,9 @@ const Footer = () => {
         {/* Brand */}
         <div className="tk-col">
           <div className="tk-logo">
-            <span className="tk-logo-icon">T</span>
-            Tekmino
+            <img src={logo} alt="Tekmino Logo" className="tk-logo-icon" />
           </div>
+
           <p>
             Every great solution start understand the time into learn about.
           </p>
@@ -89,8 +90,12 @@ const Footer = () => {
         <div className="tk-col">
           <h4>Contact Info</h4>
           <p>993 Renner Burg, West Rond, MT 94251-030</p>
-          <p><strong>P:</strong> +1 (009) 544-7818</p>
-          <p><strong>E:</strong> support@tekmino.com</p>
+          <p>
+            <strong>P:</strong> +1 (009) 544-7818
+          </p>
+          <p>
+            <strong>E:</strong> support@tekmino.com
+          </p>
           <p>Mon–Fri 09am–06pm</p>
         </div>
       </div>

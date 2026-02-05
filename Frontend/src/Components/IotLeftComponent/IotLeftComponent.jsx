@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./IotLeftComponent.css";
-
+import IOTPricing from "../../Components/IOTPricing/IOTPricing";
+import iotimg1 from "../../Assets/Iot-img1.webp";
 
 const faqData = [
   {
@@ -47,7 +48,7 @@ const IotLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="iot-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
+        <img src={iotimg1} alt="Service Banner" />
       </div>
 
       {/* TITLE */}
@@ -127,6 +128,8 @@ const IotLeftComponent = () => {
 
         </div>
       </div>
+
+      <IOTPricing />
 
       {/* FAQ */}
       <div className="iot-faq-area">

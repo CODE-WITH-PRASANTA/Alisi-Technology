@@ -1,15 +1,9 @@
 import React from "react";
 import "./Cybersecurity.css";
 
-
-
-
-
-
 import CyberBreadcrum from "../../Components/CyberBreadcrum/CyberBreadcrum";
 import CyberLeftComponent from "../../Components/CyberLeftComponent/CyberLeftComponent";
 import CyberSidebar from "../../Components/CyberSidebar/CyberSidebar";
-import CyberPricing from "../../Components/Cyberapricing/Cyberapricing";
 
 const  Cybersecurity = () => {
   return (
@@ -29,7 +23,7 @@ const  Cybersecurity = () => {
         </div>
 
       </div>
-      <CyberPricing />
+      
     </section>
   );
 };

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./SusLeftComponent.css";
-
-
+import SusPricing from "../../Components/SusPricing/SusPricing";
+import img1 from "../../Assets/Sus-main-img.webp";
+import img2 from "../../Assets/Sus-img2.webp";
+import img3 from "../../Assets/Sus-img3.webp";
 const faqData = [
   {
     question: "What are the main types of cloud computing?",
@@ -78,7 +80,7 @@ const SusLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="sus-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Cloud Computing Services Banner" />
+        <img src={img1} alt="Cloud Computing Services Banner" />
       </div>
 
       {/* TITLE */}
@@ -113,8 +115,8 @@ const SusLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="sus-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Cloud team collaboration" />
-        <img src="../../assets/Service-details-002.webp" alt="Cloud infrastructure discussion" />
+        <img src={img2} alt="Cloud team collaboration" />
+        <img src={img3} alt="Cloud infrastructure discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
@@ -153,6 +155,8 @@ const SusLeftComponent = () => {
           </div>
         </div>
       </div>
+
+      <SusPricing />
 
       {/* FAQ */}
       <div className="sus-faq-area">
