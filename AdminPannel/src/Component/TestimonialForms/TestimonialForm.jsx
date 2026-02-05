@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import StarRating from "./StarRating";
+import StarRating from "../../Component/TestimonialForms/StarRating";
 
 const TestimonialForm = ({ addTestimonial, editItem, updateTestimonial }) => {
 
