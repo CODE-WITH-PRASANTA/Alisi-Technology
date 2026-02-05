@@ -1,45 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./BPOSidebar.css";
-
+import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
-  "BPO Services",
-  "KPO Services",
-  "Artificial Intelligence & Data & Analytics",
-  "Cognitive Business Operations",
-  "Consulting",
-  "Cybersecurity",
-  "Enterprise Solutions",
-  "IoT & Digital Engineering",
-  "Network Solutions & Services",
-  "Sustainability Services",
+  { name: "All Services", path: "/services/all-services" },
+  { name: "Artificial Intelligence & Data Analytics", path: "/services/Data-Analytics" },
+  { name: "BPO Services", path: "/services/bpo" },
+  { name: "KPO Services", path: "/services/kpo" },
+  { name: "Cloud Computing", path: "/services/Cloud" },
+  { name: "Cognitive Business Operations", path: "/services/Cognitive" },
+  { name: "Consulting", path: "/services/Consulting" },
+  { name: "Cybersecurity", path: "/services/Cybersecurity" },
+  { name: "Enterprise Solutions", path: "/services/Enterprise-Solutions" },
+  { name: "IoT & Digital Engineering", path: "/services/IoT-Digital-Eng." },
+  { name: "Network Solutions & Services", path: "/services/Network" },
+  { name: "Sustainability Services", path: "/services/Sustainability" },
 ];
 
 const BPOSidebar = () => {
   return (
     <div className="bpoo-sidebar-wrapper">
 
-      {/* SERVICES LIST FIRST */}
+      {/* SERVICES LIST */}
       <div className="bpoo-sidebar-services-box">
-
-        <h3 className="bpoo-sidebar-title">
-          More Services
-        </h3>
+        <h3 className="bpoo-sidebar-title">More Services</h3>
 
         <ul className="bpoo-sidebar-list">
           {services.map((item, index) => (
-            <li key={index} className="bpoo-sidebar-item">
-              {item}
-              <span className="bpoo-sidebar-arrow">›</span>
+            <li key={index}>
+              <Link to={item.path} className="bpoo-sidebar-item">
+                {item.name}
+                <span className="bpoo-sidebar-arrow">›</span>
+              </Link>
             </li>
           ))}
         </ul>
-
       </div>
 
-      {/* INNOVATIVE CARD SECOND */}
+      {/* CARD */}
       <div className="bpoo-sidebar-card">
-
         <div className="bpoo-sidebar-card-content">
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
@@ -50,9 +50,8 @@ const BPOSidebar = () => {
         </div>
 
         <div className="bpoo-sidebar-image-holder">
-          <img src="../../assets/Service-details-001.webp" alt="Professional" />
+          <img src={sidebarImg} alt="Professional" />
         </div>
-
       </div>
 
     </div>

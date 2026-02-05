@@ -1,45 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./COSidebar.css";
-
+import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
-  "BPO Services",
-  "KPO Services",
-  "Artificial Intelligence & Data & Analytics",
-  "Cognitive Business Operations",
-  "Consulting",
-  "Cybersecurity",
-  "Enterprise Solutions",
-  "IoT & Digital Engineering",
-  "Network Solutions & Services",
-  "Sustainability Services",
+  { name: "All Services", path: "/services/all-services" },
+  { name: "Artificial Intelligence & Data Analytics", path: "/services/Data-Analytics" },
+  { name: "BPO Services", path: "/services/bpo" },
+  { name: "KPO Services", path: "/services/kpo" },
+  { name: "Cloud Computing", path: "/services/Cloud" },
+  { name: "Cognitive Business Operations", path: "/services/Cognitive" },
+  { name: "Consulting", path: "/services/Consulting" },
+  { name: "Cybersecurity", path: "/services/Cybersecurity" },
+  { name: "Enterprise Solutions", path: "/services/Enterprise-Solutions" },
+  { name: "IoT & Digital Engineering", path: "/services/IoT-Digital-Eng." },
+  { name: "Network Solutions & Services", path: "/services/Network" },
+  { name: "Sustainability Services", path: "/services/Sustainability" },
 ];
 
 const COSidebar = () => {
   return (
     <div className="coo-sidebar-wrapper">
 
-      {/* SERVICES LIST FIRST */}
+      {/* SERVICES LIST */}
       <div className="coo-sidebar-services-box">
-
-        <h3 className="coo-sidebar-title">
-          More Services
-        </h3>
+        <h3 className="coo-sidebar-title">More Services</h3>
 
         <ul className="coo-sidebar-list">
           {services.map((item, index) => (
-            <li key={index} className="coo-sidebar-item">
-              {item}
-              <span className="coo-sidebar-arrow">›</span>
+            <li key={index}>
+              <Link to={item.path} className="coo-sidebar-item">
+                {item.name}
+                <span className="coo-sidebar-arrow">›</span>
+              </Link>
             </li>
           ))}
         </ul>
-
       </div>
 
-      {/* INNOVATIVE CARD SECOND */}
+      {/* CARD */}
       <div className="coo-sidebar-card">
-
         <div className="coo-sidebar-card-content">
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
@@ -50,9 +50,8 @@ const COSidebar = () => {
         </div>
 
         <div className="coo-sidebar-image-holder">
-          <img src="../../assets/Service-details-001.webp" alt="Professional" />
+          <img src={sidebarImg} alt="Professional" />
         </div>
-
       </div>
 
     </div>

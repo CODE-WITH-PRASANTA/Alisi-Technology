@@ -85,7 +85,7 @@ const BPOPricing = () => {
             <p className="bpo-sub">{plan.desc}</p>
 
             <h1>
-              ${getPrice(plan.monthly)}
+              ₹{getPrice(plan.monthly)}
               <span>{yearly ? "/per year" : "/per month"}</span>
             </h1>
 

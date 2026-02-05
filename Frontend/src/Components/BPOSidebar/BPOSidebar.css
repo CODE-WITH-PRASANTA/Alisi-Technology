@@ -6,7 +6,7 @@
 }
 
 /* =====================
-   SERVICES BOX (TOP)
+   SERVICES BOX
 ===================== */
 
 .bpoo-sidebar-services-box {
@@ -22,10 +22,15 @@
 }
 
 .bpoo-sidebar-list {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
+
+.bpoo-sidebar-list li {
+  list-style: none;
+}
+
+/* LINK ITEM */
 
 .bpoo-sidebar-item {
   background: #000;
@@ -33,12 +38,16 @@
   padding: 16px 18px;
   border-radius: 12px;
   margin-bottom: 14px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   cursor: pointer;
   transition: all 0.3s ease;
+
   font-size: 15px;
+  text-decoration: none;
 }
 
 .bpoo-sidebar-item:hover {
@@ -60,9 +69,7 @@
   padding: 32px;
   position: relative;
   overflow: hidden;
-
-  /* HEIGHT INCREASED */
-  min-height: 580px;   /* before ~420 */
+  min-height: 580px;
 }
 
 /* TEXT */
@@ -92,7 +99,7 @@
 }
 
 /* =====================
-   ROUNDED IMAGE STYLE (REFERENCE LIKE)
+   ROUNDED IMAGE
 ===================== */
 
 .bpoo-sidebar-image-holder {
@@ -103,7 +110,6 @@
   height: 50%;
   overflow: hidden;
 
-  /* THIS CREATES THE HALF CIRCLE EFFECT */
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
 }
@@ -117,13 +123,8 @@
 /* =====================
    RESPONSIVE
 ===================== */
-/* =====================
-   RESPONSIVE SYSTEM
-===================== */
 
-/* Large laptops */
 @media (max-width: 1200px) {
-
   .bpoo-sidebar-card {
     min-height: 520px;
   }
@@ -134,9 +135,7 @@
   }
 }
 
-/* Tablets */
 @media (max-width: 992px) {
-
   .bpoo-sidebar-wrapper {
     gap: 24px;
   }
@@ -155,9 +154,7 @@
   }
 }
 
-/* Small tablets */
 @media (max-width: 768px) {
-
   .bpoo-sidebar-card-content h2 {
     font-size: 36px;
   }
@@ -169,11 +166,13 @@
   .bpoo-sidebar-card {
     min-height: 420px;
   }
+
+  .bpoo-sidebar-wrapper {
+    padding-top: 50px;
+  }
 }
 
-/* Mobile */
 @media (max-width: 576px) {
-
   .bpoo-sidebar-card {
     min-height: auto;
   }
@@ -198,9 +197,7 @@
   }
 }
 
-/* Very small phones */
 @media (max-width: 400px) {
-
   .bpoo-sidebar-card-content h2 {
     font-size: 30px;
   }
@@ -208,15 +205,7 @@
   .bpoo-sidebar-image-holder {
     height: 200px;
   }
-}
 
-@media (max-width: 768px) {
-  .bpoo-sidebar-wrapper {
-    padding-top: 50px;
-  }
-}
-
-@media (max-width: 480px) {
   .bpoo-sidebar-wrapper {
     padding-top: 30px;
   }

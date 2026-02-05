@@ -85,7 +85,7 @@ const KPOPricing = () => {
             <p className="kpo-sub">{plan.desc}</p>
 
             <h1>
-              ${getPrice(plan.monthly)}
+              ₹{getPrice(plan.monthly)}
               <span>{yearly ? "/per year" : "/per month"}</span>
             </h1>
 
