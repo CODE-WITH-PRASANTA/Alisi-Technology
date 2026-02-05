@@ -7,13 +7,13 @@ const AllServicesBreadcrum = () => {
   return (
     <section className="cloud-hero">
       <div className="cloud-hero-overlay">
-        <h1>Cloud</h1>
+        <h1>Cloud Computing</h1>
 
         <div className="cloud-breadcrumb">
           <FaHome />
           <Link to="/">Home</Link>
           <span>›</span>
-          <span className="active">Cloud</span>
+          <span className="active">Cloud Computing</span>
         </div>
       </div>
     </section>

@@ -7,13 +7,13 @@ const CyberBreadcrum = () => {
   return (
     <section className="cyber-hero">
       <div className="cyber-hero-overlay">
-        <h1>Cybersecurity</h1>
+        <h1>Cyber Security</h1>
 
         <div className="cyber-breadcrumb">
           <FaHome />
           <Link to="/">Home</Link>
           <span>›</span>
-          <span className="active">Cybersecurity</span>
+          <span className="active">Cyber Security</span>
         </div>
       </div>
     </section>

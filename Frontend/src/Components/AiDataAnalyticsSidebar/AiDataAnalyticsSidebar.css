@@ -2,12 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-top: 80px;  
+  padding-top: 80px;
 }
 
-/* =====================
-   SERVICES BOX (TOP)
-===================== */
+/* SERVICES BOX */
 
 .ai-analytics-sidebar-services-box {
   background: #1a1a1a;
@@ -27,32 +25,46 @@
   margin: 0;
 }
 
+/* SERVICE ITEM */
+
 .ai-analytics-sidebar-item {
   background: #000;
-  color: #fff;
-  padding: 16px 18px;
   border-radius: 12px;
   margin-bottom: 14px;
+  transition: 0.3s ease;
+}
+
+.ai-analytics-sidebar-item a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: #fff;
   font-size: 15px;
+  transition: 0.3s ease;
 }
+
+/* Hover Only */
 
 .ai-analytics-sidebar-item:hover {
   background: #e5ff9f;
+}
+
+.ai-analytics-sidebar-item:hover a {
   color: #000;
 }
 
 .ai-analytics-sidebar-arrow {
   font-size: 20px;
+  transition: transform 0.3s ease;
 }
 
-/* =====================
-   INNOVATIVE CARD
-===================== */
+.ai-analytics-sidebar-item:hover .ai-analytics-sidebar-arrow {
+  transform: translateX(4px);
+}
+
+/* CARD */
 
 .ai-analytics-sidebar-card {
   background: radial-gradient(circle at top, #2a2a2a, #000);
@@ -60,9 +72,7 @@
   padding: 32px;
   position: relative;
   overflow: hidden;
-
-  /* HEIGHT INCREASED */
-  min-height: 580px;   /* before ~420 */
+  min-height: 580px;
 }
 
 /* TEXT */
@@ -91,9 +101,7 @@
   font-size: 15px;
 }
 
-/* =====================
-   ROUNDED IMAGE STYLE (REFERENCE LIKE)
-===================== */
+/* IMAGE */
 
 .ai-analytics-sidebar-image-holder {
   position: absolute;
@@ -102,8 +110,6 @@
   width: 85%;
   height: 50%;
   overflow: hidden;
-
-  /* THIS CREATES THE HALF CIRCLE EFFECT */
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
 }
@@ -114,36 +120,17 @@
   object-fit: cover;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-/* =====================
-   RESPONSIVE SYSTEM
-===================== */
+/* RESPONSIVE */
 
-/* Large laptops */
 @media (max-width: 1200px) {
-
   .ai-analytics-sidebar-card {
     min-height: 520px;
   }
-
-  .ai-analytics-sidebar-image-holder {
-    width: 88%;
-    height: 55%;
-  }
 }
 
-/* Tablets */
 @media (max-width: 992px) {
-
-  .ai-analytics-sidebar-wrapper {
-    gap: 24px;
-  }
-
   .ai-analytics-sidebar-card {
     min-height: 460px;
-    padding: 26px;
   }
 
   .ai-analytics-sidebar-image-holder {
@@ -155,69 +142,26 @@
   }
 }
 
-/* Small tablets */
-@media (max-width: 768px) {
-
-  .ai-analytics-sidebar-card-content h2 {
-    font-size: 36px;
-  }
-
-  .ai-analytics-sidebar-card-content p {
-    font-size: 16px;
-  }
-
-  .ai-analytics-sidebar-card {
-    min-height: 420px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-
-  .ai-analytics-sidebar-card {
-    min-height: auto;
-  }
-
-  .ai-analytics-sidebar-image-holder {
-    height: 240px;
-    border-radius: 160px 160px 0 0;
-  }
-
-  .ai-analytics-sidebar-phone {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-
-  .ai-analytics-sidebar-services-box {
-    padding: 20px;
-  }
-
-  .ai-analytics-sidebar-item {
-    font-size: 14px;
-    padding: 14px 16px;
-  }
-}
-
-/* Very small phones */
-@media (max-width: 400px) {
-
-  .ai-analytics-sidebar-card-content h2 {
-    font-size: 30px;
-  }
-
-  .ai-analytics-sidebar-image-holder {
-    height: 200px;
-  }
-}
-
 @media (max-width: 768px) {
   .ai-analytics-sidebar-wrapper {
     padding-top: 50px;
   }
+
+  .ai-analytics-sidebar-card-content h2 {
+    font-size: 36px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .ai-analytics-sidebar-wrapper {
     padding-top: 30px;
+  }
+
+  .ai-analytics-sidebar-image-holder {
+    height: 240px;
+  }
+
+  .ai-analytics-sidebar-item a {
+    font-size: 14px;
   }
 }

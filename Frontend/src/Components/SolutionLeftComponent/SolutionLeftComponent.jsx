@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./SolutionLeftComponent.css";
 
+import EnterPricing from "../../Components/EnterPricing/EnterPricing";
+import img1 from "../../Assets/Enter-main-img.webp";
+import img2 from "../../Assets/Enter-img2.webp";
+import img3 from "../../Assets/Enter-img3.webp";
 
 const faqData = [
   
@@ -60,7 +64,7 @@ const SolutionLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="solution-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
+        <img src={img1} alt="Service Banner" />
       </div>
 
       {/* TITLE */}
@@ -96,8 +100,8 @@ const SolutionLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="solution-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Team working" />
-        <img src="../../assets/Service-details-001.webp" alt="Discussion" />
+        <img src={img2} alt="Team working" />
+        <img src={img3} alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
@@ -139,6 +143,8 @@ const SolutionLeftComponent = () => {
 
         </div>
       </div>
+
+      <EnterPricing />
 
       {/* FAQ */}
       <div className="solution-faq-area">

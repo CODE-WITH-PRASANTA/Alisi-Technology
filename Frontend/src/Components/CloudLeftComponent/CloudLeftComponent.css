@@ -9,12 +9,14 @@
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 30px;
+  max-height: 560px;     /* LIMIT HEIGHT */
 }
 
 .cloud-banner-box img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;    /* fills box nicely */
+  display: block;
 }
 
 /* TEXT */
