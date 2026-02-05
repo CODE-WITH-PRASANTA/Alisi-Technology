@@ -1,26 +1,31 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   FiHome,
   FiEdit,
   FiDollarSign,
-  FiUsers,
-  FiCheckCircle,
   FiStar,
   FiBriefcase,
   FiChevronDown,
   FiX,
   FiLogOut,
+  FiUserPlus,
 } from "react-icons/fi";
 
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
-
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [blogOpen, setBlogOpen] = useState(false);
   const [priceOpen, setPriceOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
+
+  // ✅ Auto close sidebar on route change (mobile)
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -39,14 +44,12 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
         ${collapsed ? "w-20" : "w-64"}
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
-
         {/* LOGO */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800">
-
           {!collapsed && (
             <span
-              className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
               onClick={() => navigate("/dashboard")}
+              className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
             >
               Admin Panel
             </span>
@@ -58,25 +61,19 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           >
             <FiX />
           </button>
-
         </div>
 
         {/* MENU */}
-        <nav className="flex-1 p-3 space-y-1 text-sm overflow-y-auto">
-
-          {/* DASHBOARD */}
+        <nav className="flex-1 p-3 space-y-1 overflow-y-auto text-sm">
           <SidebarItem
             icon={<FiHome />}
             label="Dashboard"
+            active={isActive("/dashboard")}
             collapsed={collapsed}
-            color="text-blue-400"
-            onClick={() => {
-              navigate("/dashboard");
-              setSidebarOpen(false);
-            }}
+            onClick={() => navigate("/dashboard")}
           />
 
-          {/* BLOG MANAGEMENT */}
+          {/* BLOG */}
           <Dropdown
             icon={<FiEdit className="text-purple-400" />}
             label="Blog Management"
@@ -86,22 +83,17 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           >
             <SubItem
               label="Add Blog"
-              onClick={() => {
-                navigate("/blog");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/blog")}
+              onClick={() => navigate("/blog")}
             />
-
             <SubItem
               label="View Blog"
-              onClick={() => {
-                navigate("/blog-view");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/blog-view")}
+              onClick={() => navigate("/blog-view")}
             />
           </Dropdown>
 
-          {/* PRICE MANAGEMENT */}
+          {/* PRICE */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
             label="Price Management"
@@ -111,50 +103,35 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           >
             <SubItem
               label="Add Price"
-              onClick={() => {
-                navigate("/price/add");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/price/add")}
+              onClick={() => navigate("/price/add")}
             />
-
             <SubItem
               label="View Prices"
-              onClick={() => {
-                navigate("/price");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/price")}
+              onClick={() => navigate("/price")}
             />
           </Dropdown>
-
-          {/* LEAD */}
-          <SidebarItem
-            icon={<FiUsers />}
-            label="Lead Management"
-            collapsed={collapsed}
-            color="text-cyan-400"
-          />
-
-          {/* FINALIZE */}
-          <SidebarItem
-            icon={<FiCheckCircle />}
-            label="Finalize Work"
-            collapsed={collapsed}
-            color="text-emerald-400"
-          />
 
           {/* TESTIMONIAL */}
           <SidebarItem
             icon={<FiStar />}
-            label="Testimonial Management"
+            label="Testimonial"
+            active={isActive("/testimonial")}
             collapsed={collapsed}
-            color="text-yellow-400"
-            onClick={() => {
-              navigate("/testimonial");
-              setSidebarOpen(false);
-            }}
+            onClick={() => navigate("/testimonial")}
           />
 
-          {/* PROJECTS */}
+          {/* TEAM */}
+          <SidebarItem
+            icon={<FiUserPlus />}
+            label="Team Posting"
+            active={isActive("/team")}
+            collapsed={collapsed}
+            onClick={() => navigate("/team")}
+          />
+
+          {/* PROJECT & CLIENT */}
           <Dropdown
             icon={<FiBriefcase className="text-orange-400" />}
             label="Project & Client"
@@ -164,30 +141,28 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           >
             <SubItem
               label="Add Project"
-              onClick={() => {
-                navigate("/projects/add");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/projects/add")}
+              onClick={() => navigate("/projects/add")}
             />
 
             <SubItem
               label="View Projects"
-              onClick={() => {
-                navigate("/projects");
-                setSidebarOpen(false);
-              }}
+              active={isActive("/projects")}
+              onClick={() => navigate("/projects")}
             />
 
-            <SubItem label="Clients" />
+            {/* ✅ OUR COMPANY LOGOS */}
+            <SubItem
+              label="Our Company Logos"
+              active={isActive("/our-project")}
+              onClick={() => navigate("/our-project")}
+            />
           </Dropdown>
-
         </nav>
 
         {/* PROFILE */}
         <div className="border-t border-slate-800 p-3">
-
-          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25] transition">
-
+          <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-[#161c25]">
             <img
               src="https://i.pravatar.cc/40"
               className="w-9 h-9 rounded-full ring-2 ring-blue-500"
@@ -200,15 +175,11 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
-
-                <FiLogOut className="text-slate-400 hover:text-red-400 cursor-pointer" />
+                <FiLogOut className="text-red-400 cursor-pointer" />
               </>
             )}
-
           </div>
-
         </div>
-
       </aside>
     </>
   );
@@ -216,14 +187,16 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 
 export default AppSidebar;
 
-/* ---------------- COMPONENTS ---------------- */
+/* ================= SUB COMPONENTS ================= */
 
-const SidebarItem = ({ icon, label, collapsed, color, onClick }) => (
+const SidebarItem = ({ icon, label, collapsed, onClick, active }) => (
   <button
     onClick={onClick}
-    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
+    className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition
+      ${active ? "bg-[#1b2230] text-white" : "hover:bg-[#161c25] text-slate-300"}
+    `}
   >
-    <span className={`text-lg ${color}`}>{icon}</span>
+    <span className="text-lg">{icon}</span>
     {!collapsed && <span>{label}</span>}
   </button>
 );
@@ -232,7 +205,7 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
   <>
     <button
       onClick={() => setOpen(!open)}
-      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25] transition"
+      className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-[#161c25]"
     >
       <div className="flex items-center gap-3">
         {icon}
@@ -241,26 +214,25 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
 
       {!collapsed && (
         <FiChevronDown
-          className={`transition ${
-            open ? "rotate-180 text-blue-400" : "text-slate-400"
-          }`}
+          className={`transition ${open ? "rotate-180 text-blue-400" : ""}`}
         />
       )}
     </button>
 
-    {open && !collapsed && (
-      <div className="ml-8 space-y-1">
-        {children}
-      </div>
-    )}
+    {open && !collapsed && <div className="ml-8 space-y-1">{children}</div>}
   </>
 );
 
-const SubItem = ({ label, onClick }) => (
+const SubItem = ({ label, onClick, active }) => (
   <button
     onClick={onClick}
-    className="block w-full text-left px-3 py-2 rounded-lg
-    text-slate-400 hover:text-white hover:bg-[#1b2230] transition"
+    className={`block w-full text-left px-3 py-2 rounded-lg transition
+      ${
+        active
+          ? "bg-[#1b2230] text-white"
+          : "text-slate-400 hover:text-white hover:bg-[#1b2230]"
+      }
+    `}
   >
     {label}
   </button>

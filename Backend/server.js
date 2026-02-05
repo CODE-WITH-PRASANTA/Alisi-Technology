@@ -1,34 +1,41 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+
 const connectDB = require("./config/db");
 const projectRoutes = require("./routes/project.routes");
+const testimonialRoutes = require("./routes/testimonial.routes");
 
 dotenv.config();
 connectDB();
 
 const app = express();
 
+/* ================= MIDDLEWARE ================= */
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      // "http://localhost:5174",
-    ],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-/* serve uploaded images */
+/* ================= STATIC FILES ================= */
+
 app.use("/uploads", express.static("uploads"));
 
-/* routes */
+/* ================= ROUTES ================= */
+
 app.use("/api/projects", projectRoutes);
+app.use("/api/testimonials", testimonialRoutes);
+
+/* ================= SERVER ================= */
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () =>
-  console.log(`✅ Server running on port ${PORT}`)
-);
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
