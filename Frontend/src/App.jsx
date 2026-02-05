@@ -22,6 +22,7 @@ import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import BPOService from "./Pages/BPOService/BPOService";
 import KPOService from "./Pages/KPOService/KPOService";
 import CognitiveOperations from "./Pages/CognitiveOperations/CognitiveOperations";
+import NetworkSolution from "./Pages/NetworkSolution/NetworkSolution";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/services/bpo" element={<BPOService />} />
         <Route path="/services/kpo" element={<KPOService />} />
         <Route path="/services/Cognitive" element={<CognitiveOperations />} />
+        <Route path="/services/Network" element={<NetworkSolution />} />
       </Routes>
 
       <Footer />
