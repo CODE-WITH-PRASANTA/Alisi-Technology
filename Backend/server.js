@@ -20,14 +20,6 @@ app.use(
   })
 );
 
-app.get("/add",(req,res)=>{
-  res.send("My app")
-})
-
-// test route
-app.get("/", (req, res) => {
-  res.send("API running successfully 🚀");
-});
 app.use(express.json());
 
 /* serve uploaded images */
