@@ -47,12 +47,12 @@ const Navbar = () => {
             <img src={logo} alt="Alisi Technology Logo" />
           </NavLink>
 
-          {/* DESKTOP MENU */}
+          {/* ================= DESKTOP MENU ================= */}
           <nav className="tm-menu">
             <NavLink to="/" end onClick={closeAll}>Home</NavLink>
             <NavLink to="/about" onClick={closeAll}>About</NavLink>
 
-            {/* 🔽 CLICKABLE SERVICES */}
+            {/* SERVICES */}
             <div className="tm-dropdown">
               <button
                 className="tm-dropdown-btn"
@@ -94,16 +94,13 @@ const Navbar = () => {
             <NavLink to="/contact" onClick={closeAll}>Contact</NavLink>
           </nav>
 
-          {/* ACTIONS */}
+          {/* ================= ACTIONS ================= */}
           <div className="tm-actions">
             <button className="cta-btn">
               Get Started <FaArrowRight />
             </button>
 
-            <button
-              className="menu-toggle"
-              onClick={() => setOpen(!open)}
-            >
+            <button className="menu-toggle" onClick={() => setOpen(!open)}>
               {open ? <FaTimes /> : <FaBars />}
             </button>
           </div>
@@ -114,6 +111,7 @@ const Navbar = () => {
           <NavLink to="/" onClick={closeAll}>Home</NavLink>
           <NavLink to="/about" onClick={closeAll}>About</NavLink>
 
+          {/* MOBILE SERVICES */}
           <button
             className="tm-mobile-dropdown-btn"
             onClick={() => setServiceOpen(!serviceOpen)}
@@ -124,9 +122,17 @@ const Navbar = () => {
           {serviceOpen && (
             <div className="tm-mobile-submenu">
               <NavLink to="/services/all-services" onClick={closeAll}>All Services</NavLink>
-              <NavLink to="/services/Data-Analytics" onClick={closeAll}>AI & Data</NavLink>
-              <NavLink to="/services/Cloud" onClick={closeAll}>Cloud</NavLink>
+              <NavLink to="/services/Data-Analytics" onClick={closeAll}>AI & Data Analytics</NavLink>
+              <NavLink to="/services/bpo" onClick={closeAll}>BPO Services</NavLink>
+              <NavLink to="/services/kpo" onClick={closeAll}>KPO Services</NavLink>
+              <NavLink to="/services/Cloud" onClick={closeAll}>Cloud Computing</NavLink>
+              <NavLink to="/services/Cognitive" onClick={closeAll}>Cognitive Operations</NavLink>
+              <NavLink to="/services/Consulting" onClick={closeAll}>Consulting</NavLink>
               <NavLink to="/services/Cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
+              <NavLink to="/services/Enterprise-Solutions" onClick={closeAll}>Enterprise Solutions</NavLink>
+              <NavLink to="/services/IoT-Digital-Eng." onClick={closeAll}>IoT & Digital Engineering</NavLink>
+              <NavLink to="/services/Network" onClick={closeAll}>Network Solutions</NavLink>
+              <NavLink to="/services/Sustainability" onClick={closeAll}>Sustainability Services</NavLink>
             </div>
           )}
 
