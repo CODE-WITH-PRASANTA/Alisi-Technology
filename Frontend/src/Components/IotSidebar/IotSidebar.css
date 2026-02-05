@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-top: 80px;
 }
 
 /* =====================
-   SERVICES BOX (TOP)
+   SERVICES BOX
 ===================== */
 
 .iot-sidebar-services-box {
@@ -21,10 +22,15 @@
 }
 
 .iot-sidebar-list {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
+
+.iot-sidebar-list li {
+  list-style: none;
+}
+
+/* LINK ITEM */
 
 .iot-sidebar-item {
   background: #000;
@@ -32,12 +38,16 @@
   padding: 16px 18px;
   border-radius: 12px;
   margin-bottom: 14px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   cursor: pointer;
   transition: all 0.3s ease;
+
   font-size: 15px;
+  text-decoration: none;
 }
 
 .iot-sidebar-item:hover {
@@ -59,9 +69,7 @@
   padding: 32px;
   position: relative;
   overflow: hidden;
-
-  /* HEIGHT INCREASED */
-  min-height: 580px;   /* before ~420 */
+  min-height: 580px;
 }
 
 /* TEXT */
@@ -91,7 +99,7 @@
 }
 
 /* =====================
-   ROUNDED IMAGE STYLE (REFERENCE LIKE)
+   ROUNDED IMAGE
 ===================== */
 
 .iot-sidebar-image-holder {
@@ -102,7 +110,6 @@
   height: 50%;
   overflow: hidden;
 
-  /* THIS CREATES THE HALF CIRCLE EFFECT */
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
 }
@@ -112,38 +119,79 @@
   height: 100%;
   object-fit: cover;
 }
-.iot-sidebar-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-top: 80px;   /* NEW */
-}
-
 
 /* =====================
-   TOP PADDING RESPONSIVE
+   RESPONSIVE
 ===================== */
 
-/* Tablets */
 @media (max-width: 992px) {
-  .iot-left-wrapper,
   .iot-sidebar-wrapper {
     padding-top: 60px;
   }
-}
 
-/* Mobile */
-@media (max-width: 576px) {
-  .iot-left-wrapper,
-  .iot-sidebar-wrapper {
-    padding-top: 40px;
+  .iot-sidebar-image-holder {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 200px 200px 0 0;
+    margin-top: 24px;
+  }
+
+  .iot-sidebar-card {
+    min-height: 460px;
+    padding: 26px;
   }
 }
 
-/* Very small phones */
+@media (max-width: 768px) {
+  .iot-sidebar-card-content h2 {
+    font-size: 36px;
+  }
+
+  .iot-sidebar-card-content p {
+    font-size: 16px;
+  }
+
+  .iot-sidebar-card {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .iot-sidebar-wrapper {
+    padding-top: 40px;
+  }
+
+  .iot-sidebar-image-holder {
+    height: 240px;
+    border-radius: 160px 160px 0 0;
+  }
+
+  .iot-sidebar-phone {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .iot-sidebar-services-box {
+    padding: 20px;
+  }
+
+  .iot-sidebar-item {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}
+
 @media (max-width: 400px) {
-  .iot-left-wrapper,
   .iot-sidebar-wrapper {
     padding-top: 30px;
+  }
+
+  .iot-sidebar-card-content h2 {
+    font-size: 30px;
+  }
+
+  .iot-sidebar-image-holder {
+    height: 200px;
   }
 }

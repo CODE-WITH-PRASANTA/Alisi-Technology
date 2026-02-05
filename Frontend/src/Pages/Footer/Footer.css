@@ -87,23 +87,10 @@
   gap: 60px;
 }
 
-.tk-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 22px;
-  font-weight: 700;
-  color: #d9f99d;
-}
-
-.tk-logo-icon {
-  background: #d9f99d;
-  color: #000;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  .tk-logo-icon {
+  width: 150px;      /* desktop */
+  height: auto;
+  object-fit: contain;
 }
 
 .tk-col h4 {
@@ -254,9 +241,19 @@
     font-size: 28px;
   }
 
-  .tk-logo {
-    font-size: 20px;
+  /* Tablet */
+@media (max-width: 768px) {
+  .tk-logo-icon {
+    width: 124px;
   }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .tk-logo-icon {
+    width: 120px;
+  }
+}
 
   .tk-footer-bottom {
     font-size: 13px;

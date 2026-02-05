@@ -19,6 +19,9 @@ import EnterpriceSolution from "./Pages/EnterpriceSolution/EnterpriceSolution";
 import IOTDigitalEng from "./Pages/IOTDigitalEng/IOTDigitalEng";
 import Sustainability from "./Pages/Sustainability/Sustainability";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
+import BPOService from "./Pages/BPOService/BPOService";
+import KPOService from "./Pages/KPOService/KPOService";
+import CognitiveOperations from "./Pages/CognitiveOperations/CognitiveOperations";
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
         <Route path="/services/IoT-Digital-Eng." element={<IOTDigitalEng />} />
         <Route path="/services/Sustainability" element={<Sustainability />} />
         <Route path="/blog/details" element={<BlogDetails/>} />
+        <Route path="/services/bpo" element={<BPOService />} />
+        <Route path="/services/kpo" element={<KPOService />} />
+        <Route path="/services/Cognitive" element={<CognitiveOperations />} />
       </Routes>
 
       <Footer />

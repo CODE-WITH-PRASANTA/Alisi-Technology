@@ -1,0 +1,223 @@
+.bpoo-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 80px;
+}
+
+/* =====================
+   SERVICES BOX (TOP)
+===================== */
+
+.bpoo-sidebar-services-box {
+  background: #1a1a1a;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.bpoo-sidebar-title {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.bpoo-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bpoo-sidebar-item {
+  background: #000;
+  color: #fff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.bpoo-sidebar-item:hover {
+  background: #e5ff9f;
+  color: #000;
+}
+
+.bpoo-sidebar-arrow {
+  font-size: 20px;
+}
+
+/* =====================
+   INNOVATIVE CARD
+===================== */
+
+.bpoo-sidebar-card {
+  background: radial-gradient(circle at top, #2a2a2a, #000);
+  border-radius: 26px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+
+  /* HEIGHT INCREASED */
+  min-height: 580px;   /* before ~420 */
+}
+
+/* TEXT */
+
+.bpoo-sidebar-card-content h2 {
+  font-size: 44px;
+  margin: 0;
+  color: #fff;
+}
+
+.bpoo-sidebar-card-content p {
+  color: #aaa;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.bpoo-sidebar-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #e5ff9f;
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* =====================
+   ROUNDED IMAGE STYLE (REFERENCE LIKE)
+===================== */
+
+.bpoo-sidebar-image-holder {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85%;
+  height: 50%;
+  overflow: hidden;
+
+  /* THIS CREATES THE HALF CIRCLE EFFECT */
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+}
+
+.bpoo-sidebar-image-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .bpoo-sidebar-card {
+    min-height: 520px;
+  }
+
+  .bpoo-sidebar-image-holder {
+    width: 88%;
+    height: 55%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .bpoo-sidebar-wrapper {
+    gap: 24px;
+  }
+
+  .bpoo-sidebar-card {
+    min-height: 460px;
+    padding: 26px;
+  }
+
+  .bpoo-sidebar-image-holder {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 200px 200px 0 0;
+    margin-top: 24px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .bpoo-sidebar-card-content h2 {
+    font-size: 36px;
+  }
+
+  .bpoo-sidebar-card-content p {
+    font-size: 16px;
+  }
+
+  .bpoo-sidebar-card {
+    min-height: 420px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .bpoo-sidebar-card {
+    min-height: auto;
+  }
+
+  .bpoo-sidebar-image-holder {
+    height: 240px;
+    border-radius: 160px 160px 0 0;
+  }
+
+  .bpoo-sidebar-phone {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .bpoo-sidebar-services-box {
+    padding: 20px;
+  }
+
+  .bpoo-sidebar-item {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .bpoo-sidebar-card-content h2 {
+    font-size: 30px;
+  }
+
+  .bpoo-sidebar-image-holder {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bpoo-sidebar-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bpoo-sidebar-wrapper {
+    padding-top: 30px;
+  }
+}

@@ -1,7 +1,6 @@
 import "./MigrationSection.css";
 
-
-export default function MigrationSection() {
+const MigrationSection = () => {
   return (
     <section className="migration-wrapper">
       <div className="migration-container">
@@ -50,3 +49,7 @@ export default function MigrationSection() {
     </section>
   );
 }
+
+export default MigrationSection
+
+

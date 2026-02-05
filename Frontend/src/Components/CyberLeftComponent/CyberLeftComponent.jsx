@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./CyberLeftComponent.css";
 
+import CyberPricing from "../../Components/Cyberapricing/Cyberapricing";
+import mainimg from "../../Assets/Consult-mainimg.webp";
+import Discuss from "../../Assets/Cyber-img1.webp";
+import team from "../../Assets/Cyber-teamwork.webp"
+
 
 const faqData = [
   {
@@ -47,7 +52,7 @@ const CyberLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="cyber-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Service Banner" />
+        <img src={Discuss} alt="Service Banner" />
       </div>
 
       {/* TITLE */}
@@ -84,8 +89,8 @@ const CyberLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="cyber-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Team working" />
-        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
+        <img src={team} alt="Team working" />
+        <img src={mainimg} alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
@@ -127,6 +132,8 @@ const CyberLeftComponent = () => {
 
         </div>
       </div>
+
+      <CyberPricing />
 
       {/* FAQ */}
       <div className="cyber-faq-area">
