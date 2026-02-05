@@ -21,16 +21,6 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
-app.get("/add",(req,res)=>{
-  res.send("My app")
-})
-
-// test route
-app.get("/", (req, res) => {
-  res.send("API running successfully 🚀");
-});
-=======
 app.use(express.json());
 
 /* serve uploaded images */
@@ -38,7 +28,6 @@ app.use("/uploads", express.static("uploads"));
 
 /* routes */
 app.use("/api/projects", projectRoutes);
->>>>>>> e9e257578a50db9ee16864459b3bab3877dd63ce
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
