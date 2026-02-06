@@ -45,7 +45,7 @@ export default function HomeHero() {
 
         {/* RIGHT */}
         <div className="hero-right">
-          <img src={hero} alt="" className="hero-img" />
+          <img src={hero} alt="" className="Home-hero-img" />
 
           {/* Trusted badge */}
           <div className="trusted">
