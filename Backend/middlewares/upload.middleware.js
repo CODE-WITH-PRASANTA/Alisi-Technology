@@ -3,12 +3,12 @@ const path = require("path");
 const fs = require("fs");
 const sharp = require("sharp");
 
+/* ================= HELPERS ================= */
 const ensureDir = (dir) => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 };
 
+/* ================= MULTER ================= */
 const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
@@ -22,12 +22,32 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, fileFilter });
 
+/* ================= SHARP ================= */
 const convertToWebp = async (req, res, next) => {
-  if (!req.files || Object.keys(req.files).length === 0) {
-    return next();
-  }
-
   try {
+    /* ===== upload.single("photo") ===== */
+    if (req.file) {
+      const uploadPath = "uploads/team";
+      ensureDir(uploadPath);
+
+      const filename = `${Date.now()}-${Math.random()
+        .toString(36)
+        .slice(2)}.webp`;
+
+      const outputPath = path.join(uploadPath, filename);
+
+      await sharp(req.file.buffer)
+        .resize(500, 500, { fit: "inside" })
+        .webp({ quality: 80 })
+        .toFile(outputPath);
+
+      req.file.path = outputPath;
+      return next();
+    }
+
+    /* ===== upload.fields(...) ===== */
+    if (!req.files) return next();
+
     for (const field in req.files) {
       for (const file of req.files[field]) {
         let uploadPath = "";

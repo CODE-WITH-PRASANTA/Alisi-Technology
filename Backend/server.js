@@ -5,6 +5,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const projectRoutes = require("./routes/project.routes");
 const testimonialRoutes = require("./routes/testimonial.routes");
+const teamRoutes = require("./routes/teamRoutes");
 
 dotenv.config();
 connectDB();
@@ -32,6 +33,7 @@ app.use("/uploads", express.static("uploads"));
 
 app.use("/api/projects", projectRoutes);
 app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/team", teamRoutes);
 
 /* ================= SERVER ================= */
 

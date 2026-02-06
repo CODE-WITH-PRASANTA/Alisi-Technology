@@ -1,6 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-import { API_URL } from "../Api/Api";
+import api from "../Api/Api"; // ✅ axios instance
 
 const AddProject = () => {
   const [form, setForm] = useState({
@@ -61,12 +60,13 @@ const AddProject = () => {
       }
     });
 
+    // 🔍 DEBUG (remove after confirmation)
+    for (let pair of formData.entries()) {
+      console.log(pair[0], pair[1]);
+    }
+
     try {
-      await axios.post(`${API_URL}/projects`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await api.post("/projects", formData); // ✅ NO headers
 
       setSuccess(true);
 
@@ -199,39 +199,3 @@ const AddProject = () => {
 };
 
 export default AddProject;
-
-/* ================= REUSABLE INPUTS ================= */
-
-const Input = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input
-      {...props}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const Textarea = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <textarea
-      {...props}
-      rows={4}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const FileInput = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input
-      type="file"
-      {...props}
-      className="w-full text-sm text-slate-400"
-    />
-  </div>
-);

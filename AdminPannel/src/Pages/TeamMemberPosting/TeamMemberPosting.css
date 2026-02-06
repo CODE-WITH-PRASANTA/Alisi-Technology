@@ -1,332 +1,161 @@
 /* ===============================
    MAIN CONTAINER
 ================================ */
-
-.adm-blog-manager-container{
-  display:flex;
-  height:100vh;
-  padding:20px;
-  gap:22px;
-  overflow:hidden;
-  background:#070b10;
+.adm-blog-manager-container {
+  display: flex;
+  height: 100vh;
+  padding: 20px;
+  gap: 22px;
+  overflow: hidden;
+  background: #070b10;
 }
 
 /* ===============================
    PANELS
 ================================ */
-
-.adm-blog-left-panel{
-  width:55%;
-  height:100%;
-  overflow-y:auto;
-  overflow-x:hidden;
-  padding-right:6px;
+.adm-blog-left-panel {
+  width: 55%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
 }
 
-.adm-blog-right-panel{
-  width:45%;
-  height:100%;
+.adm-blog-right-panel {
+  width: 45%;
+  height: 100%;
 }
 
 /* ===============================
    FORM BOX
 ================================ */
-
-.adm-blog-form-box{
-  background:linear-gradient(180deg,#0f141b,#0b0f14);
-  padding:28px;
-  border-radius:18px;
-  border:1px solid #1f2933;
-  box-shadow:0 12px 35px rgba(0,0,0,.7);
-  max-height:88vh;
-  overflow-y:auto;
+.adm-blog-form-box {
+  background: linear-gradient(180deg, #0f141b, #0b0f14);
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #1f2933;
+  max-height: 88vh;
+  overflow-y: auto;
 }
 
 /* ===============================
    HEADING
 ================================ */
-
-.adm-blog-form-heading{
-  font-size:22px;
-  margin-bottom:22px;
-  color:#f9fafb;
-  font-weight:600;
+.adm-blog-form-heading {
+  font-size: 22px;
+  margin-bottom: 22px;
+  color: #f9fafb;
+  font-weight: 600;
 }
 
 /* ===============================
    INPUT GROUP
 ================================ */
-
-.adm-input-group{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  margin-bottom:15px;
-  color:#9ca3af;
-  font-size:14px;
+.adm-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+  color: #9ca3af;
+  font-size: 14px;
 }
 
-.adm-input-group input,
-.adm-input-group textarea,
-.adm-input-group select{
-  padding:13px;
-  border-radius:11px;
-  border:1px solid #1f2933;
-  background:#0b0f14;
-  color:#fff;
-  outline:none;
-  transition:.25s;
-}
-
-.adm-input-group input::placeholder{
-  color:#6b7280;
-}
-
-.adm-input-group input:focus,
-.adm-input-group textarea:focus,
-.adm-input-group select:focus{
-  border-color:#38bdf8;
-  box-shadow:0 0 0 1px rgba(56,189,248,.3);
-}
-
-/* ===============================
-   TEXTAREA (IF USED)
-================================ */
-
-.adm-content-textarea{
-  height:160px;
-  resize:none;
+.adm-input-group input {
+  padding: 13px;
+  border-radius: 11px;
+  border: 1px solid #1f2933;
+  background: #0b0f14;
+  color: #fff;
 }
 
 /* ===============================
    IMAGE PREVIEW
 ================================ */
-
-.adm-image-preview{
-  width:95px;
-  height:95px;
-  border-radius:14px;
-  object-fit:cover;
-  margin-top:10px;
-  border:1px solid #1f2933;
-  background:#020617;
+.adm-image-preview {
+  width: 95px;
+  height: 95px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 1px solid #1f2933;
 }
 
 /* ===============================
-   SUBMIT BUTTON
+   ACTION BUTTONS
 ================================ */
-
-.adm-submit-btn{
-  width:100%;
-  padding:15px;
-  margin-top:8px;
-  background:linear-gradient(135deg,#38bdf8,#22d3ee);
-  border:none;
-  color:#020617;
-  border-radius:14px;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s ease;
+.adm-form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
 }
 
-.adm-submit-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(56,189,248,.45);
+.adm-submit-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #38bdf8, #22d3ee);
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* ===============================
-   TABLE BOX
-================================ */
-
-.adm-blog-table-box{
-  background:linear-gradient(180deg,#0f141b,#0b0f14);
-  padding:18px;
-  border-radius:18px;
-  border:1px solid #1f2933;
-  height:100%;
-  display:flex;
-  flex-direction:column;
+.adm-view-delete-btn {
+  padding: 15px;
+  background: #ef4444;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
 }
 
-/* ===============================
-   TABLE HEADING
-================================ */
-
-.adm-table-heading{
-  font-size:20px;
-  color:#f9fafb;
-  font-weight:600;
-}
-
-/* ===============================
-   TABLE SCROLL
-================================ */
-
-.adm-table-scroll-area{
-  margin-top:15px;
-  overflow-x:auto;
+.adm-cancel-btn {
+  padding: 15px;
+  background: #1f2933;
+  border-radius: 14px;
+  border: 1px solid #374151;
+  cursor: pointer;
+  display: block;
 }
 
 /* ===============================
    TABLE
 ================================ */
-
-.adm-blog-table{
-  min-width:1000px;
-  width:100%;
-  border-collapse:collapse;
-  background:#0b0f14;
-  color:#e5e7eb;
+.adm-blog-table {
+  min-width: 1000px;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.adm-blog-table th{
-  background:#1f2933;
-  padding:13px;
-  text-align:left;
-  font-size:14px;
+.adm-blog-table th,
+.adm-blog-table td {
+  padding: 12px;
+  border-bottom: 1px solid #1f2933;
 }
 
-.adm-blog-table td{
-  padding:12px;
-  border-bottom:1px solid #1f2933;
-  font-size:14px;
+.adm-table-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
 }
 
-/* ===============================
-   IMAGE CELL
-================================ */
-
-.adm-table-img{
-  width:65px;
-  height:65px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-/* ===============================
-   SOCIAL LINK CELLS
-================================ */
-
-.adm-desc-cell{
-  max-width:220px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  color:#cbd5f5;
-}
-
-/* ===============================
-   BUTTONS
-================================ */
-
-.adm-edit-btn{
-  background:#22c55e;
-  color:#020617;
-  border:none;
-  padding:7px 14px;
-  border-radius:9px;
-  margin-right:6px;
-  cursor:pointer;
-  font-size:13px;
-  transition:.2s;
-}
-
-.adm-edit-btn:hover{
-  opacity:.85;
-}
-
-.adm-delete-btn{
-  background:#ef4444;
-  color:#020617;
-  border:none;
-  padding:7px 14px;
-  border-radius:9px;
-  cursor:pointer;
-  font-size:13px;
-  transition:.2s;
-}
-
-.adm-delete-btn:hover{
-  opacity:.85;
-}
-
-/* ===============================
-   EMPTY STATE
-================================ */
-
-.adm-empty-row{
-  text-align:center;
-  padding:22px;
-  color:#9ca3af;
-  font-size:14px;
-}
-
-/* ===============================
-   HIDE SCROLLBARS
-================================ */
-
-/* Chrome */
-.adm-blog-left-panel::-webkit-scrollbar,
-.adm-blog-form-box::-webkit-scrollbar,
-.adm-blog-right-panel::-webkit-scrollbar,
-.adm-table-scroll-area::-webkit-scrollbar{
-  width:0;
-  height:0;
-}
-
-/* Firefox */
-.adm-blog-left-panel,
-.adm-blog-form-box,
-.adm-blog-right-panel,
-.adm-table-scroll-area{
-  scrollbar-width:none;
-}
-
-/* IE */
-.adm-blog-left-panel,
-.adm-blog-form-box,
-.adm-blog-right-panel,
-.adm-table-scroll-area{
-  -ms-overflow-style:none;
+.adm-edit-btn {
+  background: #22c55e;
+  padding: 7px 14px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
 }
 
 /* ===============================
    RESPONSIVE
 ================================ */
-
-@media(max-width:1100px){
-  .adm-blog-manager-container{
-    flex-direction:column;
-    height:auto;
+@media (max-width: 1100px) {
+  .adm-blog-manager-container {
+    flex-direction: column;
+    height: auto;
   }
-
   .adm-blog-left-panel,
-  .adm-blog-right-panel{
-    width:100%;
-  }
-
-  .adm-blog-form-box{
-    max-height:none;
-  }
-}
-
-@media(max-width:600px){
-
-  .adm-blog-manager-container{
-    padding:12px;
-    gap:16px;
-  }
-
-  .adm-blog-form-box{
-    padding:18px;
-  }
-
-  .adm-submit-btn{
-    font-size:15px;
-  }
-
-  .adm-table-heading{
-    font-size:18px;
+  .adm-blog-right-panel {
+    width: 100%;
   }
 }
