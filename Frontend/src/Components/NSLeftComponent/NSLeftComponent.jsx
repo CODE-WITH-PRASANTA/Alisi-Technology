@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import './NSLeftComponent.css'
 import NSPricing from "../NSPricing/NSPricing";
+import img1 from "../../Assets/Nss-img1.webp";
+import img2 from "../../Assets/Nss2-img.webp";
+import img3 from "../../Assets/Nss-img3.webp";
 
 const faqData = [
   {
@@ -47,7 +50,7 @@ const NSLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="nsl-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Network Solutions and Services by Alisil Technology" />
+        <img src={img1} alt="Network Solutions and Services by Alisil Technology" />
       </div>
 
       {/* TITLE */}
@@ -84,8 +87,8 @@ const NSLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="nsl-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Network engineers managing infrastructure" />
-        <img src="../../assets/Service-details-002.webp" alt="IT network operations center" />
+        <img src={img2} alt="Network engineers managing infrastructure" />
+        <img src={img3} alt="IT network operations center" />
       </div>
 
       {/* CUSTOMER SERVICES */}

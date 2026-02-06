@@ -45,7 +45,7 @@ const SolutionSidebar = () => {
           <p>IT Solutions.</p>
 
           <div className="solution-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞 +1 (009) 544-7818
           </div>
         </div>
 

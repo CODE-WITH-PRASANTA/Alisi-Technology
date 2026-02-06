@@ -45,7 +45,7 @@ const KPOSidebar = () => {
           <p>IT Solutions.</p>
 
           <div className="kpoo-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞+1 (009) 544-7818
           </div>
         </div>
 

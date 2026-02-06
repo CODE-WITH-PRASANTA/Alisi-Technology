@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NSSidebar.css";
+import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -17,65 +18,44 @@ const services = [
   { name: "Sustainability Services", path: "/services/Sustainability" },
 ];
 
-const NSSiderbar = () => {
+const NSSidebar = () => {
   return (
     <div className="nss-sidebar-wrapper">
 
-      {/* SERVICES LIST FIRST */}
+      {/* SERVICES */}
       <div className="nss-sidebar-services-box">
-
-        <h3 className="nss-sidebar-title">
-          More Services
-        </h3>
+        <h3 className="nss-sidebar-title">More Services</h3>
 
         <ul className="nss-sidebar-list">
           {services.map((service, index) => (
             <li key={index} className="nss-sidebar-item">
-
-              <Link 
-                to={service.path} 
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                  alignItems: "center"
-                }}
-              >
-                {service.name}
+              <Link to={service.path}>
+                <span>{service.name}</span>
                 <span className="nss-sidebar-arrow">›</span>
               </Link>
-
             </li>
           ))}
         </ul>
-
       </div>
 
-      {/* INNOVATIVE CARD SECOND */}
+      {/* INNOVATIVE CARD */}
       <div className="nss-sidebar-card">
-
         <div className="nss-sidebar-card-content">
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
 
           <div className="nss-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞 +011-6931-3553
           </div>
         </div>
 
         <div className="nss-sidebar-image-holder">
-          <img 
-            src="../../assets/Service-details-001.webp" 
-            alt="Professional" 
-          />
+          <img src={sidebarImg} alt="Professional" />
         </div>
-
       </div>
 
     </div>
   );
 };
 
-export default NSSiderbar;
+export default NSSidebar;

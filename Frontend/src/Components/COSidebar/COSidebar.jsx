@@ -45,7 +45,7 @@ const COSidebar = () => {
           <p>IT Solutions.</p>
 
           <div className="coo-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞 +1 (009) 544-7818
           </div>
         </div>
 

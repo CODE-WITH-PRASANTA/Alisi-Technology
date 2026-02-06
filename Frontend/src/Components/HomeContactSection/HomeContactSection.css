@@ -161,3 +161,8 @@ textarea {
     padding: 35px 25px;
   }
 }
+
+.contact-btn-link {
+  text-decoration: none;
+  display: inline-block;
+}

@@ -301,3 +301,12 @@ body {
     height: 34px;
   }
 }
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+

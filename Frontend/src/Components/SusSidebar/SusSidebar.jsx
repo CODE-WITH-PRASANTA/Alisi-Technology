@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./SusSidebar.css";
+import sidebarImg from "../../assets/Service-details-001.webp";
 
-/* ✅ ALL SERVICES ROUTES (MATCHING NAVBAR) */
+/* ALL SERVICES ROUTES */
 const services = [
   { name: "All Services", path: "/services/all-services" },
   { name: "Artificial Intelligence & Data Analytics", path: "/services/Data-Analytics" },
@@ -19,8 +20,6 @@ const services = [
 ];
 
 const SusSidebar = () => {
-
-  /* SEO (lightweight, no helmet) */
   useEffect(() => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
@@ -33,6 +32,8 @@ const SusSidebar = () => {
 
   return (
     <div className="sus-sidebar-wrapper">
+
+      {/* SERVICES */}
       <div className="sus-sidebar-services-box">
         <h3 className="sus-sidebar-title">More Services</h3>
 
@@ -42,9 +43,7 @@ const SusSidebar = () => {
               <NavLink
                 to={service.path}
                 className={({ isActive }) =>
-                  isActive
-                    ? "sus-sidebar-link active"
-                    : "sus-sidebar-link"
+                  isActive ? "sus-sidebar-link active" : "sus-sidebar-link"
                 }
               >
                 <span>{service.name}</span>
@@ -54,6 +53,23 @@ const SusSidebar = () => {
           ))}
         </ul>
       </div>
+
+      {/* INNOVATIVE CARD */}
+      <div className="sus-sidebar-card">
+        <div className="sus-sidebar-card-content">
+          <h2>Innovative</h2>
+          <p>IT Solutions.</p>
+
+          <div className="sus-sidebar-phone">
+            📞 +1 (009) 544-7818
+          </div>
+        </div>
+
+        <div className="sus-sidebar-image-holder">
+          <img src={sidebarImg} alt="Professional" />
+        </div>
+      </div>
+
     </div>
   );
 };

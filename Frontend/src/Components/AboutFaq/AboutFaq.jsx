@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AboutFaq.css";
 import { FaPlus, FaMinus, FaPhoneAlt } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
+import img from "../../Assets/Alisillogo.webp";
 
 
 const faqData = [
@@ -69,14 +70,14 @@ const FaqSection = () => {
 
             <div className="tek-faq-call-box">
               <img
-                src="../../assets/testimonial-client-1.webp"
+                src={img}
                 alt="Alisil Technology consultant"
                 className="tek-faq-person-img"
               />
 
               <div>
                 <span>Call us now</span>
-                <h4>+1 (888) 333-8181</h4>
+                <h4>+011-6931-3553</h4>
               </div>
 
               <div className="tek-faq-phone-icon">

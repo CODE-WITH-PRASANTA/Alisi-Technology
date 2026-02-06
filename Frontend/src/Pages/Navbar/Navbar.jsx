@@ -26,11 +26,13 @@ const Navbar = () => {
       <div className="tm-topbar">
         <div className="tm-top-left">
           <FaBolt />
-          <span>
-            Fast & Reliable IT Solution Services.
-            <a href="#"> Join Now ↗</a>
-          </span>
+          <span className="call-strip">
+  Fast, reliable cloud solutions.
+  <a href="tel:+911169313553"> Call Now ↗</a>
+</span>
+
         </div>
+
 
         <div className="tm-top-right">
           <span>
@@ -96,9 +98,10 @@ const Navbar = () => {
 
           {/* ACTIONS */}
           <div className="tm-actions">
-            <button className="cta-btn">
-              Get Started <FaArrowRight />
-            </button>
+           <a href="tel:01169313553" className="cta-btn">
+            Call Now (011-6931-3553) <FaArrowRight />
+          </a>
+
 
             <button
               className="menu-toggle"
