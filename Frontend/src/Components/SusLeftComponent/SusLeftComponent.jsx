@@ -4,36 +4,37 @@ import SusPricing from "../../Components/SusPricing/SusPricing";
 import img1 from "../../Assets/Sus-main-img.webp";
 import img2 from "../../Assets/Sus-img2.webp";
 import img3 from "../../Assets/Sus-img3.webp";
+
 const faqData = [
   {
-    question: "What are the main types of cloud computing?",
+    question: "What are sustainability services?",
     answer:
-      "Cloud computing includes IaaS, PaaS, and SaaS models offering scalable infrastructure, platforms, and software solutions."
+      "Sustainability services help organizations reduce environmental impact, improve energy efficiency, meet compliance standards, and adopt responsible business practices while maintaining profitability."
   },
   {
-    question: "How secure is cloud computing?",
+    question: "How does Alisil Technology support sustainable transformation?",
     answer:
-      "Cloud providers implement encryption, firewalls, and multi-factor authentication to protect data."
+      "Alisil Technology provides data-driven sustainability strategies, cloud-enabled optimization, carbon footprint analysis, and digital solutions that help businesses operate responsibly and efficiently."
   },
   {
-    question: "Can I move my existing applications to the cloud?",
+    question: "Can sustainability initiatives reduce operational costs?",
     answer:
-      "Yes, most applications can be migrated using cloud migration strategies."
+      "Yes. Sustainable practices such as energy optimization, cloud migration, and process automation significantly reduce operational expenses while improving productivity."
   },
   {
-    question: "How does cloud computing reduce costs?",
+    question: "Do you help with ESG compliance and reporting?",
     answer:
-      "It eliminates hardware investments and allows pay-as-you-go pricing."
+      "Absolutely. We assist organizations with ESG frameworks, compliance reporting, performance tracking, and analytics to meet regulatory and stakeholder expectations."
   },
   {
-    question: "How do you collect customer feedback?",
+    question: "Which industries benefit from sustainability services?",
     answer:
-      "Through surveys, analytics tools, and continuous monitoring systems."
+      "Manufacturing, IT, healthcare, retail, logistics, and enterprise organizations benefit by improving efficiency, lowering emissions, and strengthening brand reputation."
   },
   {
-    question: "How Do I Choose the Right Cloud Service Provider?",
+    question: "How long does a sustainability transformation take?",
     answer:
-      "Cloud providers implement strong security measures such as encryption, firewalls, and multi-factor authentication. Businesses must also follow best practices like strong password policies and regular security audits."
+      "Timelines vary based on business size and goals, but most organizations begin seeing measurable improvements within a few months of implementation."
   }
 ];
 
@@ -44,20 +45,17 @@ const SusLeftComponent = () => {
      SEO (NO HELMET, NO UI CHANGE)
      =============================== */
   useEffect(() => {
-    // Page title
     document.title =
-      "Cloud Computing Services | Secure & Scalable IT Solutions";
+      "Sustainability Services | Digital Sustainability Solutions – Alisil Technology";
 
-    // Meta description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Professional cloud computing services offering scalable infrastructure, enhanced security, disaster recovery, and cost-effective IT solutions for modern businesses."
+        "Alisil Technology delivers sustainability services that help businesses reduce carbon footprint, optimize operations, achieve ESG goals, and drive long-term growth through smart digital solutions."
       );
     }
 
-    // Meta keywords (optional)
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement("meta");
@@ -67,7 +65,7 @@ const SusLeftComponent = () => {
 
     metaKeywords.setAttribute(
       "content",
-      "cloud computing services, cloud infrastructure, AWS cloud solutions, Azure cloud services, secure cloud computing, scalable IT solutions, enterprise cloud"
+      "sustainability services, ESG solutions, digital sustainability, carbon footprint reduction, green IT, enterprise sustainability, Alisil Technology, sustainable business solutions"
     );
   }, []);
 
@@ -80,77 +78,77 @@ const SusLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="sus-banner-box">
-        <img src={img1} alt="Cloud Computing Services Banner" />
+        <img src={img1} alt="Sustainability Services by Alisil Technology" />
       </div>
 
       {/* TITLE */}
       <h1 className="sus-main-heading">
-        Cloud Computing: Transforming the Future of IT Solution
+        Sustainability Services: Driving Responsible Digital Transformation
       </h1>
 
       {/* DESCRIPTION */}
       <p className="sus-text">
-        Cloud computing is revolutionizing the way businesses and individuals store, access, and manage data. It refers to the delivery of computing services—such as storage, servers, networking, databases, software, and analytics—over the internet rather than relying on local servers or personal devices.
+        At Alisil Technology, our sustainability services empower organizations to build environmentally responsible, efficient, and future-ready operations. We combine digital innovation with sustainability strategies to help businesses minimize environmental impact while maximizing performance.
       </p>
 
       <p className="sus-text">
-        Cloud computing is categorized into Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), enabling businesses to scale efficiently while reducing costs and improving collaboration.
+        From carbon footprint reduction and ESG compliance to cloud optimization and smart analytics, we enable enterprises to embrace sustainable practices that deliver measurable business value. Our approach focuses on long-term growth, operational resilience, and responsible innovation.
       </p>
 
       {/* FEATURE LIST */}
       <div className="sus-feature-container">
         <ul className="sus-feature-list">
-          <li>Scalable IT Infrastructure</li>
-          <li>High Data Security</li>
-          <li>Disaster Recovery Solutions</li>
-          <li>Flexible Storage Options</li>
+          <li>Carbon Footprint Assessment</li>
+          <li>Energy Optimization Solutions</li>
+          <li>Sustainable IT Infrastructure</li>
+          <li>ESG Strategy & Reporting</li>
         </ul>
 
         <ul className="sus-feature-list">
-          <li>Compliance & Support</li>
-          <li>Reduced Hardware Costs</li>
-          <li>24/7 Cloud Monitoring</li>
+          <li>Cloud-Based Optimization</li>
+          <li>Regulatory Compliance Support</li>
+          <li>Continuous Performance Monitoring</li>
         </ul>
       </div>
 
       {/* IMAGE GRID */}
       <div className="sus-image-layout">
-        <img src={img2} alt="Cloud team collaboration" />
-        <img src={img3} alt="Cloud infrastructure discussion" />
+        <img src={img2} alt="Sustainability team collaboration" />
+        <img src={img3} alt="Enterprise sustainability planning" />
       </div>
 
       {/* CUSTOMER SERVICES */}
       <div className="sus-services-section">
         <h2 className="sus-section-title">
-          Our Range of Customer Services
+          Our Sustainability Service Approach
         </h2>
 
         <p className="sus-section-desc">
-          We deliver reliable cloud and IT services tailored to business needs. Our solutions ensure seamless operations, enhanced security, and optimized performance for organizations of all sizes.
+          We partner with organizations to design practical sustainability roadmaps backed by data, automation, and digital intelligence. Our solutions help businesses reduce costs, improve transparency, and create positive environmental impact.
         </p>
 
         <div className="sus-card-grid">
           <div className="sus-service-card">
             <span className="sus-card-number">01</span>
-            <h4>Increased Customer Satisfaction</h4>
+            <h4>Responsible Business Growth</h4>
             <p>
-              Personalized solutions help businesses deliver better customer experiences.
+              We align sustainability goals with business objectives to drive ethical, scalable growth.
             </p>
           </div>
 
           <div className="sus-service-card">
             <span className="sus-card-number">02</span>
-            <h4>Improved Operational Efficiency</h4>
+            <h4>Operational Excellence</h4>
             <p>
-              Automation and cloud tools streamline workflows and reduce manual effort.
+              Digital tools and automation improve efficiency while reducing energy usage and waste.
             </p>
           </div>
 
           <div className="sus-service-card">
             <span className="sus-card-number">03</span>
-            <h4>Insights for Improvement</h4>
+            <h4>Actionable Insights</h4>
             <p>
-              Data-driven insights empower continuous business growth.
+              Advanced analytics provide visibility into sustainability performance for smarter decisions.
             </p>
           </div>
         </div>

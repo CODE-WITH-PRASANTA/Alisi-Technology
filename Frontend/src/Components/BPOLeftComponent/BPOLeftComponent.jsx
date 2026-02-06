@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import './BPOLeftComponent.css'
 import BPOPricing from "../../Components/BPOPricing/BPOPricing";
+import img1 from "../../Assets/Bpo-img1.webp";
+import img2 from "../../Assets/Bpo-img2.webp";
+import img3 from "../../Assets/Bpo-img3.webp";
 
 const faqData = [
   {
@@ -47,7 +50,7 @@ const BPOLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="bpo-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="BPO Services at Alisil Technology" />
+        <img src={img1} alt="BPO Services at Alisil Technology" />
       </div>
 
       {/* TITLE */}
@@ -84,8 +87,8 @@ const BPOLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="bpo-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="BPO operations team working" />
-        <img src="../../assets/Service-details-002.webp" alt="Business outsourcing professionals" />
+        <img src={img2} alt="BPO operations team working" />
+        <img src={img3} alt="Business outsourcing professionals" />
       </div>
 
       {/* CUSTOMER SERVICES */}

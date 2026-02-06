@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import './COLeftComponent.css'
 import COPricing from "../COPricing/COPricing";
+import img1 from "../../Assets/Co-img1.webp";
+import img2 from "../../Assets/Co-img2.webp";
+import img3 from "../../Assets/Co-img3.webp";
+
 
 const faqData = [
   {
@@ -47,7 +51,7 @@ const COLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="co-left-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="Cognitive Business Operations by Alisil Technology" />
+        <img src={img1} alt="Cognitive Business Operations by Alisil Technology" />
       </div>
 
       {/* TITLE */}
@@ -84,8 +88,8 @@ const COLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="co-left-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Cognitive operations analytics team" />
-        <img src="../../assets/Service-details-002.webp" alt="AI driven business workflow management" />
+        <img src={img2} alt="Cognitive operations analytics team" />
+        <img src={img3} alt="AI driven business workflow management" />
       </div>
 
       {/* CUSTOMER SERVICES */}

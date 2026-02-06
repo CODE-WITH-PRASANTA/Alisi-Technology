@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Home.css"
 import HomeHeroSection from '../../Components/HomeHeroSection/HomeHeroSection'
-import HomeTestimonial from '../../Components/HomeTestimonial/HomeTestimonial'
 import HomeSliderBrand from '../../Components/HomeSliderBrand/HomeSliderBrand'
 import HomeWhyChoose from '../../Components/HomeWhyChoose/HomeWhyChoose'
 import HomeAbout from '../../Components/HomeAbout/HomeAbout'

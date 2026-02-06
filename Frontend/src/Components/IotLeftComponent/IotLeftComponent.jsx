@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./IotLeftComponent.css";
 import IOTPricing from "../../Components/IOTPricing/IOTPricing";
 import iotimg1 from "../../Assets/Iot-img1.webp";
+import iotimg2 from "../../Assets/Iot-img2.webp";
+import iotimg3 from "../../Assets/iot-img3.webp";
 
 const faqData = [
   {
@@ -85,8 +87,8 @@ const IotLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="iot-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="Team working" />
-        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
+        <img src={iotimg2} alt="Team working" />
+        <img src={iotimg3} alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}

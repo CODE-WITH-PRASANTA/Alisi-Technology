@@ -45,7 +45,7 @@ const IotSidebar = () => {
           <p>IoT & Digital Engineering Solutions</p>
 
           <div className="iot-sidebar-phone">
-            📞 Speak With Our Experts: +8 (321) 890-640
+            📞 Speak With Our Experts: +1 (009) 544-7818
           </div>
         </div>
 

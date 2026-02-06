@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import './KPOLeftComponent.css'
 import KPOPricing from "../KPOPricing/KPOPricing";
-
+import img1 from "../../Assets/Kpo-img1.webp";
+import img2 from "../../Assets/Co-img2.webp";
+import img3 from "../../Assets/Cyber-teamwork.webp";
 const faqData = [
   {
     question: "What KPO services does Alisil Technology offer?",
@@ -47,7 +49,7 @@ const KPOLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="kpo-banner-box">
-        <img src="../../assets/Service-details-001.webp" alt="KPO Services by Alisil Technology" />
+        <img src={img1} alt="KPO Services by Alisil Technology" />
       </div>
 
       {/* TITLE */}
@@ -84,8 +86,8 @@ const KPOLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="kpo-image-layout">
-        <img src="../../assets/Service-details-002.webp" alt="KPO professionals analyzing data" />
-        <img src="../../assets/Service-details-002.webp" alt="Knowledge process outsourcing team" />
+        <img src={img2} alt="KPO professionals analyzing data" />
+        <img src={img3} alt="Knowledge process outsourcing team" />
       </div>
 
       {/* CUSTOMER SERVICES */}

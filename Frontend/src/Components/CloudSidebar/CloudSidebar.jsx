@@ -53,7 +53,7 @@ const CloudSidebar = () => {
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
 
-          <div className="cloudd-sidebar-phone">📞 +8 (321) 890-640</div>
+          <div className="cloudd-sidebar-phone">📞 +1 (009) 544-7818</div>
         </div>
 
         <div className="cloudd-sidebar-image-holder">

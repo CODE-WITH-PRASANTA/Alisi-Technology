@@ -25,8 +25,8 @@ const ContactInfo = () => {
           </div>
           <h3>Our Location</h3>
           <p>
-            993 Renner Burg, West Rond, <br />
-            MT 94251-030
+            VILL &  PO-RASAPUNJA, PS BISHNUPUR, NEAR RASAPUNJA PANCHYAT.<br />
+            SOUTH 24 PARGANAS, WESTBENGAL - 700104
           </p>
         </div>
 
@@ -46,8 +46,7 @@ const ContactInfo = () => {
             <FaPhoneAlt />
           </div>
           <h3>Call us</h3>
-          <p>+1 (009) 544-7818</p>
-          <p>+1 (009) 880-1810</p>
+          <p> + 011-6931-3553</p>
         </div>
 
         {/* Live Chat */}
