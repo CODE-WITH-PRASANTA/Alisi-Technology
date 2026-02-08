@@ -4,12 +4,13 @@ import "./LeftContent.css";
 import bannerImg from "../../Assets/AI&Data-1.webp";
 import imgOne from "../../Assets/AI-data-4.webp";
 import imgTwo from "../../Assets/AI&data-3.webp";
+import PricingSection from "../../Components/PricingSection/PricingSection";
 
 const faqData = [
   {
-    question: "What AI services does Alisi Technology provide?",
+    question: "What AI services does Alisil Technology provide?",
     answer:
-      "Alisi Technology delivers end-to-end AI solutions including machine learning models, intelligent automation, predictive analytics, and custom AI applications—helping businesses turn data into measurable outcomes.",
+      "Alisil Technology delivers end-to-end AI solutions including machine learning models, intelligent automation, predictive analytics, and custom AI applications—helping businesses turn data into measurable outcomes.",
   },
   {
     question: "How does data analytics improve business performance?",
@@ -24,7 +25,7 @@ const faqData = [
   {
     question: "Is my data secure with AI and analytics platforms?",
     answer:
-      "Absolutely. Alisi Technology implements enterprise-grade security, encryption, access control, and continuous monitoring to ensure your data remains protected, compliant, and reliable.",
+      "Absolutely. Alisil Technology implements enterprise-grade security, encryption, access control, and continuous monitoring to ensure your data remains protected, compliant, and reliable.",
   },
 ];
 
@@ -53,7 +54,7 @@ const LeftContent = () => {
       </p>
 
       <p className="ai-analytics-text">
-        We build intelligent systems that automate processes, enhance decision-making, and create reimagined value chains across industries. From predictive analytics to autonomous workflows, Alisi Technology helps you operationalize AI across your organization.
+        We build intelligent systems that automate processes, enhance decision-making, and create reimagined value chains across industries. From predictive analytics to autonomous workflows, Alisil Technology helps you operationalize AI across your organization.
       </p>
 
       {/* ================= FEATURES ================= */}
@@ -126,7 +127,7 @@ const LeftContent = () => {
         </h2>
 
         <p className="ai-analytics-section-desc">
-         At Alisi Technology, we deliver intelligent cloud, AI, and IT solutions designed to accelerate growth, enhance security, and improve operational performance. Our customer-centric approach ensures every solution is tailored to your business goals—helping you scale faster in today’s digital economy.
+         At Alisil Technology, we deliver intelligent cloud, AI, and IT solutions designed to accelerate growth, enhance security, and improve operational performance. Our customer-centric approach ensures every solution is tailored to your business goals—helping you scale faster in today’s digital economy.
         </p>
 
         <div className="ai-analytics-card-grid">
@@ -155,6 +156,8 @@ const LeftContent = () => {
           </div>
         </div>
       </div>
+
+      <PricingSection />
 
       {/* ================= FAQ ================= */}
       <div className="ai-analytics-faq-area">

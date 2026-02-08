@@ -3,17 +3,14 @@ const path = require("path");
 const fs = require("fs");
 const sharp = require("sharp");
 
-/* Ensure directory exists */
+/* ================= HELPERS ================= */
 const ensureDir = (dir) => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 };
 
-/* Multer memory storage */
+/* ================= MULTER ================= */
 const storage = multer.memoryStorage();
 
-/* File filter */
 const fileFilter = (req, file, cb) => {
   const allowed = /jpeg|jpg|png|webp/;
   const ext = allowed.test(path.extname(file.originalname).toLowerCase());
@@ -25,39 +22,63 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, fileFilter });
 
-/* Convert images to WEBP */
+/* ================= SHARP ================= */
 const convertToWebp = async (req, res, next) => {
-  if (!req.files) return next();
-
   try {
+    /* ===== upload.single("photo") ===== */
+    if (req.file) {
+      const uploadPath = "uploads/team";
+      ensureDir(uploadPath);
+
+      const filename = `${Date.now()}-${Math.random()
+        .toString(36)
+        .slice(2)}.webp`;
+
+      const outputPath = path.join(uploadPath, filename);
+
+      await sharp(req.file.buffer)
+        .resize(500, 500, { fit: "inside" })
+        .webp({ quality: 80 })
+        .toFile(outputPath);
+
+      req.file.path = outputPath;
+      return next();
+    }
+
+    /* ===== upload.fields(...) ===== */
+    if (!req.files) return next();
+
     for (const field in req.files) {
       for (const file of req.files[field]) {
         let uploadPath = "";
 
+        if (field === "image") uploadPath = "uploads/testimonials";
         if (field === "projectImg") uploadPath = "uploads/projects";
         if (field === "galleryImg") uploadPath = "uploads/gallery";
 
+        if (!uploadPath) continue;
+
         ensureDir(uploadPath);
 
-        const filename = `${Date.now()}-${Math.round(
-          Math.random() * 1e9
-        )}.webp`;
+        const filename = `${Date.now()}-${Math.random()
+          .toString(36)
+          .slice(2)}.webp`;
 
         const outputPath = path.join(uploadPath, filename);
 
         await sharp(file.buffer)
+          .resize(500, 500, { fit: "inside" })
           .webp({ quality: 80 })
           .toFile(outputPath);
 
-        // important: replace path for controller
         file.path = outputPath;
       }
     }
 
     next();
   } catch (err) {
-    console.error("WEBP error:", err);
-    res.status(500).json({ success: false, error: "Image processing failed" });
+    console.error("SHARP ERROR:", err);
+    res.status(500).json({ error: err.message });
   }
 };
 

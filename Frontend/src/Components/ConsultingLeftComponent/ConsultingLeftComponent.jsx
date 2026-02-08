@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./ConsultingLeftComponent.css";
 
-import imgone from '../../assets/Service-details-001.webp'
+import imgone from '../../Assets/Consult-main-img.webp';
+import dis from '../../Assets/Consult-discussion.webp';
+import team from '../../Assets/Consult-teamworking.webp';
+import ConsultingPrice from "../../Components/ConsultingPrice/ConsultingPrice";
+
 
 const faqData = [
   {
@@ -48,7 +52,7 @@ const ConsultingLeftComponent = () => {
 
       {/* BANNER IMAGE */}
       <div className="consulting-banner-box">
-        <img src="../../assets//Service-details-001.webp" alt="Service Banner" />
+        <img src={team} alt="Service Banner" />
       </div>
 
       {/* TITLE */}
@@ -85,8 +89,8 @@ const ConsultingLeftComponent = () => {
 
       {/* IMAGE GRID */}
       <div className="consulting-image-layout">
+        <img src={dis} alt="Discussion" />
         <img src={imgone} alt="Team working" />
-        <img src="../../assets/Service-details-002.webp" alt="Discussion" />
       </div>
 
       {/* CUSTOMER SERVICES */}
@@ -128,6 +132,8 @@ const ConsultingLeftComponent = () => {
 
         </div>
       </div>
+
+      <ConsultingPrice />
 
       {/* FAQ */}
       <div className="consulting-faq-area">

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import footerBg from "../../Assets/footer-bg.webp"; // ✅ IMPORTANT
+import footerBg from "../../Assets/footer-bg.webp";
+import logo from "../../Assets/Logo 003.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -52,9 +53,9 @@ const Footer = () => {
         {/* Brand */}
         <div className="tk-col">
           <div className="tk-logo">
-            <span className="tk-logo-icon">T</span>
-            Tekmino
+            <img src={logo} alt="Tekmino Logo" className="tk-logo-icon" />
           </div>
+
           <p>
             Every great solution start understand the time into learn about.
           </p>
@@ -86,11 +87,28 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* ===== UPDATED CONTACT INFO ===== */}
         <div className="tk-col">
           <h4>Contact Info</h4>
-          <p>993 Renner Burg, West Rond, MT 94251-030</p>
-          <p><strong>P:</strong> +1 (009) 544-7818</p>
-          <p><strong>E:</strong> support@tekmino.com</p>
+
+          <p>
+            <strong>Corporate Address:</strong>
+            <br />
+            VILL & PO-RASAPUNJA, PS BISHNUPUR,
+            <br />
+            Near Rasapunja Panchayat,
+            <br />
+            South 24 Parganas, West Bengal – 700104
+          </p>
+
+          <p>
+            <strong>Company No:</strong> + 011-6931-3553
+          </p>
+
+          <p>
+            <strong>E:</strong> support@tekmino.com
+          </p>
+
           <p>Mon–Fri 09am–06pm</p>
         </div>
       </div>

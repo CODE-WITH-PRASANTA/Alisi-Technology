@@ -1,35 +1,74 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaArrowRight,
-  FaShareAlt
+  FaShareAlt,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 
+import API_URL from "../../Api/Api";
 import "./AboutTeam.css";
 
-import team1 from "../../Assets/team-1.webp";
-import team2 from "../../Assets/team-2.webp";
-import team3 from "../../Assets/team-3.webp";
-import team4 from "../../Assets/team-4.webp";
+const AboutTeam = () => {
+  const [teamData, setTeamData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const scrollRef = useRef(null);
 
-export default function TekminoTeamSection() {
+  const isMobile = window.innerWidth <= 768;
 
-  const teamData = [
-    { name: "Eade Marren", role: "Chief Executive", img: team1 },
-    { name: "Savannah Nqueen", role: "Operations Head", img: team2 },
-    { name: "Cameron William", role: "Marketing Lead", img: team3 },
-    { name: "Olivia Fox", role: "Business Director", img: team4 },
-  ];
+  /* ================= FETCH TEAM ================= */
+  useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const res = await API_URL.get("/team");
+        setTeamData(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchTeam();
+  }, []);
+
+  /* ================= DESKTOP SCROLL ================= */
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -320, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
+  };
+
+  /* ================= MOBILE SCROLL → DOT SYNC ================= */
+  const handleScroll = () => {
+    if (!isMobile) return;
+
+    const container = scrollRef.current;
+    const cardWidth = container.offsetWidth;
+    const index = Math.round(container.scrollLeft / cardWidth);
+
+    setCurrentPage(index);
+  };
+
+  /* ================= DOT CLICK ================= */
+  const handleDotClick = (index) => {
+    const container = scrollRef.current;
+    const cardWidth = container.offsetWidth;
+
+    container.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+
+    setCurrentPage(index);
+  };
 
   return (
     <section className="tek-team-section">
-
-      {/* HEADER */}
-
+      {/* ================= HEADER ================= */}
       <div className="tek-team-header">
-
         <div className="tek-team-left">
           <span className="tek-team-tag"> [ MEET OUR TEAM ]</span>
           <h3 className="tek-team-title">
@@ -42,58 +81,93 @@ export default function TekminoTeamSection() {
         </div>
 
         <div className="tek-team-right">
-         <button className="tek-team-more-btn">
-  <span className="tek-team-btn-text">More Member</span>
-
-  <span className="tek-team-arrow-circle">
-    <FaArrowRight className="tek-team-arrow-icon" />
-  </span>
-</button>
-
-
+          <button className="tek-team-more-btn">
+            <span className="tek-team-btn-text">More Member</span>
+            <span className="tek-team-arrow-circle">
+              <FaArrowRight className="tek-team-arrow-icon" />
+            </span>
+          </button>
         </div>
-
       </div>
 
-      {/* CARDS */}
+      {/* ================= TEAM SECTION ================= */}
+      <div className="tek-team-scroll-container">
+        {/* DESKTOP ARROWS */}
+        {!isMobile && (
+          <button className="tek-scroll-btn left" onClick={scrollLeft}>
+            <FaChevronLeft />
+          </button>
+        )}
 
-      <div className="tek-team-cards">
+        <div
+          className="tek-team-cards"
+          ref={scrollRef}
+          onScroll={handleScroll}
+        >
+          {teamData.map((item, index) => (
+            <div className="tek-team-card" key={index}>
+              <div className="tek-team-img-box">
+                <img
+                  src={`http://localhost:5000/${item.photo}`}
+                  alt={item.name}
+                />
 
-        {teamData.map((item, index) => (
+                <div className="tek-team-social-wrap">
+                  <div className="tek-team-share-btn">
+                    <FaShareAlt />
+                  </div>
 
-          <div className="tek-team-card" key={index}>
-
-            <div className="tek-team-img-box">
-
-              <img src={item.img} alt={item.name} />
-
-              <div className="tek-team-social-wrap">
-
-                <div className="tek-team-share-btn">
-                  <FaShareAlt />
+                  <div className="tek-team-social-icons">
+                    {item.facebook && (
+                      <a href={item.facebook} target="_blank" rel="noreferrer">
+                        <FaFacebookF />
+                      </a>
+                    )}
+                    {item.instagram && (
+                      <a href={item.instagram} target="_blank" rel="noreferrer">
+                        <FaInstagram />
+                      </a>
+                    )}
+                    {item.linkedin && (
+                      <a href={item.linkedin} target="_blank" rel="noreferrer">
+                        <FaLinkedinIn />
+                      </a>
+                    )}
+                  </div>
                 </div>
-
-                <div className="tek-team-social-icons">
-                  <FaFacebookF />
-                  <FaInstagram />
-                  <FaLinkedinIn />
-                </div>
-
               </div>
 
+              <div className="tek-team-info">
+                <h3>{item.name}</h3>
+                <span>{item.designation}</span>
+              </div>
             </div>
+          ))}
+        </div>
 
-            <div className="tek-team-info">
-              <h3>{item.name}</h3>
-              <span>{item.role}</span>
-            </div>
-
-          </div>
-
-        ))}
-
+        {!isMobile && (
+          <button className="tek-scroll-btn right" onClick={scrollRight}>
+            <FaChevronRight />
+          </button>
+        )}
       </div>
 
+      {/* ================= MOBILE PAGINATION ================= */}
+      {isMobile && (
+        <div className="tek-team-pagination">
+          {teamData.map((_, index) => (
+            <span
+              key={index}
+              className={`tek-dot ${
+                currentPage === index ? "active" : ""
+              }`}
+              onClick={() => handleDotClick(index)}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
-}
+};
+
+export default AboutTeam;

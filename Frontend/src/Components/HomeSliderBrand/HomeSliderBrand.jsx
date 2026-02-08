@@ -14,7 +14,7 @@ export default function BrandSlider() {
   return (
     <section className="brand-wrapper">
       <div className="brand-title">
-        Join Over <span>1000+</span> Companies with Tekmino Here
+        Join Over <span>100+</span> Companies with Alisil Technology Here
       </div>
 
       <div className="brand-slider">

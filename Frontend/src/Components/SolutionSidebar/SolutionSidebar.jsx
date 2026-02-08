@@ -1,58 +1,57 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SolutionSidebar.css";
-
+import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
-  "BPO Services",
-  "KPO Services",
-  "Cloud Computing",
-  "Cognitive Business Operations",
-  "Artificial Intelligence & Data & Analytics",
-  "Consulting",
-  "Cyber Security",
-  "IoT & Digital Engineering",
-  "Network Solutions & Services",
-  "Sustainability Services",
+  { name: "All Services", path: "/services/all-services" },
+  { name: "Artificial Intelligence & Data Analytics", path: "/services/Data-Analytics" },
+  { name: "BPO Services", path: "/services/bpo" },
+  { name: "KPO Services", path: "/services/kpo" },
+  { name: "Cloud Computing", path: "/services/Cloud" },
+  { name: "Cognitive Business Operations", path: "/services/Cognitive" },
+  { name: "Consulting", path: "/services/Consulting" },
+  { name: "Cybersecurity", path: "/services/Cybersecurity" },
+  { name: "Enterprise Solutions", path: "/services/Enterprise-Solutions" },
+  { name: "IoT & Digital Engineering", path: "/services/IoT-Digital-Eng." },
+  { name: "Network Solutions & Services", path: "/services/Network" },
+  { name: "Sustainability Services", path: "/services/Sustainability" },
 ];
 
 const SolutionSidebar = () => {
   return (
     <div className="solution-sidebar-wrapper">
 
-      {/* SERVICES LIST FIRST */}
+      {/* SERVICES LIST */}
       <div className="solution-sidebar-services-box">
-
-        <h3 className="solution-sidebar-title">
-          More Services
-        </h3>
+        <h3 className="solution-sidebar-title">More Services</h3>
 
         <ul className="solution-sidebar-list">
           {services.map((item, index) => (
-            <li key={index} className="solution-sidebar-item">
-              {item}
-              <span className="solution-sidebar-arrow">›</span>
+            <li key={index}>
+              <Link to={item.path} className="solution-sidebar-item">
+                {item.name}
+                <span className="solution-sidebar-arrow">›</span>
+              </Link>
             </li>
           ))}
         </ul>
-
       </div>
 
-      {/* INNOVATIVE CARD SECOND */}
+      {/* CARD */}
       <div className="solution-sidebar-card">
-
         <div className="solution-sidebar-card-content">
           <h2>Innovative</h2>
           <p>IT Solutions.</p>
 
           <div className="solution-sidebar-phone">
-            📞 +8 (321) 890-640
+            📞 +1 (009) 544-7818
           </div>
         </div>
 
         <div className="solution-sidebar-image-holder">
-          <img src="../../assets/Service-details-001.webp" alt="Professional" />
+          <img src={sidebarImg} alt="Professional" />
         </div>
-
       </div>
 
     </div>

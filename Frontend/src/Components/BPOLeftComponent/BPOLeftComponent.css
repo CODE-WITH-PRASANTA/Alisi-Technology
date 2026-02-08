@@ -1,0 +1,296 @@
+.bpo-left-wrapper {
+  color: #fff;
+  padding-top: 80px;
+}
+
+/* BANNER */
+
+.bpo-banner-box {
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.bpo-banner-box img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+}
+
+/* TEXT */
+
+.bpo-main-heading {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.bpo-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+/* FEATURES */
+
+.bpo-feature-container {
+  display: flex;
+  gap: 80px;
+  margin: 40px 0;
+}
+
+.bpo-feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bpo-feature-list li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+  color: #ddd;
+}
+
+.bpo-feature-list li::before {
+  content: "✔";
+  color: #e5ff9f;
+  position: absolute;
+  left: 0;
+}
+
+/* IMAGE GRID */
+
+.bpo-image-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.bpo-image-layout img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* SERVICES */
+
+.bpo-services-section {
+  margin: 80px 0;
+}
+
+.bpo-section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.bpo-section-desc {
+  color: #cfcfcf;
+  max-width: 750px;
+  margin-bottom: 40px;
+}
+
+.bpo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bpo-service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.bpo-service-card:hover {
+  transform: translateY(-8px);
+}
+
+.bpo-card-number {
+  background: #e5ff9f;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.bpo-service-card h4 {
+  margin: 20px 0 10px;
+}
+
+.bpo-service-card p {
+  color: #ccc;
+}
+
+/* FAQ */
+
+.bpo-faq-area {
+  margin: 80px 0;
+}
+
+.bpo-faq-box {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.bpo-faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bpo-faq-icon {
+  background: #e5ff9f;
+  color: #000;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bpo-faq-content {
+  margin-top: 14px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .bpo-main-heading {
+    font-size: 36px;
+  }
+
+  .bpo-feature-container {
+    gap: 50px;
+  }
+
+  .bpo-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .bpo-feature-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .bpo-image-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bpo-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bpo-banner-box img {
+    height: 320px;
+  }
+
+  .bpo-main-heading {
+    font-size: 32px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .bpo-main-heading {
+    font-size: 28px;
+  }
+
+  .bpo-text {
+    font-size: 15px;
+  }
+
+  .bpo-section-title {
+    font-size: 30px;
+  }
+
+  .bpo-banner-box img {
+    height: 260px;
+  }
+
+  .bpo-services-section,
+  .bpo-faq-area {
+    margin: 60px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .bpo-banner-box img {
+    height: 220px;
+  }
+
+  .bpo-main-heading {
+    font-size: 24px;
+  }
+
+  .bpo-feature-list li {
+    font-size: 14px;
+  }
+
+  .bpo-service-card {
+    padding: 22px;
+  }
+
+  .bpo-card-number {
+    padding: 5px 10px;
+  }
+
+  .bpo-faq-box {
+    padding: 18px;
+  }
+
+  .bpo-faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .bpo-main-heading {
+    font-size: 22px;
+  }
+
+  .bpo-banner-box img {
+    height: 190px;
+  }
+
+  .bpo-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bpo-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bpo-left-wrapper {
+    padding-top: 30px;
+  }
+}

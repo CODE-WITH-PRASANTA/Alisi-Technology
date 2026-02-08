@@ -6,7 +6,7 @@ import "./Sustainability.css";
 import SusBreadcrum from "../../Components/SusBreadcrum/SusBreadcrum";
 import SusLeftComponent from "../../Components/SusLeftComponent/SusLeftComponent";
 import SusSidebar from "../../Components/SusSidebar/SusSidebar";
-import SusPricing from "../../Components/SusPricing/SusPricing";
+
 
 const Sustainability = () => {
   return (
@@ -26,7 +26,7 @@ const Sustainability = () => {
         </div>
 
       </div>
-      <SusPricing />
+      
     </section>
   );
 };

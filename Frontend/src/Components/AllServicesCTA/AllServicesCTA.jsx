@@ -25,15 +25,15 @@ const AllServicesCTA = () => {
           <div className="as-info-grid">
             <div>
               <h4>Contact Info:</h4>
-              <p>+1 (009) 544-7818</p>
+              <p>+011-6931-3553</p>
               <p>support@tekmino.com</p>
             </div>
 
             <div>
               <h4>Find Us:</h4>
               <p>
-                Renner Burg, West Rond, <br />
-                MT 9421-030, USA.
+                VILL &  PO-RASAPUNJA, PS BISHNUPUR, NEAR RASAPUNJA PANCHYAT. <br />
+                SOUTH 24 PARGANAS, WESTBENGAL - 700104
               </p>
             </div>
 

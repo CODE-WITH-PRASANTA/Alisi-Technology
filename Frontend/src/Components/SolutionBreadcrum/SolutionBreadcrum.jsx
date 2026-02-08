@@ -7,13 +7,13 @@ const SolutionBreadcrum = () => {
   return (
     <section className="solution-hero">
       <div className="solution-hero-overlay">
-        <h1>Enterprice Solution</h1>
+        <h1>Enterprise Solution</h1>
 
         <div className="solution-breadcrumb">
           <FaHome />
           <Link to="/">Home</Link>
           <span>›</span>
-          <span className="active">Enterprice Solution</span>
+          <span className="active">Enterprise Solution</span>
         </div>
       </div>
     </section>

@@ -1,0 +1,191 @@
+.nsp-section {
+  background: #000;
+  padding: 100px 20px;
+  color: #fff;
+}
+
+/* Header */
+.nsp-header {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.nsp-tag {
+  color: #e5ff9f;
+  font-size: 13px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nsp-header h2 {
+  font-size: clamp(26px, 4vw, 46px);
+  font-weight: 700;
+}
+
+/* Toggle */
+.nsp-toggle {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.nsp-toggle span {
+  font-size: 14px;
+  color: #888;
+}
+
+.nsp-toggle span.active {
+  color: #fff;
+}
+
+.nsp-toggle em {
+  color: #e5ff9f;
+}
+
+.nsp-switch {
+  width: 60px;
+  height: 30px;
+  background: #222;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nsp-switch span {
+  width: 22px;
+  height: 22px;
+  background: #e5ff9f;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  transition: all 0.3s ease;
+}
+
+.nsp-switch.yearly span {
+  left: 33px;
+}
+
+/* Grid */
+.nsp-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Card */
+.nsp-card {
+  background: #111;
+  border-radius: 18px;
+  padding: 36px 28px;
+  transition: all 0.4s ease;
+}
+
+.nsp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(229, 255, 159, 0.15);
+}
+
+.nsp-card h3 {
+  font-size: 22px;
+}
+
+.nsp-sub {
+  color: #aaa;
+  margin: 8px 0 22px;
+}
+
+.nsp-card h1 {
+  font-size: 52px;
+  margin-bottom: 22px;
+}
+
+.nsp-card h1 span {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 6px;
+}
+
+/* Button */
+.nsp-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 26px;
+}
+
+.nsp-btn.outline {
+  border: 1px solid #e5ff9f;
+  background: transparent;
+  color: #e5ff9f;
+}
+
+.nsp-btn.solid {
+  background: #000;
+  color: #e5ff9f;
+  border: none;
+}
+
+/* Features */
+.nsp-card ul {
+  list-style: none;
+}
+
+.nsp-card li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #ddd;
+}
+
+.nsp-card svg {
+  color: #e5ff9f;
+}
+
+/* Featured */
+.featured {
+  background: #e5ff9f;
+  color: #000;
+  transform: scale(1.06);
+}
+
+.featured h3,
+.featured h1,
+.featured li,
+.featured .nsp-sub {
+  color: #000;
+}
+
+.featured svg {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nsp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .nsp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    transform: scale(1);
+  }
+
+  .nsp-section {
+    padding: 80px 16px;
+  }
+}

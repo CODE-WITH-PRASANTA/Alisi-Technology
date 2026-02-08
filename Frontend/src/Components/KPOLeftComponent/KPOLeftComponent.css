@@ -1,0 +1,296 @@
+.kpo-left-wrapper {
+  color: #fff;
+  padding-top: 80px;
+}
+
+/* BANNER */
+
+.kpo-banner-box {
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.kpo-banner-box img {
+  width: 100%;
+  height: 690px;
+  object-fit: cover;
+}
+
+/* TEXT */
+
+.kpo-main-heading {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.kpo-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+/* FEATURES */
+
+.kpo-feature-container {
+  display: flex;
+  gap: 80px;
+  margin: 40px 0;
+}
+
+.kpo-feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.kpo-feature-list li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+  color: #ddd;
+}
+
+.kpo-feature-list li::before {
+  content: "✔";
+  color: #e5ff9f;
+  position: absolute;
+  left: 0;
+}
+
+/* IMAGE GRID */
+
+.kpo-image-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.kpo-image-layout img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* SERVICES */
+
+.kpo-services-section {
+  margin: 80px 0;
+}
+
+.kpo-section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.kpo-section-desc {
+  color: #cfcfcf;
+  max-width: 750px;
+  margin-bottom: 40px;
+}
+
+.kpo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.kpo-service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.kpo-service-card:hover {
+  transform: translateY(-8px);
+}
+
+.kpo-card-number {
+  background: #e5ff9f;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.kpo-service-card h4 {
+  margin: 20px 0 10px;
+}
+
+.kpo-service-card p {
+  color: #ccc;
+}
+
+/* FAQ */
+
+.kpo-faq-area {
+  margin: 80px 0;
+}
+
+.kpo-faq-box {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.kpo-faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kpo-faq-icon {
+  background: #e5ff9f;
+  color: #000;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kpo-faq-content {
+  margin-top: 14px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .kpo-main-heading {
+    font-size: 36px;
+  }
+
+  .kpo-feature-container {
+    gap: 50px;
+  }
+
+  .kpo-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .kpo-feature-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .kpo-image-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .kpo-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpo-banner-box img {
+    height: 320px;
+  }
+
+  .kpo-main-heading {
+    font-size: 32px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .kpo-main-heading {
+    font-size: 28px;
+  }
+
+  .kpo-text {
+    font-size: 15px;
+  }
+
+  .kpo-section-title {
+    font-size: 30px;
+  }
+
+  .kpo-banner-box img {
+    height: 260px;
+  }
+
+  .kpo-services-section,
+  .kpo-faq-area {
+    margin: 60px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .kpo-banner-box img {
+    height: 220px;
+  }
+
+  .kpo-main-heading {
+    font-size: 24px;
+  }
+
+  .kpo-feature-list li {
+    font-size: 14px;
+  }
+
+  .kpo-service-card {
+    padding: 22px;
+  }
+
+  .kpo-card-number {
+    padding: 5px 10px;
+  }
+
+  .kpo-faq-box {
+    padding: 18px;
+  }
+
+  .kpo-faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .kpo-main-heading {
+    font-size: 22px;
+  }
+
+  .kpo-banner-box img {
+    height: 190px;
+  }
+
+  .kpo-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpo-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpo-left-wrapper {
+    padding-top: 30px;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from "../Api/Api"; // ✅ axios instance
 
 const AddProject = () => {
   const [form, setForm] = useState({
@@ -19,23 +20,32 @@ const AddProject = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  /* ---------- HANDLERS ---------- */
+  /* ================= HANDLERS ================= */
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleProjectImage = (e) => {
-    setForm({ ...form, projectImg: e.target.files[0] });
+    setForm((prev) => ({ ...prev, projectImg: e.target.files[0] }));
   };
 
   const handleGalleryImages = (e) => {
-    setForm({ ...form, galleryImg: Array.from(e.target.files) });
+    setForm((prev) => ({
+      ...prev,
+      galleryImg: Array.from(e.target.files),
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!form.projectImg) {
+      alert("Project image is required");
+      return;
+    }
+
     setLoading(true);
 
     const formData = new FormData();
@@ -50,11 +60,13 @@ const AddProject = () => {
       }
     });
 
+    // 🔍 DEBUG (remove after confirmation)
+    for (let pair of formData.entries()) {
+      console.log(pair[0], pair[1]);
+    }
+
     try {
-      await fetch("http://localhost:5000/api/projects", {
-        method: "POST",
-        body: formData,
-      });
+      await api.post("/projects", formData); // ✅ NO headers
 
       setSuccess(true);
 
@@ -75,7 +87,8 @@ const AddProject = () => {
 
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
-      console.error(err);
+      console.error("API Error:", err.response?.data || err.message);
+      alert("Something went wrong while submitting");
     } finally {
       setLoading(false);
     }
@@ -83,8 +96,7 @@ const AddProject = () => {
 
   return (
     <div className="h-[calc(100vh-4rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
-
-      {/* LEFT FORM */}
+      {/* ================= LEFT FORM ================= */}
       <form
         onSubmit={handleSubmit}
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
@@ -129,7 +141,7 @@ const AddProject = () => {
         </button>
       </form>
 
-      {/* RIGHT LIVE PREVIEW */}
+      {/* ================= RIGHT LIVE PREVIEW ================= */}
       <div className="bg-[#0f141b] border border-slate-800 rounded-2xl p-6 space-y-4 overflow-y-auto no-scrollbar">
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
@@ -187,35 +199,3 @@ const AddProject = () => {
 };
 
 export default AddProject;
-
-/* ---------- REUSABLE INPUTS ---------- */
-
-const Input = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input
-      {...props}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const Textarea = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <textarea
-      {...props}
-      rows={4}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const FileInput = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input type="file" {...props} className="w-full text-sm text-slate-400" />
-  </div>
-);

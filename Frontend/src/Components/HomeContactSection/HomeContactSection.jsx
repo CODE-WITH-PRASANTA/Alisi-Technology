@@ -1,13 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomeContactSection.css";
 import bg from "../../Assets/common-bg-2.webp";
 
 export default function ContactSection() {
   return (
-    <section
-      className="contact"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
+    <section className="contact" style={{ backgroundImage: `url(${bg})` }}>
       <div className="contact-overlay"></div>
 
       <div className="contact-container">
@@ -15,29 +13,35 @@ export default function ContactSection() {
         <div className="contact-left">
           <span className="tag">[ GET IN TOUCH ]</span>
 
-          <h2>
-            Have any Questions on Mind? Get in Touch for Market Experts.
-          </h2>
+          <h2>Have any Questions on Mind? Get in Touch for Market Experts.</h2>
 
-          <button className="primary-btn">
-            Contact Us Now <span>↗</span>
-          </button>
+          {/* CONTACT BUTTON LINKED */}
+          <Link to="/contact" className="contact-btn-link">
+            <button className="primary-btn">
+              Contact Us Now <span>↗</span>
+            </button>
+          </Link>
 
           <div className="contact-info">
             <div>
               <h4>Contact Info:</h4>
-              <p>+1 (009) 544-7818</p>
+              <p>+ 011-6931-3553</p>
               <p>support@tekmino.com</p>
             </div>
 
             <div>
               <h4>Find Us:</h4>
-              <p>Renner Burg, West Rond, MT 9421-030, USA.</p>
+              <p>
+                VILL & PO-RASAPUNJA, PS BISHNUPUR, Near Rasapunja Panchayat,
+                South 24 Parganas, West Bengal – 700104
+              </p>
             </div>
 
             <div>
               <h4>Contact Info:</h4>
-              <p>Mon - Fri <span>(Open)</span></p>
+              <p>
+                Mon - Fri <span>(Open)</span>
+              </p>
               <p>09:00am - 06.00pm</p>
             </div>
           </div>
@@ -53,7 +57,6 @@ export default function ContactSection() {
             <div className="form-grid">
               <input placeholder="Full Name *" />
               <input placeholder="Email Address *" />
-
               <input placeholder="Phone Number *" />
 
               <select>

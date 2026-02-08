@@ -1,0 +1,296 @@
+.co-left-left-wrapper {
+  color: #fff;
+  padding-top: 80px;
+}
+
+/* BANNER */
+
+.co-left-banner-box {
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.co-left-banner-box img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* TEXT */
+
+.co-left-main-heading {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.co-left-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+/* FEATURES */
+
+.co-left-feature-container {
+  display: flex;
+  gap: 80px;
+  margin: 40px 0;
+}
+
+.co-left-feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.co-left-feature-list li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+  color: #ddd;
+}
+
+.co-left-feature-list li::before {
+  content: "✔";
+  color: #e5ff9f;
+  position: absolute;
+  left: 0;
+}
+
+/* IMAGE GRID */
+
+.co-left-image-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.co-left-image-layout img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* SERVICES */
+
+.co-left-services-section {
+  margin: 80px 0;
+}
+
+.co-left-section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.co-left-section-desc {
+  color: #cfcfcf;
+  max-width: 750px;
+  margin-bottom: 40px;
+}
+
+.co-left-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.co-left-service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.co-left-service-card:hover {
+  transform: translateY(-8px);
+}
+
+.co-left-card-number {
+  background: #e5ff9f;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.co-left-service-card h4 {
+  margin: 20px 0 10px;
+}
+
+.co-left-service-card p {
+  color: #ccc;
+}
+
+/* FAQ */
+
+.co-left-faq-area {
+  margin: 80px 0;
+}
+
+.co-left-faq-box {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.co-left-faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.co-left-faq-icon {
+  background: #e5ff9f;
+  color: #000;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.co-left-faq-content {
+  margin-top: 14px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+/* =====================
+   RESPONSIVE SYSTEM
+===================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+
+  .co-left-main-heading {
+    font-size: 36px;
+  }
+
+  .co-left-feature-container {
+    gap: 50px;
+  }
+
+  .co-left-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .co-left-feature-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .co-left-image-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .co-left-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .co-left-banner-box img {
+    height: 320px;
+  }
+
+  .co-left-main-heading {
+    font-size: 32px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+
+  .co-left-main-heading {
+    font-size: 28px;
+  }
+
+  .co-left-text {
+    font-size: 15px;
+  }
+
+  .co-left-section-title {
+    font-size: 30px;
+  }
+
+  .co-left-banner-box img {
+    height: 260px;
+  }
+
+  .co-left-services-section,
+  .co-left-faq-area {
+    margin: 60px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .co-left-banner-box img {
+    height: 220px;
+  }
+
+  .co-left-main-heading {
+    font-size: 24px;
+  }
+
+  .co-left-feature-list li {
+    font-size: 14px;
+  }
+
+  .co-left-service-card {
+    padding: 22px;
+  }
+
+  .co-left-card-number {
+    padding: 5px 10px;
+  }
+
+  .co-left-faq-box {
+    padding: 18px;
+  }
+
+  .co-left-faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+  .co-left-main-heading {
+    font-size: 22px;
+  }
+
+  .co-left-banner-box img {
+    height: 190px;
+  }
+
+  .co-left-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .co-left-left-wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .co-left-left-wrapper {
+    padding-top: 30px;
+  }
+}

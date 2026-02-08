@@ -45,8 +45,7 @@ const CloudPricing = () => {
     },
   ];
 
-  const getPrice = (price) =>
-    yearly ? Math.round(price * 12 * 0.85) : price;
+  const getPrice = (price) => (yearly ? Math.round(price * 12 * 0.85) : price);
 
   return (
     <section className="cloud-section">
@@ -85,14 +84,12 @@ const CloudPricing = () => {
             <p className="cloud-sub">{plan.desc}</p>
 
             <h1>
-              ${getPrice(plan.monthly)}
+              ₹{getPrice(plan.monthly)}
               <span>{yearly ? "/per year" : "/per month"}</span>
             </h1>
 
             <button
-              className={`cloud-btn ${
-                plan.featured ? "solid" : "outline"
-              }`}
+              className={`cloud-btn ${plan.featured ? "solid" : "outline"}`}
             >
               Choose package →
             </button>

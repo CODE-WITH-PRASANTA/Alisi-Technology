@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Home.css"
 import HomeHeroSection from '../../Components/HomeHeroSection/HomeHeroSection'
-import HomeTestimonial from '../../Components/HomeTestimonial/HomeTestimonial'
 import HomeSliderBrand from '../../Components/HomeSliderBrand/HomeSliderBrand'
 import HomeWhyChoose from '../../Components/HomeWhyChoose/HomeWhyChoose'
 import HomeAbout from '../../Components/HomeAbout/HomeAbout'
@@ -10,10 +9,11 @@ import HomeWorkingProcess from '../../Components/HomeWorkingProcess/HomeWorkingP
 import HomeContactSection from '../../Components/HomeContactSection/HomeContactSection'
 import HomeRecentProjects from '../../Components/HomeRecentProjects/HomeRecentProjects'
 import HomeTechnologies from '../../Components/HomeTechnologies/HomeTechnologies'
-import HomeTeam from '../../Components/HomeTeam/HomeTeam'
 import HomeVideo from '../../Components/HomeVideo/HomeVideo'
 import HomeServices from '../../Components/HomeServices/HomeServices'
 import HomeFeedback from '../../Components/HomeFeedback/HomeFeedback'
+import AboutTestmonial from '../../Components/AboutTestimonial/AboutTestimonial'
+import AboutTeam from '../../Components/AboutTeam/AboutTeam'
 
 const Home = () => {
   return (
@@ -25,9 +25,9 @@ const Home = () => {
       <HomeServices/>
       <HomeVideo/>
       <HomeFeedback/>
-      <HomeTestimonial/>
+      <AboutTestmonial/>
       <HomeWorkingProcess/>
-      <HomeTeam/>
+      <AboutTeam/>
       <HomeTechnologies/>
       <HomeRecentProjects/>
       <HomeContactSection/>  
