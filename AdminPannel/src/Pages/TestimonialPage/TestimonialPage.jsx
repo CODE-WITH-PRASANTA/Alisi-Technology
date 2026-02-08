@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import API_URL from "../../Api/Api";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 import "./TestimonialPage.css";
 
 const TestimonialPage = () => {
@@ -17,8 +17,12 @@ const TestimonialPage = () => {
 
   /* ================= FETCH ================= */
   const fetchTestimonials = async () => {
-    const res = await API_URL.get("/testimonials");
-    setTestimonials(res.data);
+    try {
+      const res = await API_URL.get("/testimonials");
+      setTestimonials(res.data);
+    } catch (err) {
+      console.error("Fetch error:", err);
+    }
   };
 
   useEffect(() => {
@@ -49,18 +53,23 @@ const TestimonialPage = () => {
     formData.append("rating", rating);
     if (image) formData.append("image", image);
 
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    if (editItem) {
-      await API_URL.put(`/testimonials/${editItem._id}`, formData);
-      setEditItem(null);
-    } else {
-      await API_URL.post("/testimonials", formData);
+      if (editItem) {
+        await API_URL.put(`/testimonials/${editItem._id}`, formData);
+        setEditItem(null);
+      } else {
+        await API_URL.post("/testimonials", formData);
+      }
+
+      resetForm();
+      fetchTestimonials();
+    } catch (err) {
+      console.error("Submit error:", err);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
-    resetForm();
-    fetchTestimonials();
   };
 
   /* ================= EDIT ================= */
@@ -70,15 +79,19 @@ const TestimonialPage = () => {
     setDesignation(item.designation || "");
     setMessage(item.message);
     setRating(item.rating);
-    setPreview(item.image ? `http://localhost:5000/${item.image}` : "");
+    setPreview(item.image ? `${IMAGE_BASE_URL}/${item.image}` : "");
     setImage(null);
   };
 
   /* ================= DELETE ================= */
   const deleteTestimonial = async (id) => {
     if (!window.confirm("Delete this testimonial?")) return;
-    await API_URL.delete(`/testimonials/${id}`);
-    fetchTestimonials();
+    try {
+      await API_URL.delete(`/testimonials/${id}`);
+      fetchTestimonials();
+    } catch (err) {
+      console.error("Delete error:", err);
+    }
   };
 
   /* ================= RESET ================= */
@@ -103,7 +116,11 @@ const TestimonialPage = () => {
           <input type="file" accept="image/*" onChange={handleImage} />
 
           {preview && (
-            <img src={preview} className="adm-preview-img" alt="preview" />
+            <img
+              src={preview}
+              className="adm-preview-img"
+              alt="preview"
+            />
           )}
 
           <input
@@ -157,9 +174,13 @@ const TestimonialPage = () => {
           <div className="adm-testimonial-card" key={item._id}>
             {item.image && (
               <img
-                src={`http://localhost:5000/${item.image}`}
+                src={`${IMAGE_BASE_URL}/${item.image}`}
                 className="adm-client-photo"
                 alt="client"
+                onError={(e) =>
+                  (e.target.src =
+                    "https://via.placeholder.com/80")
+                }
               />
             )}
 
@@ -167,6 +188,7 @@ const TestimonialPage = () => {
               <h4 className="adm-client-name">{item.name}</h4>
               <p className="adm-client-position">{item.designation}</p>
               <p className="adm-feedback-text">{item.message}</p>
+
               <div className="adm-rating-view">
                 {"★".repeat(item.rating)}
               </div>

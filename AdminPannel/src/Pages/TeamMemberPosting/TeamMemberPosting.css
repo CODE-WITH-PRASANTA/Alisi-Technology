@@ -1,161 +1,251 @@
-/* ===============================
-   MAIN CONTAINER
-================================ */
-.adm-blog-manager-container {
+/* ================= ROOT THEME ================= */
+:root {
+  --bg-main: #020617;
+  --bg-panel: #020617;
+  --bg-soft: #0f172a;
+  --border-soft: #1e293b;
+
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.team-admin-wrapper {
   display: flex;
+  gap: 22px;
   height: 100vh;
   padding: 20px;
-  gap: 22px;
+  background: radial-gradient(circle at top, #0f172a, var(--bg-main));
+  color: var(--text-main);
   overflow: hidden;
-  background: #070b10;
 }
 
-/* ===============================
-   PANELS
-================================ */
-.adm-blog-left-panel {
-  width: 55%;
-  height: 100%;
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-.adm-blog-right-panel {
-  width: 45%;
-  height: 100%;
-}
-
-/* ===============================
-   FORM BOX
-================================ */
-.adm-blog-form-box {
-  background: linear-gradient(180deg, #0f141b, #0b0f14);
-  padding: 28px;
+/* ================= PANELS ================= */
+.team-form-panel,
+.team-table-panel {
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg-panel));
   border-radius: 18px;
-  border: 1px solid #1f2933;
-  max-height: 88vh;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.team-form-panel {
+  width: 40%;
+  padding: 26px;
   overflow-y: auto;
 }
 
-/* ===============================
-   HEADING
-================================ */
-.adm-blog-form-heading {
-  font-size: 22px;
-  margin-bottom: 22px;
-  color: #f9fafb;
-  font-weight: 600;
+.team-table-panel {
+  width: 60%;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===============================
-   INPUT GROUP
-================================ */
-.adm-input-group {
+/* ================= TITLES ================= */
+.panel-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #f8fafc;
+}
+
+/* ================= FORM ================= */
+.team-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin-bottom: 15px;
-  color: #9ca3af;
   font-size: 14px;
+  color: var(--text-muted);
 }
 
-.adm-input-group input {
-  padding: 13px;
-  border-radius: 11px;
-  border: 1px solid #1f2933;
-  background: #0b0f14;
-  color: #fff;
+.form-group input {
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  transition: all 0.25s ease;
 }
 
-/* ===============================
-   IMAGE PREVIEW
-================================ */
-.adm-image-preview {
-  width: 95px;
-  height: 95px;
-  border-radius: 14px;
-  object-fit: cover;
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+}
+
+/* ================= IMAGE PREVIEW ================= */
+.preview-img {
+  width: 105px;
+  height: 105px;
   margin-top: 10px;
-  border: 1px solid #1f2933;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* ===============================
-   ACTION BUTTONS
-================================ */
-.adm-form-actions {
+/* ================= FORM ACTIONS ================= */
+.form-actions {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 14px;
+  gap: 12px;
+  margin-top: 16px;
 }
 
-.adm-submit-btn {
+.btn-primary {
+  flex: 1;
   padding: 15px;
-  background: linear-gradient(135deg, #38bdf8, #22d3ee);
-  border: none;
   border-radius: 14px;
+  border: none;
   font-weight: 600;
   cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #020617;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.adm-view-delete-btn {
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.45);
+}
+
+.btn-secondary {
+  flex: 1;
   padding: 15px;
-  background: #ef4444;
-  border: none;
   border-radius: 14px;
-  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
   cursor: pointer;
-  display: block;
+  transition: background 0.2s ease;
 }
 
-.adm-cancel-btn {
-  padding: 15px;
-  background: #1f2933;
-  border-radius: 14px;
-  border: 1px solid #374151;
-  cursor: pointer;
-  display: block;
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* ===============================
-   TABLE
-================================ */
-.adm-blog-table {
-  min-width: 1000px;
+/* ================= TABLE SCROLL AREA ================= */
+.table-scroll {
+  flex: 1;
+  overflow: auto;
+  border-radius: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-main);
+}
+
+/* ===== Custom Scrollbar ===== */
+.table-scroll::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: var(--bg-main);
+  border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 10px;
+}
+
+/* ================= TABLE ================= */
+.team-table {
+  min-width: 1200px; /* IMPORTANT for horizontal scroll */
   width: 100%;
   border-collapse: collapse;
 }
 
-.adm-blog-table th,
-.adm-blog-table td {
-  padding: 12px;
-  border-bottom: 1px solid #1f2933;
+.team-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px;
+  font-size: 14px;
+  text-align: left;
+  background: linear-gradient(180deg, #020617, #020617);
+  border-bottom: 1px solid var(--border-soft);
+  color: #f8fafc;
 }
 
-.adm-table-img {
-  width: 65px;
-  height: 65px;
-  border-radius: 12px;
+.team-table td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-main);
 }
 
-.adm-edit-btn {
-  background: #22c55e;
-  padding: 7px 14px;
-  border-radius: 9px;
+/* ================= TABLE ROW UX ================= */
+.team-table tbody tr {
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.team-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.08);
+  transform: scale(1.004);
+}
+
+/* ================= TABLE IMAGE ================= */
+.table-img {
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
+}
+
+/* ================= ACTION BUTTONS ================= */
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background: var(--success);
+  color: #020617;
   border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 1100px) {
-  .adm-blog-manager-container {
-    flex-direction: column;
-    height: auto;
-  }
-  .adm-blog-left-panel,
-  .adm-blog-right-panel {
-    width: 100%;
-  }
+.btn-edit:hover {
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-delete:hover {
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ================= EMPTY STATE ================= */
+.empty-row {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-style: italic;
 }

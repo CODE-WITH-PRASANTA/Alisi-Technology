@@ -13,6 +13,7 @@ import BlogManagerPage from "./Pages/BlogManagerPage/BlogManagerPage";
 import BlogView from "./Pages/BlogView/BlogView";
 import TeamManagerPage from "./Pages/TeamMemberPosting/TeamMemberPosting";
 import OurProjectComp from "./Pages/OurProjectComp";
+import UploadClientLogo from "./Pages/UploadClinetLogo/UploadClinetLogo";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/blog-view" element={<BlogView />} />
             <Route path="/team" element={<TeamManagerPage />} />
             <Route path="/our-project" element={<OurProjectComp />} />
+            <Route path="/client-logos" element={<UploadClientLogo />} />
            </Route>
 
           {/* FALLBACK */}

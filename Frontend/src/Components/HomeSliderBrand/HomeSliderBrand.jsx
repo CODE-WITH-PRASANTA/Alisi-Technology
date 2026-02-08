@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 import "./HomeSliderBrand.css";
 
-import b1 from "../../Assets/brand-1.webp";
-import b2 from "../../Assets/brand-2.webp";
-import b3 from "../../Assets/brand-3.webp";
-import b4 from "../../Assets/brand-4.webp";
-import b5 from "../../Assets/brand-5.webp";
-import b6 from "../../Assets/brand-6.webp";
-
-const brands = [b1, b2, b3, b4, b5, b6];
-
 export default function BrandSlider() {
+  const [brands, setBrands] = useState([]);
+
+  /* ================= FETCH CLIENT LOGOS ================= */
+  useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const res = await API_URL.get("/client-logos");
+        setBrands(res.data);
+      } catch (err) {
+        console.error("FAILED TO LOAD BRANDS:", err);
+      }
+    };
+
+    fetchBrands();
+  }, []);
+
+  if (!brands.length) return null;
+
   return (
     <section className="brand-wrapper">
       <div className="brand-title">
-        Join Over <span>100+</span> Companies with Alisil Technology Here
+        Join Over <span>{brands.length}+</span> Companies with Alisil Technology
       </div>
 
       <div className="brand-slider">
         <div className="track">
-          {[...brands, ...brands].map((logo, i) => (
+          {/* Duplicate for infinite scroll */}
+          {[...brands, ...brands].map((item, i) => (
             <div className="brand-card" key={i}>
-              <img src={logo} alt="brand" />
+              <img
+                src={`${IMAGE_BASE_URL}/${item.logo}`}
+                alt="client-logo"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

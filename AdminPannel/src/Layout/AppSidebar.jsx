@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../Auth/AuthContext";
 import {
   FiHome,
   FiEdit,
@@ -10,22 +11,32 @@ import {
   FiX,
   FiLogOut,
   FiUserPlus,
+  FiImage, // ✅ NEW ICON
 } from "react-icons/fi";
 
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [blogOpen, setBlogOpen] = useState(false);
+  const [contentOpen, setContentOpen] = useState(false);
   const [priceOpen, setPriceOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
 
-  // ✅ Auto close sidebar on route change (mobile)
+  /* Auto close sidebar on route change (mobile) */
   useEffect(() => {
     setSidebarOpen(false);
   }, [location.pathname]);
 
   const isActive = (path) => location.pathname === path;
+
+  const { logout } = useAuth();
+
+const handleLogout = () => {
+  logout();                 // clear auth + localStorage
+  setSidebarOpen(false);    // close sidebar (mobile UX)
+  navigate("/login", { replace: true }); // prevent back
+};
+
 
   return (
     <>
@@ -51,7 +62,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
               onClick={() => navigate("/dashboard")}
               className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
             >
-              Admin Panel
+              Admin Console
             </span>
           )}
 
@@ -73,50 +84,50 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             onClick={() => navigate("/dashboard")}
           />
 
-          {/* BLOG */}
+          {/* CONTENT MANAGEMENT */}
           <Dropdown
             icon={<FiEdit className="text-purple-400" />}
-            label="Blog Management"
-            open={blogOpen}
-            setOpen={setBlogOpen}
+            label="Content Management"
+            open={contentOpen}
+            setOpen={setContentOpen}
             collapsed={collapsed}
           >
             <SubItem
-              label="Add Blog"
+              label="Create Article"
               active={isActive("/blog")}
               onClick={() => navigate("/blog")}
             />
             <SubItem
-              label="View Blog"
+              label="Manage Articles"
               active={isActive("/blog-view")}
               onClick={() => navigate("/blog-view")}
             />
           </Dropdown>
 
-          {/* PRICE */}
+          {/* PRICING */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
-            label="Price Management"
+            label="Pricing & Plans"
             open={priceOpen}
             setOpen={setPriceOpen}
             collapsed={collapsed}
           >
             <SubItem
-              label="Add Price"
+              label="Add Pricing Plan"
               active={isActive("/price/add")}
               onClick={() => navigate("/price/add")}
             />
             <SubItem
-              label="View Prices"
+              label="Manage Pricing"
               active={isActive("/price")}
               onClick={() => navigate("/price")}
             />
           </Dropdown>
 
-          {/* TESTIMONIAL */}
+          {/* TESTIMONIALS */}
           <SidebarItem
             icon={<FiStar />}
-            label="Testimonial"
+            label="Client Testimonials"
             active={isActive("/testimonial")}
             collapsed={collapsed}
             onClick={() => navigate("/testimonial")}
@@ -125,37 +136,37 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           {/* TEAM */}
           <SidebarItem
             icon={<FiUserPlus />}
-            label="Team Posting"
+            label="Team Management"
             active={isActive("/team")}
             collapsed={collapsed}
             onClick={() => navigate("/team")}
           />
 
-          {/* PROJECT & CLIENT */}
+          {/* PORTFOLIO */}
           <Dropdown
             icon={<FiBriefcase className="text-orange-400" />}
-            label="Project & Client"
+            label="Portfolio Management"
             open={projectOpen}
             setOpen={setProjectOpen}
             collapsed={collapsed}
           >
             <SubItem
-              label="Add Project"
+              label="Add Portfolio Item"
               active={isActive("/projects/add")}
               onClick={() => navigate("/projects/add")}
             />
 
             <SubItem
-              label="View Projects"
+              label="Manage Portfolio"
               active={isActive("/projects")}
               onClick={() => navigate("/projects")}
             />
 
-            {/* ✅ OUR COMPANY LOGOS */}
+            {/* ✅ NEW SECTION */}
             <SubItem
-              label="Our Company Logos"
-              active={isActive("/our-project")}
-              onClick={() => navigate("/our-project")}
+              label="Upload Client Logo"
+              active={isActive("/client-logos")}
+              onClick={() => navigate("/client-logos")}
             />
           </Dropdown>
         </nav>
@@ -175,7 +186,10 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
-                <FiLogOut className="text-red-400 cursor-pointer" />
+                <FiLogOut
+  className="text-red-400 cursor-pointer hover:text-red-500"
+  onClick={handleLogout}
+/>
               </>
             )}
           </div>

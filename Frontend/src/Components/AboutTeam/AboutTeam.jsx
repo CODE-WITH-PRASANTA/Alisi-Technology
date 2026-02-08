@@ -9,7 +9,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-import API_URL from "../../Api/Api";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 import "./AboutTeam.css";
 
 const AboutTeam = () => {
@@ -23,10 +23,10 @@ const AboutTeam = () => {
   useEffect(() => {
     const fetchTeam = async () => {
       try {
-        const res = await API_URL.get("/team");
+        const res = await API_URL.get("/team"); // /api/team
         setTeamData(res.data);
       } catch (err) {
-        console.error(err);
+        console.error("Team fetch error:", err);
       }
     };
     fetchTeam();
@@ -70,7 +70,7 @@ const AboutTeam = () => {
       {/* ================= HEADER ================= */}
       <div className="tek-team-header">
         <div className="tek-team-left">
-          <span className="tek-team-tag"> [ MEET OUR TEAM ]</span>
+          <span className="tek-team-tag">[ MEET OUR TEAM ]</span>
           <h3 className="tek-team-title">
             Creative Minds Behind <br /> our Team.
           </h3>
@@ -92,7 +92,6 @@ const AboutTeam = () => {
 
       {/* ================= TEAM SECTION ================= */}
       <div className="tek-team-scroll-container">
-        {/* DESKTOP ARROWS */}
         {!isMobile && (
           <button className="tek-scroll-btn left" onClick={scrollLeft}>
             <FaChevronLeft />
@@ -104,12 +103,16 @@ const AboutTeam = () => {
           ref={scrollRef}
           onScroll={handleScroll}
         >
-          {teamData.map((item, index) => (
-            <div className="tek-team-card" key={index}>
+          {teamData.map((item) => (
+            <div className="tek-team-card" key={item._id}>
               <div className="tek-team-img-box">
                 <img
-                  src={`http://localhost:5000/${item.photo}`}
+                  src={`${IMAGE_BASE_URL}/${item.photo}`}
                   alt={item.name}
+                  onError={(e) =>
+                    (e.target.src =
+                      "https://via.placeholder.com/300x300")
+                  }
                 />
 
                 <div className="tek-team-social-wrap">

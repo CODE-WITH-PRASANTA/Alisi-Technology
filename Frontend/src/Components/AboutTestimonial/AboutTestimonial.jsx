@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API_URL from "../../Api/Api";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 import "./AboutTestimonial.css";
 
 export default function Testimonial() {
@@ -36,7 +36,7 @@ export default function Testimonial() {
 
   return (
     <section className="testimonial-wrapper">
-      {/* AVATAR TABS */}
+      {/* ================= AVATAR TABS ================= */}
       <div className="avatar-tabs">
         {data.map((item, i) => (
           <div
@@ -50,20 +50,23 @@ export default function Testimonial() {
             <img
               src={
                 item.image
-                  ? `http://localhost:5000/${item.image}`
+                  ? `${IMAGE_BASE_URL}/${item.image}`
                   : "https://via.placeholder.com/80"
               }
               alt={item.name}
+              onError={(e) =>
+                (e.target.src = "https://via.placeholder.com/80")
+              }
             />
           </div>
         ))}
       </div>
 
-      {/* NAME & ROLE */}
+      {/* ================= NAME & ROLE ================= */}
       <h3>{data[active].name}</h3>
       <span>{data[active].designation}</span>
 
-      {/* SLIDER */}
+      {/* ================= SLIDER ================= */}
       <div className="slider-area">
         <button className="arrow left" onClick={prev}>
           ‹
@@ -81,7 +84,7 @@ export default function Testimonial() {
         </button>
       </div>
 
-      {/* DOTS */}
+      {/* ================= DOTS ================= */}
       <div className="dots">
         {data.map((_, i) => (
           <span

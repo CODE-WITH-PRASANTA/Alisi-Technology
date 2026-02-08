@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API_URL from "../../Api/Api";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 import "./TeamMemberPosting.css";
 
 const TeamMemberPosting = () => {
@@ -19,7 +19,7 @@ const TeamMemberPosting = () => {
       const res = await API_URL.get("/team");
       setMembers(res.data);
     } catch (err) {
-      console.error(err);
+      console.error("Fetch error:", err);
     }
   };
 
@@ -27,11 +27,11 @@ const TeamMemberPosting = () => {
     fetchMembers();
   }, []);
 
-  /* ================= PREFILL EDIT ================= */
+  /* ================= PREFILL ================= */
   useEffect(() => {
     if (editMember) {
-      setName(editMember.name);
-      setDesignation(editMember.designation);
+      setName(editMember.name || "");
+      setDesignation(editMember.designation || "");
       setInstagram(editMember.instagram || "");
       setLinkedin(editMember.linkedin || "");
       setFacebook(editMember.facebook || "");
@@ -60,22 +60,23 @@ const TeamMemberPosting = () => {
       fetchMembers();
       resetForm();
     } catch (err) {
-      console.error(err);
+      console.error("Submit error:", err);
     }
   };
 
   /* ================= DELETE ================= */
   const deleteMember = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this member?")) return;
+
     try {
       await API_URL.delete(`/team/${id}`);
       fetchMembers();
       resetForm();
     } catch (err) {
-      console.error(err);
+      console.error("Delete error:", err);
     }
   };
 
-  /* ================= RESET ================= */
   const resetForm = () => {
     setName("");
     setDesignation("");
@@ -87,164 +88,153 @@ const TeamMemberPosting = () => {
   };
 
   return (
-    <div className="adm-blog-manager-container">
-      {/* ================= VIEW / FORM BOX ================= */}
-      <div className="adm-blog-left-panel">
-        <div className="adm-blog-form-box">
-          <h2 className="adm-blog-form-heading">
-            {editMember ? "Update Team Member" : "Create Team Member"}
-          </h2>
+    <div className="team-admin-wrapper">
+      {/* ================= FORM ================= */}
+      <div className="team-form-panel">
+        <h2 className="panel-title">
+          {editMember ? "Update Team Member" : "Add Team Member"}
+        </h2>
 
-          <form onSubmit={handleSubmit}>
-            {/* IMAGE */}
-            <div className="adm-input-group">
-              <label>Upload Photo</label>
-              <input type="file" onChange={(e) => setPhoto(e.target.files[0])} />
+        <form onSubmit={handleSubmit} className="team-form">
+          <div className="form-group">
+            <label>Photo</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setPhoto(e.target.files[0])}
+            />
 
-              {editMember?.photo && !photo && (
-                <img
-                  src={`http://localhost:5000/${editMember.photo}`}
-                  className="adm-image-preview"
-                  alt="preview"
-                />
-              )}
-
-              {photo && (
-                <img
-                  src={URL.createObjectURL(photo)}
-                  className="adm-image-preview"
-                  alt="preview"
-                />
-              )}
-            </div>
-
-            {/* INPUTS */}
-            <div className="adm-input-group">
-              <label>Name</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} />
-            </div>
-
-            <div className="adm-input-group">
-              <label>Designation</label>
-              <input
-                value={designation}
-                onChange={(e) => setDesignation(e.target.value)}
+            {(photo || editMember?.photo) && (
+              <img
+                src={
+                  photo
+                    ? URL.createObjectURL(photo)
+                    : `${IMAGE_BASE_URL}/${editMember.photo}`
+                }
+                className="preview-img"
+                alt="preview"
               />
-            </div>
+            )}
+          </div>
 
-            <div className="adm-input-group">
-              <label>Instagram</label>
-              <input
-                value={instagram}
-                onChange={(e) => setInstagram(e.target.value)}
-              />
-            </div>
+          <div className="form-group">
+            <label>Name</label>
+            <input value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
 
-            <div className="adm-input-group">
-              <label>LinkedIn</label>
-              <input
-                value={linkedin}
-                onChange={(e) => setLinkedin(e.target.value)}
-              />
-            </div>
+          <div className="form-group">
+            <label>Designation</label>
+            <input
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
+            />
+          </div>
 
-            <div className="adm-input-group">
-              <label>Facebook</label>
-              <input
-                value={facebook}
-                onChange={(e) => setFacebook(e.target.value)}
-              />
-            </div>
+          <div className="form-group">
+            <label>Instagram</label>
+            <input
+              value={instagram}
+              onChange={(e) => setInstagram(e.target.value)}
+            />
+          </div>
 
-            {/* ================= ACTION BUTTONS ================= */}
-            <div className="adm-form-actions">
-              <button className="adm-submit-btn">
-                {editMember ? "Update Member" : "Submit Member"}
+          <div className="form-group">
+            <label>LinkedIn</label>
+            <input
+              value={linkedin}
+              onChange={(e) => setLinkedin(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Facebook</label>
+            <input
+              value={facebook}
+              onChange={(e) => setFacebook(e.target.value)}
+            />
+          </div>
+
+          <div className="form-actions">
+            <button className="btn-primary" type="submit">
+              {editMember ? "Update Member" : "Create Member"}
+            </button>
+
+            {editMember && (
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={resetForm}
+              >
+                Cancel Edit
               </button>
-
-              {editMember && (
-                <>
-                  <button
-                    type="button"
-                    className="adm-view-delete-btn"
-                    onClick={() => {
-                      if (window.confirm("Delete this team member?")) {
-                        deleteMember(editMember._id);
-                      }
-                    }}
-                  >
-                    Delete Member
-                  </button>
-
-                  <button
-                    type="button"
-                    className="adm-cancel-btn"
-                    onClick={resetForm}
-                  >
-                    Cancel
-                  </button>
-                </>
-              )}
-            </div>
-          </form>
-        </div>
+            )}
+          </div>
+        </form>
       </div>
 
       {/* ================= TABLE ================= */}
-      <div className="adm-blog-right-panel">
-        <div className="adm-blog-table-box">
-          <h2 className="adm-table-heading">Manage Team Members</h2>
+      <div className="team-table-panel">
+        <h2 className="panel-title">Team Members</h2>
 
-          <div className="adm-table-scroll-area">
-            <table className="adm-blog-table">
-              <thead>
+        <div className="table-scroll">
+          <table className="team-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Instagram</th>
+                <th>LinkedIn</th>
+                <th>Facebook</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {members.length === 0 && (
                 <tr>
-                  <th>Photo</th>
-                  <th>Name</th>
-                  <th>Designation</th>
-                  <th>Instagram</th>
-                  <th>LinkedIn</th>
-                  <th>Facebook</th>
-                  <th>Action</th>
+                  <td colSpan="7" className="empty-row">
+                    No team members found
+                  </td>
                 </tr>
-              </thead>
+              )}
 
-              <tbody>
-                {members.length === 0 && (
-                  <tr>
-                    <td colSpan="7" className="adm-empty-row">
-                      No team members found
-                    </td>
-                  </tr>
-                )}
-
-                {members.map((m) => (
-                  <tr key={m._id}>
-                    <td>
-                      <img
-                        src={`http://localhost:5000/${m.photo}`}
-                        className="adm-table-img"
-                        alt={m.name}
-                      />
-                    </td>
-                    <td>{m.name}</td>
-                    <td>{m.designation}</td>
-                    <td>{m.instagram}</td>
-                    <td>{m.linkedin}</td>
-                    <td>{m.facebook}</td>
-                    <td>
-                      <button
-                        className="adm-edit-btn"
-                        onClick={() => setEditMember(m)}
-                      >
-                        Edit
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              {members.map((m) => (
+                <tr key={m._id}>
+                  <td>
+                    <img
+                      src={`${IMAGE_BASE_URL}/${m.photo}`}
+                      className="table-img"
+                      alt={m.name}
+                      onError={(e) =>
+                        (e.target.src =
+                          "https://via.placeholder.com/60")
+                      }
+                    />
+                  </td>
+                  <td>{m.name}</td>
+                  <td>{m.designation}</td>
+                  <td>{m.instagram}</td>
+                  <td>{m.linkedin}</td>
+                  <td>{m.facebook}</td>
+                  <td className="action-cell">
+                    <button
+                      className="btn-edit"
+                      onClick={() => setEditMember(m)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="btn-delete"
+                      onClick={() => deleteMember(m._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
