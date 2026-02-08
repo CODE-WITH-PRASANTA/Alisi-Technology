@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./COSidebar.css";
-import sidebarImg from "../../assets/AI&-Data-2.webp";
+// import sidebarImg from "../../assets/AI&-Data-2.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -49,9 +49,9 @@ const COSidebar = () => {
           </div>
         </div>
 
-        <div className="coo-sidebar-image-holder">
+        {/* <div className="coo-sidebar-image-holder">
           <img src={sidebarImg} alt="Professional" />
-        </div>
+        </div> */}
       </div>
 
     </div>

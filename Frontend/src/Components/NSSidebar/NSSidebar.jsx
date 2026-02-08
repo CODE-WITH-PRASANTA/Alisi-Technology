@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NSSidebar.css";
-import sidebarImg from "../../assets/AI&Data-1.webp";
+// import sidebarImg from "../../assets/AI&Data-1.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -49,9 +49,9 @@ const NSSidebar = () => {
           </div>
         </div>
 
-        <div className="nss-sidebar-image-holder">
+        {/* <div className="nss-sidebar-image-holder">
           <img src={sidebarImg} alt="Professional" />
-        </div>
+        </div> */}
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./IotSidebar.css";
-import sidebarImg from "../../assets/AI-data-4.webp";
+// import sidebarImg from "../../assets/AI-data-4.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -49,9 +49,9 @@ const IotSidebar = () => {
           </div>
         </div>
 
-        <div className="iot-sidebar-image-holder">
+        {/* <div className="iot-sidebar-image-holder">
           <img src={sidebarImg} alt="Alisil Technology Digital Engineering Team" />
-        </div>
+        </div> */}
       </div>
 
     </div>
