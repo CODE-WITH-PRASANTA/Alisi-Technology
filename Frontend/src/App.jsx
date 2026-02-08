@@ -66,15 +66,15 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/details/:id" element={<ProjectDetails />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/services/Cybersecurity" element={<Cybersecurity />} />
-        <Route path="/services/Enterprise-Solutions" element={<EnterpriceSolution />} />
-        <Route path="/services/IoT-Digital-Eng." element={<IOTDigitalEng />} />
-        <Route path="/services/Sustainability" element={<Sustainability />} />
+        <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/services/enterprise-solutions" element={<EnterpriceSolution />} />
+        <Route path="/services/iot-digital-engineering" element={<IOTDigitalEng />} />
+        <Route path="/services/sustainability" element={<Sustainability />} />
         <Route path="/blog/details" element={<BlogDetails />} />
         <Route path="/services/bpo" element={<BPOService />} />
         <Route path="/services/kpo" element={<KPOService />} />
-        <Route path="/services/Cognitive" element={<CognitiveOperations />} />
-        <Route path="/services/Network" element={<NetworkSolution />} />
+        <Route path="/services/cognitive-operations" element={<CognitiveOperations />} />
+        <Route path="/services/network-solutions" element={<NetworkSolution />} />
       </Routes>
 
       <Footer />

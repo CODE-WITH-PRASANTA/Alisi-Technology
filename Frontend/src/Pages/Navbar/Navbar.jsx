@@ -71,21 +71,21 @@ const Navbar = () => {
                 <NavLink to="/services/bpo" onClick={closeAll}>BPO Services</NavLink>
                 <NavLink to="/services/kpo" onClick={closeAll}>KPO Services</NavLink>
                 <NavLink to="/services/Cloud" onClick={closeAll}>Cloud Computing</NavLink>
-                <NavLink to="/services/Cognitive" onClick={closeAll}>
+                <NavLink to="/services/cognitive-operations" onClick={closeAll}>
                   Cognitive Business Operations
                 </NavLink>
                 <NavLink to="/services/Consulting" onClick={closeAll}>Consulting</NavLink>
-                <NavLink to="/services/Cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
-                <NavLink to="/services/Enterprise-Solutions" onClick={closeAll}>
+                <NavLink to="/services/cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
+                <NavLink to="/services/enterprise-solutions" onClick={closeAll}>
                   Enterprise Solutions
                 </NavLink>
-                <NavLink to="/services/IoT-Digital-Eng." onClick={closeAll}>
+                <NavLink to="/services/iot-digital-engineering" onClick={closeAll}>
                   IoT & Digital Engineering
                 </NavLink>
-                <NavLink to="/services/Network" onClick={closeAll}>
+                <NavLink to="/services/network-solutions" onClick={closeAll}>
                   Network Solutions & Services
                 </NavLink>
-                <NavLink to="/services/Sustainability" onClick={closeAll}>
+                <NavLink to="/services/sustainability" onClick={closeAll}>
                   Sustainability Services
                 </NavLink>
               </div>
@@ -129,13 +129,13 @@ const Navbar = () => {
               <NavLink to="/services/bpo" onClick={closeAll}>BPO Services</NavLink>
               <NavLink to="/services/kpo" onClick={closeAll}>KPO Services</NavLink>
               <NavLink to="/services/Cloud" onClick={closeAll}>Cloud Computing</NavLink>
-              <NavLink to="/services/Cognitive" onClick={closeAll}>Cognitive Operations</NavLink>
+              <NavLink to="/services/cognitive-operations" onClick={closeAll}>Cognitive Operations</NavLink>
               <NavLink to="/services/Consulting" onClick={closeAll}>Consulting</NavLink>
-              <NavLink to="/services/Cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
-              <NavLink to="/services/Enterprise-Solutions" onClick={closeAll}>Enterprise Solutions</NavLink>
-              <NavLink to="/services/IoT-Digital-Eng." onClick={closeAll}>IoT & Digital Engineering</NavLink>
-              <NavLink to="/services/Network" onClick={closeAll}>Network Solutions</NavLink>
-              <NavLink to="/services/Sustainability" onClick={closeAll}>Sustainability Services</NavLink>
+              <NavLink to="/services/cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
+              <NavLink to="/services/enterprise-solutions" onClick={closeAll}>Enterprise Solutions</NavLink>
+              <NavLink to="/services/iot-digital-engineering" onClick={closeAll}>IoT & Digital Engineering</NavLink>
+              <NavLink to="/services/network-solutions" onClick={closeAll}>Network Solutions</NavLink>
+              <NavLink to="/services/sustainability" onClick={closeAll}>Sustainability Services</NavLink>
             </div>
           )}
 
