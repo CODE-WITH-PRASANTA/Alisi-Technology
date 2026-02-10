@@ -1,99 +1,218 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BlogView.css";
-
-import blogMain from "../../assets/a5.webp";
-import blogSide1 from "../../assets/a4.webp";
-import blogSide2 from "../../assets/a3.webp";
-
-import grid1 from "../../assets/a3.webp";
-import grid2 from "../../assets/a1.webp";
-import grid3 from "../../assets/a6.webp";
-import grid4 from "../../assets/a7.webp";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
+import { useNavigate } from "react-router-dom";
 
 const BlogView = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [view, setView] = useState("grid");
+  const [openMenu, setOpenMenu] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  /* ================= STATUS NORMALIZER ================= */
+  const getStatus = (blog) => blog.status || "Draft";
+
+  /* ================= FETCH BLOGS ================= */
+  const fetchBlogs = async () => {
+    try {
+      setLoading(true);
+      const res = await API_URL.get("/blogs");
+      setBlogs(res.data);
+    } catch (err) {
+      console.error("FETCH BLOGS ERROR:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  /* ================= ACTION HANDLER ================= */
+  const handleAction = async (action, blog) => {
+    setOpenMenu(null);
+
+    switch (action) {
+      case "view":
+        navigate(`/blogs/${blog._id}`);
+        break;
+
+      case "edit":
+        navigate(`/admin/blogs/edit/${blog._id}`);
+        break;
+
+      case "toggle":
+        await API_URL.put(`/blogs/${blog._id}`, {
+          status: getStatus(blog) === "Published" ? "Draft" : "Published",
+        });
+        fetchBlogs();
+        break;
+
+      case "delete":
+        if (!window.confirm("Delete this blog?")) return;
+        await API_URL.delete(`/blogs/${blog._id}`);
+        fetchBlogs();
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
-    <section className="bv-main-section">
+    <section className="blog-preview">
+      <div className="blog-container">
+        <h2 className="blog-preview-title">Blog Preview</h2>
 
-      <h2 className="bv-main-heading">Blog View</h2>
-
-      <div className="bv-top-layout">
-
-        {/* LEFT BIG BLOG */}
-        <div className="bv-feature-card">
-          <img src={blogMain} alt="blog" />
-
-          <div className="bv-feature-overlay">
-            <span className="bv-date">25 July 2024</span>
-
-            <h3>
-              Accusamus et iusto odio dignissimos ducimus qui blanditiis.
-            </h3>
-
-            <div className="bv-meta">
-              <span>Mark Jecno</span>
-              <span>02 Hits</span>
-              <span>598 Comments</span>
-            </div>
-          </div>
+        {/* VIEW TOGGLE */}
+        <div className="blog-toggle-wrap">
+          <button
+            className={view === "grid" ? "active" : ""}
+            onClick={() => setView("grid")}
+          >
+            ⬛ Grid View
+          </button>
+          <button
+            className={view === "list" ? "active" : ""}
+            onClick={() => setView("list")}
+          >
+            ☰ List View
+          </button>
         </div>
 
-        {/* RIGHT SIDE BLOGS */}
-        <div className="bv-side-wrapper">
+        {loading && <p className="loading">Loading blogs...</p>}
 
-          <div className="bv-side-card">
-            <img src={blogSide1} alt="blog" />
+        {/* ================= GRID VIEW ================= */}
+        {view === "grid" && !loading && (
+          <div className="blog-grid">
+            {blogs.map((blog) => {
+              const status = getStatus(blog);
 
-            <div className="bv-side-content">
-              <span className="bv-side-date">02 January 2024</span>
-              <h4>Perspiciatis unde omnis iste natus</h4>
-              <p>
-                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-            </div>
+              return (
+                <div className="blog-card" key={blog._id}>
+                  <div className="blog-card-media">
+                    <img
+                      src={`${IMAGE_BASE_URL}/${blog.image}`}
+                      alt={blog.title}
+                    />
+
+                    <button
+                      className="dot-btn"
+                      onClick={() =>
+                        setOpenMenu(openMenu === blog._id ? null : blog._id)
+                      }
+                    >
+                      ⋮
+                    </button>
+
+                    {openMenu === blog._id && (
+                      <div className="action-menu">
+                        <button onClick={() => handleAction("view", blog)}>
+                          👁 View
+                        </button>
+                        <button onClick={() => handleAction("edit", blog)}>
+                          ✏ Edit
+                        </button>
+                        <button onClick={() => handleAction("toggle", blog)}>
+                          {status === "Published"
+                            ? "🚫 Unpublish"
+                            : "✅ Publish"}
+                        </button>
+                        <button
+                          className="danger"
+                          onClick={() => handleAction("delete", blog)}
+                        >
+                          🗑 Delete
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="blog-card-body">
+                    <span className="category">{blog.category}</span>
+                    <h3>{blog.title}</h3>
+                    <p className="author">
+                      {blog.author} • {blog.designation}
+                    </p>
+
+                    <div className="meta-row">
+                      <span className="date">
+                        {new Date(blog.createdAt).toLocaleDateString()}
+                      </span>
+                      <span
+                        className={`status ${
+                          status === "Published" ? "published" : "draft"
+                        }`}
+                      >
+                        {status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        )}
 
-          <div className="bv-side-card">
-            <img src={blogSide2} alt="blog" />
-
-            <div className="bv-side-content">
-              <span className="bv-side-date">03 January 2024</span>
-              <h4>Perspiciatis unde omnis iste natus</h4>
-              <p>
-                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
+        {/* ================= LIST VIEW ================= */}
+        {view === "list" && !loading && (
+          <div className="blog-list">
+            <div className="blog-list-head">
+              <div>SL</div>
+              <div>Title</div>
+              <div>Author</div>
+              <div>Date</div>
+              <div>Status</div>
+              <div>Actions</div>
             </div>
+
+            {blogs.map((blog, i) => {
+              const status = getStatus(blog);
+
+              return (
+                <div className="blog-list-row" key={blog._id}>
+                  <div>{i + 1}</div>
+                  <div className="title">{blog.title}</div>
+                  <div>
+                    {blog.author}
+                    <br />
+                    <small>{blog.designation}</small>
+                  </div>
+                  <div>
+                    {new Date(blog.createdAt).toLocaleDateString()}
+                  </div>
+                  <div>
+                    <span
+                      className={`status ${
+                        status === "Published" ? "published" : "draft"
+                      }`}
+                    >
+                      {status}
+                    </span>
+                  </div>
+                  <div className="list-actions">
+                    <button onClick={() => handleAction("view", blog)}>
+                      View
+                    </button>
+                    <button onClick={() => handleAction("edit", blog)}>
+                      Edit
+                    </button>
+                    <button
+                      className="danger"
+                      onClick={() => handleAction("delete", blog)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
-        </div>
-
+        )}
       </div>
-
-      {/* GRID BLOGS */}
-
-      <div className="bv-grid-wrapper">
-
-        <div className="bv-grid-card">
-          <img src={grid1} alt="blog" />
-          <h5>A huge part of it is the incomparable beauty</h5>
-        </div>
-
-        <div className="bv-grid-card">
-          <img src={grid2} alt="blog" />
-          <h5>A huge part of it is the incomparable beauty</h5>
-        </div>
-
-        <div className="bv-grid-card">
-          <img src={grid3} alt="blog" />
-          <h5>A huge part of it is the incomparable beauty</h5>
-        </div>
-
-        <div className="bv-grid-card">
-          <img src={grid4} alt="blog" />
-          <h5>A huge part of it is the incomparable beauty</h5>
-        </div>
-
-      </div>
-
     </section>
   );
 };

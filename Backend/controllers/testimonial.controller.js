@@ -98,9 +98,3 @@ module.exports = {
 };
 
 
-module.exports = {
-  addTestimonial,
-  getTestimonials,
-  updateTestimonial,
-  deleteTestimonial,
-};

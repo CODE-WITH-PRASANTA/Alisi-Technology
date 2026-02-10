@@ -1,26 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./HomeRecentProjects.css";
-
-import p1 from "../../Assets/project-1.webp";
-import p2 from "../../Assets/project-2.webp";
-import p3 from "../../Assets/project-3.webp";
-import p4 from "../../Assets/project-4.webp";
-
-const projects = [
-  { img: p1, tag: "Solution", title: "Mobile App Development" },
-  { img: p2, tag: "Solution", title: "Business Transformation" },
-  { img: p3, tag: "Solution", title: "Cloud Migration System" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-  { img: p4, tag: "Solution", title: "Digital Growth Strategy" },
-];
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
 
 export default function RecentProjects() {
+  const [projects, setProjects] = useState([]);
+  const [index, setIndex] = useState(1);
+  const trackRef = useRef(null);
+
   const isMobile = window.innerWidth < 640;
   const cardsPerPage = isMobile ? 1 : 3;
+
+  /* ================= FETCH PROJECTS ================= */
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await API_URL.get("/projects");
+        setProjects(res.data.projects || []);
+      } catch (err) {
+        console.error("FETCH PROJECTS ERROR:", err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const pages = Math.ceil(projects.length / cardsPerPage);
 
@@ -31,27 +33,25 @@ export default function RecentProjects() {
   }
 
   /* CLONE FIRST + LAST */
-  const slides = [
-    grouped[grouped.length - 1],
-    ...grouped,
-    grouped[0],
-  ];
-
-  const [index, setIndex] = useState(1);
-  const trackRef = useRef(null);
+  const slides =
+    grouped.length > 1
+      ? [grouped[grouped.length - 1], ...grouped, grouped[0]]
+      : grouped;
 
   /* AUTO SLIDE */
   useEffect(() => {
+    if (slides.length <= 1) return;
+
     const timer = setInterval(() => {
       setIndex((i) => i + 1);
     }, 4000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   /* INFINITE RESET */
   useEffect(() => {
-    if (!trackRef.current) return;
+    if (!trackRef.current || slides.length <= 1) return;
 
     if (index === slides.length - 1) {
       setTimeout(() => {
@@ -87,60 +87,66 @@ export default function RecentProjects() {
 
   return (
     <section className="projects">
-      {/* HEADER */}
-      <div className="projects-header">
-        <div>
-          <span>[ RECENT PROJECTS ]</span>
-          <h2>
-            Breaking Boundaries, <br /> Building Dreams.
-          </h2>
-        </div>
+      {/* ✅ SAFE CONDITIONAL RENDER */}
+      {!projects.length ? null : (
+        <>
+          {/* HEADER */}
+          <div className="projects-header">
+            <div>
+              <span>[ RECENT PROJECTS ]</span>
+              <h2>
+                Breaking Boundaries, <br /> Building Dreams.
+              </h2>
+            </div>
 
-        <div className="nav-btns">
-          <button onClick={prev}>←</button>
-          <button onClick={next}>→</button>
-        </div>
-      </div>
+            <div className="nav-btns">
+              <button onClick={prev}>←</button>
+              <button onClick={next}>→</button>
+            </div>
+          </div>
 
-      {/* SLIDER */}
-      <div className="slider-wrapper">
-        <div
-          ref={trackRef}
-          className="slider-track"
-          style={{
-            transform: `translateX(-${index * 100}%)`,
-          }}
-        >
-          {slides.map((group, i) => (
-            <div className="slide-group" key={i}>
-              {group.map((item, j) => (
-                <div className="project-slide" key={j}>
-                  <div className="project-card">
-                    <img src={item.img} alt="" />
+          {/* SLIDER */}
+          <div className="slider-wrapper">
+            <div
+              ref={trackRef}
+              className="slider-track"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {slides.map((group, i) => (
+                <div className="slide-group" key={i}>
+                  {group.map((item) => (
+                    <div className="project-slide" key={item._id}>
+                      <div className="project-card">
+                        <img
+                          src={`${IMAGE_BASE_URL}/${item.projectImg}`}
+                          alt={item.title}
+                        />
 
-                    <div className="overlay">
-                      <span>{item.tag}</span>
-                      <h3>{item.title}</h3>
-                      <div className="arrow">↗</div>
+                        <div className="overlay">
+                          <span>{item.tag || "Solution"}</span>
+                          <h3>{item.title}</h3>
+                          <div className="arrow">↗</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* DOTS */}
-      <div className="dots">
-        {Array.from({ length: pages }).map((_, i) => (
-          <span
-            key={i}
-            className={i === realPage ? "dot active" : "dot"}
-            onClick={() => setIndex(i + 1)}
-          />
-        ))}
-      </div>
+          {/* DOTS */}
+          <div className="dots">
+            {Array.from({ length: pages }).map((_, i) => (
+              <span
+                key={i}
+                className={i === realPage ? "dot active" : "dot"}
+                onClick={() => setIndex(i + 1)}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }
