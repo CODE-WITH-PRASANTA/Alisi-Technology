@@ -45,7 +45,7 @@ const Select = ({ label, options, ...props }) => (
 
 /* ---------- MAIN COMPONENT ---------- */
 
-const AddPrice = () => {
+const AiData = () => {
   const [form, setForm] = useState({
     title: "",
     category: "",
@@ -217,4 +217,4 @@ const AddPrice = () => {
   );
 };
 
-export default AddPrice;
+export default AiData;

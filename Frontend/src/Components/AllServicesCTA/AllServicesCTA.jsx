@@ -26,7 +26,7 @@ const AllServicesCTA = () => {
             <div>
               <h4>Contact Info:</h4>
               <p>+011-6931-3553</p>
-              <p>support@tekmino.com</p>
+              <p> Alisiltechnology@gmail.com</p>
             </div>
 
             <div>
