@@ -70,7 +70,7 @@ function App() {
         <Route path="/services/enterprise-solutions" element={<EnterpriceSolution />} />
         <Route path="/services/iot-digital-engineering" element={<IOTDigitalEng />} />
         <Route path="/services/sustainability" element={<Sustainability />} />
-        <Route path="/blog/details" element={<BlogDetails />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/services/bpo" element={<BPOService />} />
         <Route path="/services/kpo" element={<KPOService />} />
         <Route path="/services/cognitive-operations" element={<CognitiveOperations />} />

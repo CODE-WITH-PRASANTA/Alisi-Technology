@@ -1,3 +1,5 @@
+/* ================= CONTACT SECTION ================= */
+
 .contact {
   position: relative;
   background-size: cover;
@@ -21,7 +23,7 @@
   gap: 60px;
 }
 
-/* LEFT */
+/* ================= LEFT ================= */
 
 .tag {
   color: #e5ff9f;
@@ -35,7 +37,7 @@
   line-height: 1.2;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .primary-btn {
   background: #e5ff9f;
@@ -61,15 +63,20 @@
   justify-content: center;
 }
 
-/* HOVER EFFECT */
-
+/* Hover */
 .primary-btn:hover {
   background: #000;
   color: #e5ff9f;
   border: 2px solid #e5ff9f;
 }
 
-/* INFO */
+/* Disabled */
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================= INFO ================= */
 
 .contact-info {
   margin-top: 60px;
@@ -91,7 +98,7 @@
   color: #e5ff9f;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 
 .contact-form {
   background: #050505;
@@ -114,6 +121,8 @@
   gap: 20px;
 }
 
+/* Inputs */
+
 input,
 select,
 textarea {
@@ -123,6 +132,15 @@ textarea {
   border-radius: 8px;
   color: #fff;
   outline: none;
+  transition: 0.3s ease;
+}
+
+/* Focus Animation */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #e5ff9f;
+  box-shadow: 0 0 10px rgba(229, 255, 159, 0.2);
 }
 
 textarea {
@@ -130,6 +148,42 @@ textarea {
   height: 130px;
   margin: 25px 0;
   resize: none;
+}
+
+/* ================= ALERT MESSAGE ================= */
+
+.form-alert {
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeInAlert 0.3s ease-in-out;
+}
+
+.alert-success {
+  background: rgba(229, 255, 159, 0.08);
+  border: 1px solid #e5ff9f;
+  color: #e5ff9f;
+  box-shadow: 0 0 15px rgba(229, 255, 159, 0.15);
+}
+
+.alert-error {
+  background: rgba(255, 80, 80, 0.08);
+  border: 1px solid #ff5050;
+  color: #ff5050;
+  box-shadow: 0 0 15px rgba(255, 80, 80, 0.15);
+}
+
+@keyframes fadeInAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= RESPONSIVE ================= */

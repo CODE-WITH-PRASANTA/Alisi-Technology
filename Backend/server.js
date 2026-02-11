@@ -36,6 +36,10 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
+
+
 /* ================= STATIC FILES ================= */
 /* Public access to uploads */
 app.use(
@@ -49,7 +53,7 @@ app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/client-logos", clientLogoRoutes);
 app.use("/api/blogs",blogRoutes)
-app.use("/api/contacts",contactRoutes)
+app.use("/api/contacts",contactRoutes);
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {

@@ -11,6 +11,7 @@ import {
   FiX,
   FiLogOut,
   FiUserPlus,
+  FiMail,
 } from "react-icons/fi";
 
 /* ================= SERVICES LIST ================= */
@@ -52,7 +53,6 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 
   return (
     <>
-      {/* MOBILE OVERLAY */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/60 z-40 lg:hidden"
@@ -107,7 +107,7 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             <SubItem label="Manage Articles" onClick={() => navigate("/blog-view")} />
           </Dropdown>
 
-          {/* PRICING & SERVICES */}
+          {/* PRICING */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
             label="Pricing & Plans"
@@ -117,17 +117,6 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           >
             <SubItem label="Add Pricing Plan" onClick={() => navigate("/price/add")} />
             <SubItem label="Manage Pricing" onClick={() => navigate("/price")} />
-
-            <div className="mt-2 border-t border-slate-700 pt-2">
-              {PRICING_SERVICES.map((service) => (
-                <SubItem
-                  key={service.path}
-                  label={service.label}
-                  active={isActive(service.path)}
-                  onClick={() => navigate(service.path)}
-                />
-              ))}
-            </div>
           </Dropdown>
 
           {/* TESTIMONIAL */}
@@ -144,6 +133,15 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             label="Team Management"
             collapsed={collapsed}
             onClick={() => navigate("/team")}
+          />
+
+          {/* CONTACT RECORDS */}
+          <SidebarItem
+            icon={<FiMail className="text-cyan-400" />}
+            label="Contact Records"
+            collapsed={collapsed}
+            active={isActive("/contacts")}
+            onClick={() => navigate("/contacts")}
           />
 
           {/* PORTFOLIO */}
@@ -213,10 +211,14 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
         {!collapsed && <span>{label}</span>}
       </div>
       {!collapsed && (
-        <FiChevronDown className={`transition ${open ? "rotate-180 text-blue-400" : ""}`} />
+        <FiChevronDown
+          className={`transition ${open ? "rotate-180 text-blue-400" : ""}`}
+        />
       )}
     </button>
-    {open && !collapsed && <div className="ml-8 space-y-1">{children}</div>}
+    {open && !collapsed && (
+      <div className="ml-8 space-y-1">{children}</div>
+    )}
   </>
 );
 

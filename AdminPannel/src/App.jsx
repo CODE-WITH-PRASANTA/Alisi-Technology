@@ -14,6 +14,7 @@ import BlogView from "./Pages/BlogView/BlogView";
 import TeamManagerPage from "./Pages/TeamMemberPosting/TeamMemberPosting";
 import OurProjectComp from "./Pages/OurProjectComp";
 import UploadClientLogo from "./Pages/UploadClinetLogo/UploadClinetLogo";
+import ContactAdminPage from "./Pages/ContactAdminPage";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/team" element={<TeamManagerPage />} />
             <Route path="/our-project" element={<OurProjectComp />} />
             <Route path="/client-logos" element={<UploadClientLogo />} />
+            <Route path="/contacts" element={<ContactAdminPage />} />
            </Route>
 
           {/* FALLBACK */}
