@@ -1,0 +1,108 @@
+/* Overlay background */
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 47, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Main container */
+.cookie-container {
+  max-width: 900px;
+  width: 100%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.cookie-container h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.cookie-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* Accept Button */
+.accept-btn {
+  background: linear-gradient(90deg, #2ea7ff, #1e90ff);
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.accept-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Responsive ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cookie-container {
+    padding: 30px;
+  }
+
+  .cookie-container h2 {
+    font-size: 22px;
+  }
+
+  .cookie-container p {
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cookie-container {
+    padding: 25px 20px;
+    border-radius: 10px;
+  }
+
+  .cookie-container h2 {
+    font-size: 18px;
+  }
+
+  .cookie-container p {
+    font-size: 14px;
+  }
+
+  .accept-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

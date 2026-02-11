@@ -14,10 +14,13 @@ import HomeServices from '../../Components/HomeServices/HomeServices'
 import HomeFeedback from '../../Components/HomeFeedback/HomeFeedback'
 import AboutTestmonial from '../../Components/AboutTestimonial/AboutTestimonial'
 import AboutTeam from '../../Components/AboutTeam/AboutTeam'
+import CookieBanner from '../../Components/CookieBanner/CookieBanner'
+
 
 const Home = () => {
   return (
     <div className='home'>
+      <CookieBanner/>
       <HomeHeroSection/>
       <HomeSliderBrand/>
       <HomeWhyChoose/>
