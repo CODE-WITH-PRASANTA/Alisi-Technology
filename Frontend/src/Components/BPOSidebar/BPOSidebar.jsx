@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./BPOSidebar.css";
-import sidebarImg from "../../assets/Service-details-001.webp";
+// import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -49,9 +49,9 @@ const BPOSidebar = () => {
           </div>
         </div>
 
-        <div className="bpoo-sidebar-image-holder">
+        {/* <div className="bpoo-sidebar-image-holder">
           <img src={sidebarImg} alt="Professional" />
-        </div>
+        </div> */}
       </div>
 
     </div>
