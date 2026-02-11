@@ -1,4 +1,7 @@
 const Testimonial = require("../models/Testimonial.model");
+const fs = require("fs");
+const path = require("path");
+
 
 /* ADD */
 const addTestimonial = async (req, res) => {
@@ -54,12 +57,35 @@ const updateTestimonial = async (req, res) => {
   }
 };
 
+
 /* DELETE */
 const deleteTestimonial = async (req, res) => {
   try {
+    // 1. Find testimonial by ID
+    const testimonial = await Testimonial.findById(req.params.id);
+
+    if (!testimonial) {
+      return res.status(404).json({ error: "Testimonial not found" });
+    }
+
+    // 2. Delete image from upload folder if exists
+    if (testimonial.image) {
+      const imagePath = path.join(__dirname, "..", testimonial.image);
+
+      fs.unlink(imagePath, (err) => {
+        if (err) {
+          console.error("Image delete error:", err.message);
+        }
+      });
+    }
+
+    // 3. Delete testimonial from database
     await Testimonial.findByIdAndDelete(req.params.id);
-    res.json({ message: "Testimonial deleted successfully" });
+
+    res.json({ message: "Testimonial and image deleted successfully" });
+
   } catch (err) {
+    console.error("DELETE ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -70,3 +96,5 @@ module.exports = {
   updateTestimonial,
   deleteTestimonial,
 };
+
+

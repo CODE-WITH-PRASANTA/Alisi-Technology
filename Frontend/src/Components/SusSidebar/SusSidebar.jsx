@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./SusSidebar.css";
-import sidebarImg from "../../assets/Service-details-001.webp";
+// import sidebarImg from "../../assets/AI-data-4.webp";
 
 /* ALL SERVICES ROUTES */
 const services = [
@@ -65,9 +65,9 @@ const SusSidebar = () => {
           </div>
         </div>
 
-        <div className="sus-sidebar-image-holder">
+        {/* <div className="sus-sidebar-image-holder">
           <img src={sidebarImg} alt="Professional" />
-        </div>
+        </div> */}
       </div>
 
     </div>

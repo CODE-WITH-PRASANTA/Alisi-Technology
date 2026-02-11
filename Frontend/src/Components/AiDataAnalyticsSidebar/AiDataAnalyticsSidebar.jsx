@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./AiDataAnalyticsSidebar.css";
-import sidebarImg from "../../assets/Service-details-001.webp";
+// import sidebarImg from "../../assets/AI&Data-1.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -48,10 +48,10 @@ const AiDataAnalyticsSidebar = () => {
             📞+1 (009) 544-7818
           </div>
         </div>
-
+{/* 
         <div className="ai-analytics-sidebar-image-holder">
           <img src={sidebarImg} alt="IT Solutions" />
-        </div>
+        </div> */}
       </div>
 
     </div>

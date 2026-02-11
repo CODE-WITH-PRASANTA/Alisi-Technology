@@ -1,10 +1,12 @@
 import React from "react";
 import "./HomeHeroSection.css";
+import { Link } from "react-router-dom";
+
 
 import bg from "../../Assets/footer-bg.webp";
 import hero from "../../Assets/home-hero-img.webp";
 import c1 from "../../Assets/client-1.webp";
-import c2 from "../../Assets/teastmonial-client-2.webp"
+import c2 from "../../Assets/teastmonial-client-2.webp";
 import c3 from "../../Assets/home-client-3.webp";
 import c4 from "../../Assets/teastmonial-client-2.webp";
 
@@ -15,54 +17,65 @@ export default function HomeHero() {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="hero-container">
-        {/* LEFT */}
+        {/* LEFT CONTENT */}
         <div className="hero-left">
-          <span className="tag">[ TRANSFORMING IDEAS ]</span>
+          <span className="hero-tag">
+            TRUSTED DIGITAL TRANSFORMATION PARTNER
+          </span>
 
           <h1>
-            Empowering Businesses  
-            <br />
-            Through Smart Digital
-            <br />
-            & IT Solutions.
+            Building Smart <br />
+            Digital & IT Solutions <br />
+            for <span>Future-Ready Businesses</span>
           </h1>
 
-          <div className="hero-actions">
-            <button className="explore-btn">
-              Explore Services <span>↗</span>
-            </button>
+          <p className="hero-desc">
+            Alisil Technology Cloud services enable organizations to move faster, reduce costs, and enhance performance through modern cloud architectures.
+            <br /> We provide comprehensive IT solutions that ensure business continuity, operational efficiency, and long-term growth
+          </p>
 
-            <div className="call">
-              ☎ <span>+1 (888) 333-8181</span>
-            </div>
+          <div className="hero-actions">
+          <Link to="/services/all-services" className="explore-btn">
+                View Our Services →
+            </Link>
+
+            <a href="tel:01169313553" className="call">
+              ☎ 011-6931-3553
+            </a>
           </div>
 
-          <div className="hero-points">
-            <p>✔ Innovate Smarter</p>
-            <p>✔ Technology Simplified</p>
+          <div className="hero-stats">
+            <div>
+              <h3>100+</h3>
+              <p>Global Clients</p>
+            </div>
+            <div>
+              <h3>3+</h3>
+              <p>Years of Excellence</p>
+            </div>
+            <div>
+              <h3>3+</h3>
+              <p>Technology Experts</p>
+            </div>
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT CONTENT */}
         <div className="hero-right">
-          <img src={hero} alt="" className="hero-img" />
+          <img src={hero} alt="Alisil Technology IT Services" />
 
-          {/* Trusted badge */}
-          <div className="trusted">
-            ✔ Trusted  800+ <br /> Technology Partner
-          </div>
-
-          {/* Review card */}
           <div className="review-card">
             <div className="avatars">
-              <img src={c1} alt="" />
-              <img src={c2} alt="" />
-              <img src={c3} alt="" />
-              <img src={c4} alt="" />
+              <img src={c1} alt="Client Review" />
+              <img src={c2} alt="Client Review" />
+              <img src={c3} alt="Client Review" />
+              <img src={c4} alt="Client Review" />
             </div>
 
-            <h2>4.9 <span>★★★★★</span></h2>
-            <p>Based on 600+ Google Reviews.</p>
+            <h2>
+              4.9 <span>★★★★★</span>
+            </h2>
+            <p>Rated by 50+ satisfied clients worldwide</p>
           </div>
         </div>
       </div>

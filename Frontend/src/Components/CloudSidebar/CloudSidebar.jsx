@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./CloudSidebar.css";
 
-import sidebarImg from "../../assets/Service-details-001.webp";
+// import sidebarImg from "../../assets/AI&-Data-2.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -55,10 +55,10 @@ const CloudSidebar = () => {
 
           <div className="cloudd-sidebar-phone">📞 +1 (009) 544-7818</div>
         </div>
-
+{/* 
         <div className="cloudd-sidebar-image-holder">
           <img src={sidebarImg} alt="IT Solutions" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

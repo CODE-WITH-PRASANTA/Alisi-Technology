@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../Auth/AuthContext";
 import {
   FiHome,
   FiEdit,
@@ -12,20 +13,42 @@ import {
   FiUserPlus,
 } from "react-icons/fi";
 
+/* ================= SERVICES LIST ================= */
+const PRICING_SERVICES = [
+  { label: "All Services", path: "/services/all-services" },
+  { label: "AI & Data Analytics", path: "/services/Data-Analytics" },
+  { label: "BPO Services", path: "/services/bpo" },
+  { label: "KPO Services", path: "/services/kpo" },
+  { label: "Cloud Computing", path: "/services/Cloud" },
+  { label: "Cognitive Operations", path: "/services/cognitive-operations" },
+  { label: "Consulting", path: "/services/Consulting" },
+  { label: "Cybersecurity", path: "/services/cybersecurity" },
+  { label: "Enterprise Solutions", path: "/services/enterprise-solutions" },
+  { label: "IoT & Digital Engineering", path: "/services/iot-digital-engineering" },
+  { label: "Network Solutions", path: "/services/network-solutions" },
+  { label: "Sustainability Services", path: "/services/sustainability" },
+];
+
 const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { logout } = useAuth();
 
-  const [blogOpen, setBlogOpen] = useState(false);
+  const [contentOpen, setContentOpen] = useState(false);
   const [priceOpen, setPriceOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
 
-  // ✅ Auto close sidebar on route change (mobile)
   useEffect(() => {
     setSidebarOpen(false);
   }, [location.pathname]);
 
   const isActive = (path) => location.pathname === path;
+
+  const handleLogout = () => {
+    logout();
+    setSidebarOpen(false);
+    navigate("/login", { replace: true });
+  };
 
   return (
     <>
@@ -51,10 +74,9 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
               onClick={() => navigate("/dashboard")}
               className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
             >
-              Admin Panel
+              Admin Console
             </span>
           )}
-
           <button
             className="lg:hidden text-slate-400"
             onClick={() => setSidebarOpen(false)}
@@ -73,51 +95,45 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             onClick={() => navigate("/dashboard")}
           />
 
-          {/* BLOG */}
+          {/* CONTENT */}
           <Dropdown
             icon={<FiEdit className="text-purple-400" />}
-            label="Blog Management"
-            open={blogOpen}
-            setOpen={setBlogOpen}
+            label="Content Management"
+            open={contentOpen}
+            setOpen={setContentOpen}
             collapsed={collapsed}
           >
-            <SubItem
-              label="Add Blog"
-              active={isActive("/blog")}
-              onClick={() => navigate("/blog")}
-            />
-            <SubItem
-              label="View Blog"
-              active={isActive("/blog-view")}
-              onClick={() => navigate("/blog-view")}
-            />
+            <SubItem label="Create Article" onClick={() => navigate("/blog")} />
+            <SubItem label="Manage Articles" onClick={() => navigate("/blog-view")} />
           </Dropdown>
 
-          {/* PRICE */}
+          {/* PRICING & SERVICES */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
-            label="Price Management"
+            label="Pricing & Plans"
             open={priceOpen}
             setOpen={setPriceOpen}
             collapsed={collapsed}
           >
-            <SubItem
-              label="Add Price"
-              active={isActive("/price/add")}
-              onClick={() => navigate("/price/add")}
-            />
-            <SubItem
-              label="View Prices"
-              active={isActive("/price")}
-              onClick={() => navigate("/price")}
-            />
+            <SubItem label="Add Pricing Plan" onClick={() => navigate("/price/add")} />
+            <SubItem label="Manage Pricing" onClick={() => navigate("/price")} />
+
+            <div className="mt-2 border-t border-slate-700 pt-2">
+              {PRICING_SERVICES.map((service) => (
+                <SubItem
+                  key={service.path}
+                  label={service.label}
+                  active={isActive(service.path)}
+                  onClick={() => navigate(service.path)}
+                />
+              ))}
+            </div>
           </Dropdown>
 
           {/* TESTIMONIAL */}
           <SidebarItem
             icon={<FiStar />}
-            label="Testimonial"
-            active={isActive("/testimonial")}
+            label="Client Testimonials"
             collapsed={collapsed}
             onClick={() => navigate("/testimonial")}
           />
@@ -125,38 +141,22 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           {/* TEAM */}
           <SidebarItem
             icon={<FiUserPlus />}
-            label="Team Posting"
-            active={isActive("/team")}
+            label="Team Management"
             collapsed={collapsed}
             onClick={() => navigate("/team")}
           />
 
-          {/* PROJECT & CLIENT */}
+          {/* PORTFOLIO */}
           <Dropdown
             icon={<FiBriefcase className="text-orange-400" />}
-            label="Project & Client"
+            label="Portfolio Management"
             open={projectOpen}
             setOpen={setProjectOpen}
             collapsed={collapsed}
           >
-            <SubItem
-              label="Add Project"
-              active={isActive("/projects/add")}
-              onClick={() => navigate("/projects/add")}
-            />
-
-            <SubItem
-              label="View Projects"
-              active={isActive("/projects")}
-              onClick={() => navigate("/projects")}
-            />
-
-            {/* ✅ OUR COMPANY LOGOS */}
-            <SubItem
-              label="Our Company Logos"
-              active={isActive("/our-project")}
-              onClick={() => navigate("/our-project")}
-            />
+            <SubItem label="Add Portfolio" onClick={() => navigate("/projects/add")} />
+            <SubItem label="Manage Portfolio" onClick={() => navigate("/projects")} />
+            <SubItem label="Upload Client Logo" onClick={() => navigate("/client-logos")} />
           </Dropdown>
         </nav>
 
@@ -168,14 +168,16 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
               className="w-9 h-9 rounded-full ring-2 ring-blue-500"
               alt="profile"
             />
-
             {!collapsed && (
               <>
                 <div className="flex-1">
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-400">Administrator</p>
                 </div>
-                <FiLogOut className="text-red-400 cursor-pointer" />
+                <FiLogOut
+                  className="text-red-400 cursor-pointer hover:text-red-500"
+                  onClick={handleLogout}
+                />
               </>
             )}
           </div>
@@ -193,8 +195,7 @@ const SidebarItem = ({ icon, label, collapsed, onClick, active }) => (
   <button
     onClick={onClick}
     className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition
-      ${active ? "bg-[#1b2230] text-white" : "hover:bg-[#161c25] text-slate-300"}
-    `}
+      ${active ? "bg-[#1b2230] text-white" : "hover:bg-[#161c25] text-slate-300"}`}
   >
     <span className="text-lg">{icon}</span>
     {!collapsed && <span>{label}</span>}
@@ -211,14 +212,10 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
         {icon}
         {!collapsed && <span>{label}</span>}
       </div>
-
       {!collapsed && (
-        <FiChevronDown
-          className={`transition ${open ? "rotate-180 text-blue-400" : ""}`}
-        />
+        <FiChevronDown className={`transition ${open ? "rotate-180 text-blue-400" : ""}`} />
       )}
     </button>
-
     {open && !collapsed && <div className="ml-8 space-y-1">{children}</div>}
   </>
 );
@@ -227,12 +224,7 @@ const SubItem = ({ label, onClick, active }) => (
   <button
     onClick={onClick}
     className={`block w-full text-left px-3 py-2 rounded-lg transition
-      ${
-        active
-          ? "bg-[#1b2230] text-white"
-          : "text-slate-400 hover:text-white hover:bg-[#1b2230]"
-      }
-    `}
+      ${active ? "bg-[#1b2230] text-white" : "text-slate-400 hover:bg-[#1b2230]"}`}
   >
     {label}
   </button>

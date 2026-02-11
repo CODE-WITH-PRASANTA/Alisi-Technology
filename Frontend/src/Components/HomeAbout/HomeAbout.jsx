@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./HomeAbout.css";
 import { FaAward } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 import aboutImg from "../../Assets/about-img-1.webp";
 import awardBg from "../../Assets/award-circle-bg.webp";
@@ -33,7 +35,7 @@ export default function AboutTekmino() {
 
           {/* Experience badge */}
           <div className="exp-badge">
-            <h2>20+</h2>
+            <h2>3+</h2>
             <p>Years of Excellence in IT Solutions Company.</p>
           </div>
 
@@ -41,7 +43,7 @@ export default function AboutTekmino() {
           <div className="founder">
             <img src={founder} alt="" />
             <div className="founder-text">
-              <h4>Burdee Nicolas</h4>
+              <h4>Arshad Ali Tanwir</h4>
               <span>Co. Founder</span>
             </div>
             <img src={sign} className="sign" alt="" />
@@ -66,7 +68,7 @@ export default function AboutTekmino() {
 
           <div className="stats">
             <div>
-              <h3>3K+</h3>
+              <h3>100+</h3>
               <span>Successful Projects.</span>
             </div>
             <div>
@@ -74,10 +76,13 @@ export default function AboutTekmino() {
               <span>IT Professionals.</span>
             </div>
           </div>
-
-          <button className="about-btn">
-            Learn More <span>↗</span>
-          </button>
+        <Link
+          to="/about"
+          className="about-btn"
+          aria-label="Learn more about Alisil Technology"
+        >
+          Learn More <span>↗</span>
+        </Link>
 
           {/* Award */}
           <div className="award">

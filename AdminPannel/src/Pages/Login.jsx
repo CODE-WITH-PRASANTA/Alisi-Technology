@@ -11,12 +11,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ DEMO CREDENTIALS
-    if (email === "admin@gmail.com" && password === "admin123") {
-      login({ email });
-      navigate("/dashboard"); // ✅ FIXED
+    const success = login(email, password);
+
+    if (success) {
+      navigate("/dashboard", { replace: true });
     } else {
-      alert("Invalid email or password");
+      alert("Invalid admin credentials");
     }
   };
 
@@ -32,8 +32,8 @@ const Login = () => {
 
         <input
           type="email"
-          placeholder="Email"
-          className="w-full mb-4 px-4 py-2 rounded-lg bg-[#0b0f14] border border-slate-700 text-white outline-none focus:border-blue-500"
+          placeholder="Admin Email"
+          className="w-full mb-4 px-4 py-2 rounded-lg bg-[#0b0f14] border border-slate-700 text-white"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -41,20 +41,17 @@ const Login = () => {
         <input
           type="password"
           placeholder="Password"
-          className="w-full mb-6 px-4 py-2 rounded-lg bg-[#0b0f14] border border-slate-700 text-white outline-none focus:border-blue-500"
+          className="w-full mb-6 px-4 py-2 rounded-lg bg-[#0b0f14] border border-slate-700 text-white"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button
-          type="submit"
-          className="w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition text-white font-semibold"
-        >
+        <button className="w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold">
           Login
         </button>
 
         <p className="text-xs text-slate-400 mt-4 text-center">
-          Demo: admin@gmail.com / admin123
+          Demo Admin: admin@gmail.com / admin123
         </p>
       </form>
     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./HomeWhyChoose.css";
+import { Link } from "react-router-dom";
 import {
   FaThumbsUp,
   FaLightbulb,
@@ -39,9 +40,10 @@ export default function WhyChoose() {
             engineering, and IT solutions designed to improve efficiency,
             strengthen performance, and support long-term business growth.
           </p>
-          <button className="learn-btn">
-            Learn More <span>↗</span>
-          </button>
+         <Link to="/about" className="home-learn-btn" aria-label="Learn more about Alisil Technology">
+              Learn More <span>↗</span>
+            </Link>
+
         </div>
       </div>
 
