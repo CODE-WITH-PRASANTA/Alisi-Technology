@@ -91,8 +91,10 @@ const EnterpriseSolution = () => {
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
         rounded-2xl p-6 space-y-5 overflow-y-auto h-[60vh]"
       >
+
+        {/* 🔥 ONLY THIS LINE IS UPDATED */}
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
-          Add Price
+          EnterpriseSolution Price
         </h2>
 
         <Input label="Plan Title" name="title" value={form.title} onChange={handleChange} />

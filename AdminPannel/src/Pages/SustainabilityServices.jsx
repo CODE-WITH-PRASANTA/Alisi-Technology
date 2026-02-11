@@ -92,7 +92,7 @@ const SustainabilitySrvices = () => {
         rounded-2xl p-6 space-y-5 overflow-y-auto h-[60vh]"
       >
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
-          Add Price
+          Sustainability Services Price
         </h2>
 
         <Input label="Plan Title" name="title" value={form.title} onChange={handleChange} />
