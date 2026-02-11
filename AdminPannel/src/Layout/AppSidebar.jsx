@@ -39,11 +39,16 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
   const [priceOpen, setPriceOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
 
+  const isActive = (path) => location.pathname === path;
+
+  /* ================= AUTO OPEN DROPDOWNS ================= */
   useEffect(() => {
     setSidebarOpen(false);
-  }, [location.pathname]);
 
-  const isActive = (path) => location.pathname === path;
+    setContentOpen(location.pathname.startsWith("/blog"));
+    setPriceOpen(location.pathname.startsWith("/services"));
+    setProjectOpen(location.pathname.startsWith("/projects"));
+  }, [location.pathname]);
 
   const handleLogout = () => {
     logout();
@@ -87,6 +92,8 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
 
         {/* MENU */}
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto text-sm">
+
+          {/* DASHBOARD */}
           <SidebarItem
             icon={<FiHome />}
             label="Dashboard"
@@ -103,11 +110,19 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             setOpen={setContentOpen}
             collapsed={collapsed}
           >
-            <SubItem label="Create Article" onClick={() => navigate("/blog")} />
-            <SubItem label="Manage Articles" onClick={() => navigate("/blog-view")} />
+            <SubItem
+              label="Create Article"
+              active={isActive("/blog")}
+              onClick={() => navigate("/blog")}
+            />
+            <SubItem
+              label="Manage Articles"
+              active={isActive("/blog-view")}
+              onClick={() => navigate("/blog-view")}
+            />
           </Dropdown>
 
-          {/* PRICING */}
+          {/* PRICING & PLANS (NOW USING SERVICES LIST) */}
           <Dropdown
             icon={<FiDollarSign className="text-green-400" />}
             label="Pricing & Plans"
@@ -115,8 +130,14 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             setOpen={setPriceOpen}
             collapsed={collapsed}
           >
-            <SubItem label="Add Pricing Plan" onClick={() => navigate("/price/add")} />
-            <SubItem label="Manage Pricing" onClick={() => navigate("/price")} />
+            {PRICING_SERVICES.map((service) => (
+              <SubItem
+                key={service.path}
+                label={service.label}
+                active={isActive(service.path)}
+                onClick={() => navigate(service.path)}
+              />
+            ))}
           </Dropdown>
 
           {/* TESTIMONIAL */}
@@ -139,8 +160,8 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
           <SidebarItem
             icon={<FiMail className="text-cyan-400" />}
             label="Contact Records"
-            collapsed={collapsed}
             active={isActive("/contacts")}
+            collapsed={collapsed}
             onClick={() => navigate("/contacts")}
           />
 
@@ -152,10 +173,23 @@ const AppSidebar = ({ sidebarOpen, setSidebarOpen, collapsed }) => {
             setOpen={setProjectOpen}
             collapsed={collapsed}
           >
-            <SubItem label="Add Portfolio" onClick={() => navigate("/projects/add")} />
-            <SubItem label="Manage Portfolio" onClick={() => navigate("/projects")} />
-            <SubItem label="Upload Client Logo" onClick={() => navigate("/client-logos")} />
+            <SubItem
+              label="Add Portfolio"
+              active={isActive("/projects/add")}
+              onClick={() => navigate("/projects/add")}
+            />
+            <SubItem
+              label="Manage Portfolio"
+              active={isActive("/projects")}
+              onClick={() => navigate("/projects")}
+            />
+            <SubItem
+              label="Upload Client Logo"
+              active={isActive("/client-logos")}
+              onClick={() => navigate("/client-logos")}
+            />
           </Dropdown>
+
         </nav>
 
         {/* PROFILE */}
@@ -216,6 +250,7 @@ const Dropdown = ({ icon, label, open, setOpen, collapsed, children }) => (
         />
       )}
     </button>
+
     {open && !collapsed && (
       <div className="ml-8 space-y-1">{children}</div>
     )}
