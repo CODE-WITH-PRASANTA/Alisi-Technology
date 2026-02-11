@@ -59,7 +59,6 @@ const AiData = () => {
       features: [],
       status: "Active",
     });
-
     setFeatureInput("");
     setEditingId(null);
   };
@@ -81,7 +80,7 @@ const AiData = () => {
       }
 
       resetForm();
-      setRefreshKey((prev) => prev + 1); // 🔥 refresh table
+      setRefreshKey((prev) => prev + 1);
     } catch (err) {
       console.error(err);
       alert("Operation failed ❌");
@@ -142,7 +141,7 @@ const AiData = () => {
           className="w-full p-2 bg-black border border-slate-700 rounded text-white"
         />
 
-        {/* ---------- FEATURES ---------- */}
+        {/* FEATURES */}
         <div className="flex gap-2">
           <input
             value={featureInput}
@@ -205,9 +204,7 @@ const AiData = () => {
         <h3 className="text-lg font-semibold mb-4">Live Preview</h3>
 
         <div className="border border-slate-700 p-4 rounded-xl bg-[#0b0f14]">
-          <h3 className="text-xl font-bold">
-            {form.title || "Plan Title"}
-          </h3>
+          <h3 className="text-xl font-bold">{form.title || "Plan Title"}</h3>
 
           <p className="text-slate-400">
             {form.category || "Category"}
@@ -255,7 +252,6 @@ const AiData = () => {
               features: price.features || [],
               status: price.status,
             });
-
             setEditingId(price._id);
           }}
         />
