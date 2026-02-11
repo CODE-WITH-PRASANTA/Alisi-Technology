@@ -23,24 +23,26 @@ const prices = [
 
 const ViewPrices = () => {
   return (
-    <div className="h-[calc(100vh-4rem)] bg-[#0f141b] border border-slate-800 rounded-2xl flex flex-col">
-      
+    <div className="h-[calc(100vh-4rem)] bg-[#0f141b] border border-slate-800 rounded-2xl flex flex-col overflow-hidden">
+
       {/* HEADER */}
-      <h2 className="text-xl font-semibold p-6 border-b border-slate-800 sticky top-0 bg-[#0f141b] z-10">
+      <h2 className="text-xl font-semibold p-6 border-b border-slate-800 sticky top-0 bg-[#0f141b] z-20">
         Price Management
       </h2>
 
-      {/* SCROLL AREA */}
-      <div className="flex-1 overflow-y-auto overflow-x-auto px-6 pb-6">
-        <table className="min-w-[900px] w-full text-sm">
-          <thead className="sticky top-0 bg-[#0f141b] z-10">
-            <tr className="text-left text-slate-400 border-b border-slate-800">
-              <th className="py-3">Plan</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Duration</th>
-              <th>Features</th>
-              <th>Status</th>
+      {/* SCROLLING TABLE WRAPPER */}
+      <div className="flex-1 overflow-auto p-6">
+
+        {/* FORCE TABLE WIDTH TO ENABLE HORIZONTAL SCROLL */}
+        <table className="min-w-[1100px] w-full text-sm border-collapse">
+          <thead>
+            <tr className="text-slate-400 border-b border-slate-800 sticky top-0 bg-[#0f141b] z-10">
+              <th className="py-3 text-left">Plan</th>
+              <th className="text-left">Category</th>
+              <th className="text-left">Price</th>
+              <th className="text-left">Duration</th>
+              <th className="text-left">Features</th>
+              <th className="text-left">Status</th>
               <th className="text-right">Actions</th>
             </tr>
           </thead>
@@ -66,8 +68,7 @@ const ViewPrices = () => {
 
                 <td>
                   <span
-                    className={`px-3 py-1 text-xs rounded-full
-                    ${
+                    className={`px-3 py-1 text-xs rounded-full ${
                       p.status === "Active"
                         ? "bg-green-500/20 text-green-400"
                         : "bg-red-500/20 text-red-400"
@@ -90,10 +91,9 @@ const ViewPrices = () => {
           </tbody>
         </table>
 
+        {/* EMPTY MESSAGE */}
         {prices.length === 0 && (
-          <p className="text-center text-slate-400 py-10">
-            No prices found
-          </p>
+          <p className="text-center text-slate-400 py-10">No prices found</p>
         )}
       </div>
     </div>

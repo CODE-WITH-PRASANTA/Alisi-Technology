@@ -45,7 +45,7 @@ const Select = ({ label, options, ...props }) => (
 
 /* ---------- MAIN COMPONENT ---------- */
 
-const AddPrice = () => {
+const BpoService = () => {
   const [form, setForm] = useState({
     title: "",
     category: "",
@@ -213,8 +213,9 @@ const AddPrice = () => {
       <div className="xl:col-span-3 w-full">
         <ViewPrices />
       </div>
+      
     </div>
   );
 };
 
-export default AddPrice;
+export default BpoService;
