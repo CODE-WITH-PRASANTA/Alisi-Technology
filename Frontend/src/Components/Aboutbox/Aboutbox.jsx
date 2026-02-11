@@ -10,7 +10,7 @@ import "./Aboutbox.css";
 const statsData = [
   {
     icon: <FaHandshake />,
-    value: 1000,
+    value: 100,
     suffix: "+",
     label: "Engaged Customers"
   },
@@ -22,7 +22,7 @@ const statsData = [
   },
   {
     icon: <FaUsers />,
-    value: 80,
+    value: 10,
     suffix: "+",
     label: "Team of Professionals"
   },

@@ -75,7 +75,6 @@ const Navbar = () => {
                   Cognitive Business Operations
                 </NavLink>
                 <NavLink to="/services/Consulting" onClick={closeAll}>Consulting</NavLink>
-                <NavLink to="/services/cybersecurity" onClick={closeAll}>Cybersecurity</NavLink>
                 <NavLink to="/services/enterprise-solutions" onClick={closeAll}>
                   Enterprise Solutions
                 </NavLink>

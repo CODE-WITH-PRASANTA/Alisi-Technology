@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./HomeServices.css";
 import {
   FiMonitor,
@@ -13,24 +14,26 @@ const services = [
   {
     id: "01",
     icon: <FiMonitor />,
-    title: "Managed IT Services",
+    title: "AI and Data Analytics",
     desc: "End-to-end IT management to keep your systems running smoothly and securely.",
     points: [
       "24/7 monitoring & maintenance",
       "Technical support services",
       "Remote IT assistance",
     ],
+    link: "/services/Data-analytics",
   },
   {
     id: "02",
     icon: <FiCloud />,
-    title: "Cloud Computing Solutions",
+    title: "IOT and Digital Engineering",
     desc: "Flexible cloud platforms that support business growth and digital transformation.",
     points: [
       "Cloud migration services",
       "Secure cloud infrastructure",
       "Hybrid cloud solutions",
     ],
+    link: "/services/IoT-Digital-Eng.",
   },
   {
     id: "03",
@@ -42,28 +45,31 @@ const services = [
       "Network security protection",
       "Data safety solutions",
     ],
+    link: "/services/cybersecurity",
   },
   {
     id: "04",
     icon: <FiSettings />,
-    title: "IT Consulting & Strategy",
+    title: "Cognitive Business operation",
     desc: "Expert guidance to optimize technology and improve business performance.",
     points: [
       "Digital transformation planning",
       "System optimization",
       "Technology consulting",
     ],
+    link: "/services/Cognitive",
   },
   {
     id: "05",
     icon: <FiShare2 />,
-    title: "Network & IoT Infrastructure",
+    title: "Network Solution & Services",
     desc: "Reliable connectivity solutions for modern digital operations.",
     points: [
       "Network design & setup",
       "IoT system integration",
       "Secure connectivity",
     ],
+    link: "/services/Network",
   },
 ];
 
@@ -95,9 +101,9 @@ export default function HomeServices() {
             Smart IT & Digital Solutions <br /> Built for Business Growth
           </h2>
 
-          <button className="main-btn">
+          <Link to="/services" className="main-btn">
             Learn More <FiArrowUpRight />
-          </button>
+          </Link>
         </div>
 
         {/* RIGHT CARDS */}
@@ -122,7 +128,9 @@ export default function HomeServices() {
                 ))}
               </ul>
 
-              <button className="learn-btn">Learn more →</button>
+              <Link to={s.link} className="learn-btn">
+                Learn more →
+              </Link>
             </div>
           ))}
         </div>

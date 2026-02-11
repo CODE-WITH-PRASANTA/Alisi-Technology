@@ -71,12 +71,6 @@ const services = [
   {
     id: "10",
     icon: <FaCode />,
-    title: "Cybersecurity",
-    desc: "Protect your digital ecosystem with comprehensive cybersecurity services. From risk assessment and threat detection to compliance and infrastructure security, we safeguard your data, applications, and networks against evolving cyber threats.",
-  },
-  {
-    id: "11",
-    icon: <FaCode />,
     title: "Enterprise Solutions",
     desc: "Build robust enterprise platforms and system integrations that improve productivity and operational efficiency. We deliver ERP, CRM, and custom enterprise solutions designed to support scalable business growth.",
   },
