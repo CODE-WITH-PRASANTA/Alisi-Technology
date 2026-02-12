@@ -11,7 +11,6 @@ const services = [
   { name: "Cloud Computing", path: "/services/Cloud" },
   { name: "Cognitive Business Operations", path: "/services/Cognitive" },
   { name: "Consulting", path: "/services/Consulting" },
-  { name: "Cybersecurity", path: "/services/Cybersecurity" },
   { name: "Enterprise Solutions", path: "/services/Enterprise-Solutions" },
   { name: "IoT & Digital Engineering", path: "/services/IoT-Digital-Eng." },
   { name: "Network Solutions & Services", path: "/services/Network" },

@@ -36,8 +36,8 @@ const ContactInfo = () => {
             <FaEnvelope />
           </div>
           <h3>Email us</h3>
-          <p>support@tekmino.com</p>
-          <p>info@tekmino.com</p>
+          <p>Alisiltechnology@gmail.com</p>
+          
         </div>
 
         {/* Phone */}
@@ -55,7 +55,7 @@ const ContactInfo = () => {
             <FaComments />
           </div>
           <h3>Live chat</h3>
-          <p>livechat@tekmino.com</p>
+          <p>Alisiltechnology@gmail.com</p>
           <p className="highlight">Need help?</p>
         </div>
       </div>

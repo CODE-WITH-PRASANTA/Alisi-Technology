@@ -93,7 +93,6 @@ const BlogSidebar = () => {
           <span>IoT</span>
           <span>Cloud</span>
           <span>Automation</span>
-          <span>Cybersecurity</span>
           <span>Digital</span>
           <span>Engineering</span>
           <span>Analytics</span>

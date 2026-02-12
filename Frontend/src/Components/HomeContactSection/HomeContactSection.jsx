@@ -5,28 +5,28 @@ import bg from "../../Assets/common-bg-2.webp";
 
 export default function ContactSection() {
   return (
-    <section className="contact" style={{ backgroundImage: `url(${bg})` }}>
-      <div className="contact-overlay"></div>
+    <section className="Home-contact" style={{ backgroundImage: `url(${bg})` }}>
+      <div className="Home-contact-overlay"></div>
 
-      <div className="contact-container">
+      <div className="Home-contact-container">
         {/* LEFT */}
-        <div className="contact-left">
+        <div className="Home-contact-left">
           <span className="tag">[ GET IN TOUCH ]</span>
 
           <h2>Have any Questions on Mind? Get in Touch for Market Experts.</h2>
 
           {/* CONTACT BUTTON LINKED */}
-          <Link to="/contact" className="contact-btn-link">
+          <Link to="/contact" className="Home-contact-btn-link">
             <button className="primary-btn">
               Contact Us Now <span>↗</span>
             </button>
           </Link>
 
-          <div className="contact-info">
+          <div className="Home-contact-info">
             <div>
               <h4>Contact Info:</h4>
               <p>+ 011-6931-3553</p>
-              <p>support@tekmino.com</p>
+              <p> Alisiltechnology@gmail.com</p>
             </div>
 
             <div>
@@ -48,7 +48,7 @@ export default function ContactSection() {
         </div>
 
         {/* RIGHT FORM */}
-        <div className="contact-form">
+        <div className="Home-contact-form">
           <h3>
             Drop Us a <span>Line.</span>
           </h3>

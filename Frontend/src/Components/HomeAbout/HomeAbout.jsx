@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 
 import aboutImg from "../../Assets/about-img-1.webp";
-import awardBg from "../../Assets/award-circle-bg.webp";
-import awardText from "../../Assets/award-circle-text.webp";
 import founder from "../../Assets/client-1.webp";
 import sign from "../../Assets/signature.webp";
 import bg from "../../Assets/common-bg.webp";
@@ -86,13 +84,8 @@ export default function AboutTekmino() {
 
           {/* Award */}
           <div className="award">
-            <img src={awardBg} className="award-bg" alt="" />
-            <img src={awardText} className="award-text" alt="" />
 
-            {/* CENTER ICON */}
-            <div className="award-icon">
-              <FaAward />
-            </div>
+            
           </div>
         </div>
       </div>

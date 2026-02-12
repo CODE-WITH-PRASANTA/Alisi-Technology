@@ -59,10 +59,7 @@ const BlogSidebar = () => {
           <span>(02)</span>
         </div>
 
-        <div className="bd-categoryItem">
-          <span>Cybersecurity</span>
-          <span>(03)</span>
-        </div>
+        
 
         <div className="bd-categoryItem">
           <span>Data Analytics</span>
