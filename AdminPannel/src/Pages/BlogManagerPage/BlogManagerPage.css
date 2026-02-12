@@ -75,12 +75,14 @@
   background: #0b0f14;
   color: #ffffff;
   outline: none;
+  transition: 0.25s ease;
 }
 
 .adm-input-group input:focus,
 .adm-input-group textarea:focus,
 .adm-input-group select:focus {
   border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
 }
 
 /* =========================
@@ -181,8 +183,9 @@
 .adm-table-scroll-area {
   margin-top: 15px;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   padding-bottom: 8px;
+  flex: 1;
 }
 
 /* =========================
@@ -190,7 +193,7 @@
    ========================= */
 
 .adm-blog-table {
-  min-width: 1100px;
+  min-width: 1300px;
   width: 100%;
   border-collapse: collapse;
   background: #0b0f14;
@@ -202,11 +205,20 @@
   padding: 12px;
   text-align: left;
   font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .adm-blog-table td {
   padding: 12px;
   border-bottom: 1px solid #1f2933;
+  vertical-align: middle;
+}
+
+/* Hover row */
+.adm-blog-table tbody tr:hover {
+  background: #111827;
 }
 
 /* =========================
@@ -232,8 +244,32 @@
 }
 
 /* =========================
+   TAGS
+   ========================= */
+
+.adm-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.adm-tag-chip {
+  background: #1f2937;
+  color: #22d3ee;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+}
+
+/* =========================
    ACTION BUTTONS
    ========================= */
+
+.adm-action-wrap {
+  display: flex;
+  gap: 8px;
+}
 
 .adm-edit-btn {
   background: #22c55e;
@@ -241,8 +277,12 @@
   border: none;
   padding: 6px 12px;
   border-radius: 8px;
-  margin-right: 6px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.adm-edit-btn:hover {
+  opacity: 0.9;
 }
 
 .adm-delete-btn {
@@ -252,6 +292,11 @@
   padding: 6px 12px;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.adm-delete-btn:hover {
+  opacity: 0.9;
 }
 
 /* =========================
@@ -268,15 +313,9 @@
    SCROLLBAR CONTROL
    ========================= */
 
-/* Hide vertical scrollbars */
-.adm-blog-left-panel::-webkit-scrollbar,
-.adm-blog-form-box::-webkit-scrollbar {
-  width: 0;
-}
-
-/* Horizontal scrollbar visible */
 .adm-table-scroll-area::-webkit-scrollbar {
   height: 6px;
+  width: 6px;
 }
 
 .adm-table-scroll-area::-webkit-scrollbar-thumb {
@@ -286,6 +325,11 @@
 
 .adm-table-scroll-area::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.adm-blog-left-panel::-webkit-scrollbar,
+.adm-blog-form-box::-webkit-scrollbar {
+  width: 0;
 }
 
 /* Firefox */

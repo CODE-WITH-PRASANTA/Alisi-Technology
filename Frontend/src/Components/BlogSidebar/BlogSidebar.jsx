@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
+import { useNavigate } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
 import "./BlogSidebar.css";
 
-import blog1 from "../../Assets/blog-post-1.webp";
-import blog2 from "../../Assets/blog-post-2.webp";
-import blog3 from "../../Assets/blog-post-3.webp";
-
-import { FiSearch } from "react-icons/fi";
-
 const BlogSidebar = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await API_URL.get("/blogs");
+        const published = res.data.filter(
+          (blog) => blog.status === "Published"
+        );
+        setBlogs(published);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const filteredBlogs = blogs.filter((blog) =>
+    blog.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="blogSidebar">
 
@@ -16,7 +37,11 @@ const BlogSidebar = () => {
         <h3>Search Articles</h3>
 
         <div className="searchBox">
-          <input placeholder="Search blog posts..." />
+          <input
+            placeholder="Search blog posts..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <FiSearch />
         </div>
       </div>
@@ -25,12 +50,25 @@ const BlogSidebar = () => {
       <div className="sidebarCard">
         <h3>Recent Insights</h3>
 
-        <div className="recentPost">
-          <img src={blog1} alt="Cloud migration strategies by Alisil Technology" />
-          <div>
-            <p>Practical Cloud Migration Strategies for Modern Businesses</p>
-            <span>12 JAN, 2026</span>
+        {filteredBlogs.slice(0, 3).map((blog) => (
+          <div
+            className="recentPost"
+            key={blog._id}
+            onClick={() => navigate(`/blog/${blog._id}`)}
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={`${IMAGE_BASE_URL}/${blog.image}`}
+              alt={blog.title}
+            />
+            <div>
+              <p>{blog.title}</p>
+              <span>
+                {new Date(blog.createdAt).toLocaleDateString()}
+              </span>
+            </div>
           </div>
+<<<<<<< HEAD
         </div>
 
         <div className="recentPost">
@@ -99,6 +137,9 @@ const BlogSidebar = () => {
           <span>Software</span>
           <span>Technology</span>
         </div>
+=======
+        ))}
+>>>>>>> 782b506e50cfc10244849d2e0babdb9d1f7c8385
       </div>
 
     </div>

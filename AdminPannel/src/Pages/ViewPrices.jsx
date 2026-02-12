@@ -1,100 +1,123 @@
+import { useEffect, useState } from "react";
+import API_URL from "../Api/Api";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 
-const prices = [
-  {
-    id: 1,
-    title: "Basic Plan",
-    category: "Website",
-    price: "₹5,000",
-    duration: "Monthly",
-    features: ["5 Pages", "Basic SEO", "Email Support"],
-    status: "Active",
-  },
-  {
-    id: 2,
-    title: "Pro Plan",
-    category: "Website",
-    price: "₹15,000",
-    duration: "Yearly",
-    features: ["Unlimited Pages", "Advanced SEO", "Priority Support"],
-    status: "Inactive",
-  },
-];
+const ViewPrices = ({ refreshKey, onEdit }) => {
+  const [prices, setPrices] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-const ViewPrices = () => {
+  const fetchPrices = async () => {
+    try {
+      setLoading(true);
+      const res = await API_URL.get("/ai-prices");
+      setPrices(res.data);
+    } catch (err) {
+      console.error("FETCH ERROR:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPrices();
+  }, [refreshKey]);
+
+  const deletePrice = async (id) => {
+    try {
+      await API_URL.delete(`/ai-prices/${id}`);
+      fetchPrices();
+    } catch (err) {
+      console.error("DELETE ERROR:", err);
+    }
+  };
+
   return (
-    <div className="h-[calc(100vh-4rem)] bg-[#0f141b] border border-slate-800 rounded-2xl flex flex-col">
-      
+    <div className="bg-[#0f141b] border border-slate-800 rounded-2xl flex flex-col h-[500px]">
+
       {/* HEADER */}
-      <h2 className="text-xl font-semibold p-6 border-b border-slate-800 sticky top-0 bg-[#0f141b] z-10">
-        Price Management
-      </h2>
+      <div className="p-6 border-b border-slate-800">
+        <h2 className="text-xl font-semibold">Price Management</h2>
+      </div>
 
       {/* SCROLL AREA */}
-      <div className="flex-1 overflow-y-auto overflow-x-auto px-6 pb-6">
-        <table className="min-w-[900px] w-full text-sm">
-          <thead className="sticky top-0 bg-[#0f141b] z-10">
-            <tr className="text-left text-slate-400 border-b border-slate-800">
-              <th className="py-3">Plan</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Duration</th>
-              <th>Features</th>
-              <th>Status</th>
-              <th className="text-right">Actions</th>
-            </tr>
-          </thead>
+      <div className="flex-1 overflow-auto">
 
-          <tbody>
-            {prices.map((p) => (
-              <tr
-                key={p.id}
-                className="border-b border-slate-800 hover:bg-[#161c25] transition"
-              >
-                <td className="py-3 font-medium">{p.title}</td>
-                <td>{p.category}</td>
-                <td className="text-blue-400 font-semibold">{p.price}</td>
-                <td>{p.duration}</td>
+        {loading ? (
+          <p className="p-6 text-slate-400">Loading prices...</p>
+        ) : prices.length === 0 ? (
+          <p className="p-6 text-slate-400">No prices found</p>
+        ) : (
+          <div className="min-w-[1100px]">
+            <table className="w-full text-sm border-collapse">
+              
+              <thead className="sticky top-0 bg-[#0f141b] z-10">
+                <tr className="text-slate-400 border-b border-slate-800">
+                  <th className="py-3 px-4 text-left">Plan</th>
+                  <th className="px-4 text-left">Category</th>
+                  <th className="px-4 text-left">Price</th>
+                  <th className="px-4 text-left">Duration</th>
+                  <th className="px-4 text-left">Features</th>
+                  <th className="px-4 text-left">Status</th>
+                  <th className="px-4 text-right">Actions</th>
+                </tr>
+              </thead>
 
-                <td>
-                  <ul className="space-y-1 text-slate-400">
-                    {p.features.map((f, i) => (
-                      <li key={i}>• {f}</li>
-                    ))}
-                  </ul>
-                </td>
-
-                <td>
-                  <span
-                    className={`px-3 py-1 text-xs rounded-full
-                    ${
-                      p.status === "Active"
-                        ? "bg-green-500/20 text-green-400"
-                        : "bg-red-500/20 text-red-400"
-                    }`}
+              <tbody>
+                {prices.map((p) => (
+                  <tr
+                    key={p._id}
+                    className="border-b border-slate-800 hover:bg-[#161c25] transition"
                   >
-                    {p.status}
-                  </span>
-                </td>
+                    <td className="py-3 px-4 font-medium">{p.title}</td>
+                    <td className="px-4">{p.category}</td>
+                    <td className="px-4 text-blue-400 font-semibold">
+                      {p.price}
+                    </td>
+                    <td className="px-4">{p.duration}</td>
 
-                <td className="text-right space-x-3">
-                  <button className="text-blue-400 hover:text-blue-500">
-                    <FiEdit />
-                  </button>
-                  <button className="text-red-400 hover:text-red-500">
-                    <FiTrash2 />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                    <td className="px-4">
+                      <ul className="space-y-1 text-slate-400">
+                        {p.features?.map((f, i) => (
+                          <li key={i}>• {f}</li>
+                        ))}
+                      </ul>
+                    </td>
 
-        {prices.length === 0 && (
-          <p className="text-center text-slate-400 py-10">
-            No prices found
-          </p>
+                    <td className="px-4">
+                      <span
+                        className={`px-3 py-1 text-xs rounded-full ${
+                          p.status === "Active"
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-red-500/20 text-red-400"
+                        }`}
+                      >
+                        {p.status}
+                      </span>
+                    </td>
+
+                    <td className="px-4 text-right space-x-3">
+                      <button
+                        onClick={() => onEdit(p)}
+                        className="text-blue-400 hover:text-blue-500"
+                      >
+                        <FiEdit />
+                      </button>
+
+                      <button
+                        onClick={() => deletePrice(p._id)}
+                        className="text-red-400 hover:text-red-500"
+                      >
+                        <FiTrash2 />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+
+            </table>
+          </div>
         )}
+
       </div>
     </div>
   );

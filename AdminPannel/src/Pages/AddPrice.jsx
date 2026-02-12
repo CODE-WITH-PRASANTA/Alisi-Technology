@@ -1,4 +1,49 @@
 import { useState } from "react";
+import ViewPrices from "./ViewPrices";
+
+/* ---------- REUSABLE INPUT COMPONENTS ---------- */
+
+const Input = ({ label, ...props }) => (
+  <div>
+    <label className="block text-sm mb-1 text-slate-400">{label}</label>
+    <input
+      {...props}
+      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
+      border border-slate-700 text-white outline-none focus:border-blue-500"
+    />
+  </div>
+);
+
+const Textarea = ({ label, ...props }) => (
+  <div>
+    <label className="block text-sm mb-1 text-slate-400">{label}</label>
+    <textarea
+      {...props}
+      rows={4}
+      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
+      border border-slate-700 text-white outline-none focus:border-blue-500"
+    />
+  </div>
+);
+
+const Select = ({ label, options, ...props }) => (
+  <div>
+    <label className="block text-sm mb-1 text-slate-400">{label}</label>
+    <select
+      {...props}
+      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
+      border border-slate-700 text-white outline-none focus:border-blue-500"
+    >
+      {options.map((opt) => (
+        <option key={opt} value={opt}>
+          {opt}
+        </option>
+      ))}
+    </select>
+  </div>
+);
+
+/* ---------- MAIN COMPONENT ---------- */
 
 const AddPrice = () => {
   const [form, setForm] = useState({
@@ -38,13 +83,13 @@ const AddPrice = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-4rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
-      
-      {/* LEFT FORM */}
+    <div className="h-[calc(100vh-6rem)] grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+      {/* ---------- FORM (LEFT) ---------- */}
       <form
         onSubmit={handleSubmit}
         className="xl:col-span-2 bg-[#0f141b] border border-slate-800
-        rounded-2xl p-6 space-y-5 overflow-y-auto scroll-smooth no-scrollbar"
+        rounded-2xl p-6 space-y-5 overflow-y-auto h-[60vh]"
       >
         <h2 className="text-xl font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Add Price
@@ -119,10 +164,10 @@ const AddPrice = () => {
         </button>
       </form>
 
-      {/* RIGHT PREVIEW */}
+      {/* ---------- LIVE PREVIEW (RIGHT) ---------- */}
       <div
         className="bg-[#0f141b] border border-slate-800 rounded-2xl
-        p-6 space-y-4 overflow-y-auto"
+        p-6 space-y-4 overflow-y-auto h-full"
       >
         <h3 className="text-lg font-semibold sticky top-0 bg-[#0f141b] pb-4 z-10">
           Live Preview
@@ -163,50 +208,13 @@ const AddPrice = () => {
           </span>
         </div>
       </div>
+
+      {/* ---------- VIEW PRICES - FULL WIDTH ---------- */}
+      <div className="xl:col-span-3 w-full">
+        <ViewPrices />
+      </div>
     </div>
   );
 };
 
 export default AddPrice;
-
-/* ---------- REUSABLE INPUT COMPONENTS ---------- */
-
-const Input = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <input
-      {...props}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const Textarea = ({ label, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <textarea
-      {...props}
-      rows={4}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    />
-  </div>
-);
-
-const Select = ({ label, options, ...props }) => (
-  <div>
-    <label className="block text-sm mb-1 text-slate-400">{label}</label>
-    <select
-      {...props}
-      className="w-full px-4 py-2 rounded-lg bg-[#0b0f14]
-      border border-slate-700 text-white outline-none focus:border-blue-500"
-    >
-      {options.map((opt) => (
-        <option key={opt} value={opt}>
-          {opt}
-        </option>
-      ))}
-    </select>
-  </div>
-);

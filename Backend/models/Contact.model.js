@@ -12,10 +12,12 @@ const contactSchema = new mongoose.Schema(
       required: true,
       trim: true,
       lowercase: true,
+      match: [/\S+@\S+\.\S+/, "Please enter a valid email"],
     },
     phone: {
       type: String,
       required: true,
+      match: [/^[0-9]{10}$/, "Please enter valid 10 digit phone number"],
     },
     service: {
       type: String,
@@ -26,7 +28,7 @@ const contactSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Contact", contactSchema);
