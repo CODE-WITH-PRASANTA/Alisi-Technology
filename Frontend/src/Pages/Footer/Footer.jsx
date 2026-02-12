@@ -106,7 +106,7 @@ const Footer = () => {
           </p>
 
           <p>
-            <strong>E:</strong> support@tekmino.com
+            <strong>E:</strong>  Alisiltechnology@gmail.com
           </p>
 
           <p>Mon–Fri 09am–06pm</p>
@@ -115,7 +115,7 @@ const Footer = () => {
 
       {/* ================= BOTTOM ================= */}
       <div className="tk-footer-bottom">
-        <span>Tekmino © 2025. All right reserved.</span>
+        <span>© 2025 Alisil Technology. All Rights Reserved. | Powered by Alisil Technology | <br />Developed by PR WEBSTOCK</span>
         <div>
           <a href="#">Privacy & Policy</a>
           <a href="#">Terms & Condition</a>
