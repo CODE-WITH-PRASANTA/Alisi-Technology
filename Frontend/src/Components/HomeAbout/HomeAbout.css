@@ -217,7 +217,8 @@
 
 .award-icon svg {
   font-size: 30px;
-  color: #e5ff9f;
+  
+  border-radius: 100%;
 }
 
 /* ================= ANIMATION ================= */

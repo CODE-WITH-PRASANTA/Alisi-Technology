@@ -2,7 +2,6 @@ const Testimonial = require("../models/Testimonial.model");
 const fs = require("fs");
 const path = require("path");
 
-
 /* ADD */
 const addTestimonial = async (req, res) => {
   try {
@@ -57,7 +56,6 @@ const updateTestimonial = async (req, res) => {
   }
 };
 
-
 /* DELETE */
 const deleteTestimonial = async (req, res) => {
   try {
@@ -96,5 +94,4 @@ module.exports = {
   updateTestimonial,
   deleteTestimonial,
 };
-
 

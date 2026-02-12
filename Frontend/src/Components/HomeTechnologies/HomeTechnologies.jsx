@@ -1,55 +1,80 @@
 import React from "react";
 import "./HomeTechnologies.css";
 
-import slack from "../../Assets/slack.svg";
-import clickup from "../../Assets/clickup.svg";
-import dropbox from "../../Assets/dropbox.svg";
-import zoom from "../../Assets/zoom.svg";
-import ovh from "../../Assets/ovhcloud.svg";
-import gitlab from "../../Assets/gitlab.svg";
-import notion from "../../Assets/notion.svg";
-import chatgpt from "../../Assets/chatgpt.svg";
+import Pandas from "../../Assets/Pandas_logo.svg.webp";
+import R from "../../Assets/R.webp";
+import MongoDB from "../../Assets/MongoDB.webp";
+import Tableau from "../../Assets/Tableau-logo.webp";
+import TensorFlow from "../../Assets/TensorFlow_logo.svg.webp";
+import PowerBI from "../../Assets/Power-BI-Symbol.webp";
+import pytorch from "../../Assets/pytorch.webp";
+import Scikit from "../../Assets/Scikit_learn_logo_small.svg.webp";
+import NoSQL from "../../Assets/NoSQL.webp";
+import Hadoop from "../../Assets/Hadoop.webp";
+import SQL from "../../Assets/SQL.webp";
+import Python from "../../Assets/Python.svg.webp";
 
 const techs = [
   {
-    img: chatgpt,
-    title: "ChatGPT",
-    desc: "Offering assistance with answering frequently asked questions.",
+    img: Python,
+    title: "Python",
+    desc: "Powerful programming language for web development, automation, and AI solutions.",
   },
   {
-    img: notion,
-    title: "Notion",
-    desc: "You can create rich-text document customizable formatting, images.",
+    img:R ,
+    title: "R",
+    desc: "Advanced language for statistical analysis and predictive modeling.",
   },
   {
-    img: gitlab,
-    title: "Gitlab",
-    desc: "Support more Multiple repositories to one or more channels.",
+    img: MongoDB ,
+    title: " MongoDB",
+    desc: "Ensures scalable, high-speed, and secure data management.",
   },
   {
-    img: ovh,
-    title: "OVHcloud",
-    desc: "OVH legally OVH group SAS, is a French cloud compute company.",
+    img: PowerBI,
+    title: "PowerBI",
+    desc: "Create real-time dashboards to drive smarter decisions.",
   },
   {
-    img: clickup,
-    title: "Clickup",
-    desc: "ClickUp is a productivity platform for our task management.",
+    img: pytorch,
+    title: "Pytorch",
+    desc: "Build intelligent neural networks and machine learning models.",
   },
   {
-    img: slack,
-    title: "Slack",
-    desc: "Slack used channels to organize communication around topics.",
+    img: TensorFlow,
+    title: "TensorFlow",
+    desc: "Robust framework for machine learning and AI applications.",
   },
   {
-    img: zoom,
-    title: "Zoom",
-    desc: "For Video conferencing platform used for virtual meeting.",
+    img: Pandas,
+    title: "Pandas",
+    desc: "Powerful Python library for data manipulation and analysis.",
+  },
+  
+  {
+    img: Tableau,
+    title: "Tableau",
+    desc: "Leading data visualization and analytics platform.",
   },
   {
-    img: dropbox,
-    title: "Dropbox",
-    desc: "Dropbox provides cloud storage where users can securely store.",
+    img: Scikit,
+    title: "Scikit",
+    desc: "Machine learning library for predictive analytics.",
+  },
+  {
+    img: NoSQL,
+    title: "NoSQL",
+    desc: "Modern database solution for unstructured and real-time data.",
+  },
+  {
+    img: Hadoop,
+    title: "Hadoop",
+    desc: "Big data framework for distributed storage and processing.",
+  },
+  {
+    img: SQL,
+    title: "SQL",
+    desc: "Structured Query Language for relational databases.",
   },
 ];
 

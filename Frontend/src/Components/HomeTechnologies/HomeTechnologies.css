@@ -59,8 +59,8 @@
 }
 
 .tech-card img {
-  width: 42px;
-  margin-bottom: 16px;
+  width: 70px;
+  height: 70px;
 }
 
 .tech-card h4 {
@@ -128,5 +128,19 @@
 
   .tech-card {
     min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-card img {
+    width: 55px;
+    height: 55px;
   }
 }

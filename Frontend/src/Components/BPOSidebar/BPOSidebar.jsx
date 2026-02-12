@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./BPOSidebar.css";
-import sidebarImg from "../../assets/Service-details-001.webp";
+// import sidebarImg from "../../assets/Service-details-001.webp";
 
 const services = [
   { name: "All Services", path: "/services/all-services" },
@@ -11,7 +11,6 @@ const services = [
   { name: "Cloud Computing", path: "/services/Cloud" },
   { name: "Cognitive Business Operations", path: "/services/Cognitive" },
   { name: "Consulting", path: "/services/Consulting" },
-  { name: "Cybersecurity", path: "/services/Cybersecurity" },
   { name: "Enterprise Solutions", path: "/services/Enterprise-Solutions" },
   { name: "IoT & Digital Engineering", path: "/services/IoT-Digital-Eng." },
   { name: "Network Solutions & Services", path: "/services/Network" },
@@ -49,9 +48,9 @@ const BPOSidebar = () => {
           </div>
         </div>
 
-        <div className="bpoo-sidebar-image-holder">
+        {/* <div className="bpoo-sidebar-image-holder">
           <img src={sidebarImg} alt="Professional" />
-        </div>
+        </div> */}
       </div>
 
     </div>

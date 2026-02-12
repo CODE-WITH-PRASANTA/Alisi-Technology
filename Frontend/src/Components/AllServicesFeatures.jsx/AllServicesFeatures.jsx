@@ -81,12 +81,19 @@ const AllServicesFeatures = () => {
     <section className="all-services-section">
       {/* ================= HEADER (SEO H1) ================= */}
       <div className="all-services-summary">
-        <h1>IT Services & Digital Transformation Solutions</h1>
-        <p>
-          We provide end-to-end IT services and digital solutions that help
-          businesses innovate, scale, and stay secure in today’s fast-paced
-          digital landscape.
-        </p>
+      <section className="it-services-section">
+  <div className="it-services-container">
+    <h1 className="it-services-title">
+      IT Services & Digital Transformation Solutions
+    </h1>
+    <p className="it-services-description">
+      We provide end-to-end IT services and digital solutions that help
+      businesses innovate, scale, and stay secure in today’s fast-paced
+      digital landscape.
+    </p>
+  </div>
+</section>
+
       </div>
 
       {/* ================= SERVICES GRID ================= */}

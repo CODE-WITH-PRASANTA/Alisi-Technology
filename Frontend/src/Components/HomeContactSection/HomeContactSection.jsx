@@ -1,150 +1,76 @@
-import React, { useState, useEffect } from "react";
-import API_URL from "../../Api/Api";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./HomeContactSection.css";
 import bg from "../../Assets/common-bg-2.webp";
 
 export default function ContactSection() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState(null); // success or error
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-    setAlert(null);
-
-    try {
-      const res = await API_URL.post("/contacts", form);
-
-      setAlert({
-        type: "success",
-        message: res.data.message || "Message sent successfully!",
-      });
-
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
-    } catch (err) {
-      setAlert({
-        type: "error",
-        message:
-          err.response?.data?.message || "Server not responding",
-      });
-    }
-
-    setLoading(false);
-  };
-
-  // Auto hide message after 4 seconds
-  useEffect(() => {
-    if (alert) {
-      const timer = setTimeout(() => {
-        setAlert(null);
-      }, 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [alert]);
-
   return (
     <section className="contact" style={{ backgroundImage: `url(${bg})` }}>
-      <div className="contact-overlay"></div>
+      <div className="Home-Contact-overlay"></div>
 
-      <div className="contact-container">
-        <div className="contact-left">
+      <div className="Home-Contact-container">
+        {/* LEFT */}
+        <div className="Home-Contact-left">
           <span className="tag">[ GET IN TOUCH ]</span>
+
           <h2>Have any Questions on Mind? Get in Touch for Market Experts.</h2>
 
-          <Link to="/contact" className="contact-btn-link">
+          {/* CONTACT BUTTON LINKED */}
+          <Link to="/contact" className="Home-Contact-btn-link">
             <button className="primary-btn">
               Contact Us Now <span>↗</span>
             </button>
           </Link>
+
+          <div className="Home-Contact-info">
+            <div>
+              <h4>Contact Info:</h4>
+              <p>+ 011-6931-3553</p>
+              <p>support@tekmino.com</p>
+            </div>
+
+            <div>
+              <h4>Find Us:</h4>
+              <p>
+                VILL & PO-RASAPUNJA, PS BISHNUPUR, Near Rasapunja Panchayat,
+                South 24 Parganas, West Bengal – 700104
+              </p>
+            </div>
+
+            <div>
+              <h4>Contact Info:</h4>
+              <p>
+                Mon - Fri <span>(Open)</span>
+              </p>
+              <p>09:00am - 06.00pm</p>
+            </div>
+          </div>
         </div>
 
-        <div className="contact-form">
+        {/* RIGHT FORM */}
+        <div className="Home-Contact-form">
           <h3>
             Drop Us a <span>Line.</span>
           </h3>
 
-          {alert && (
-            <div
-              className={`form-alert ${
-                alert.type === "success"
-                  ? "alert-success"
-                  : "alert-error"
-              }`}
-            >
-              {alert.message}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="form-grid">
-              <input
-                name="name"
-                placeholder="Full Name *"
-                value={form.name}
-                onChange={handleChange}
-                required
-              />
+              <input placeholder="Full Name *" />
+              <input placeholder="Email Address *" />
+              <input placeholder="Phone Number *" />
 
-              <input
-                name="email"
-                type="email"
-                placeholder="Email Address *"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                name="phone"
-                placeholder="Phone Number *"
-                value={form.phone}
-                onChange={handleChange}
-                required
-              />
-
-              <select
-                name="service"
-                value={form.service}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Choose an Option</option>
+              <select>
+                <option>Choose an Option</option>
                 <option>Web Development</option>
                 <option>UI/UX Design</option>
                 <option>Cloud Service</option>
               </select>
             </div>
 
-            <textarea
-              name="message"
-              placeholder="Type Message"
-              value={form.message}
-              onChange={handleChange}
-              required
-            />
+            <textarea placeholder="Type Message"></textarea>
 
-            <button type="submit" className="primary-btn" disabled={loading}>
-              {loading ? "Sending..." : "Send Message"} <span>↗</span>
+            <button className="primary-btn">
+              Send Message <span>↗</span>
             </button>
           </form>
         </div>
