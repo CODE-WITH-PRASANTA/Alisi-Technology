@@ -33,11 +33,22 @@ const blogSchema = new mongoose.Schema(
       trim: true,
     },
 
+    /* ✅ NEW FIELD */
+    service: {
+      type: String,
+      trim: true,
+    },
+
+    /* ✅ NEW FIELD */
+    tags: {
+      type: [String],
+      default: [],
+    },
+
     content: {
       type: String,
     },
 
-    /* ✅ ADD STATUS FIELD */
     status: {
       type: String,
       enum: ["Published", "Draft"],

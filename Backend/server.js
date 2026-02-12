@@ -12,6 +12,7 @@ const teamRoutes = require("./routes/teamRoutes");
 const clientLogoRoutes = require("./routes/clientLogo.routes");
 const blogRoutes = require("./routes/blog.routes");
 const contactRoutes = require("./routes/contact.routes");
+const aiPriceRoutes = require("./routes/AiPrice.routes");
 
 dotenv.config();
 connectDB();
@@ -36,6 +37,10 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
+
+
 /* ================= STATIC FILES ================= */
 /* Public access to uploads */
 app.use(
@@ -49,7 +54,8 @@ app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/client-logos", clientLogoRoutes);
 app.use("/api/blogs",blogRoutes)
-app.use("/api/contacts",contactRoutes)
+app.use("/api/contacts",contactRoutes);
+app.use("/api/ai-prices", aiPriceRoutes);
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {

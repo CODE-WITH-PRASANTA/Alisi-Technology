@@ -16,11 +16,13 @@ import HomeServices from "../../Components/HomeServices/HomeServices";
 import HomeFeedback from "../../Components/HomeFeedback/HomeFeedback";
 import AboutTestmonial from "../../Components/AboutTestimonial/AboutTestimonial";
 import AboutTeam from "../../Components/AboutTeam/AboutTeam";
+import CookieBanner from "../../Components/CookieBanner/CookieBanner";
 
 const Home = () => {
   return (
     <>
       {/* 🔹 SEO META TAGS */}
+  
       <Helmet>
         <title>Alisil Technology | AI, Cloud & Digital Services</title>
         <meta
@@ -32,6 +34,7 @@ const Home = () => {
 
       {/* 🔹 PAGE CONTENT */}
       <div className="home">
+        <CookieBanner/>
         <HomeHeroSection />
         <HomeSliderBrand />
         <HomeWhyChoose />

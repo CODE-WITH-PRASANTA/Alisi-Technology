@@ -19,7 +19,6 @@ import Consulting from "./Pages/Consulting/Consulting";
 import Projects from "./Pages/Projects/Projects";
 import ProjectDetails from "./Pages/ProjectDetails/ProjectDetails";
 import Blog from "./Pages/Blog/Blog";
-import Cybersecurity from "./Pages/Cybersecurity/Cybersecurity";
 import EnterpriceSolution from "./Pages/EnterpriceSolution/EnterpriceSolution";
 import IOTDigitalEng from "./Pages/IOTDigitalEng/IOTDigitalEng";
 import Sustainability from "./Pages/Sustainability/Sustainability";
@@ -35,7 +34,7 @@ function App() {
 
   // 🔄 Global Route Change Loader
   useEffect(() => {
-    setLoading(true);
+   // setLoading(true);
 
     const timer = setTimeout(() => {
       setLoading(false);
@@ -66,11 +65,10 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/details/:id" element={<ProjectDetails />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/services/cybersecurity" element={<Cybersecurity />} />
         <Route path="/services/enterprise-solutions" element={<EnterpriceSolution />} />
         <Route path="/services/iot-digital-engineering" element={<IOTDigitalEng />} />
         <Route path="/services/sustainability" element={<Sustainability />} />
-        <Route path="/blog/details" element={<BlogDetails />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/services/bpo" element={<BPOService />} />
         <Route path="/services/kpo" element={<KPOService />} />
         <Route path="/services/cognitive-operations" element={<CognitiveOperations />} />

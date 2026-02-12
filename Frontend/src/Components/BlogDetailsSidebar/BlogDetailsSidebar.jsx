@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API_URL, { IMAGE_BASE_URL } from "../../Api/Api";
+import { useNavigate } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
 import "./BlogDetailsSidebar.css";
 
-import blog1 from "../../Assets/blog-post-1.webp";
-import blog2 from "../../Assets/blog-post-2.webp";
-import blog3 from "../../Assets/blog-post-3.webp";
+const BlogDetailsSidebar = () => {
+  const [blogs, setBlogs] = useState([]);
+  const navigate = useNavigate();
 
-import { FiSearch } from "react-icons/fi";
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const res = await API_URL.get("/blogs");
 
-const BlogSidebar = () => {
+      const published = res.data.filter(
+        (blog) => blog.status === "Published"
+      );
+
+      setBlogs(published);
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="bd-blogSidebar">
-
       {/* SEARCH */}
       <div className="bd-sidebarCard">
         <h3>Search here</h3>
-
         <div className="searchBox">
           <input placeholder="Search here" />
           <FiSearch />
@@ -25,85 +37,28 @@ const BlogSidebar = () => {
       <div className="bd-sidebarCard">
         <h3>Recent Posts</h3>
 
-        <div className="bd-recentPost">
-          <img src={blog1} alt="" />
-          <div>
-            <p>How to Successfully Migrate Your Business</p>
-            <span>08 NOV, 2025</span>
+        {blogs.slice(0, 3).map((blog) => (
+          <div
+            className="bd-recentPost"
+            key={blog._id}
+            onClick={() => navigate(`/blog/${blog._id}`)}
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={`${IMAGE_BASE_URL}/${blog.image}`}
+              alt={blog.title}
+            />
+            <div>
+              <p>{blog.title}</p>
+              <span>
+                {new Date(blog.createdAt).toLocaleDateString()}
+              </span>
+            </div>
           </div>
-        </div>
-
-        <div className="bd-recentPost">
-          <img src={blog2} alt="" />
-          <div>
-            <p>Building a Stronger Workforce with IT Training</p>
-            <span>08 NOV, 2025</span>
-          </div>
-        </div>
-
-        <div className="bd-recentPost">
-          <img src={blog3} alt="" />
-          <div>
-            <p>Optimizing Your IT Budget: Tips and Strategies</p>
-            <span>08 NOV, 2025</span>
-          </div>
-        </div>
+        ))}
       </div>
-
-      {/* CATEGORIES */}
-      <div className="bd-sidebarCard">
-        <h3>Categories</h3>
-
-        <div className="bd-categoryItem">
-          <span>Automation</span>
-          <span>(02)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Cybersecurity</span>
-          <span>(03)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Data Analytics</span>
-          <span>(02)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Development</span>
-          <span>(02)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Innovation</span>
-          <span>(01)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Technology</span>
-          <span>(02)</span>
-        </div>
-      </div>
-
-      {/* TAGS */}
-      <div className="bd-sidebarCard">
-        <h3>Tags</h3>
-
-        <div className="tagWrap">
-          <span>Cloud</span>
-          <span>Data</span>
-          <span>Drive</span>
-          <span>Focus</span>
-          <span>Optimize</span>
-          <span>Security</span>
-          <span>Software</span>
-          <span>Solution</span>
-          <span>Tech</span>
-        </div>
-      </div>
-
     </div>
   );
 };
 
-export default BlogSidebar;
+export default BlogDetailsSidebar;

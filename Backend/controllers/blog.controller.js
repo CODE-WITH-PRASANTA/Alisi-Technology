@@ -15,6 +15,10 @@ const deleteFileIfExists = (filePath) => {
 /* ================= CREATE BLOG ================= */
 exports.createBlog = async (req, res) => {
   try {
+    const tagsArray = req.body.tags
+      ? req.body.tags.split(",").map(tag => tag.trim())
+      : [];
+
     const blog = await Blog.create({
       image: req.file?.path || "",
       title: req.body.title,
@@ -22,6 +26,8 @@ exports.createBlog = async (req, res) => {
       author: req.body.author,
       designation: req.body.designation,
       category: req.body.category,
+      service: req.body.service, // ✅ Added
+      tags: tagsArray,           // ✅ Added
       content: req.body.content,
       status: req.body.status || "Draft",
     });
@@ -36,7 +42,14 @@ exports.createBlog = async (req, res) => {
 /* ================= GET ALL BLOGS ================= */
 exports.getBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find().sort({ createdAt: -1 });
+    const filter = {};
+
+    if (req.query.status) {
+      filter.status = req.query.status;
+    }
+
+    const blogs = await Blog.find(filter).sort({ createdAt: -1 });
+
     res.json(blogs);
   } catch (error) {
     console.error("GET BLOGS ERROR:", error);
@@ -69,25 +82,33 @@ exports.updateBlog = async (req, res) => {
       return res.status(404).json({ message: "Blog not found" });
     }
 
-    /* DELETE OLD IMAGE IF NEW IMAGE UPLOADED */
     if (req.file && blog.image) {
       deleteFileIfExists(blog.image);
     }
 
-    /* UPDATE FIELDS SAFELY */
     if (req.body.title !== undefined) blog.title = req.body.title;
     if (req.body.description !== undefined)
       blog.description = req.body.description;
-    if (req.body.author !== undefined) blog.author = req.body.author;
+    if (req.body.author !== undefined)
+      blog.author = req.body.author;
     if (req.body.designation !== undefined)
       blog.designation = req.body.designation;
     if (req.body.category !== undefined)
       blog.category = req.body.category;
-    if (req.body.content !== undefined) blog.content = req.body.content;
+    if (req.body.service !== undefined)
+      blog.service = req.body.service; // ✅ Added
 
-    /* ✅ STATUS TOGGLE FIX */
+    if (req.body.tags !== undefined) {
+      blog.tags = req.body.tags
+        .split(",")
+        .map(tag => tag.trim());
+    }
+
+    if (req.body.content !== undefined)
+      blog.content = req.body.content;
+
     if (req.body.status) {
-      blog.status = req.body.status; // Draft | Published
+      blog.status = req.body.status;
     }
 
     if (req.file) {
