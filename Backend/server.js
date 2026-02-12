@@ -10,6 +10,8 @@ const projectRoutes = require("./routes/project.routes");
 const testimonialRoutes = require("./routes/testimonial.routes");
 const teamRoutes = require("./routes/teamRoutes");
 const clientLogoRoutes = require("./routes/clientLogo.routes");
+const blogRoutes = require("./routes/blog.routes");
+const contactRoutes = require("./routes/contact.routes");
 
 dotenv.config();
 connectDB();
@@ -46,6 +48,8 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/client-logos", clientLogoRoutes);
+app.use("/api/blogs",blogRoutes)
+app.use("/api/contacts",contactRoutes)
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {
