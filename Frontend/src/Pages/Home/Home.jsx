@@ -17,6 +17,7 @@ import HomeFeedback from "../../Components/HomeFeedback/HomeFeedback";
 import AboutTestmonial from "../../Components/AboutTestimonial/AboutTestimonial";
 import AboutTeam from "../../Components/AboutTeam/AboutTeam";
 import CookieBanner from "../../Components/CookieBanner/CookieBanner";
+import IsoCertified from "../../Components/IsoCertified/IsoCertified";
 
 const Home = () => {
   return (
@@ -47,6 +48,7 @@ const Home = () => {
         <AboutTeam />
         <HomeTechnologies />
         <HomeRecentProjects />
+        <IsoCertified/>
         <HomeContactSection />
         <HomeInsights />
       </div>

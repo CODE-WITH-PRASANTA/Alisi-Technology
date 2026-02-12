@@ -1,21 +1,19 @@
-/* ================= CONTACT SECTION ================= */
-
 .contact {
   position: relative;
   background-size: cover;
   background-position: center;
-  padding: 120px 6%;
+  padding: 20px 6%;
   color: #fff;
 }
 
-.Home-contact-overlay {
+.Home-Contact-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at left, rgba(201,255,26,0.15), transparent 50%),
               rgba(0,0,0,0.85);
 }
 
-.Home-contact-container {
+.Home-Contact-container {
   position: relative;
   z-index: 2;
   display: grid;
@@ -23,7 +21,7 @@
   gap: 60px;
 }
 
-/* ================= LEFT ================= */
+/* LEFT */
 
 .tag {
   color: #e5ff9f;
@@ -31,13 +29,13 @@
   font-size: 13px;
 }
 
-.Home-contact-left h2 {
+.Home-Contact-left h2 {
   font-size: clamp(30px, 4vw, 46px);
   margin: 20px 0 35px;
   line-height: 1.2;
 }
 
-/* ================= BUTTON ================= */
+/* BUTTON */
 
 .primary-btn {
   background: #e5ff9f;
@@ -63,55 +61,50 @@
   justify-content: center;
 }
 
-/* Hover */
+/* HOVER EFFECT */
+
 .primary-btn:hover {
   background: #000;
   color: #e5ff9f;
   border: 2px solid #e5ff9f;
 }
 
-/* Disabled */
-.primary-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+/* INFO */
 
-/* ================= INFO ================= */
-
-.Home-contact-info {
+.Home-Contact-info {
   margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
-.Home-contact-info h4 {
+.Home-Contact-info h4 {
   margin-bottom: 10px;
 }
 
-.Home-contact-info p {
+.Home-Contact-info p {
   color: #bbb;
   font-size: 14px;
 }
 
-.Home-contact-info span {
+.Home-Contact-info span {
   color: #e5ff9f;
 }
 
-/* ================= FORM ================= */
+/* FORM */
 
-.Home-contact-form {
+.Home-Contact-form {
   background: #050505;
   padding: 50px 40px;
   border-radius: 20px;
 }
 
-.Home-contact-form h3 {
+.Home-Contact-form h3 {
   font-size: 28px;
   margin-bottom: 30px;
 }
 
-.Home-contact-form h3 span {
+.Home-Contact-form h3 span {
   color: #e5ff9f;
 }
 
@@ -120,8 +113,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-
-/* Inputs */
 
 input,
 select,
@@ -132,15 +123,6 @@ textarea {
   border-radius: 8px;
   color: #fff;
   outline: none;
-  transition: 0.3s ease;
-}
-
-/* Focus Animation */
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #e5ff9f;
-  box-shadow: 0 0 10px rgba(229, 255, 159, 0.2);
 }
 
 textarea {
@@ -150,56 +132,20 @@ textarea {
   resize: none;
 }
 
-/* ================= ALERT MESSAGE ================= */
-
-.form-alert {
-  padding: 14px 18px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  animation: fadeInAlert 0.3s ease-in-out;
-}
-
-.alert-success {
-  background: rgba(229, 255, 159, 0.08);
-  border: 1px solid #e5ff9f;
-  color: #e5ff9f;
-  box-shadow: 0 0 15px rgba(229, 255, 159, 0.15);
-}
-
-.alert-error {
-  background: rgba(255, 80, 80, 0.08);
-  border: 1px solid #ff5050;
-  color: #ff5050;
-  box-shadow: 0 0 15px rgba(255, 80, 80, 0.15);
-}
-
-@keyframes fadeInAlert {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
-  .Home-contact-container {
+  .Home-Contact-container {
     grid-template-columns: 1fr;
   }
 
-  .Home-contact-info {
+  .Home-Contact-info {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .Home-contact {
+  .contact {
     padding: 80px 4%;
   }
 
@@ -207,16 +153,16 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .Home-contact-info {
+  .Home-Contact-info {
     grid-template-columns: 1fr;
   }
 
-  .Home-contact-form {
+  .Home-Contact-form {
     padding: 35px 25px;
   }
 }
 
-.Home-contact-btn-link {
+.Home-Contact-btn-link {
   text-decoration: none;
   display: inline-block;
 }

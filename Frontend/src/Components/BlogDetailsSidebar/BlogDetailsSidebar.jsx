@@ -57,59 +57,6 @@ const BlogDetailsSidebar = () => {
           </div>
         ))}
       </div>
-<<<<<<< HEAD
-
-      {/* CATEGORIES */}
-      <div className="bd-sidebarCard">
-        <h3>Categories</h3>
-
-        <div className="bd-categoryItem">
-          <span>Automation</span>
-          <span>(02)</span>
-        </div>
-
-        
-
-        <div className="bd-categoryItem">
-          <span>Data Analytics</span>
-          <span>(02)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Development</span>
-          <span>(02)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Innovation</span>
-          <span>(01)</span>
-        </div>
-
-        <div className="bd-categoryItem">
-          <span>Technology</span>
-          <span>(02)</span>
-        </div>
-      </div>
-
-      {/* TAGS */}
-      <div className="bd-sidebarCard">
-        <h3>Tags</h3>
-
-        <div className="tagWrap">
-          <span>Cloud</span>
-          <span>Data</span>
-          <span>Drive</span>
-          <span>Focus</span>
-          <span>Optimize</span>
-          <span>Security</span>
-          <span>Software</span>
-          <span>Solution</span>
-          <span>Tech</span>
-        </div>
-      </div>
-
-=======
->>>>>>> 782b506e50cfc10244849d2e0babdb9d1f7c8385
     </div>
   );
 };
