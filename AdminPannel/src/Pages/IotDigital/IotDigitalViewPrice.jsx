@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import API_URL from "../Api/Api";
+import API_URL from "../../Api/Api";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 
-const ViewPrices = ({ refreshKey, onEdit }) => {
+const IotDigitalViewPrice = ({ refreshKey, onEdit }) => {
   const [prices, setPrices] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchPrices = async () => {
     try {
       setLoading(true);
-      const res = await API_URL.get("/ai-prices");
-      setPrices(res.data);
+      const res = await API_URL.get("/iot-prices");
+      setPrices(res.data || []);
     } catch (err) {
       console.error("FETCH ERROR:", err);
     } finally {
@@ -23,8 +23,10 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
   }, [refreshKey]);
 
   const deletePrice = async (id) => {
+    if (!window.confirm("Delete this IoT plan?")) return;
+
     try {
-      await API_URL.delete(`/ai-prices/${id}`);
+      await API_URL.delete(`/iot-prices/${id}`);
       fetchPrices();
     } catch (err) {
       console.error("DELETE ERROR:", err);
@@ -34,22 +36,22 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
   return (
     <div className="bg-[#0f141b] border border-slate-800 rounded-2xl flex flex-col h-[500px]">
 
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
       <div className="p-6 border-b border-slate-800">
-        <h2 className="text-xl font-semibold">Price Management</h2>
+        <h2 className="text-xl font-semibold">IoT Price Management</h2>
       </div>
 
-      {/* SCROLL AREA */}
+      {/* ================= BODY ================= */}
       <div className="flex-1 overflow-auto">
-
         {loading ? (
           <p className="p-6 text-slate-400">Loading prices...</p>
         ) : prices.length === 0 ? (
           <p className="p-6 text-slate-400">No prices found</p>
         ) : (
-          <div className="min-w-[1100px]">
+          <div className="min-w-[1200px]">
             <table className="w-full text-sm border-collapse">
-              
+
+              {/* ================= TABLE HEAD ================= */}
               <thead className="sticky top-0 bg-[#0f141b] z-10">
                 <tr className="text-slate-400 border-b border-slate-800">
                   <th className="py-3 px-4 text-left">Plan</th>
@@ -62,25 +64,42 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
                 </tr>
               </thead>
 
+              {/* ================= TABLE BODY ================= */}
               <tbody>
                 {prices.map((p) => (
                   <tr
                     key={p._id}
                     className="border-b border-slate-800 hover:bg-[#161c25] transition"
                   >
-                    <td className="py-3 px-4 font-medium">{p.title}</td>
-                    <td className="px-4">{p.category}</td>
+                    <td className="py-3 px-4 font-medium">
+                      {p.title}
+                    </td>
+
+                    <td className="px-4">
+                      {p.category || "IOT"}
+                    </td>
+
                     <td className="px-4 text-blue-400 font-semibold">
                       {p.price}
                     </td>
-                    <td className="px-4">{p.duration}</td>
 
                     <td className="px-4">
-                      <ul className="space-y-1 text-slate-400">
-                        {p.features?.map((f, i) => (
-                          <li key={i}>• {f}</li>
-                        ))}
-                      </ul>
+                      {p.duration}
+                    </td>
+
+                    {/* FEATURES COLUMN */}
+                    <td className="px-4">
+                      {p.features && p.features.length > 0 ? (
+                        <ul className="space-y-1 text-slate-400 text-sm">
+                          {p.features.map((f, i) => (
+                            <li key={i}>• {f}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <span className="text-slate-500 text-sm">
+                          No features
+                        </span>
+                      )}
                     </td>
 
                     <td className="px-4">
@@ -97,7 +116,7 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
 
                     <td className="px-4 text-right space-x-3">
                       <button
-                        onClick={() => onEdit(p)}
+                        onClick={() => onEdit?.(p)}
                         className="text-blue-400 hover:text-blue-500"
                       >
                         <FiEdit />
@@ -110,6 +129,7 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
                         <FiTrash2 />
                       </button>
                     </td>
+
                   </tr>
                 ))}
               </tbody>
@@ -117,10 +137,9 @@ const ViewPrices = ({ refreshKey, onEdit }) => {
             </table>
           </div>
         )}
-
       </div>
     </div>
   );
 };
 
-export default ViewPrices;
+export default IotDigitalViewPrice;

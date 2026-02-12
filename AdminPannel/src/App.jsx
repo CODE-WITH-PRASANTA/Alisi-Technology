@@ -7,7 +7,7 @@ import ProtectedLayout from "./Auth/ProtectedLayout";
 import AddProject from "./Pages/AddProject";
 import ViewProjects from "./Pages/ViewProjects";
 import AddPrice from "./Pages/AddPrice";
-import ViewPrices from "./Pages/ViewPrices";
+import ViewPrices from "./Pages/AiData/ViewPrices";
 import TestimonialPage from "./Pages/TestimonialPage/TestimonialPage";
 import BlogManagerPage from "./Pages/BlogManagerPage/BlogManagerPage";
 import BlogView from "./Pages/BlogView/BlogView";
@@ -17,17 +17,17 @@ import UploadClientLogo from "./Pages/UploadClinetLogo/UploadClinetLogo";
 import ContactAdminPage from "./Pages/ContactAdminPage";
 
 /* ✅ If these pages exist, import them */
-import AiData from "./Pages/AiData";
-import BpoService from "./Pages/BpoService";
-import KpoService from "./Pages/KpoService";
-import CloudComputing from "./Pages/CloudComputing";
-import CognitiveOperation from "./Pages/CognitiveOperation";
-import Consulting from "./Pages/Consulting";
-import EnterpriseSolution from "./Pages/EnterpriseSolution";
-import IotDigital from "./Pages/IotDigital";
+import AiData from "./Pages/AiData/AiData";
+import BpoService from "./Pages/BpoService/BpoService";
+import KpoService from "./Pages/KpoService/KpoService";
+import CloudComputing from "./Pages/CloudComputing/CloudComputing";
+import CognitiveOperation from "./Pages/CognitiveOperation/CognitiveOperation";
+import Consulting from "./Pages/Consulting/Consulting";
+import EnterpriseSolution from "./Pages/EnterpriseSolution/EnterpriseSolution";
+import IotDigital from "./Pages/IotDigital/IotDigital";
 // import IotDigital from "./Pages/IotDigital";
-import NetworkSolution from "./Pages/NetworkSolution";
-import SustainabilitySrvices from "./Pages/SustainabilityServices";
+import NetworkSolution from "./Pages/NetworkSolution/NetworkSolution";
+import SustainabilitySrvices from "./Pages/SustainabilityServices/SustainabilityServices";
 // import SustainabilitySrvices from "./Pages/SustainabilitySrvices";
 
 function App() {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ViewPrices from "./ViewPrices";
+import ViewPrices from "./AiData/ViewPrices";
 
 /* ---------- REUSABLE INPUT COMPONENTS ---------- */
 
