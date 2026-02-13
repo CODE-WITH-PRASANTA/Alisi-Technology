@@ -1,49 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PricingSection.css";
 import { FaCheck } from "react-icons/fa";
+import API_URL from "../../Api/Api"; // ✅ your axios instance
 
 const PricingSection = () => {
   const [yearly, setYearly] = useState(false);
+  const [plans, setPlans] = useState([]);
 
-  const plans = [
-    {
-      name: "Basic Plan",
-      desc: "Essential IT Services",
-      monthly: 99,
-      features: [
-        "Essential IT Support",
-        "Cloud Storage (50 GB)",
-        "Monthly System Check",
-        "Security Updates",
-        "Software Fixes",
-      ],
-    },
-    {
-      name: "Standard Plan",
-      desc: "Complete IT Solutions",
-      monthly: 249,
-      featured: true,
-      features: [
-        "Advanced IT Management",
-        "Cloud Storage (200 GB)",
-        "Custom Software",
-        "Threat Detection",
-        "Backup & Recovery",
-      ],
-    },
-    {
-      name: "Premium Plan",
-      desc: "Advanced IT Services",
-      monthly: 499,
-      features: [
-        "Unlimited Cloud Storage",
-        "1-Hour Priority Support",
-        "Cybersecurity Protection",
-        "Dedicated Account Manager",
-        "24/7 Emergency Service",
-      ],
-    },
-  ];
+  /* ================= FETCH FROM BACKEND ================= */
+
+  useEffect(() => {
+    const fetchPlans = async () => {
+      try {
+        const res = await API_URL.get("/ai-prices");
+        setPlans(res.data || []);
+      } catch (error) {
+        console.error("Error fetching pricing plans:", error);
+      }
+    };
+
+    fetchPlans();
+  }, []);
 
   const getPrice = (price) =>
     yearly ? Math.round(price * 12 * 0.85) : price;
@@ -78,14 +55,15 @@ const PricingSection = () => {
       <div className="ai-grid">
         {plans.map((plan, i) => (
           <div
-            key={i}
+            key={plan._id || i}
             className={`ai-card ${plan.featured ? "featured" : ""}`}
           >
-            <h3>{plan.name}</h3>
-            <p className="ai-sub">{plan.desc}</p>
+            {/* 🔥 KEEPING SAME UI STRUCTURE */}
+            <h3>{plan.name || plan.title}</h3>
+            <p className="ai-sub">{plan.desc || plan.category}</p>
 
             <h1>
-              ₹{getPrice(plan.monthly)}
+              ₹{getPrice(plan.monthly || plan.price)}
               <span>{yearly ? "/per year" : "/per month"}</span>
             </h1>
 
@@ -98,7 +76,7 @@ const PricingSection = () => {
             </button>
 
             <ul>
-              {plan.features.map((f, idx) => (
+              {(plan.features || []).map((f, idx) => (
                 <li key={idx}>
                   <FaCheck /> {f}
                 </li>

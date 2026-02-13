@@ -109,7 +109,7 @@ const Footer = () => {
             <strong>E:</strong>  Alisiltechnology@gmail.com
           </p>
 
-          <p>Mon–Fri 09am–06pm</p>
+          <p>Mon–Fri 11 AM TO 10 PM</p>
         </div>
       </div>
 

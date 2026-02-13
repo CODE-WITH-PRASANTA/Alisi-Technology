@@ -75,7 +75,6 @@ app.use("/api/consulting-prices", consultingRoutes);
 app.use("/api/enterprise-prices", enterpriseRoutes);
 app.use("/api/iot-prices", iotRoutes);
 app.use("/api/network-prices", networkRoutes);
-
 app.use("/api/sustainability-prices", sustainabilityRoutes);
 
 /* ================= HEALTH CHECK ================= */

@@ -16,14 +16,14 @@ import {
 
 /* ================= SERVICES LIST ================= */
 const PRICING_SERVICES = [
-  { label: "All Services", path: "/services/all-services" },
+  // { label: "All Services", path: "/services/all-services" },
   { label: "AI & Data Analytics", path: "/services/Data-Analytics" },
   { label: "BPO Services", path: "/services/bpo" },
   { label: "KPO Services", path: "/services/kpo" },
   { label: "Cloud Computing", path: "/services/Cloud" },
   { label: "Cognitive Operations", path: "/services/cognitive-operations" },
   { label: "Consulting", path: "/services/Consulting" },
-  { label: "Cybersecurity", path: "/services/cybersecurity" },
+  // { label: "Cybersecurity", path: "/services/cybersecurity" },
   { label: "Enterprise Solutions", path: "/services/enterprise-solutions" },
   { label: "IoT & Digital Engineering", path: "/services/iot-digital-engineering" },
   { label: "Network Solutions", path: "/services/network-solutions" },
