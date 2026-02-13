@@ -1,10 +1,10 @@
 import React from "react";
 import "./IsoCertified.css";
 
-import Iso27017 from '../../assets/ISO-27017.webp'
-import Iso18295 from '../../assets/ISO-18295.webp'
-import Iso27001 from '../../assets/ISO-27001.webp'
-import Iso9001 from '../../assets/ISO-9001.webp'
+import Iso27017 from '../../Assets/ISO-27017.webp'
+import Iso18295 from '../../Assets/ISO-18295.webp'
+import Iso27001 from '../../Assets/ISO-27001.webp'
+import Iso9001 from '../../Assets/ISO-9001.webp'
 
 const IsoCertified = () => {
   const isoData = [
