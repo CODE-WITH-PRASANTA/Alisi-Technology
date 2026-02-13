@@ -46,7 +46,7 @@ const ContactInfo = () => {
             <FaPhoneAlt />
           </div>
           <h3>Call us</h3>
-          <p> + 011-6931-3553</p>
+          <p> 011-6931-3553</p>
         </div>
 
         {/* Live Chat */}

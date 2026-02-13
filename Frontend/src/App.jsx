@@ -32,29 +32,25 @@ function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  // 🔄 Global Route Change Loader
   useEffect(() => {
-   // setLoading(true);
+    // 🔥 Start Loader on Route Change
+    setLoading(true);
 
+    // ⏳ Stop Loader After Delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200); // ⏱ Smooth professional delay
+    }, 800); // Keep it short for smooth UX
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <>
-      {/* Global Loader */}
       <Loader loading={loading} />
-
-      {/* Auto Scroll To Top on Route Change */}
       <ScrollToTop />
-
-      {/* Site Layout */}
       <Navbar />
 
-      <Routes>
+      <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

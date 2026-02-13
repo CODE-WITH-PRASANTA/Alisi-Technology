@@ -13,6 +13,17 @@ const clientLogoRoutes = require("./routes/clientLogo.routes");
 const blogRoutes = require("./routes/blog.routes");
 const contactRoutes = require("./routes/contact.routes");
 const aiPriceRoutes = require("./routes/AiPrice.routes");
+const bpoPriceRoutes = require("./routes/bpoprice.routes")
+const kpoRoutes = require("./routes/KpoPrice.routes");
+const cloudRoutes = require("./routes/cloudPrice.routes");
+const cognitiveRoutes = require("./routes/cognitive.routes");
+const consultingRoutes = require("./routes/consulting.routes");
+const enterpriseRoutes = require("./routes/enterprise.routes");
+const iotRoutes = require("./routes/iot.routes");
+const networkRoutes = require("./routes/network.routes");
+const sustainabilityRoutes = require("./routes/sustainability.routes");
+
+
 
 dotenv.config();
 connectDB();
@@ -56,6 +67,16 @@ app.use("/api/client-logos", clientLogoRoutes);
 app.use("/api/blogs",blogRoutes)
 app.use("/api/contacts",contactRoutes);
 app.use("/api/ai-prices", aiPriceRoutes);
+app.use("/api/bpo-prices", bpoPriceRoutes);
+app.use("/api/kpo-prices", kpoRoutes);
+app.use("/api/cloud-prices", cloudRoutes);
+app.use("/api/cognitive-prices", cognitiveRoutes);
+app.use("/api/consulting-prices", consultingRoutes);
+app.use("/api/enterprise-prices", enterpriseRoutes);
+app.use("/api/iot-prices", iotRoutes);
+app.use("/api/network-prices", networkRoutes);
+
+app.use("/api/sustainability-prices", sustainabilityRoutes);
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {

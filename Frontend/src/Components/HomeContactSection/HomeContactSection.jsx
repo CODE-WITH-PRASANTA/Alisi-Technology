@@ -25,7 +25,7 @@ export default function ContactSection() {
           <div className="Home-Contact-info">
             <div>
               <h4>Contact Info:</h4>
-              <p>+ 011-6931-3553</p>
+              <p> 011-6931-3553</p>
               <p>support@tekmino.com</p>
             </div>
 
