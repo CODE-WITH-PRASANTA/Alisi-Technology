@@ -3,14 +3,12 @@ import API_URL, { IMAGE_BASE_URL } from "../Api/Api";
 
 /* ================= SERVICES LIST ================= */
 const SERVICES = [
-  "All Services",
-  "AI & Data Analytics",
+  
   "BPO Services",
   "KPO Services",
   "Cloud Computing",
   "Cognitive Operations",
   "Consulting",
-  "Cybersecurity",
   "Enterprise Solutions",
   "IoT & Digital Engineering",
   "Network Solutions",

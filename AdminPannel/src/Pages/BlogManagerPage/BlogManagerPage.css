@@ -19,8 +19,7 @@
   width: 50%;
   height: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 6px;
+  padding-right: 8px;
 }
 
 .adm-blog-right-panel {
@@ -40,7 +39,7 @@
   border-radius: 18px;
   border: 1px solid #1f2933;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  max-height: 88vh;
+  min-height: 100%;
   overflow-y: auto;
 }
 
@@ -62,7 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   color: #9ca3af;
 }
 
@@ -90,8 +89,8 @@
    ========================= */
 
 .adm-content-textarea {
-  height: 160px;
-  resize: none;
+  min-height: 160px;
+  resize: vertical;
 }
 
 /* =========================
@@ -99,12 +98,59 @@
    ========================= */
 
 .adm-image-preview {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 12px;
   object-fit: cover;
-  margin-top: 8px;
+  margin-top: 10px;
   border: 1px solid #1f2933;
+}
+
+/* =========================
+   TAG SYSTEM
+   ========================= */
+
+.adm-tags-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #1f2933;
+  background: #0b0f14;
+  transition: 0.25s ease;
+}
+
+.adm-tags-input-wrapper:focus-within {
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.adm-tags-input-wrapper input {
+  flex: 1;
+  min-width: 120px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.adm-tag-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 999px;
+  background: #1f2937;
+  color: #22d3ee;
+  border: 1px solid #334155;
+}
+
+.adm-tag-chip span {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ef4444;
 }
 
 /* =========================
@@ -130,6 +176,21 @@
 }
 
 /* =========================
+   TABLE BOX
+   ========================= */
+
+.adm-blog-table-box {
+  background: linear-gradient(180deg, #0f141b, #0b0f14);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #1f2933;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* =========================
    TABLE TOP BAR
    ========================= */
 
@@ -137,7 +198,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
 }
 
 .adm-table-heading {
@@ -153,27 +213,6 @@
   font-weight: 600;
   cursor: pointer;
   color: #020617;
-  transition: 0.25s;
-}
-
-.adm-add-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.4);
-}
-
-/* =========================
-   TABLE BOX
-   ========================= */
-
-.adm-blog-table-box {
-  background: linear-gradient(180deg, #0f141b, #0b0f14);
-  padding: 18px;
-  border-radius: 18px;
-  border: 1px solid #1f2933;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 /* =========================
@@ -184,7 +223,6 @@
   margin-top: 15px;
   overflow-x: auto;
   overflow-y: auto;
-  padding-bottom: 8px;
   flex: 1;
 }
 
@@ -193,7 +231,7 @@
    ========================= */
 
 .adm-blog-table {
-  min-width: 1300px;
+  min-width: 1100px;
   width: 100%;
   border-collapse: collapse;
   background: #0b0f14;
@@ -213,10 +251,8 @@
 .adm-blog-table td {
   padding: 12px;
   border-bottom: 1px solid #1f2933;
-  vertical-align: middle;
 }
 
-/* Hover row */
 .adm-blog-table tbody tr:hover {
   background: #111827;
 }
@@ -237,29 +273,10 @@
    ========================= */
 
 .adm-desc-cell {
-  max-width: 220px;
-  white-space: nowrap;
+  max-width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* =========================
-   TAGS
-   ========================= */
-
-.adm-tags-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.adm-tag-chip {
-  background: #1f2937;
-  color: #22d3ee;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 20px;
-  border: 1px solid #334155;
+  white-space: nowrap;
 }
 
 /* =========================
@@ -271,32 +288,23 @@
   gap: 8px;
 }
 
+.adm-edit-btn,
+.adm-delete-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
 .adm-edit-btn {
   background: #22c55e;
   color: #020617;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.adm-edit-btn:hover {
-  opacity: 0.9;
 }
 
 .adm-delete-btn {
   background: #ef4444;
   color: #020617;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.adm-delete-btn:hover {
-  opacity: 0.9;
 }
 
 /* =========================
@@ -310,7 +318,7 @@
 }
 
 /* =========================
-   SCROLLBAR CONTROL
+   SCROLLBARS
    ========================= */
 
 .adm-table-scroll-area::-webkit-scrollbar {
@@ -323,30 +331,19 @@
   border-radius: 999px;
 }
 
-.adm-table-scroll-area::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.adm-blog-left-panel::-webkit-scrollbar,
-.adm-blog-form-box::-webkit-scrollbar {
+.adm-blog-left-panel::-webkit-scrollbar {
   width: 0;
 }
 
-/* Firefox */
-.adm-blog-left-panel,
-.adm-blog-form-box {
+.adm-blog-left-panel {
   scrollbar-width: none;
-}
-
-.adm-table-scroll-area {
-  scrollbar-width: thin;
 }
 
 /* =========================
    RESPONSIVE
    ========================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .adm-blog-manager-container {
     flex-direction: column;
     height: auto;
@@ -355,5 +352,49 @@
   .adm-blog-left-panel,
   .adm-blog-right-panel {
     width: 100%;
+    height: auto;
+  }
+
+  .adm-blog-form-box {
+    min-height: auto;
+  }
+
+  .adm-blog-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adm-blog-manager-container {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .adm-blog-form-box {
+    padding: 20px;
+  }
+
+  .adm-table-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .adm-blog-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adm-blog-form-heading {
+    font-size: 18px;
+  }
+
+  .adm-submit-btn {
+    font-size: 14px;
+  }
+
+  .adm-blog-table {
+    min-width: 700px;
   }
 }

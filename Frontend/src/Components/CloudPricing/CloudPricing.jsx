@@ -1,51 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CloudPricing.css";
 import { FaCheck } from "react-icons/fa";
+import API_URL from "../../Api/Api"; // ✅ axios instance
 
 const CloudPricing = () => {
   const [yearly, setYearly] = useState(false);
+  const [plans, setPlans] = useState([]);
 
-  const plans = [
-    {
-      name: "Basic Plan",
-      desc: "Essential IT Services",
-      monthly: 99,
-      features: [
-        "Essential IT Support",
-        "Cloud Storage (50 GB)",
-        "Monthly System Check",
-        "Security Updates",
-        "Software Fixes",
-      ],
-    },
-    {
-      name: "Standard Plan",
-      desc: "Complete IT Solutions",
-      monthly: 249,
-      featured: true,
-      features: [
-        "Advanced IT Management",
-        "Cloud Storage (200 GB)",
-        "Custom Software",
-        "Threat Detection",
-        "Backup & Recovery",
-      ],
-    },
-    {
-      name: "Premium Plan",
-      desc: "Advanced IT Services",
-      monthly: 499,
-      features: [
-        "Unlimited Cloud Storage",
-        "1-Hour Priority Support",
-        "Cybersecurity Protection",
-        "Dedicated Account Manager",
-        "24/7 Emergency Service",
-      ],
-    },
-  ];
+  /* ================= FETCH CLOUD PRICES ================= */
 
-  const getPrice = (price) => (yearly ? Math.round(price * 12 * 0.85) : price);
+  useEffect(() => {
+    const fetchPlans = async () => {
+      try {
+        const res = await API_URL.get("/cloud-prices");
+        setPlans(res.data || []);
+      } catch (error) {
+        console.error("Error fetching Cloud pricing:", error);
+      }
+    };
+
+    fetchPlans();
+  }, []);
+
+  const getPrice = (price) =>
+    yearly ? Math.round(price * 12 * 0.85) : price;
 
   return (
     <section className="cloud-section">
@@ -77,25 +55,27 @@ const CloudPricing = () => {
       <div className="cloud-grid">
         {plans.map((plan, i) => (
           <div
-            key={i}
+            key={plan._id || i}
             className={`cloud-card ${plan.featured ? "featured" : ""}`}
           >
-            <h3>{plan.name}</h3>
-            <p className="cloud-sub">{plan.desc}</p>
+            <h3>{plan.name || plan.title}</h3>
+            <p className="cloud-sub">{plan.desc || plan.category}</p>
 
             <h1>
-              ₹{getPrice(plan.monthly)}
+              ₹{getPrice(plan.monthly || plan.price)}
               <span>{yearly ? "/per year" : "/per month"}</span>
             </h1>
 
             <button
-              className={`cloud-btn ${plan.featured ? "solid" : "outline"}`}
+              className={`cloud-btn ${
+                plan.featured ? "solid" : "outline"
+              }`}
             >
               Choose package →
             </button>
 
             <ul>
-              {plan.features.map((f, idx) => (
+              {(plan.features || []).map((f, idx) => (
                 <li key={idx}>
                   <FaCheck /> {f}
                 </li>
